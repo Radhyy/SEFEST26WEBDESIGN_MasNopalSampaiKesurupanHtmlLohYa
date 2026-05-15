@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TechPath.id - Jelajahi Karier Digitalmu</title>
-  <meta name="description" content="TechPath.id membantu kamu menemukan karier digital yang tepat melalui rekomendasi karier, roadmap interaktif, gamifikasi, dan simulasi dunia kerja." />
+  <title>WorkSim - Jelajahi Karier Digitalmu</title>
+  <meta name="description" content="WorkSim membantu kamu menemukan karier digital yang tepat melalui rekomendasi karier, roadmap interaktif, gamifikasi, dan simulasi dunia kerja." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
@@ -29,6 +29,15 @@
           boxShadow: {
             soft: "0 12px 35px rgba(20, 24, 38, 0.09)",
           },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-100%)' },
+            }
+          },
+          animation: {
+            marquee: 'marquee 35s linear infinite',
+          },
         },
       },
     };
@@ -39,7 +48,7 @@
   <header class="sticky top-0 z-30 border-b border-transparent bg-transparent transition-colors duration-300">
     <div class="mx-auto flex min-h-[88px] w-[98vw] max-w-[1320px] items-center">
       <div class="hidden w-full items-center justify-between rounded-full border border-[#dbe3f8] bg-[#f7faff] p-2 shadow-[0_10px_26px_rgba(47,91,211,0.14)] lg:flex dark:border-slate-600 dark:bg-[#111c2f]">
-        <a href="#" class="px-4 font-display text-[1.3rem] font-bold tracking-[-0.02em]">TechPath<span class="text-brand-500">.id</span></a>
+        <a href="#" class="px-4 font-display text-[1.3rem] font-bold tracking-[-0.02em]">Work<span class="text-brand-500">Sim</span></a>
 
         <nav class="flex items-center gap-1 text-[0.95rem] font-semibold text-slate-600 dark:text-slate-200">
           <a class="rounded-full px-4 py-2 transition hover:bg-[#eaf0ff] dark:hover:bg-white/10" href="#fitur">Fitur</a>
@@ -61,7 +70,7 @@
       </div>
 
       <div class="flex w-full items-center justify-between lg:hidden">
-        <a href="#" class="font-display text-[1.3rem] font-bold tracking-[-0.02em]">TechPath<span class="text-brand-500">.id</span></a>
+        <a href="#" class="font-display text-[1.3rem] font-bold tracking-[-0.02em]">Work<span class="text-brand-500">Sim</span></a>
         <div class="flex items-center gap-2">
           <button id="themeToggleMobile" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#b8cdfa] bg-[#e3edff] text-[#2f5bd3] dark:border-slate-500 dark:bg-slate-900 dark:text-[#ffd166]" aria-label="Ganti tema mobile">
             <i id="themeIconMobile" class="fa-solid fa-moon text-sm"></i>
@@ -101,28 +110,12 @@
             <img class="-ml-3 h-10 w-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Avatar 2" />
             <img class="-ml-3 h-10 w-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=120&q=80" alt="Avatar 3" />
           </div>
-          <p class="text-sm text-slate-500">Lebih dari <strong>8.500+</strong> pelajar dan mahasiswa sudah eksplor karier di TechPath.id</p>
+          <p class="text-sm text-slate-500">Lebih dari <strong>8.500+</strong> pelajar dan mahasiswa sudah eksplor karier di WorkSim</p>
         </div>
       </div>
 
-      <div class="reveal relative grid translate-y-6 gap-3 opacity-0 transition-all duration-700 lg:block lg:max-w-[560px] lg:justify-self-end">
-        <div class="overflow-hidden rounded-[20px] border border-white/90 shadow-soft lg:h-[400px]">
-          <img class="h-full w-full object-cover" src="assets/hero/laptop.jpeg" alt="Peserta sedang belajar karier digital" />
-        </div>
-        <div class="flex items-center gap-3 rounded-2xl border border-white bg-white/85 p-3 shadow-soft backdrop-blur lg:absolute lg:right-[-26px] lg:top-5">
-          <i class="fa-brands fa-figma grid h-[34px] w-[34px] place-items-center rounded-[10px] bg-gradient-to-br from-brand-500 to-[#4a76f0] text-white"></i>
-          <div>
-            <strong class="block text-sm leading-tight">UI/UX Designer</strong>
-            <span class="text-xs text-slate-500">Match Score: 92%</span>
-          </div>
-        </div>
-        <div class="flex items-center gap-3 rounded-2xl border border-white bg-white/85 p-3 shadow-soft backdrop-blur lg:absolute lg:bottom-6 lg:left-[-30px]">
-          <i class="fa-solid fa-chart-line grid h-[34px] w-[34px] place-items-center rounded-[10px] bg-gradient-to-br from-brand-500 to-[#4a76f0] text-white"></i>
-          <div>
-            <strong class="block text-sm leading-tight">Data Analyst</strong>
-            <span class="text-xs text-slate-500">Roadmap 12 Minggu</span>
-          </div>
-        </div>
+      <div class="reveal relative flex w-full justify-center translate-y-6 opacity-0 transition-all duration-700 lg:block lg:max-w-[560px] lg:justify-self-end">
+        <img class="mx-auto h-auto w-[85%] max-w-[340px] object-contain transition-transform duration-500 hover:scale-105 lg:max-w-[420px]" src="assets/hero/phone.png" alt="Aplikasi WorkSim" />
       </div>
     </section>
 
@@ -159,48 +152,91 @@
       <div class="mx-auto w-[98vw] max-w-[1320px]">
         <div class="section-head reveal mb-8 max-w-[760px] translate-y-6 opacity-0 transition-all duration-700">
           <p class="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.03em] text-brand-500"><i class="fa-solid fa-grid-2"></i> Core Features</p>
-          <h2 class="font-display text-[clamp(1.55rem,2.7vw,2.3rem)] leading-[1.2]">Semua yang kamu butuhkan untuk naik level karier digital</h2>
+          <div class="flex items-start gap-3">
+            <h2 class="font-display text-[clamp(1.55rem,2.7vw,2.3rem)] leading-[1.2]">Semua yang kamu butuhkan untuk naik level karier digital</h2>
+            <img class="pointer-events-none mt-1 hidden w-16 -rotate-[10deg] opacity-80 lg:block" src="assets/decor/burst.svg" alt="" aria-hidden="true" />
+          </div>
         </div>
 
-        <div class="grid gap-[18px] md:grid-cols-2 xl:grid-cols-3">
-          <article class="reveal translate-y-6 rounded-2xl border border-[#dbe3f8] bg-white p-6 opacity-0 shadow-[0_8px_28px_rgba(20,24,38,0.06)] transition-all duration-700">
-            <div class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-[#ebf0ff] text-[1.1rem] text-brand-500"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-            <h3 class="mb-2 text-[1.06rem] font-bold">Career Recommendation System</h3>
-            <p class="text-[0.92rem] text-slate-500">Sistem semi-AI menganalisis minat, skill, dan kepribadian lalu menyarankan jalur seperti Programmer, UI/UX Designer, atau Data Analyst.</p>
-          </article>
-          <article class="reveal translate-y-6 rounded-2xl border border-[#dbe3f8] bg-white p-6 opacity-0 shadow-[0_8px_28px_rgba(20,24,38,0.06)] transition-all duration-700">
-            <div class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-[#ebf0ff] text-[1.1rem] text-brand-500"><i class="fa-solid fa-route"></i></div>
-            <h3 class="mb-2 text-[1.06rem] font-bold">Interactive Roadmap</h3>
-            <p class="text-[0.92rem] text-slate-500">Roadmap visual dari basic hingga praktik: HTML/CSS, JavaScript, Framework, Project, sampai peluang magang atau freelance.</p>
-          </article>
-          <article class="reveal relative translate-y-6 rounded-2xl border border-[#dbe3f8] bg-white p-6 opacity-0 shadow-[0_8px_28px_rgba(20,24,38,0.06)] transition-all duration-700">
-            <img class="pointer-events-none absolute right-[6px] -top-[87px] hidden w-24 -rotate-[10deg] opacity-90 lg:block" src="assets/decor/burst.svg" alt="" aria-hidden="true" />
-            <div class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-[#ebf0ff] text-[1.1rem] text-brand-500"><i class="fa-solid fa-gamepad"></i></div>
-            <h3 class="mb-2 text-[1.06rem] font-bold">Gamification System</h3>
-            <p class="text-[0.92rem] text-slate-500">Kumpulkan XP, naik level, dan unlock badge seperti Beginner Coder atau UI Designer Level 2 biar belajar makin konsisten.</p>
-          </article>
-          <article class="reveal translate-y-6 rounded-2xl border border-[#dbe3f8] bg-white p-6 opacity-0 shadow-[0_8px_28px_rgba(20,24,38,0.06)] transition-all duration-700">
-            <div class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-[#ebf0ff] text-[1.1rem] text-brand-500"><i class="fa-solid fa-chart-pie"></i></div>
-            <h3 class="mb-2 text-[1.06rem] font-bold">Skill Tracker Dashboard</h3>
-            <p class="text-[0.92rem] text-slate-500">Lihat kemajuan skill, progres roadmap, serta rekomendasi langkah berikutnya dalam satu tampilan seperti raport digital.</p>
-          </article>
-          <article class="reveal translate-y-6 rounded-2xl border border-[#dbe3f8] bg-white p-6 opacity-0 shadow-[0_8px_28px_rgba(20,24,38,0.06)] transition-all duration-700">
-            <div class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-[#ebf0ff] text-[1.1rem] text-brand-500"><i class="fa-solid fa-briefcase"></i></div>
-            <h3 class="mb-2 text-[1.06rem] font-bold">Mini Project Generator</h3>
-            <p class="text-[0.92rem] text-slate-500">Dapatkan simulasi kasus dunia kerja: buat landing page UMKM, analisis data sederhana, dan tantangan praktik lainnya.</p>
-          </article>
-          <article class="reveal translate-y-6 rounded-2xl border border-[#dbe3f8] bg-white p-6 opacity-0 shadow-[0_8px_28px_rgba(20,24,38,0.06)] transition-all duration-700">
-            <div class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-[#ebf0ff] text-[1.1rem] text-brand-500"><i class="fa-solid fa-users"></i></div>
-            <h3 class="mb-2 text-[1.06rem] font-bold">Mentor & Komunitas</h3>
-            <p class="text-[0.92rem] text-slate-500">Tanya jawab, diskusi, dan sharing project bersama mentor serta komunitas agar proses belajar tidak terasa sendirian.</p>
-          </article>
-          <article class="reveal translate-y-6 rounded-2xl border border-[#dbe3f8] bg-white p-6 opacity-0 shadow-[0_8px_28px_rgba(20,24,38,0.06)] transition-all duration-700 md:col-span-2 xl:col-span-3 xl:grid xl:grid-cols-[auto_1fr] xl:items-center xl:gap-4">
-            <div class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-[#ebf0ff] text-[1.1rem] text-brand-500 xl:mb-0"><i class="fa-solid fa-bullseye"></i></div>
-            <div>
-              <h3 class="mb-2 text-[1.06rem] font-bold">Career Simulation Mode</h3>
-              <p class="text-[0.92rem] text-slate-500">Pilih skenario seperti “Kalau aku jadi UI Designer”, lalu lihat gaji rata-rata, tools yang dipakai, dan contoh task harian agar lebih realistis.</p>
-            </div>
-          </article>
+        <div class="flex overflow-hidden group py-4 reveal translate-y-6 opacity-0 transition-all duration-700 w-[100vw] relative left-[50%] -translate-x-1/2 [-webkit-mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+          <div class="flex gap-[18px] w-max animate-marquee group-hover:[animation-play-state:paused] pr-[18px]">
+            <article class="w-[300px] md:w-[360px] shrink-0 rounded-2xl border border-[#dbe3f8] bg-white p-6 shadow-[0_8px_28px_rgba(20,24,38,0.06)] transition-transform duration-300 active:scale-105 cursor-pointer">
+              <div class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-[#ebf0ff] text-[1.1rem] text-brand-500"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+              <h3 class="mb-2 text-[1.06rem] font-bold">Career Recommendation System</h3>
+              <p class="text-[0.92rem] text-slate-500">Sistem semi-AI menganalisis minat, skill, dan kepribadian lalu menyarankan jalur seperti Programmer, UI/UX Designer, atau Data Analyst.</p>
+            </article>
+            <article class="w-[300px] md:w-[360px] shrink-0 rounded-2xl border border-[#dbe3f8] bg-white p-6 shadow-[0_8px_28px_rgba(20,24,38,0.06)] transition-transform duration-300 active:scale-105 cursor-pointer">
+              <div class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-[#ebf0ff] text-[1.1rem] text-brand-500"><i class="fa-solid fa-route"></i></div>
+              <h3 class="mb-2 text-[1.06rem] font-bold">Interactive Roadmap</h3>
+              <p class="text-[0.92rem] text-slate-500">Roadmap visual dari basic hingga praktik: HTML/CSS, JavaScript, Framework, Project, sampai peluang magang atau freelance.</p>
+            </article>
+            <article class="w-[300px] md:w-[360px] shrink-0 rounded-2xl border border-[#dbe3f8] bg-white p-6 shadow-[0_8px_28px_rgba(20,24,38,0.06)] transition-transform duration-300 active:scale-105 cursor-pointer">
+              <div class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-[#ebf0ff] text-[1.1rem] text-brand-500"><i class="fa-solid fa-gamepad"></i></div>
+              <h3 class="mb-2 text-[1.06rem] font-bold">Gamification System</h3>
+              <p class="text-[0.92rem] text-slate-500">Kumpulkan XP, naik level, dan unlock badge seperti Beginner Coder atau UI Designer Level 2 biar belajar makin konsisten.</p>
+            </article>
+            <article class="w-[300px] md:w-[360px] shrink-0 rounded-2xl border border-[#dbe3f8] bg-white p-6 shadow-[0_8px_28px_rgba(20,24,38,0.06)] transition-transform duration-300 active:scale-105 cursor-pointer">
+              <div class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-[#ebf0ff] text-[1.1rem] text-brand-500"><i class="fa-solid fa-chart-pie"></i></div>
+              <h3 class="mb-2 text-[1.06rem] font-bold">Skill Tracker Dashboard</h3>
+              <p class="text-[0.92rem] text-slate-500">Lihat kemajuan skill, progres roadmap, serta rekomendasi langkah berikutnya dalam satu tampilan seperti raport digital.</p>
+            </article>
+            <article class="w-[300px] md:w-[360px] shrink-0 rounded-2xl border border-[#dbe3f8] bg-white p-6 shadow-[0_8px_28px_rgba(20,24,38,0.06)] transition-transform duration-300 active:scale-105 cursor-pointer">
+              <div class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-[#ebf0ff] text-[1.1rem] text-brand-500"><i class="fa-solid fa-briefcase"></i></div>
+              <h3 class="mb-2 text-[1.06rem] font-bold">Mini Project Generator</h3>
+              <p class="text-[0.92rem] text-slate-500">Dapatkan simulasi kasus dunia kerja: buat landing page UMKM, analisis data sederhana, dan tantangan praktik lainnya.</p>
+            </article>
+            <article class="w-[300px] md:w-[360px] shrink-0 rounded-2xl border border-[#dbe3f8] bg-white p-6 shadow-[0_8px_28px_rgba(20,24,38,0.06)] transition-transform duration-300 active:scale-105 cursor-pointer">
+              <div class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-[#ebf0ff] text-[1.1rem] text-brand-500"><i class="fa-solid fa-users"></i></div>
+              <h3 class="mb-2 text-[1.06rem] font-bold">Mentor & Komunitas</h3>
+              <p class="text-[0.92rem] text-slate-500">Tanya jawab, diskusi, dan sharing project bersama mentor serta komunitas agar proses belajar tidak terasa sendirian.</p>
+            </article>
+            <article class="w-[300px] md:w-[360px] shrink-0 rounded-2xl border border-[#dbe3f8] bg-white p-6 shadow-[0_8px_28px_rgba(20,24,38,0.06)] transition-transform duration-300 active:scale-105 cursor-pointer flex flex-col justify-center">
+              <div class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-[#ebf0ff] text-[1.1rem] text-brand-500"><i class="fa-solid fa-bullseye"></i></div>
+              <div>
+                <h3 class="mb-2 text-[1.06rem] font-bold">Career Simulation Mode</h3>
+                <p class="text-[0.92rem] text-slate-500">Pilih skenario seperti “Kalau aku jadi UI Designer”, lalu lihat gaji rata-rata, tools yang dipakai, dan contoh task harian agar lebih realistis.</p>
+              </div>
+            </article>
+          </div>
+          <div class="flex gap-[18px] w-max animate-marquee group-hover:[animation-play-state:paused] pr-[18px]" aria-hidden="true">
+            <article class="w-[300px] md:w-[360px] shrink-0 rounded-2xl border border-[#dbe3f8] bg-white p-6 shadow-[0_8px_28px_rgba(20,24,38,0.06)] transition-transform duration-300 active:scale-105 cursor-pointer">
+              <div class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-[#ebf0ff] text-[1.1rem] text-brand-500"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+              <h3 class="mb-2 text-[1.06rem] font-bold">Career Recommendation System</h3>
+              <p class="text-[0.92rem] text-slate-500">Sistem semi-AI menganalisis minat, skill, dan kepribadian lalu menyarankan jalur seperti Programmer, UI/UX Designer, atau Data Analyst.</p>
+            </article>
+            <article class="w-[300px] md:w-[360px] shrink-0 rounded-2xl border border-[#dbe3f8] bg-white p-6 shadow-[0_8px_28px_rgba(20,24,38,0.06)] transition-transform duration-300 active:scale-105 cursor-pointer">
+              <div class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-[#ebf0ff] text-[1.1rem] text-brand-500"><i class="fa-solid fa-route"></i></div>
+              <h3 class="mb-2 text-[1.06rem] font-bold">Interactive Roadmap</h3>
+              <p class="text-[0.92rem] text-slate-500">Roadmap visual dari basic hingga praktik: HTML/CSS, JavaScript, Framework, Project, sampai peluang magang atau freelance.</p>
+            </article>
+            <article class="w-[300px] md:w-[360px] shrink-0 rounded-2xl border border-[#dbe3f8] bg-white p-6 shadow-[0_8px_28px_rgba(20,24,38,0.06)] transition-transform duration-300 active:scale-105 cursor-pointer">
+              <div class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-[#ebf0ff] text-[1.1rem] text-brand-500"><i class="fa-solid fa-gamepad"></i></div>
+              <h3 class="mb-2 text-[1.06rem] font-bold">Gamification System</h3>
+              <p class="text-[0.92rem] text-slate-500">Kumpulkan XP, naik level, dan unlock badge seperti Beginner Coder atau UI Designer Level 2 biar belajar makin konsisten.</p>
+            </article>
+            <article class="w-[300px] md:w-[360px] shrink-0 rounded-2xl border border-[#dbe3f8] bg-white p-6 shadow-[0_8px_28px_rgba(20,24,38,0.06)] transition-transform duration-300 active:scale-105 cursor-pointer">
+              <div class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-[#ebf0ff] text-[1.1rem] text-brand-500"><i class="fa-solid fa-chart-pie"></i></div>
+              <h3 class="mb-2 text-[1.06rem] font-bold">Skill Tracker Dashboard</h3>
+              <p class="text-[0.92rem] text-slate-500">Lihat kemajuan skill, progres roadmap, serta rekomendasi langkah berikutnya dalam satu tampilan seperti raport digital.</p>
+            </article>
+            <article class="w-[300px] md:w-[360px] shrink-0 rounded-2xl border border-[#dbe3f8] bg-white p-6 shadow-[0_8px_28px_rgba(20,24,38,0.06)] transition-transform duration-300 active:scale-105 cursor-pointer">
+              <div class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-[#ebf0ff] text-[1.1rem] text-brand-500"><i class="fa-solid fa-briefcase"></i></div>
+              <h3 class="mb-2 text-[1.06rem] font-bold">Mini Project Generator</h3>
+              <p class="text-[0.92rem] text-slate-500">Dapatkan simulasi kasus dunia kerja: buat landing page UMKM, analisis data sederhana, dan tantangan praktik lainnya.</p>
+            </article>
+            <article class="w-[300px] md:w-[360px] shrink-0 rounded-2xl border border-[#dbe3f8] bg-white p-6 shadow-[0_8px_28px_rgba(20,24,38,0.06)] transition-transform duration-300 active:scale-105 cursor-pointer">
+              <div class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-[#ebf0ff] text-[1.1rem] text-brand-500"><i class="fa-solid fa-users"></i></div>
+              <h3 class="mb-2 text-[1.06rem] font-bold">Mentor & Komunitas</h3>
+              <p class="text-[0.92rem] text-slate-500">Tanya jawab, diskusi, dan sharing project bersama mentor serta komunitas agar proses belajar tidak terasa sendirian.</p>
+            </article>
+            <article class="w-[300px] md:w-[360px] shrink-0 rounded-2xl border border-[#dbe3f8] bg-white p-6 shadow-[0_8px_28px_rgba(20,24,38,0.06)] transition-transform duration-300 active:scale-105 cursor-pointer flex flex-col justify-center">
+              <div class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-[#ebf0ff] text-[1.1rem] text-brand-500"><i class="fa-solid fa-bullseye"></i></div>
+              <div>
+                <h3 class="mb-2 text-[1.06rem] font-bold">Career Simulation Mode</h3>
+                <p class="text-[0.92rem] text-slate-500">Pilih skenario seperti “Kalau aku jadi UI Designer”, lalu lihat gaji rata-rata, tools yang dipakai, dan contoh task harian agar lebih realistis.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -334,7 +370,7 @@
               <span class="grid h-10 w-10 place-items-center rounded-2xl bg-gradient-to-br from-brand-500 to-[#17bebb] text-white shadow-[0_10px_20px_rgba(47,91,211,0.22)]">
                 <i class="fa-solid fa-compass"></i>
               </span>
-              TechPath<span class="text-brand-500">.id</span>
+              Work<span class="text-brand-500">Sim</span>
             </a>
             <p class="mt-4 max-w-[34ch] text-[0.94rem] leading-7 text-slate-500">Platform eksplorasi karier digital untuk pelajar, mahasiswa, dan career switcher yang ingin belajar dengan arah yang lebih jelas.</p>
             <div class="mt-5 flex flex-wrap gap-2">
@@ -377,7 +413,7 @@
         </div>
 
         <div class="mt-8 flex flex-col gap-3 border-t border-[#e7edfb] pt-5 text-sm text-slate-500 lg:flex-row lg:items-center lg:justify-between">
-          <p>© 2026 TechPath.id. Dibangun untuk membantu perjalanan karier digital jadi lebih terarah.</p>
+          <p>© 2026 WorkSim. Dibangun untuk membantu perjalanan karier digital jadi lebih terarah.</p>
           <p class="inline-flex items-center gap-2"><i class="fa-solid fa-sparkles text-brand-500"></i> Belajar, progres, dan eksplorasi dalam satu tempat</p>
         </div>
       </div>

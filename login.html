@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login - WorkSim</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+    rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="shared.js" defer></script>
   <script>
     tailwind.config = {
       darkMode: "class",
@@ -32,24 +36,44 @@
       background-size: 400% 400%;
       animation: gradientBG 15s ease infinite;
     }
+
     .dark .bg-animate {
       background: linear-gradient(-45deg, #0f1f5c, #0b1220, #1b2840, #1d43b4);
       background-size: 400% 400%;
       animation: gradientBG 15s ease infinite;
     }
+
     @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
     }
+
     /* Floating Elements */
     .floating-icon {
       animation: float 6s ease-in-out infinite;
     }
+
     @keyframes float {
-      0% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-20px) rotate(5deg); }
-      100% { transform: translateY(0px) rotate(0deg); }
+      0% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(5deg);
+      }
+
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
     }
   </style>
   <script>
@@ -68,63 +92,75 @@
         localStorage.setItem("theme", "dark");
       }
     }
+    
+    function togglePassword(inputId, iconContainer) {
+      const input = document.getElementById(inputId);
+      const icon = iconContainer.querySelector("i");
+      if (input.type === "password") {
+        input.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+      } else {
+        input.type = "password";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("loginForm");
+      if (form) {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const email = document.getElementById("email").value;
+          const pwd = document.getElementById("password").value;
+          
+          if (email === "budi@worksim.id" && pwd === "password123") {
+            window.location.href = "features/skill-passport/index.html";
+          } else {
+            alert("Email atau password salah!\nGunakan akun dummy:\nEmail: budi@worksim.id\nPassword: password123");
+          }
+        });
+      }
+    });
   </script>
 </head>
-<body class="bg-animate min-h-screen flex flex-col font-sans text-slate-900 dark:text-slate-100 transition-colors duration-300 relative overflow-hidden">
 
-  <!-- Floating Decorative Icons -->
-  <div class="absolute top-20 left-[10%] opacity-20 dark:opacity-10 floating-icon text-brand-500 text-6xl">
-    <i class="fa-solid fa-code"></i>
-  </div>
-  <div class="absolute bottom-20 right-[10%] opacity-20 dark:opacity-10 floating-icon text-brand-500 text-6xl" style="animation-delay: -3s;">
-    <i class="fa-solid fa-rocket"></i>
-  </div>
-  <div class="absolute top-1/3 right-[20%] opacity-10 dark:opacity-5 floating-icon text-amber-500 text-5xl" style="animation-delay: -1.5s;">
-    <i class="fa-solid fa-bolt"></i>
-  </div>
+<body
+  class="bg-animate min-h-screen flex flex-col font-sans text-slate-900 dark:text-slate-100 transition-colors duration-300 relative overflow-x-hidden">
 
-  <!-- Navbar Minimalis -->
-  <header class="absolute top-0 w-full z-50">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-      <div class="flex lg:flex-1">
-        <a href="index.html" class="-m-1.5 p-1.5">
-          <span class="sr-only">WorkSim</span>
-          <img class="h-8 w-auto dark:hidden" src="assets/logo/Logo%20WorkSim.png" alt="WorkSim Logo" />
-          <img class="h-8 w-auto hidden dark:block" src="assets/logo/Logo%20WorkSim_dark.png" alt="WorkSim Logo Dark" />
-        </a>
-      </div>
-      <div class="flex lg:flex-1 justify-end items-center gap-4">
-        <button onclick="toggleTheme()" class="rounded-full p-2 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors bg-white/50 dark:bg-slate-800/50 backdrop-blur border border-slate-200 dark:border-slate-700">
-          <i class="fa-solid fa-moon dark:hidden"></i>
-          <i class="fa-solid fa-sun hidden dark:block"></i>
-        </button>
-      </div>
-    </nav>
-  </header>
+  <div id="navbar-placeholder"></div>
+
+  <!-- Logo Dekorasi Kanan Tengah -->
+  <img src="assets/logo/WorksimLogo.png" alt="" class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] lg:w-[800px] opacity-30 pointer-events-none dark:hidden" />
+  <img src="assets/logo/WorksimLogo.png" alt="" class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] lg:w-[800px] opacity-30 pointer-events-none hidden dark:block" />
 
   <!-- Konten Utama: Form Login -->
   <main class="flex-grow flex items-center justify-center p-4 relative z-10">
     <div class="w-full max-w-md">
-      
+
       <!-- Card Container dengan Glassmorphism -->
-      <div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 dark:border-slate-700/50 p-8 sm:p-10 transform transition-all hover:scale-[1.01]">
-        
+      <div
+        class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 dark:border-slate-700/50 p-8 sm:p-10 transform transition-all hover:scale-[1.01]">
+
         <!-- Header -->
         <div class="text-center mb-8">
           <h2 class="font-display text-3xl font-bold text-slate-900 dark:text-white mb-2">Selamat Datang Kembali</h2>
-          <p class="text-slate-500 dark:text-slate-400 text-sm">Masuk untuk melanjutkan perjalanan karirmu di WorkSim.</p>
+          <p class="text-slate-500 dark:text-slate-400 text-sm">Masuk untuk melanjutkan perjalanan karirmu di WorkSim.
+          </p>
         </div>
 
         <!-- Form -->
-        <form class="space-y-6" action="index.html" method="GET">
+        <form id="loginForm" class="space-y-6">
           <!-- Input Email -->
           <div>
-            <label for="email" class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Alamat Email</label>
+            <label for="email" class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Alamat
+              Email</label>
             <div class="relative">
               <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
                 <i class="fa-solid fa-envelope"></i>
               </div>
-              <input type="email" id="email" name="email" required placeholder="nama@email.com" 
+              <input type="email" id="email" name="email" required placeholder="budi@worksim.id" value="budi@worksim.id"
                 class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-800/50 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all shadow-sm" />
             </div>
           </div>
@@ -132,17 +168,21 @@
           <!-- Input Password -->
           <div>
             <div class="flex items-center justify-between mb-2">
-              <label for="password" class="block text-sm font-semibold text-slate-700 dark:text-slate-300">Kata Sandi</label>
-              <a href="#" class="text-sm font-semibold text-brand-500 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Lupa sandi?</a>
+              <label for="password" class="block text-sm font-semibold text-slate-700 dark:text-slate-300">Kata
+                Sandi</label>
+              <a href="#"
+                class="text-sm font-semibold text-brand-500 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Lupa
+                sandi?</a>
             </div>
             <div class="relative">
               <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
                 <i class="fa-solid fa-lock"></i>
               </div>
-              <input type="password" id="password" name="password" required placeholder="••••••••" 
+              <input type="password" id="password" name="password" required placeholder="••••••••" value="password123"
                 class="w-full pl-10 pr-10 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-800/50 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all shadow-sm" />
-              <!-- Mata untuk toggle password (opsional/hanya UI) -->
-              <div class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
+              <!-- Mata untuk toggle password -->
+              <div onclick="togglePassword('password', this)"
+                class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
                 <i class="fa-regular fa-eye"></i>
               </div>
             </div>
@@ -150,7 +190,8 @@
 
           <!-- Tombol Submit -->
           <div>
-            <button type="submit" class="w-full flex justify-center items-center gap-2 py-3 px-4 border border-transparent rounded-xl shadow-lg shadow-brand-500/30 text-sm font-bold text-white bg-brand-500 hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 transition-all hover:-translate-y-0.5">
+            <button type="submit"
+              class="w-full flex justify-center items-center gap-2 py-3 px-4 border border-transparent rounded-xl shadow-lg shadow-brand-500/30 text-sm font-bold text-white bg-brand-500 hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 transition-all hover:-translate-y-0.5">
               <span>Masuk Sekarang</span>
               <i class="fa-solid fa-arrow-right"></i>
             </button>
@@ -166,10 +207,12 @@
 
         <!-- Social Login -->
         <div class="mt-6 grid grid-cols-2 gap-4">
-          <button class="flex items-center justify-center gap-2 px-4 py-2.5 border border-slate-200 dark:border-slate-700 rounded-xl bg-white/50 dark:bg-slate-800/50 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold text-sm transition-colors shadow-sm">
+          <button
+            class="flex items-center justify-center gap-2 px-4 py-2.5 border border-slate-200 dark:border-slate-700 rounded-xl bg-white/50 dark:bg-slate-800/50 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold text-sm transition-colors shadow-sm">
             <i class="fa-brands fa-google text-red-500"></i> Google
           </button>
-          <button class="flex items-center justify-center gap-2 px-4 py-2.5 border border-slate-200 dark:border-slate-700 rounded-xl bg-white/50 dark:bg-slate-800/50 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold text-sm transition-colors shadow-sm">
+          <button
+            class="flex items-center justify-center gap-2 px-4 py-2.5 border border-slate-200 dark:border-slate-700 rounded-xl bg-white/50 dark:bg-slate-800/50 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold text-sm transition-colors shadow-sm">
             <i class="fa-brands fa-github"></i> GitHub
           </button>
         </div>
@@ -178,12 +221,15 @@
 
       <!-- Link Daftar -->
       <p class="mt-8 text-center text-sm text-slate-600 dark:text-slate-400">
-        Belum punya akun? 
-        <a href="register.html" class="font-bold text-brand-500 hover:text-brand-600 dark:hover:text-brand-400 transition-colors border-b border-transparent hover:border-brand-500 pb-0.5">Daftar Gratis</a>
+        Belum punya akun?
+        <a href="register.html"
+          class="font-bold text-brand-500 hover:text-brand-600 dark:hover:text-brand-400 transition-colors border-b border-transparent hover:border-brand-500 pb-0.5">Daftar
+          Gratis</a>
       </p>
 
     </div>
   </main>
 
 </body>
+
 </html>

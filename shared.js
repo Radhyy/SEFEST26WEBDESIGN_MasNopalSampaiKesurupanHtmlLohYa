@@ -19,10 +19,11 @@ const NAVBAR_HTML = `
     <div class="hidden w-full items-center justify-between rounded-full border border-[#dbe3f8] bg-[#f7faff] p-2 shadow-[0_10px_26px_rgba(47,91,211,0.14)] lg:flex dark:border-slate-600 dark:bg-[#111c2f]">
       <a href="${rootPath}index.html" class="px-4 font-display text-[1.3rem] font-bold tracking-[-0.02em]">Work<span class="text-brand-500">Sim</span></a>
       <nav class="flex items-center gap-1 text-[0.95rem] font-semibold text-slate-600 dark:text-slate-200">
-        <a class="rounded-full px-4 py-2 transition hover:bg-[#eaf0ff] dark:hover:bg-white/10" href="${rootPath}index.html#fitur">Fitur</a>
+        <a class="rounded-full px-4 py-2 transition hover:bg-[#eaf0ff] dark:hover:bg-white/10" href="${rootPath}index.html">Home</a>
+        <a class="rounded-full px-4 py-2 transition hover:bg-[#eaf0ff] dark:hover:bg-white/10" href="${rootPath}features/ai-career-advisor/index.html">AI Advisor</a>
         <a class="rounded-full px-4 py-2 transition hover:bg-[#eaf0ff] dark:hover:bg-white/10" href="${rootPath}features/learning-roadmap/index.html">Roadmap</a>
         <a class="rounded-full px-4 py-2 transition hover:bg-[#eaf0ff] dark:hover:bg-white/10" href="${rootPath}features/career-simulation/index.html">Simulasi</a>
-        <a class="rounded-full px-4 py-2 transition hover:bg-[#eaf0ff] dark:hover:bg-white/10" href="${rootPath}index.html#kontak">Kontak</a>
+        <a class="rounded-full px-4 py-2 transition hover:bg-[#eaf0ff] dark:hover:bg-white/10" href="${rootPath}features/skill-passport/index.html">Skill Passport</a>
       </nav>
       <div class="flex items-center gap-2">
         <button id="themeToggle" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#b8cdfa] bg-[#e3edff] text-[#2f5bd3] transition hover:-translate-y-0.5 hover:border-brand-500 dark:border-slate-500 dark:bg-slate-900 dark:text-[#ffd166]" aria-label="Ganti tema">
@@ -70,9 +71,10 @@ const FOOTER_HTML = `
           <p class="mb-4 text-sm font-bold uppercase tracking-[0.08em] text-brand-500">Navigasi</p>
           <div class="grid gap-3 text-[0.95rem] text-slate-600">
             <a class="transition hover:text-brand-500" href="${rootPath}index.html">Home</a>
-            <a class="transition hover:text-brand-500" href="${rootPath}index.html#fitur">Fitur</a>
+            <a class="transition hover:text-brand-500" href="${rootPath}features/ai-career-advisor/index.html">AI Advisor</a>
             <a class="transition hover:text-brand-500" href="${rootPath}features/learning-roadmap/index.html">Roadmap</a>
             <a class="transition hover:text-brand-500" href="${rootPath}features/career-simulation/index.html">Simulasi</a>
+            <a class="transition hover:text-brand-500" href="${rootPath}features/skill-passport/index.html">Skill Passport</a>
           </div>
         </div>
         <div>

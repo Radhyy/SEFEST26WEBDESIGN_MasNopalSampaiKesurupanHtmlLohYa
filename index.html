@@ -1,158 +1,184 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>WorkSim - Jelajahi Karier Digitalmu</title>
-  <meta name="description" content="WorkSim membantu kamu menemukan karier digital yang tepat melalui rekomendasi karier, roadmap interaktif, gamifikasi, dan simulasi dunia kerja." />
+  <meta name="description"
+    content="WorkSim membantu kamu menemukan karier digital yang tepat melalui rekomendasi karier, roadmap interaktif, gamifikasi, dan simulasi dunia kerja." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="shared.js" defer></script>
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ["Plus Jakarta Sans", "sans-serif"],
-            display: ["Sora", "sans-serif"],
-          },
-          colors: {
-            brand: {
-              50: "#eef3ff",
-              100: "#dbe5ff",
-              500: "#2f5bd3",
-              600: "#1d43b4",
-            },
-          },
-          boxShadow: {
-            soft: "0 12px 35px rgba(20, 24, 38, 0.09)",
-          },
-          keyframes: {
-            marquee: {
-              '0%': { transform: 'translateX(0)' },
-              '100%': { transform: 'translateX(-100%)' },
-            }
-          },
-          animation: {
-            marquee: 'marquee 35s linear infinite',
-          },
-        },
-      },
-    };
-  </script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+    rel="stylesheet" />
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="./css/output.css" />
+
+  <script src="./js/shared.js" defer></script>
+  <script src="./js/home.js" defer></script>
 </head>
-<body class="overflow-x-hidden bg-[radial-gradient(circle_at_10%_-10%,#e7ecff_0%,#f8fafc_45%)] text-slate-900 transition-colors duration-300 dark:bg-[radial-gradient(circle_at_10%_-10%,#1b2840_0%,#0b1220_45%)] dark:text-slate-100">
+
+<body
+  class="font-sans overflow-x-hidden bg-[radial-gradient(circle_at_10%_-10%,#e7ecff_0%,#f8fafc_45%)] text-slate-900 transition-colors duration-300 dark:bg-[radial-gradient(circle_at_10%_-10%,#1b2840_0%,#0b1220_45%)] dark:text-slate-100">
   <div id="navbar-placeholder"></div>
 
   <main>
-    <section class="relative mx-auto mt-2 grid min-h-[calc(100svh-88px)] w-[98vw] max-w-[1320px] gap-7 pb-16 pt-10 lg:grid-cols-[1.12fr_0.88fr] lg:items-center lg:gap-12 lg:pt-14 lg:pb-20">
-      <div class="pointer-events-none absolute -left-44 top-[58%] -z-10 h-72 w-72 rounded-full bg-gradient-to-b from-[#d9e3ff] to-[#c4d4ff]"></div>
-      <div class="pointer-events-none absolute -right-36 top-8 -z-10 h-60 w-60 rounded-full bg-gradient-to-b from-[#dfe9ff] to-[#c9d9ff] opacity-70"></div>
-       <img class="pointer-events-none absolute left-[8%] top-[12%] -z-10 hidden w-28 opacity-70 lg:block" src="assets/decor/dots-blue.svg" alt="" aria-hidden="true" />
-       <img class="pointer-events-none absolute right-[6%] top-[42%] -z-10 hidden w-40 opacity-65 lg:block" src="assets/decor/blob-soft.svg" alt="" aria-hidden="true" />
+    <section
+      class="relative mx-auto mt-2 grid min-h-[calc(100svh-88px)] w-[98vw] max-w-330 gap-7 pb-16 pt-10 lg:grid-cols-[1.12fr_0.88fr] lg:items-center lg:gap-12 lg:pt-14 lg:pb-20">
+      <div
+        class="pointer-events-none absolute -left-44 top-[58%] -z-10 h-72 w-72 rounded-full bg-gradient-to-b from-[#d9e3ff] to-[#c4d4ff]">
+      </div>
+      <div
+        class="pointer-events-none absolute -right-36 top-8 -z-10 h-60 w-60 rounded-full bg-gradient-to-b from-[#dfe9ff] to-[#c9d9ff] opacity-70">
+      </div>
+      <img class="pointer-events-none absolute left-[8%] top-[12%] -z-10 hidden w-28 opacity-70 lg:block"
+        src="assets/decor/dots-blue.svg" alt="" aria-hidden="true" />
+      <img class="pointer-events-none absolute right-[6%] top-[42%] -z-10 hidden w-40 opacity-65 lg:block"
+        src="assets/decor/blob-soft.svg" alt="" aria-hidden="true" />
       <div class="reveal translate-y-6 opacity-0 transition-all duration-700">
-        <p class="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.03em] text-brand-500">
+        <p class="eyebrow">
           <i class="fa-solid fa-sparkles"></i>
           Platform Karier Digital Modern
         </p>
-        <h1 class="font-display text-[clamp(2.35rem,4.8vw,4.1rem)] leading-[1.1] tracking-[-0.03em]">Temukan <span class="text-brand-500">arah karier</span> yang paling cocok dengan potensi kamu</h1>
-        <p class="mt-4 max-w-[55ch] text-slate-500">Dari minat, skill, hingga kepribadian, sistem akan merekomendasikan jalur terbaik dan roadmap belajar yang jelas.</p>
+        <h1 class="font-display text-[clamp(2.35rem,4.8vw,4.1rem)] leading-[1.1] tracking-[-0.03em]">Temukan <span
+            class="text-brand-500">arah karier</span> yang paling cocok dengan potensi kamu</h1>
+        <p class="mt-4 max-w-[55ch] text-slate-500">Dari minat, skill, hingga kepribadian, sistem akan merekomendasikan
+          jalur terbaik dan roadmap belajar yang jelas.</p>
         <div class="mt-6 flex flex-wrap gap-3">
-          <a class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-brand-500 to-[#3f6ef0] px-5 py-3 text-sm font-bold text-white shadow-[0_8px_20px_rgba(47,91,211,0.25)] transition hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(47,91,211,0.35)]" href="#fitur">
+          <a class="btn-primary" href="#fitur">
             Coba Career Check
             <i class="fa-solid fa-arrow-right"></i>
           </a>
-          <a class="inline-flex items-center gap-2 rounded-xl border border-[#dbe3f8] bg-white px-5 py-3 text-sm font-bold text-slate-900 transition hover:-translate-y-0.5" href="#roadmap">
+          <a class="btn-secondary" href="#roadmap">
             <i class="fa-solid fa-play"></i>
             Lihat Demo Roadmap
           </a>
         </div>
         <div class="mt-6 flex items-center gap-3">
           <div class="flex" aria-hidden="true">
-            <img class="h-10 w-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="Avatar 1" />
-            <img class="-ml-3 h-10 w-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Avatar 2" />
-            <img class="-ml-3 h-10 w-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=120&q=80" alt="Avatar 3" />
+            <img class="h-10 w-10 rounded-full border-2 border-white object-cover"
+              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80"
+              alt="Avatar 1" />
+            <img class="-ml-3 h-10 w-10 rounded-full border-2 border-white object-cover"
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80"
+              alt="Avatar 2" />
+            <img class="-ml-3 h-10 w-10 rounded-full border-2 border-white object-cover"
+              src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=120&q=80"
+              alt="Avatar 3" />
           </div>
-          <p class="text-sm text-slate-500">Lebih dari <strong>8.500+</strong> pelajar dan mahasiswa sudah eksplor karier di WorkSim</p>
+          <p class="text-sm text-slate-500">Lebih dari <strong>8.500+</strong> pelajar dan mahasiswa sudah eksplor
+            karier di WorkSim</p>
         </div>
       </div>
 
-      <div class="reveal relative flex w-full justify-center translate-y-6 opacity-0 transition-all duration-700 lg:block lg:max-w-[560px] lg:justify-self-end">
-        <img class="mx-auto h-auto w-[85%] max-w-[340px] object-contain transition-transform duration-500 hover:scale-105 lg:max-w-[420px]" src="assets/hero/phone.png" alt="Aplikasi WorkSim" />
+      <div
+        class="reveal relative flex w-full justify-center translate-y-6 opacity-0 transition-all duration-700 lg:block lg:max-w-[560px] lg:justify-self-end">
+        <img
+          class="mx-auto h-auto w-[85%] max-w-[340px] object-contain transition-transform duration-500 hover:scale-105 lg:max-w-[420px]"
+          src="assets/hero/phone.png" alt="Aplikasi WorkSim" />
       </div>
     </section>
 
-    <section class="reveal mx-auto w-[98vw] max-w-[1320px] translate-y-6 pt-10 pb-14 opacity-0 transition-all duration-700 lg:pt-14 lg:pb-24">
+    <section
+      class="reveal container-page translate-y-6 pt-10 pb-14 opacity-0 transition-all duration-700 lg:pt-14 lg:pb-24">
       <h2 class="mb-7 font-display text-[clamp(1.45rem,2.5vw,2.1rem)]">Alur Belajar yang Simpel dan Terarah</h2>
       <div class="relative grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-        <article class="rounded-2xl border border-[#dbe3f8] bg-white p-6 shadow-[0_8px_25px_rgba(20,24,38,0.05)]">
-          <span class="mb-4 inline-grid h-[34px] w-[34px] place-items-center rounded-[10px] bg-brand-500 font-bold text-white">1</span>
+        <article class="step-card">
+          <span
+            class="mb-4 inline-grid h-[34px] w-[34px] place-items-center rounded-[10px] bg-brand-500 font-bold text-white">1</span>
           <h3 class="mb-2 text-[1.04rem] font-bold">Isi Profil Potensi</h3>
-          <p class="text-[0.9rem] text-slate-500">Input minat, skill, dan tipe kepribadian agar sistem memahami kekuatanmu.</p>
+          <p class="text-[0.9rem] text-slate-500">Input minat, skill, dan tipe kepribadian agar sistem memahami
+            kekuatanmu.</p>
         </article>
-        <img class="pointer-events-none absolute left-[24%] -top-1 hidden w-[88px] rotate-12 opacity-80 xl:block" src="assets/arrows/curve-right.svg" alt="Arah langkah" />
-        <article class="rounded-2xl border border-[#dbe3f8] bg-white p-6 shadow-[0_8px_25px_rgba(20,24,38,0.05)] xl:translate-y-[52px]">
-          <span class="mb-4 inline-grid h-[34px] w-[34px] place-items-center rounded-[10px] bg-brand-500 font-bold text-white">2</span>
+        <img class="pointer-events-none absolute left-[24%] -top-1 hidden w-[88px] rotate-12 opacity-80 xl:block"
+          src="assets/arrows/curve-right.svg" alt="Arah langkah" />
+        <article class="step-card xl:translate-y-[52px]">
+          <span
+            class="mb-4 inline-grid h-[34px] w-[34px] place-items-center rounded-[10px] bg-brand-500 font-bold text-white">2</span>
           <h3 class="mb-2 text-[1.04rem] font-bold">Dapat Rekomendasi Karier</h3>
-          <p class="text-[0.9rem] text-slate-500">Sistem menyarankan peran paling cocok lengkap dengan alasan yang relevan.</p>
+          <p class="text-[0.9rem] text-slate-500">Sistem menyarankan peran paling cocok lengkap dengan alasan yang
+            relevan.</p>
         </article>
-        <img class="pointer-events-none absolute left-[49%] top-[190px] hidden w-[88px] -rotate-6 -scale-y-100 opacity-80 xl:block" src="assets/arrows/curve-right.svg" alt="Arah langkah" />
-        <article class="rounded-2xl border border-[#dbe3f8] bg-white p-6 shadow-[0_8px_25px_rgba(20,24,38,0.05)]">
-          <span class="mb-4 inline-grid h-[34px] w-[34px] place-items-center rounded-[10px] bg-brand-500 font-bold text-white">3</span>
+        <img
+          class="pointer-events-none absolute left-[49%] top-[190px] hidden w-[88px] -rotate-6 -scale-y-100 opacity-80 xl:block"
+          src="assets/arrows/curve-right.svg" alt="Arah langkah" />
+        <article class="step-card">
+          <span
+            class="mb-4 inline-grid h-[34px] w-[34px] place-items-center rounded-[10px] bg-brand-500 font-bold text-white">3</span>
           <h3 class="mb-2 text-[1.04rem] font-bold">Ikuti Roadmap Interaktif</h3>
-          <p class="text-[0.9rem] text-slate-500">Pelajari skill step-by-step, centang progres, dan lihat levelmu bertambah.</p>
+          <p class="text-[0.9rem] text-slate-500">Pelajari skill step-by-step, centang progres, dan lihat levelmu
+            bertambah.</p>
         </article>
-        <img class="pointer-events-none absolute left-[75%] -top-1 hidden w-[88px] rotate-12 opacity-80 xl:block" src="assets/arrows/curve-right.svg" alt="Arah langkah" />
-        <article class="rounded-2xl border border-[#dbe3f8] bg-white p-6 shadow-[0_8px_25px_rgba(20,24,38,0.05)] xl:translate-y-[52px]">
-          <span class="mb-4 inline-grid h-[34px] w-[34px] place-items-center rounded-[10px] bg-brand-500 font-bold text-white">4</span>
+        <img class="pointer-events-none absolute left-[75%] -top-1 hidden w-[88px] rotate-12 opacity-80 xl:block"
+          src="assets/arrows/curve-right.svg" alt="Arah langkah" />
+        <article class="step-card xl:translate-y-[52px]">
+          <span
+            class="mb-4 inline-grid h-[34px] w-[34px] place-items-center rounded-[10px] bg-brand-500 font-bold text-white">4</span>
           <h3 class="mb-2 text-[1.04rem] font-bold">Masuk Simulasi Kerja Nyata</h3>
-          <p class="text-[0.9rem] text-slate-500">Kerjakan mini project dan bangun portofolio agar siap freelance atau magang.</p>
+          <p class="text-[0.9rem] text-slate-500">Kerjakan mini project dan bangun portofolio agar siap freelance atau
+            magang.</p>
         </article>
       </div>
     </section>
 
     <!-- 1. AI Career Advisor -->
     <section id="ai-advisor" class="relative overflow-hidden py-16 lg:py-24">
-      <div class="mx-auto grid w-[98vw] max-w-[1320px] items-center gap-12 lg:grid-cols-2 px-4">
-        
+      <div class="container-page grid items-center gap-12 lg:grid-cols-2">
+
         <div class="reveal translate-y-6 opacity-0 transition-all duration-700">
-          <p class="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.03em] text-brand-500"><i class="fa-solid fa-robot"></i> Career Discovery</p>
-          <h2 class="mb-5 font-display text-[clamp(1.8rem,3vw,2.5rem)] leading-tight text-slate-900 dark:text-white">AI Career Advisor</h2>
-          <p class="mb-6 text-[1.05rem] leading-relaxed text-slate-500 dark:text-slate-400">Bingung harus mulai dari mana? AI kami akan menganalisis minat, kekuatan, dan kepribadianmu untuk menyusun rekomendasi jalur karier digital yang paling ideal.</p>
-          
+          <p class="eyebrow"><i class="fa-solid fa-robot"></i> Career Discovery</p>
+          <h2 class="mb-5 section-title">AI Career Advisor</h2>
+          <p class="mb-6 section-desc">Bingung harus mulai dari mana? AI kami akan menganalisis minat, kekuatan, dan
+            kepribadianmu untuk menyusun rekomendasi jalur karier digital yang paling ideal.</p>
+
           <ul class="mb-8 space-y-3">
-            <li class="flex items-center gap-3 text-slate-700 dark:text-slate-300 font-medium"><i class="fa-solid fa-check-circle text-emerald-500"></i> Analisis berbasis minat yang interaktif</li>
-            <li class="flex items-center gap-3 text-slate-700 dark:text-slate-300 font-medium"><i class="fa-solid fa-check-circle text-emerald-500"></i> Cocok untuk switcher & pemula</li>
-            <li class="flex items-center gap-3 text-slate-700 dark:text-slate-300 font-medium"><i class="fa-solid fa-check-circle text-emerald-500"></i> Disertai alasan kecocokan spesifik</li>
+            <li class="feature-list-item"><i class="fa-solid fa-check-circle text-emerald-500"></i> Analisis berbasis
+              minat yang interaktif</li>
+            <li class="feature-list-item"><i class="fa-solid fa-check-circle text-emerald-500"></i> Cocok untuk switcher
+              & pemula</li>
+            <li class="feature-list-item"><i class="fa-solid fa-check-circle text-emerald-500"></i> Disertai alasan
+              kecocokan spesifik</li>
           </ul>
 
-          <a href="features/ai-career-advisor/index.html" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-brand-500 to-[#3f6ef0] px-6 py-3.5 text-[0.95rem] font-bold text-white shadow-[0_8px_20px_rgba(47,91,211,0.25)] transition hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(47,91,211,0.35)]">
+          <a href="features/ai-career-advisor/index.html" class="btn-primary-lg">
             Coba Analisis AI <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
 
         <div class="relative reveal translate-y-6 opacity-0 transition-all duration-700 lg:ml-auto w-full max-w-lg">
-          <div class="absolute -inset-4 bg-gradient-to-tr from-purple-500 to-brand-500 blur-3xl opacity-20 rounded-full"></div>
-          <div class="relative bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-6 sm:p-8 shadow-[0_20px_50px_rgba(20,24,38,0.08)]">
-             <div class="flex items-end gap-4 mb-6">
-               <div class="w-12 h-12 rounded-full bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-500 text-xl shrink-0"><i class="fa-solid fa-robot"></i></div>
-               <div class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-2xl rounded-bl-none border border-slate-100 dark:border-slate-600/50 text-[0.95rem] text-slate-700 dark:text-slate-300 shadow-sm leading-relaxed">Berdasarkan analisismu yang suka desain dan peka terhadap empati pengguna, kamu punya kecocokan <strong class="text-brand-500 dark:text-brand-400">92%</strong> menjadi UI/UX Designer!</div>
-             </div>
-             
-             <div class="space-y-4">
-                <div class="bg-purple-50 dark:bg-purple-900/20 border border-purple-100 dark:border-purple-800/50 rounded-2xl p-4 flex items-center justify-between">
-                  <span class="font-semibold text-purple-700 dark:text-purple-300">Kreativitas Visual</span>
-                  <span class="px-3 py-1 bg-purple-200 dark:bg-purple-800/50 text-purple-700 dark:text-purple-300 rounded-full text-xs font-bold">Tinggi</span>
-                </div>
-                <div class="bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-100 dark:border-emerald-800/50 rounded-2xl p-4 flex items-center justify-between">
-                  <span class="font-semibold text-emerald-700 dark:text-emerald-300">Problem Solving</span>
-                  <span class="px-3 py-1 bg-emerald-200 dark:bg-emerald-800/50 text-emerald-700 dark:text-emerald-300 rounded-full text-xs font-bold">Sangat Tinggi</span>
-                </div>
-             </div>
+          <div
+            class="absolute -inset-4 bg-gradient-to-tr from-purple-500 to-brand-500 blur-3xl opacity-20 rounded-full">
+          </div>
+          <div class="mockup-card">
+            <div class="flex items-end gap-4 mb-6">
+              <div
+                class="w-12 h-12 rounded-full bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-500 text-xl shrink-0">
+                <i class="fa-solid fa-robot"></i></div>
+              <div
+                class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-2xl rounded-bl-none border border-slate-100 dark:border-slate-600/50 text-[0.95rem] text-slate-700 dark:text-slate-300 shadow-sm leading-relaxed">
+                Berdasarkan analisismu yang suka desain dan peka terhadap empati pengguna, kamu punya kecocokan <strong
+                  class="text-brand-500 dark:text-brand-400">92%</strong> menjadi UI/UX Designer!</div>
+            </div>
+
+            <div class="space-y-4">
+              <div
+                class="bg-purple-50 dark:bg-purple-900/20 border border-purple-100 dark:border-purple-800/50 rounded-2xl p-4 flex items-center justify-between">
+                <span class="font-semibold text-purple-700 dark:text-purple-300">Kreativitas Visual</span>
+                <span
+                  class="px-3 py-1 bg-purple-200 dark:bg-purple-800/50 text-purple-700 dark:text-purple-300 rounded-full text-xs font-bold">Tinggi</span>
+              </div>
+              <div
+                class="bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-100 dark:border-emerald-800/50 rounded-2xl p-4 flex items-center justify-between">
+                <span class="font-semibold text-emerald-700 dark:text-emerald-300">Problem Solving</span>
+                <span
+                  class="px-3 py-1 bg-emerald-200 dark:bg-emerald-800/50 text-emerald-700 dark:text-emerald-300 rounded-full text-xs font-bold">Sangat
+                  Tinggi</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -160,36 +186,51 @@
     </section>
 
     <!-- 2. Learning Roadmap -->
-    <section id="roadmap" class="relative overflow-hidden py-16 lg:py-24 bg-gradient-to-b from-[#edf2ff]/50 to-transparent dark:from-slate-900 dark:to-transparent border-y border-[#e3eafc] dark:border-slate-800">
-      <div class="mx-auto grid w-[98vw] max-w-[1320px] items-center gap-12 lg:grid-cols-2 px-4">
-        
+    <section id="roadmap"
+      class="relative overflow-hidden py-16 lg:py-24 bg-gradient-to-b from-[#edf2ff]/50 to-transparent dark:from-slate-900 dark:to-transparent border-y border-[#e3eafc] dark:border-slate-800">
+      <div class="container-page grid items-center gap-12 lg:grid-cols-2">
+
         <!-- Left: Graphic Mockup -->
-        <div class="relative reveal translate-y-6 opacity-0 transition-all duration-700 order-2 lg:order-1 w-full max-w-lg">
-          <div class="absolute -inset-4 bg-gradient-to-tr from-[#17bebb] to-[#2f5bd3] blur-3xl opacity-20 rounded-full"></div>
-          <div class="relative rounded-3xl border border-[#dbe3f8] dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8 shadow-[0_20px_50px_rgba(20,24,38,0.08)]">
+        <div
+          class="relative reveal translate-y-6 opacity-0 transition-all duration-700 order-2 lg:order-1 w-full max-w-lg">
+          <div class="absolute -inset-4 bg-gradient-to-tr from-[#17bebb] to-[#2f5bd3] blur-3xl opacity-20 rounded-full">
+          </div>
+          <div class="mockup-card">
             <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100 dark:border-slate-700">
               <div>
                 <h4 class="font-bold text-slate-900 dark:text-white text-lg">Roadmap Frontend</h4>
                 <p class="text-xs text-slate-500 mt-1">Progress keseluruhan: 40%</p>
               </div>
-              <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-500 text-xl shadow-sm"><i class="fa-solid fa-map-location-dot"></i></div>
+              <div
+                class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-500 text-xl shadow-sm">
+                <i class="fa-solid fa-map-location-dot"></i></div>
             </div>
-            
-            <ul class="space-y-3 relative before:absolute before:inset-y-0 before:left-4 before:w-0.5 before:bg-slate-200 dark:before:bg-slate-700">
+
+            <ul
+              class="space-y-3 relative before:absolute before:inset-y-0 before:left-4 before:w-0.5 before:bg-slate-200 dark:before:bg-slate-700">
               <li class="relative pl-10 flex flex-col justify-center min-h-[3rem]">
-                <div class="absolute left-1.5 top-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center text-white text-[0.6rem] z-10 shadow-sm"><i class="fa-solid fa-check"></i></div>
+                <div
+                  class="absolute left-1.5 top-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center text-white text-[0.6rem] z-10 shadow-sm">
+                  <i class="fa-solid fa-check"></i></div>
                 <p class="font-bold text-slate-900 dark:text-white line-through opacity-70">HTML & CSS Basic</p>
               </li>
               <li class="relative pl-10 flex flex-col justify-center min-h-[3rem]">
-                <div class="absolute left-1.5 top-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center text-white text-[0.6rem] z-10 shadow-sm"><i class="fa-solid fa-check"></i></div>
+                <div
+                  class="absolute left-1.5 top-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center text-white text-[0.6rem] z-10 shadow-sm">
+                  <i class="fa-solid fa-check"></i></div>
                 <p class="font-bold text-slate-900 dark:text-white line-through opacity-70">JavaScript Fundamental</p>
               </li>
-              <li class="relative pl-10 flex flex-col justify-center min-h-[3rem] bg-brand-50/50 dark:bg-brand-900/10 rounded-xl py-2">
-                <div class="absolute left-1.5 top-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-brand-500 flex items-center justify-center text-white text-[0.6rem] z-10 shadow-sm shadow-brand-500/50"><i class="fa-solid fa-spinner animate-spin"></i></div>
+              <li
+                class="relative pl-10 flex flex-col justify-center min-h-[3rem] bg-brand-50/50 dark:bg-brand-900/10 rounded-xl py-2">
+                <div
+                  class="absolute left-1.5 top-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-brand-500 flex items-center justify-center text-white text-[0.6rem] z-10 shadow-sm shadow-brand-500/50">
+                  <i class="fa-solid fa-spinner animate-spin"></i></div>
                 <p class="font-bold text-brand-600 dark:text-brand-400">React Framework</p>
               </li>
               <li class="relative pl-10 flex flex-col justify-center min-h-[3rem]">
-                <div class="absolute left-1.5 top-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-slate-200 dark:bg-slate-700 border-2 border-white dark:border-slate-800 z-10"></div>
+                <div
+                  class="absolute left-1.5 top-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-slate-200 dark:bg-slate-700 border-2 border-white dark:border-slate-800 z-10">
+                </div>
                 <p class="font-semibold text-slate-400 dark:text-slate-500">API Integration</p>
               </li>
             </ul>
@@ -198,17 +239,21 @@
 
         <!-- Right: Text -->
         <div class="reveal translate-y-6 opacity-0 transition-all duration-700 order-1 lg:order-2">
-          <p class="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.03em] text-brand-500"><i class="fa-solid fa-route"></i> Structured Learning</p>
-          <h2 class="mb-5 font-display text-[clamp(1.8rem,3vw,2.5rem)] leading-tight text-slate-900 dark:text-white">Learning Roadmap</h2>
-          <p class="mb-6 text-[1.05rem] leading-relaxed text-slate-500 dark:text-slate-400">Tidak perlu bingung mencari materi kesana-kemari. Kami sediakan roadmap terstruktur langkah demi langkah dari dasar hingga mahir, lengkap dengan teori dan kuis interaktif.</p>
-          
+          <p class="eyebrow"><i class="fa-solid fa-route"></i> Structured Learning</p>
+          <h2 class="mb-5 section-title">Learning Roadmap</h2>
+          <p class="mb-6 section-desc">Tidak perlu bingung mencari materi kesana-kemari. Kami sediakan roadmap
+            terstruktur langkah demi langkah dari dasar hingga mahir, lengkap dengan teori dan kuis interaktif.</p>
+
           <ul class="mb-8 space-y-3">
-            <li class="flex items-center gap-3 text-slate-700 dark:text-slate-300 font-medium"><i class="fa-solid fa-check-circle text-brand-500"></i> Checklist progres tersimpan otomatis</li>
-            <li class="flex items-center gap-3 text-slate-700 dark:text-slate-300 font-medium"><i class="fa-solid fa-check-circle text-brand-500"></i> Materi terkurasi sesuai standar industri</li>
-            <li class="flex items-center gap-3 text-slate-700 dark:text-slate-300 font-medium"><i class="fa-solid fa-check-circle text-brand-500"></i> Unlock task simulasi di setiap bab</li>
+            <li class="feature-list-item"><i class="fa-solid fa-check-circle text-brand-500"></i> Checklist progres
+              tersimpan otomatis</li>
+            <li class="feature-list-item"><i class="fa-solid fa-check-circle text-brand-500"></i> Materi terkurasi
+              sesuai standar industri</li>
+            <li class="feature-list-item"><i class="fa-solid fa-check-circle text-brand-500"></i> Unlock task simulasi
+              di setiap bab</li>
           </ul>
 
-          <a href="features/learning-roadmap/index.html" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-brand-500 to-[#3f6ef0] px-6 py-3.5 text-[0.95rem] font-bold text-white shadow-[0_8px_20px_rgba(47,91,211,0.25)] transition hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(47,91,211,0.35)]">
+          <a href="features/learning-roadmap/index.html" class="btn-primary-lg">
             Eksplor Roadmap <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
@@ -218,49 +263,65 @@
 
     <!-- 3. Career Simulation -->
     <section id="simulasi" class="relative overflow-hidden py-16 lg:py-24">
-      <div class="mx-auto grid w-[98vw] max-w-[1320px] items-center gap-12 lg:grid-cols-2 px-4">
-        
+      <div class="container-page grid items-center gap-12 lg:grid-cols-2">
+
         <div class="reveal translate-y-6 opacity-0 transition-all duration-700">
-          <p class="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.03em] text-brand-500"><i class="fa-solid fa-vr-cardboard"></i> Real-World Practice</p>
-          <h2 class="mb-5 font-display text-[clamp(1.8rem,3vw,2.5rem)] leading-tight text-slate-900 dark:text-white">Career Simulation</h2>
-          <p class="mb-6 text-[1.05rem] leading-relaxed text-slate-500 dark:text-slate-400">Rasakan gambaran dunia kerja nyata. Terima tugas layaknya pekerja kantoran dari klien fiktif, bangun portofolio, dan evaluasi karyamu sendiri.</p>
-          
+          <p class="eyebrow"><i class="fa-solid fa-vr-cardboard"></i> Real-World Practice</p>
+          <h2 class="mb-5 section-title">Career Simulation</h2>
+          <p class="mb-6 section-desc">Rasakan gambaran dunia kerja nyata. Terima tugas layaknya pekerja kantoran dari
+            klien fiktif, bangun portofolio, dan evaluasi karyamu sendiri.</p>
+
           <ul class="mb-8 space-y-3">
-            <li class="flex items-center gap-3 text-slate-700 dark:text-slate-300 font-medium"><i class="fa-solid fa-check-circle text-amber-500"></i> Simulasi brief kerja profesional</li>
-            <li class="flex items-center gap-3 text-slate-700 dark:text-slate-300 font-medium"><i class="fa-solid fa-check-circle text-amber-500"></i> Pelajari workflow dan standar industri</li>
-            <li class="flex items-center gap-3 text-slate-700 dark:text-slate-300 font-medium"><i class="fa-solid fa-check-circle text-amber-500"></i> Hasilkan portofolio nyata yang siap dipamerkan</li>
+            <li class="feature-list-item"><i class="fa-solid fa-check-circle text-amber-500"></i> Simulasi brief kerja
+              profesional</li>
+            <li class="feature-list-item"><i class="fa-solid fa-check-circle text-amber-500"></i> Pelajari workflow dan
+              standar industri</li>
+            <li class="feature-list-item"><i class="fa-solid fa-check-circle text-amber-500"></i> Hasilkan portofolio
+              nyata yang siap dipamerkan</li>
           </ul>
 
-          <a href="features/career-simulation/index.html" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-brand-500 to-[#3f6ef0] px-6 py-3.5 text-[0.95rem] font-bold text-white shadow-[0_8px_20px_rgba(47,91,211,0.25)] transition hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(47,91,211,0.35)]">
+          <a href="features/career-simulation/index.html" class="btn-primary-lg">
             Mulai Simulasi <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
 
         <div class="relative reveal translate-y-6 opacity-0 transition-all duration-700 lg:ml-auto w-full max-w-lg">
-          <div class="absolute -inset-4 bg-gradient-to-tr from-amber-500 to-orange-500 blur-3xl opacity-20 rounded-full"></div>
-          <div class="relative bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-6 sm:p-8 shadow-[0_20px_50px_rgba(20,24,38,0.08)]">
-             <div class="flex items-center justify-between mb-5 border-b border-slate-100 dark:border-slate-700 pb-5">
-               <div class="flex items-center gap-4">
-                 <div class="w-14 h-14 rounded-2xl bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-orange-500 text-2xl shrink-0 shadow-inner"><i class="fa-solid fa-envelope-open-text"></i></div>
-                 <div>
-                   <h4 class="font-bold text-slate-900 dark:text-white leading-tight text-lg">Brief: Redesign UI</h4>
-                   <p class="text-[0.7rem] text-slate-500 uppercase tracking-widest font-bold mt-1"><i class="fa-solid fa-building mr-1"></i> PT. Inovasi Cepat</p>
-                 </div>
-               </div>
-               <span class="text-[0.65rem] font-bold bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400 px-3 py-1.5 rounded-lg uppercase tracking-wider hidden sm:block">In Progress</span>
-             </div>
-             
-             <div class="mb-6">
-               <p class="text-[0.95rem] text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">"Tolong redesign landing page kami agar lebih modern dan memiliki tingkat konversi tinggi. Batas waktu pengerjaan 3 hari."</p>
-             </div>
+          <div
+            class="absolute -inset-4 bg-gradient-to-tr from-amber-500 to-orange-500 blur-3xl opacity-20 rounded-full">
+          </div>
+          <div class="mockup-card">
+            <div class="flex items-center justify-between mb-5 border-b border-slate-100 dark:border-slate-700 pb-5">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-14 h-14 rounded-2xl bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-orange-500 text-2xl shrink-0 shadow-inner">
+                  <i class="fa-solid fa-envelope-open-text"></i></div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white leading-tight text-lg">Brief: Redesign UI</h4>
+                  <p class="text-[0.7rem] text-slate-500 uppercase tracking-widest font-bold mt-1"><i
+                      class="fa-solid fa-building mr-1"></i> PT. Inovasi Cepat</p>
+                </div>
+              </div>
+              <span
+                class="text-[0.65rem] font-bold bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400 px-3 py-1.5 rounded-lg uppercase tracking-wider hidden sm:block">In
+                Progress</span>
+            </div>
 
-             <div class="space-y-3 bg-slate-50 dark:bg-slate-700/30 p-4 rounded-xl border border-slate-100 dark:border-slate-700">
-               <div class="flex justify-between text-xs font-bold text-slate-700 dark:text-slate-300">
-                 <span class="uppercase tracking-wider">Progress Task</span>
-                 <span class="text-orange-500">65%</span>
-               </div>
-               <div class="h-2 w-full bg-slate-200 dark:bg-slate-600 rounded-full overflow-hidden"><div class="w-[65%] h-full bg-orange-500 rounded-full"></div></div>
-             </div>
+            <div class="mb-6">
+              <p class="text-[0.95rem] text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">"Tolong redesign
+                landing page kami agar lebih modern dan memiliki tingkat konversi tinggi. Batas waktu pengerjaan 3
+                hari."</p>
+            </div>
+
+            <div
+              class="space-y-3 bg-slate-50 dark:bg-slate-700/30 p-4 rounded-xl border border-slate-100 dark:border-slate-700">
+              <div class="flex justify-between text-xs font-bold text-slate-700 dark:text-slate-300">
+                <span class="uppercase tracking-wider">Progress Task</span>
+                <span class="text-orange-500">65%</span>
+              </div>
+              <div class="h-2 w-full bg-slate-200 dark:bg-slate-600 rounded-full overflow-hidden">
+                <div class="w-[65%] h-full bg-orange-500 rounded-full"></div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -268,49 +329,62 @@
     </section>
 
     <!-- 4. Skill Passport -->
-    <section id="skill-passport" class="relative overflow-hidden py-16 lg:py-24 bg-gradient-to-b from-[#edf2ff]/50 to-transparent dark:from-slate-900 dark:to-transparent border-t border-[#e3eafc] dark:border-slate-800">
-      <div class="mx-auto grid w-[98vw] max-w-[1320px] items-center gap-12 lg:grid-cols-2 px-4">
-        
+    <section id="skill-passport"
+      class="relative overflow-hidden py-16 lg:py-24 bg-gradient-to-b from-[#edf2ff]/50 to-transparent dark:from-slate-900 dark:to-transparent border-t border-[#e3eafc] dark:border-slate-800">
+      <div class="container-page grid items-center gap-12 lg:grid-cols-2">
+
         <!-- Left: Graphic Mockup -->
-        <div class="relative reveal translate-y-6 opacity-0 transition-all duration-700 order-2 lg:order-1 w-full max-w-lg">
-          <div class="absolute -inset-4 bg-gradient-to-tr from-sky-500 to-indigo-500 blur-3xl opacity-20 rounded-full"></div>
-          <div class="relative rounded-3xl border border-[#dbe3f8] dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8 shadow-[0_20px_50px_rgba(20,24,38,0.08)] flex flex-col sm:flex-row items-center gap-6 sm:gap-8 text-center sm:text-left">
-             <!-- level circle -->
-             <div class="relative w-28 h-28 shrink-0 mx-auto sm:mx-0">
-                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" class="text-slate-100 dark:text-slate-700" stroke-width="8" />
-                  <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" class="text-sky-500" stroke-width="8" stroke-dasharray="283" stroke-dashoffset="113" stroke-linecap="round" />
-                </svg>
-                <div class="absolute inset-0 flex flex-col items-center justify-center">
-                   <span class="text-[0.6rem] text-slate-500 font-bold uppercase tracking-widest mt-1">Level</span>
-                   <span class="font-display font-bold text-2xl text-slate-900 dark:text-white leading-none mt-1">2</span>
-                </div>
-             </div>
-             <!-- stats -->
-             <div>
-               <h4 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-1">Intermediate</h4>
-               <p class="text-[0.9rem] text-slate-500 mb-5">Frontend Developer</p>
-               <div class="flex flex-wrap justify-center sm:justify-start gap-2.5">
-                 <span class="px-3 py-1.5 bg-amber-50 dark:bg-amber-900/20 border border-amber-100 dark:border-amber-800/50 text-amber-600 dark:text-amber-400 rounded-lg text-xs font-bold shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-fire text-sm"></i> 7 Hari Runtun</span>
-                 <span class="px-3 py-1.5 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-100 dark:border-emerald-800/50 text-emerald-600 dark:text-emerald-400 rounded-lg text-xs font-bold shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-star text-sm"></i> 1,280 XP</span>
-               </div>
-             </div>
+        <div
+          class="relative reveal translate-y-6 opacity-0 transition-all duration-700 order-2 lg:order-1 w-full max-w-lg">
+          <div class="absolute -inset-4 bg-gradient-to-tr from-sky-500 to-indigo-500 blur-3xl opacity-20 rounded-full">
+          </div>
+          <div class="mockup-card flex flex-col sm:flex-row items-center gap-6 sm:gap-8 text-center sm:text-left">
+            <!-- level circle -->
+            <div class="relative w-28 h-28 shrink-0 mx-auto sm:mx-0">
+              <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor"
+                  class="text-slate-100 dark:text-slate-700" stroke-width="8" />
+                <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" class="text-sky-500" stroke-width="8"
+                  stroke-dasharray="283" stroke-dashoffset="113" stroke-linecap="round" />
+              </svg>
+              <div class="absolute inset-0 flex flex-col items-center justify-center">
+                <span class="text-[0.6rem] text-slate-500 font-bold uppercase tracking-widest mt-1">Level</span>
+                <span class="font-display font-bold text-2xl text-slate-900 dark:text-white leading-none mt-1">2</span>
+              </div>
+            </div>
+            <!-- stats -->
+            <div>
+              <h4 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-1">Intermediate</h4>
+              <p class="text-[0.9rem] text-slate-500 mb-5">Frontend Developer</p>
+              <div class="flex flex-wrap justify-center sm:justify-start gap-2.5">
+                <span
+                  class="px-3 py-1.5 bg-amber-50 dark:bg-amber-900/20 border border-amber-100 dark:border-amber-800/50 text-amber-600 dark:text-amber-400 rounded-lg text-xs font-bold shadow-sm flex items-center gap-1.5"><i
+                    class="fa-solid fa-fire text-sm"></i> 7 Hari Runtun</span>
+                <span
+                  class="px-3 py-1.5 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-100 dark:border-emerald-800/50 text-emerald-600 dark:text-emerald-400 rounded-lg text-xs font-bold shadow-sm flex items-center gap-1.5"><i
+                    class="fa-solid fa-star text-sm"></i> 1,280 XP</span>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Right: Text -->
         <div class="reveal translate-y-6 opacity-0 transition-all duration-700 order-1 lg:order-2">
-          <p class="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.03em] text-brand-500"><i class="fa-solid fa-id-card"></i> Digital Identity</p>
-          <h2 class="mb-5 font-display text-[clamp(1.8rem,3vw,2.5rem)] leading-tight text-slate-900 dark:text-white">Skill Passport</h2>
-          <p class="mb-6 text-[1.05rem] leading-relaxed text-slate-500 dark:text-slate-400">Setiap tugas dan kuis yang kamu selesaikan akan terekam dalam profil digital ini. Buktikan keahlianmu tidak hanya lewat sertifikat, tapi lewat jejak nyata proses belajarmu.</p>
-          
+          <p class="eyebrow"><i class="fa-solid fa-id-card"></i> Digital Identity</p>
+          <h2 class="mb-5 section-title">Skill Passport</h2>
+          <p class="mb-6 section-desc">Setiap tugas dan kuis yang kamu selesaikan akan terekam dalam profil digital ini.
+            Buktikan keahlianmu tidak hanya lewat sertifikat, tapi lewat jejak nyata proses belajarmu.</p>
+
           <ul class="mb-8 space-y-3">
-            <li class="flex items-center gap-3 text-slate-700 dark:text-slate-300 font-medium"><i class="fa-solid fa-check-circle text-sky-500"></i> Lacak distribusi skill lewat radar chart</li>
-            <li class="flex items-center gap-3 text-slate-700 dark:text-slate-300 font-medium"><i class="fa-solid fa-check-circle text-sky-500"></i> Kumpulkan XP dan raih level yang lebih tinggi</li>
-            <li class="flex items-center gap-3 text-slate-700 dark:text-slate-300 font-medium"><i class="fa-solid fa-check-circle text-sky-500"></i> Jadikan profilmu portfolio yang interaktif</li>
+            <li class="feature-list-item"><i class="fa-solid fa-check-circle text-sky-500"></i> Lacak distribusi skill
+              lewat radar chart</li>
+            <li class="feature-list-item"><i class="fa-solid fa-check-circle text-sky-500"></i> Kumpulkan XP dan raih
+              level yang lebih tinggi</li>
+            <li class="feature-list-item"><i class="fa-solid fa-check-circle text-sky-500"></i> Jadikan profilmu
+              portfolio yang interaktif</li>
           </ul>
 
-          <a href="features/skill-passport/index.html" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-brand-500 to-[#3f6ef0] px-6 py-3.5 text-[0.95rem] font-bold text-white shadow-[0_8px_20px_rgba(47,91,211,0.25)] transition hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(47,91,211,0.35)]">
+          <a href="features/skill-passport/index.html" class="btn-primary-lg">
             Lihat Passport <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
@@ -318,24 +392,28 @@
       </div>
     </section>
 
-    <section class="reveal mx-auto my-10 grid w-[98vw] max-w-[1320px] translate-y-6 gap-5 rounded-3xl bg-gradient-to-br from-[#2f5bd3] via-[#315ed6] to-[#2c7ac2] p-6 text-white opacity-0 shadow-[0_18px_45px_rgba(47,91,211,0.25)] transition-all duration-700 lg:my-12 lg:grid-cols-[1.3fr_0.9fr]">
+    <section
+      class="reveal mx-auto my-10 grid w-[98vw] max-w-[1320px] translate-y-6 gap-5 rounded-3xl bg-gradient-to-br from-brand-500 via-[#315ed6] to-[#2c7ac2] p-6 text-white opacity-0 shadow-brand-sm transition-all duration-700 lg:my-12 lg:grid-cols-[1.3fr_0.9fr]">
       <div>
         <h2 class="mb-2 font-display text-[clamp(1.4rem,2.7vw,2rem)]">Dapatkan update karier tiap minggu</h2>
-        <p class="max-w-[55ch] text-[#dfe9ff]">Tips belajar, trend industri, dan challenge mingguan langsung ke inbox kamu.</p>
+        <p class="max-w-[55ch] text-[#dfe9ff]">Tips belajar, trend industri, dan challenge mingguan langsung ke inbox
+          kamu.</p>
         <form class="mt-4 flex flex-wrap gap-2.5">
-          <input class="min-w-[220px] flex-1 rounded-xl border-0 px-4 py-3 text-slate-900 outline-none" type="email" placeholder="Masukkan email" aria-label="Email" />
-          <button type="button" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-brand-500 to-[#3f6ef0] px-5 py-3 text-sm font-bold text-white shadow-[0_8px_20px_rgba(47,91,211,0.25)] transition hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(47,91,211,0.35)]">
+          <input class="min-w-[220px] flex-1 rounded-xl border-0 px-4 py-3 text-slate-900 outline-none" type="email"
+            placeholder="Masukkan email" aria-label="Email" />
+          <button type="button" class="btn-primary">
             Kirim
             <i class="fa-solid fa-paper-plane"></i>
           </button>
         </form>
       </div>
-      <img class="max-h-[250px] rounded-2xl object-cover" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="Tim mentor dan komunitas" />
+      <img class="max-h-[250px] rounded-2xl object-cover"
+        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80"
+        alt="Tim mentor dan komunitas" />
     </section>
   </main>
 
   <div id="footer-placeholder"></div>
-
-  <script src="script.js"></script>
 </body>
+
 </html>

@@ -7,8 +7,12 @@ const themeToggleMobile = document.getElementById("themeToggleMobile");
 const themeIconMobile = document.getElementById("themeIconMobile");
 
 function updateThemeIcons(isDark) {
-  const iconClass = isDark ? "fa-solid fa-sun text-base" : "fa-solid fa-moon text-base";
-  const mobileIconClass = isDark ? "fa-solid fa-sun text-sm" : "fa-solid fa-moon text-sm";
+  const iconClass = isDark
+    ? "fa-solid fa-sun text-base"
+    : "fa-solid fa-moon text-base";
+  const mobileIconClass = isDark
+    ? "fa-solid fa-sun text-sm"
+    : "fa-solid fa-moon text-sm";
 
   if (themeIcon) {
     themeIcon.className = iconClass;
@@ -36,20 +40,26 @@ if (savedTheme === "dark" || savedTheme === "light") {
 
 if (themeToggle) {
   themeToggle.addEventListener("click", () => {
-    const nextTheme = document.documentElement.classList.contains("dark") ? "light" : "dark";
+    const nextTheme = document.documentElement.classList.contains("dark")
+      ? "light"
+      : "dark";
     setTheme(nextTheme);
   });
 }
 
 if (themeToggleMobile) {
   themeToggleMobile.addEventListener("click", () => {
-    const nextTheme = document.documentElement.classList.contains("dark") ? "light" : "dark";
+    const nextTheme = document.documentElement.classList.contains("dark")
+      ? "light"
+      : "dark";
     setTheme(nextTheme);
   });
 }
 
 function updateProgress() {
-  const checkboxes = Array.from(stepsContainer.querySelectorAll("input[type='checkbox']"));
+  const checkboxes = Array.from(
+    stepsContainer.querySelectorAll("input[type='checkbox']"),
+  );
   const checkedCount = checkboxes.filter((item) => item.checked).length;
   const percent = Math.round((checkedCount / checkboxes.length) * 100);
 
@@ -73,7 +83,7 @@ const observer = new IntersectionObserver(
   },
   {
     threshold: 0.15,
-  }
+  },
 );
 
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));

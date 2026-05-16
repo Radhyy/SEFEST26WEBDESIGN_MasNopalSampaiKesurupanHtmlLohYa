@@ -1,0 +1,21 @@
+{
+  "name": "worksim",
+  "version": "1.0.0",
+  "description": "Project for competition",
+  "keywords": [
+    "worksim"
+  ],
+  "license": "ISC",
+  "author": "Naufal, Aliezzar, Radhiyya",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./css/input.css -o ./css/output.css --watch",
+    "build": "tailwindcss -i ./css/input.css -o ./css/output.css --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "tailwindcss": "^4.3.0"
+  }
+}

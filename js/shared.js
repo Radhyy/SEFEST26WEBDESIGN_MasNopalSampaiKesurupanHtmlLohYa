@@ -26,10 +26,10 @@ const NAVBAR_HTML = `
         <a class="rounded-full px-4 py-2 transition hover:bg-[#eaf0ff] dark:hover:bg-white/10" href="/pages/skill-passport/">Skill Passport</a>
       </nav>
       <div class="flex items-center gap-2">
-        <button id="themeToggle" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#b8cdfa] bg-[#e3edff] text-[#2f5bd3] transition hover:-translate-y-0.5 hover:border-brand-500 dark:border-slate-500 dark:bg-slate-900 dark:text-[#ffd166]" aria-label="Ganti tema">
+        <button id="themeToggle" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#b8cdfa] bg-[#e3edff] text-brand-500 transition hover:-translate-y-0.5 hover:border-brand-500 dark:border-slate-500 dark:bg-slate-900 dark:text-[#ffd166]" aria-label="Ganti tema">
           <i id="themeIcon" class="fa-solid fa-moon text-base"></i>
         </button>
-        <a class="inline-flex items-center rounded-full border border-[#dbe3f8] bg-white px-5 py-2.5 text-sm font-bold text-slate-900 transition hover:bg-[#eef3ff] dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100" href="/pages/login">Login</a>
+        <a class="inline-flex items-center rounded-full border border-[#dbe3f8] bg-white px-5 py-2.5 text-sm font-bold text-slate-900 transition hover:bg-brand-50 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100" href="/pages/login">Login</a>
         <a class="inline-flex items-center gap-2 rounded-full bg-linear-to-br from-brand-500 to-[#3f6ef0] px-5 py-2.5 text-sm font-bold text-white shadow-brand-sm transition hover:-translate-y-0.5 hover:shadow-brand-md" href="/pages/register">
           <i class="fa-solid fa-rocket"></i> Mulai Sekarang
         </a>
@@ -38,7 +38,7 @@ const NAVBAR_HTML = `
     <div class="flex w-full items-center justify-between lg:hidden">
       <a href="/" class="font-display text-[1.3rem] font-bold tracking-[-0.02em]">Work<span class="text-brand-500">Sim</span></a>
       <div class="flex items-center gap-2">
-        <button id="themeToggleMobile" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#b8cdfa] bg-[#e3edff] text-[#2f5bd3] dark:border-slate-500 dark:bg-slate-900 dark:text-[#ffd166]" aria-label="Ganti tema mobile">
+        <button id="themeToggleMobile" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#b8cdfa] bg-[#e3edff] text-brand-500 dark:border-slate-500 dark:bg-slate-900 dark:text-[#ffd166]" aria-label="Ganti tema mobile">
           <i id="themeIconMobile" class="fa-solid fa-moon text-sm"></i>
         </button>
         <a class="inline-flex items-center rounded-full bg-linear-to-br from-brand-500 to-[#3f6ef0] px-4 py-2.5 text-sm font-bold text-white" href="/pages/login">Mulai</a>
@@ -48,7 +48,7 @@ const NAVBAR_HTML = `
 </header>`;
 
 const FOOTER_HTML = `
-<footer id="kontak" class="relative overflow-hidden border-t border-[#dce5fb] bg-linear-to-b from-[#f7faff] to-[#eef3ff] py-8 pb-7 dark:border-slate-700 dark:from-[#0a1020] dark:to-[#111c2f]">
+<footer id="kontak" class="relative overflow-hidden border-t border-[#dce5fb] bg-linear-to-b from-[#f7faff] to-brand-50 py-8 pb-7 dark:border-slate-700 dark:from-[#0a1020] dark:to-[#111c2f]">
   <div class="pointer-events-none absolute -left-24 top-0 h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(47,91,211,0.14)_0%,transparent_72%)] dark:opacity-30"></div>
   <div class="pointer-events-none absolute -right-20 -bottom-16 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(23,190,187,0.12)_0%,transparent_70%)] dark:opacity-30"></div>
   <div class="mx-auto w-[98vw] max-w-330">
@@ -88,7 +88,7 @@ const FOOTER_HTML = `
         </div>
         <div>
           <p class="mb-4 text-sm font-bold uppercase tracking-[0.08em] text-brand-500">Next step</p>
-          <div class="rounded-2xl border border-[#dbe3f8] bg-linear-to-br from-[#f8faff] to-[#eef3ff] p-4 shadow-[0_10px_24px_rgba(47,91,211,0.07)] dark:border-slate-600 dark:from-[#1a2640] dark:to-[#111c2f]">
+          <div class="rounded-2xl border border-[#dbe3f8] bg-linear-to-br from-[#f8faff] to-brand-50 p-4 shadow-[0_10px_24px_rgba(47,91,211,0.07)] dark:border-slate-600 dark:from-[#1a2640] dark:to-[#111c2f]">
             <p class="text-[0.9rem] font-semibold text-slate-900 dark:text-white">Mulai cek jalur kariermu</p>
             <p class="mt-2 text-[0.9rem] leading-7 text-slate-500 dark:text-slate-400">Gunakan demo roadmap untuk melihat langkah yang paling masuk akal dari skill saat ini ke role target.</p>
             <a class="mt-4 inline-flex items-center gap-2 rounded-xl bg-linear-to-br from-brand-500 to-[#3f6ef0] px-4 py-2.5 text-sm font-bold text-white shadow-[0_8px_20px_rgba(47,91,211,0.22)] transition hover:-translate-y-0.5" href="${rootPath}pages/learning-roadmap/">

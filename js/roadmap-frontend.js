@@ -372,7 +372,7 @@ function renderRoadmap() {
     const bg = badge === "purple" ? "bg-[#7c3aed]" : "bg-[#15803d]";
     const pos = align === "left" ? "-left-3" : "-right-3";
     return `
-        <div class="absolute top-1/2 -translate-y-1/2 ${pos} w-[22px] h-[22px] rounded-full ${bg} text-white flex items-center justify-center text-[11px] shadow-sm z-30 ring-[2.5px] ring-white dark:ring-slate-900">
+        <div class="absolute top-1/2 -translate-y-1/2 ${pos} w-5.5 h-5.5 rounded-full ${bg} text-white flex items-center justify-center text-[11px] shadow-sm z-30 ring-[2.5px] ring-white dark:ring-slate-900">
           <i class="fa-solid fa-check"></i>
         </div>
      `;
@@ -390,7 +390,7 @@ function renderRoadmap() {
           if (node.isProjectBox) {
             return `
             <div id="sub-node-${node.id}" data-parent="${row.main.id}" data-side="left" data-solid="true"
-                 class="sub-node bg-white border-2 border-slate-100 p-5 rounded-xl shadow-sm w-[280px] text-left relative z-20 dark:bg-slate-800 dark:border-slate-700">
+                 class="sub-node bg-white border-2 border-slate-100 p-5 rounded-xl shadow-sm w-70 text-left relative z-20 dark:bg-slate-800 dark:border-slate-700">
               <p class="text-slate-800 dark:text-slate-200 text-sm mb-4 font-medium leading-relaxed">
                 ${node.desc}
               </p>
@@ -402,10 +402,10 @@ function renderRoadmap() {
            `;
           } else if (node.isTestingRow) {
             return `
-            <div class="relative z-20 w-[240px] flex justify-end">
+            <div class="relative z-20 w-60 flex justify-end">
               <button id="sub-node-testing" data-parent="${row.main.id}" data-side="left" data-solid="true"
                       onclick="openPanel('testing', 'Testing', 'Kategori')"
-                      class="sub-node bg-brand-50 border-2 border-brand-300 text-brand-700 font-bold py-3 px-5 rounded-[14px] shadow-sm hover:border-brand-500 hover:-translate-y-0.5 transition-all w-[240px] text-center text-[0.95rem] dark:bg-brand-900/40 dark:border-brand-600 dark:text-brand-200 relative z-20">
+                      class="sub-node bg-brand-50 border-2 border-brand-300 text-brand-700 font-bold py-3 px-5 rounded-[14px] shadow-sm hover:border-brand-500 hover:-translate-y-0.5 transition-all w-60 text-center text-[0.95rem] dark:bg-brand-900/40 dark:border-brand-600 dark:text-brand-200 relative z-20">
                 Testing
               </button>
             </div>
@@ -414,7 +414,7 @@ function renderRoadmap() {
             return `
             <button id="sub-node-${node.id}" data-parent="${row.main.id}" data-side="left" data-solid="true"
                     onclick="openPanel('${node.id}', '${node.title}', 'Kategori')"
-                    class="sub-node bg-brand-50 border-2 border-brand-300 text-brand-700 font-bold py-3 px-5 rounded-[14px] shadow-sm hover:border-brand-500 hover:-translate-y-0.5 transition-all w-[240px] text-center text-[0.95rem] dark:bg-brand-900/40 dark:border-brand-600 dark:text-brand-200 relative z-20">
+                    class="sub-node bg-brand-50 border-2 border-brand-300 text-brand-700 font-bold py-3 px-5 rounded-[14px] shadow-sm hover:border-brand-500 hover:-translate-y-0.5 transition-all w-60 text-center text-[0.95rem] dark:bg-brand-900/40 dark:border-brand-600 dark:text-brand-200 relative z-20">
               ${node.title}
             </button>
            `;
@@ -422,7 +422,7 @@ function renderRoadmap() {
             return `
             <button id="sub-node-${node.id}" data-parent="${row.main.id}" data-side="left"
                     onclick="openPanel('${node.id}', '${node.title}', 'Sub-modul')"
-                    class="sub-node bg-[#2f5bd3] outline outline-2 outline-offset-2 outline-[#2f5bd3] text-white font-semibold py-3 px-5 rounded-[14px] shadow-sm hover:bg-[#254ab3] hover:-translate-y-0.5 transition-all w-[240px] text-center text-[0.95rem] relative z-20">
+                    class="sub-node bg-brand-500 outline-2 outline-offset-2 outline-brand-500 text-white font-semibold py-3 px-5 rounded-[14px] shadow-sm hover:bg-[#254ab3] hover:-translate-y-0.5 transition-all w-60 text-center text-[0.95rem] relative z-20">
               ${node.title}
             </button>
            `;
@@ -443,7 +443,7 @@ function renderRoadmap() {
               })
               .join("");
             return `
-            <div id="sub-node-${node.id}" data-parent="${row.main.id}" data-side="left" class="sub-node flex gap-3 relative z-20 w-[240px] justify-end">
+            <div id="sub-node-${node.id}" data-parent="${row.main.id}" data-side="left" class="sub-node flex gap-3 relative z-20 w-60 justify-end">
               ${childrenHtml}
             </div>
            `;
@@ -464,7 +464,7 @@ function renderRoadmap() {
               })
               .join("");
             return `
-             <div id="sub-node-${node.id}" data-parent="${row.main.id}" data-side="left" class="flex flex-col gap-3 relative z-20 w-[240px]">
+             <div id="sub-node-${node.id}" data-parent="${row.main.id}" data-side="left" class="flex flex-col gap-3 relative z-20 w-60">
                ${childrenHtml}
              </div>
            `;
@@ -475,7 +475,7 @@ function renderRoadmap() {
               ${badgeHtml}
               <button id="sub-node-${node.id}" data-parent="${row.main.id}" data-side="left"
                       onclick="openPanel('${node.id}', '${node.title}', 'Sub-modul')"
-                      class="sub-node bg-white border-2 border-[#dbe3f8] text-slate-700 font-semibold py-3 px-5 rounded-[14px] shadow-sm hover:border-brand-500 hover:text-brand-600 hover:-translate-y-0.5 hover:shadow-md transition-all w-[240px] text-right text-sm dark:bg-slate-800 dark:border-slate-700 dark:text-slate-200 dark:hover:border-brand-500 relative z-20">
+                      class="sub-node bg-white border-2 border-[#dbe3f8] text-slate-700 font-semibold py-3 px-5 rounded-[14px] shadow-sm hover:border-brand-500 hover:text-brand-600 hover:-translate-y-0.5 hover:shadow-md transition-all w-60 text-right text-sm dark:bg-slate-800 dark:border-slate-700 dark:text-slate-200 dark:hover:border-brand-500 relative z-20">
                 ${node.title}
               </button>
             </div>
@@ -500,7 +500,7 @@ function renderRoadmap() {
           if (node.isTextNode) {
             return `
             <div id="sub-node-${node.id}" data-parent="${row.main.id}" data-side="right" data-solid="true"
-                 class="sub-node w-[240px] text-center text-[1.05rem] font-bold text-slate-800 dark:text-slate-200 relative z-20 py-3 bg-transparent flex justify-center items-center">
+                 class="sub-node w-60 text-center text-[1.05rem] font-bold text-slate-800 dark:text-slate-200 relative z-20 py-3 bg-transparent flex justify-center items-center">
               ${node.title}
             </div>
            `;
@@ -508,7 +508,7 @@ function renderRoadmap() {
             return `
             <button id="sub-node-${node.id}" data-parent="${row.main.id}" data-side="right" data-solid="true"
                     onclick="openPanel('${node.id}', '${node.title}', 'Kategori')"
-                    class="sub-node bg-brand-50 border-2 border-brand-300 text-brand-700 font-bold py-3 px-5 rounded-[14px] shadow-sm hover:border-brand-500 hover:-translate-y-0.5 transition-all w-[240px] text-center text-[0.95rem] dark:bg-brand-900/40 dark:border-brand-600 dark:text-brand-200 relative z-20">
+                    class="sub-node bg-brand-50 border-2 border-brand-300 text-brand-700 font-bold py-3 px-5 rounded-[14px] shadow-sm hover:border-brand-500 hover:-translate-y-0.5 transition-all w-60 text-center text-[0.95rem] dark:bg-brand-900/40 dark:border-brand-600 dark:text-brand-200 relative z-20">
               ${node.title}
             </button>
            `;
@@ -529,7 +529,7 @@ function renderRoadmap() {
               })
               .join("");
             return `
-             <div id="sub-node-${node.id}" data-parent="${row.main.id}" data-side="right" class="w-[240px] flex flex-col gap-3 relative z-20">
+             <div id="sub-node-${node.id}" data-parent="${row.main.id}" data-side="right" class="w-60 flex flex-col gap-3 relative z-20">
                ${childrenHtml}
              </div>
            `;
@@ -555,7 +555,7 @@ function renderRoadmap() {
               : "absolute bottom-[calc(100%+30px)] left-0 grid grid-cols-2 gap-3 w-full z-20";
 
             return `
-            <div class="relative w-[240px]">
+            <div class="relative w-60">
               <div class="${positionClass}">
                 ${childrenHtml}
               </div>
@@ -573,7 +573,7 @@ function renderRoadmap() {
               ${badgeHtml}
               <button id="sub-node-${node.id}" data-parent="${row.main.id}" data-side="right"
                       onclick="openPanel('${node.id}', '${node.title}', 'Sub-modul')"
-                      class="sub-node bg-white border-2 border-[#dbe3f8] text-slate-700 font-semibold py-3 px-5 rounded-[14px] shadow-sm hover:border-brand-500 hover:text-brand-600 hover:-translate-y-0.5 hover:shadow-md transition-all w-[240px] text-left text-sm dark:bg-slate-800 dark:border-slate-700 dark:text-slate-200 dark:hover:border-brand-500 relative z-20">
+                      class="sub-node bg-white border-2 border-[#dbe3f8] text-slate-700 font-semibold py-3 px-5 rounded-[14px] shadow-sm hover:border-brand-500 hover:text-brand-600 hover:-translate-y-0.5 hover:shadow-md transition-all w-60 text-left text-sm dark:bg-slate-800 dark:border-slate-700 dark:text-slate-200 dark:hover:border-brand-500 relative z-20">
                 ${node.title}
               </button>
             </div>
@@ -593,7 +593,7 @@ function renderRoadmap() {
     let centerHtml = "";
     if (row.main.type === "spacer") {
       centerHtml = `
-        <div class="w-[220px] shrink-0 flex justify-center items-center relative z-10 py-5 opacity-0 pointer-events-none">
+        <div class="w-55 shrink-0 flex justify-center items-center relative z-10 py-5 opacity-0 pointer-events-none">
           <button id="main-node-${row.main.id}" class="w-full py-3 px-5">${row.main.title}</button>
         </div>
       `;
@@ -611,7 +611,7 @@ function renderRoadmap() {
         })
         .join("");
       centerHtml = `
-        <div class="w-[220px] shrink-0 flex justify-center items-center relative z-20 py-5 bg-slate-50 dark:bg-slate-900" id="main-node-${row.main.id}">
+        <div class="w-55 shrink-0 flex justify-center items-center relative z-20 py-5 bg-slate-50 dark:bg-slate-900" id="main-node-${row.main.id}">
            <div class="grid grid-cols-2 gap-3 w-full">
                ${childrenHtml}
            </div>
@@ -619,7 +619,7 @@ function renderRoadmap() {
       `;
     } else if (row.main.type === "project-box") {
       centerHtml = `
-        <div class="w-[280px] shrink-0 flex justify-center items-center relative z-20 py-8">
+        <div class="w-70 shrink-0 flex justify-center items-center relative z-20 py-8">
           <div id="main-node-${row.main.id}" class="bg-white border-2 border-slate-100 p-5 rounded-xl shadow-[0_8px_20px_rgba(47,91,211,0.15)] w-full text-left dark:bg-slate-800 dark:border-slate-700 transition-all hover:-translate-y-1">
             <p class="text-slate-800 dark:text-slate-200 text-[0.9rem] mb-4 font-medium leading-relaxed">
               ${row.main.desc}
@@ -633,7 +633,7 @@ function renderRoadmap() {
       `;
     } else if (row.main.type === "footer-box") {
       centerHtml = `
-        <div class="w-[640px] max-w-[90vw] shrink-0 flex justify-center items-center relative z-20 py-8">
+        <div class="w-160 max-w-[90vw] shrink-0 flex justify-center items-center relative z-20 py-8">
           <div id="main-node-${row.main.id}" class="bg-white border-2 border-[#dbe3f8] p-6 rounded-xl shadow-sm w-full text-center dark:bg-slate-800 dark:border-slate-700">
             <h3 class="text-slate-900 dark:text-white text-[1.05rem] font-bold mb-5 tracking-tight">
               ${row.main.title}
@@ -649,7 +649,7 @@ function renderRoadmap() {
       `;
     } else {
       centerHtml = `
-        <div class="w-[220px] shrink-0 flex justify-center items-center relative z-10 py-5">
+        <div class="w-55 shrink-0 flex justify-center items-center relative z-10 py-5">
           <button id="main-node-${row.main.id}"
                   onclick="openPanel('${row.main.id}', '${row.main.title}', 'Modul Utama', '${row.main.desc}')"
                   class="w-full bg-brand-500 text-white font-bold text-[1rem] py-3 px-5 rounded-xl shadow-brand-sm hover:-translate-y-1 hover:shadow-brand-md transition-all border border-[#5277e3] relative z-20">

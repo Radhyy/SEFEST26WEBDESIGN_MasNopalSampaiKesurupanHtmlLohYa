@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Career Simulation Mode – WorkSim</title>
+  <title>Career Simulation Mode (Unlock) – WorkSim</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,9 +14,9 @@
     rel="stylesheet" />
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
-  <link rel="stylesheet" href="../../css/output.css" />
+  <link rel="stylesheet" href="../../../css/output.css" />
 
-  <script src="../../js/shared.js" defer></script>
+  <script src="../../../js/shared.js" defer></script>
   <style>
     .card-hover {
       transition: transform .2s, box-shadow .2s
@@ -39,21 +39,6 @@
       border-radius: 999px
     }
 
-    @keyframes pulse-ring {
-
-      0%,
-      100% {
-        box-shadow: 0 0 0 0 rgba(47, 91, 211, .4)
-      }
-
-      50% {
-        box-shadow: 0 0 0 8px rgba(47, 91, 211, 0)
-      }
-    }
-
-    .pulse {
-      animation: pulse-ring 2s ease-in-out infinite
-    }
   </style>
 </head>
 
@@ -65,10 +50,10 @@
   <!-- ===== LOCKED HERO BANNER ===== -->
   <section class="relative overflow-hidden border-b border-slate-100 dark:border-slate-800">
     <div class="relative mx-auto max-w-5xl px-6 py-16 text-center">
-      <!-- lock badge -->
+      <!-- success badge -->
       <div
-        class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-300 mb-6">
-        <i class="fa-solid fa-lock text-amber-500"></i> Khusus Level Freelance
+        class="inline-flex items-center gap-2 rounded-full border border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-900/30 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-6">
+        <i class="fa-solid fa-unlock text-emerald-500"></i> Mode Terbuka!
       </div>
 
       <h1
@@ -81,27 +66,19 @@
           Freelance</strong>.
       </p>
 
-      <!-- Unlock progress -->
+      <!-- Unlock celebration -->
       <div
-        class="inline-flex flex-col items-center gap-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl px-8 py-5 mb-6 shadow-sm">
-        <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest">Progress Unlocking</p>
-        <div class="flex items-center gap-4">
-          <div class="text-right">
-            <p class="text-slate-900 dark:text-white font-display font-bold text-2xl leading-none">240</p>
-            <p class="text-slate-400 text-xs">XP Kamu</p>
-          </div>
-          <div class="w-48 h-3 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
-            <div class="h-full rounded-full bg-gradient-to-r from-brand-500 to-amber-500" style="width:16%"></div>
-          </div>
-          <div class="text-left">
-            <p class="text-slate-900 dark:text-white font-display font-bold text-2xl leading-none">1500</p>
-            <p class="text-slate-400 text-xs">XP Dibutuhkan</p>
-          </div>
+        class="inline-flex flex-col items-center gap-3 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 border border-emerald-200 dark:border-emerald-800 rounded-2xl px-8 py-6 mb-6 shadow-sm">
+        <div
+          class="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 text-white text-2xl shadow-lg animate-bounce">
+          <i class="fa-solid fa-unlock-keyhole"></i>
         </div>
-        <a href="../learning-roadmap/roadmap-frontend/"
-          class="inline-flex items-center gap-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold px-6 py-2.5 text-sm transition-all hover:-translate-y-0.5 shadow-lg">
-          <i class="fa-solid fa-bolt"></i> Lanjutkan Belajar untuk Unlock
-        </a>
+        <p class="text-emerald-700 dark:text-emerald-300 text-xs font-bold uppercase tracking-widest">Berhasil Terbuka
+        </p>
+        <p class="font-display text-2xl font-bold text-slate-900 dark:text-white text-center">Selamat! Career Simulation
+          Mode telah terbuka!</p>
+        <p class="text-slate-500 dark:text-slate-400 text-sm max-w-md text-center">Kamu sekarang bisa mengerjakan project
+          simulasi nyata, mengumpulkan XP, dan mendapatkan feedback profesional.</p>
       </div>
 
       <!-- Feature preview chips -->
@@ -122,14 +99,14 @@
     </div>
   </section>
 
-  <!-- ===== PROJECT LISTING (blurred/locked) ===== -->
+  <!-- ===== PROJECT LISTING ===== -->
   <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12">
 
     <!-- Section header -->
     <div class="flex items-center justify-between mb-6 flex-wrap gap-4">
       <div>
         <h2 class="font-display text-xl font-bold text-slate-900 dark:text-white">Project Simulasi Tersedia</h2>
-        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Preview project yang bisa dikerjakan setelah unlock
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Pilih project dan mulai kerjakan sekarang
         </p>
       </div>
       <!-- Filter tabs -->
@@ -148,31 +125,10 @@
       </div>
     </div>
 
-    <!-- Project cards grid (blurred = locked) -->
+    <!-- Project cards grid -->
     <div class="relative">
-      <!-- Lock overlay -->
-      <div
-        class="absolute inset-0 z-20 flex flex-col items-center justify-center rounded-2xl bg-gradient-to-b from-transparent via-white/60 dark:via-slate-900/60 to-white dark:to-slate-900 backdrop-blur-[2px]">
-        <div class="text-center p-8">
-          <div class="w-16 h-16 rounded-2xl bg-brand-500 pulse mx-auto mb-4 flex items-center justify-center shadow-xl">
-            <i class="fa-solid fa-lock text-white text-xl"></i>
-          </div>
-          <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-2">Fitur Terkunci</h3>
-          <p class="text-slate-500 dark:text-slate-400 text-sm max-w-xs mx-auto mb-4">Capai Level Freelance untuk
-            mengakses semua project simulasi</p>
-          <a href="../learning-roadmap/roadmap-frontend/"
-            class="inline-flex items-center gap-2 rounded-xl bg-brand-500 text-white font-bold px-6 py-3 hover:-translate-y-0.5 hover:bg-brand-600 transition-all text-sm shadow-lg">
-            <i class="fa-solid fa-bolt"></i> Mulai Belajar
-          </a>
-          <a href="/pages/career-simulation/unlock/"
-            class="inline-flex items-center gap-2 rounded-xl bg-amber-400 text-white font-bold px-6 py-3 hover:-translate-y-0.5 hover:bg-amber-500 transition-all text-sm shadow-lg">
-            <i class="fa-solid fa-unlock"></i> Unlock (Demo)
-          </a>
-        </div>
-      </div>
-
-      <!-- Preview cards (behind lock) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pointer-events-none select-none">
+      <!-- Project cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
         <!-- Card 1 -->
         <a href="project-detail.html"

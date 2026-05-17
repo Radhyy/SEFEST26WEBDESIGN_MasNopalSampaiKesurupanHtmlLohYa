@@ -48,11 +48,11 @@ const NAVBAR_HTML = `
 </header>`;
 
 const FOOTER_HTML = `
-<footer id="kontak" class="relative overflow-hidden border-t border-[#dce5fb] bg-linear-to-b from-[#f7faff] to-[#eef3ff] py-8 pb-7">
-  <div class="pointer-events-none absolute -left-24 top-0 h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(47,91,211,0.14)_0%,transparent_72%)]"></div>
-  <div class="pointer-events-none absolute -right-20 -bottom-16 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(23,190,187,0.12)_0%,transparent_70%)]"></div>
+<footer id="kontak" class="relative overflow-hidden border-t border-[#dce5fb] bg-linear-to-b from-[#f7faff] to-[#eef3ff] py-8 pb-7 dark:border-slate-700 dark:from-[#0a1020] dark:to-[#111c2f]">
+  <div class="pointer-events-none absolute -left-24 top-0 h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(47,91,211,0.14)_0%,transparent_72%)] dark:opacity-30"></div>
+  <div class="pointer-events-none absolute -right-20 -bottom-16 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(23,190,187,0.12)_0%,transparent_70%)] dark:opacity-30"></div>
   <div class="mx-auto w-[98vw] max-w-330">
-    <div class="rounded-[28px] border border-white/70 bg-white/80 p-6 shadow-[0_14px_40px_rgba(20,24,38,0.07)] backdrop-blur lg:p-8">
+    <div class="rounded-[28px] border border-white/70 bg-white/80 p-6 shadow-[0_14px_40px_rgba(20,24,38,0.07)] backdrop-blur lg:p-8 dark:border-slate-700 dark:bg-slate-900/80">
       <div class="grid gap-8 lg:grid-cols-[1.15fr_0.85fr_0.7fr_0.65fr] lg:items-start">
         <div>
           <a href="${rootPath}index.html" class="inline-flex items-center gap-2 font-display text-[1.3rem] font-bold tracking-[-0.02em]">
@@ -61,15 +61,15 @@ const FOOTER_HTML = `
             </span>
             Work<span class="text-brand-500">Sim</span>
           </a>
-          <p class="mt-4 max-w-[34ch] text-[0.94rem] leading-7 text-slate-500">Platform eksplorasi karier digital untuk pelajar, mahasiswa, dan career switcher yang ingin belajar dengan arah yang lebih jelas.</p>
+          <p class="mt-4 max-w-[34ch] text-[0.94rem] leading-7 text-slate-500 dark:text-slate-400">Platform eksplorasi karier digital untuk pelajar, mahasiswa, dan career switcher yang ingin belajar dengan arah yang lebih jelas.</p>
           <div class="mt-5 flex flex-wrap gap-2">
-            <span class="inline-flex items-center gap-2 rounded-full border border-[#d9e3fb] bg-[#f6f8ff] px-3 py-1.5 text-xs font-semibold text-[#35518d]"><i class="fa-solid fa-bolt text-brand-500"></i> Roadmap interaktif</span>
-            <span class="inline-flex items-center gap-2 rounded-full border border-[#d9e3fb] bg-[#f6f8ff] px-3 py-1.5 text-xs font-semibold text-[#35518d]"><i class="fa-solid fa-shield-heart text-brand-500"></i> Belajar lebih konsisten</span>
+            <span class="inline-flex items-center gap-2 rounded-full border border-[#d9e3fb] bg-[#f6f8ff] px-3 py-1.5 text-xs font-semibold text-[#35518d] dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300"><i class="fa-solid fa-bolt text-brand-500"></i> Roadmap interaktif</span>
+            <span class="inline-flex items-center gap-2 rounded-full border border-[#d9e3fb] bg-[#f6f8ff] px-3 py-1.5 text-xs font-semibold text-[#35518d] dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300"><i class="fa-solid fa-shield-heart text-brand-500"></i> Belajar lebih konsisten</span>
           </div>
         </div>
         <div>
           <p class="mb-4 text-sm font-bold uppercase tracking-[0.08em] text-brand-500">Navigasi</p>
-          <div class="grid gap-3 text-[0.95rem] text-slate-600">
+          <div class="grid gap-3 text-[0.95rem] text-slate-600 dark:text-slate-300">
             <a class="transition hover:text-brand-500" href="${rootPath}index.html">Home</a>
             <a class="transition hover:text-brand-500" href="${rootPath}pages/ai-career-advisor/">AI Advisor</a>
             <a class="transition hover:text-brand-500" href="${rootPath}pages/learning-roadmap/">Roadmap</a>
@@ -79,25 +79,25 @@ const FOOTER_HTML = `
         </div>
         <div>
           <p class="mb-4 text-sm font-bold uppercase tracking-[0.08em] text-brand-500">Komunitas</p>
-          <p class="max-w-[22ch] text-[0.94rem] leading-7 text-slate-500">Ikuti update, tips belajar, dan contoh perjalanan karier digital yang relevan.</p>
+          <p class="max-w-[22ch] text-[0.94rem] leading-7 text-slate-500 dark:text-slate-400">Ikuti update, tips belajar, dan contoh perjalanan karier digital yang relevan.</p>
           <div class="mt-5 flex gap-2.5">
-            <a class="grid h-10 w-10 place-items-center rounded-2xl border border-[#dbe3f8] bg-white text-brand-500 transition hover:-translate-y-0.5 hover:border-brand-500 hover:shadow-[0_10px_18px_rgba(47,91,211,0.12)]" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a class="grid h-10 w-10 place-items-center rounded-2xl border border-[#dbe3f8] bg-white text-brand-500 transition hover:-translate-y-0.5 hover:border-brand-500 hover:shadow-[0_10px_18px_rgba(47,91,211,0.12)]" href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a class="grid h-10 w-10 place-items-center rounded-2xl border border-[#dbe3f8] bg-white text-brand-500 transition hover:-translate-y-0.5 hover:border-brand-500 hover:shadow-[0_10px_18px_rgba(47,91,211,0.12)]" href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a class="grid h-10 w-10 place-items-center rounded-2xl border border-[#dbe3f8] bg-white text-brand-500 transition hover:-translate-y-0.5 hover:border-brand-500 hover:shadow-[0_10px_18px_rgba(47,91,211,0.12)] dark:border-slate-600 dark:bg-slate-800 dark:text-brand-400 dark:hover:border-brand-500" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a class="grid h-10 w-10 place-items-center rounded-2xl border border-[#dbe3f8] bg-white text-brand-500 transition hover:-translate-y-0.5 hover:border-brand-500 hover:shadow-[0_10px_18px_rgba(47,91,211,0.12)] dark:border-slate-600 dark:bg-slate-800 dark:text-brand-400 dark:hover:border-brand-500" href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a class="grid h-10 w-10 place-items-center rounded-2xl border border-[#dbe3f8] bg-white text-brand-500 transition hover:-translate-y-0.5 hover:border-brand-500 hover:shadow-[0_10px_18px_rgba(47,91,211,0.12)] dark:border-slate-600 dark:bg-slate-800 dark:text-brand-400 dark:hover:border-brand-500" href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
           </div>
         </div>
         <div>
           <p class="mb-4 text-sm font-bold uppercase tracking-[0.08em] text-brand-500">Next step</p>
-          <div class="rounded-2xl border border-[#dbe3f8] bg-linear-to-br from-[#f8faff] to-[#eef3ff] p-4 shadow-[0_10px_24px_rgba(47,91,211,0.07)]">
-            <p class="text-[0.9rem] font-semibold text-slate-900">Mulai cek jalur kariermu</p>
-            <p class="mt-2 text-[0.9rem] leading-7 text-slate-500">Gunakan demo roadmap untuk melihat langkah yang paling masuk akal dari skill saat ini ke role target.</p>
+          <div class="rounded-2xl border border-[#dbe3f8] bg-linear-to-br from-[#f8faff] to-[#eef3ff] p-4 shadow-[0_10px_24px_rgba(47,91,211,0.07)] dark:border-slate-600 dark:from-[#1a2640] dark:to-[#111c2f]">
+            <p class="text-[0.9rem] font-semibold text-slate-900 dark:text-white">Mulai cek jalur kariermu</p>
+            <p class="mt-2 text-[0.9rem] leading-7 text-slate-500 dark:text-slate-400">Gunakan demo roadmap untuk melihat langkah yang paling masuk akal dari skill saat ini ke role target.</p>
             <a class="mt-4 inline-flex items-center gap-2 rounded-xl bg-linear-to-br from-brand-500 to-[#3f6ef0] px-4 py-2.5 text-sm font-bold text-white shadow-[0_8px_20px_rgba(47,91,211,0.22)] transition hover:-translate-y-0.5" href="${rootPath}pages/learning-roadmap/">
               Lihat Roadmap <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
         </div>
       </div>
-      <div class="mt-8 flex flex-col gap-3 border-t border-[#e7edfb] pt-5 text-sm text-slate-500 lg:flex-row lg:items-center lg:justify-between">
+      <div class="mt-8 flex flex-col gap-3 border-t border-[#e7edfb] pt-5 text-sm text-slate-500 lg:flex-row lg:items-center lg:justify-between dark:border-slate-700 dark:text-slate-400">
         <p>&copy; 2026 WorkSim. Dibangun untuk membantu perjalanan karier digital jadi lebih terarah.</p>
         <p class="inline-flex items-center gap-2"><i class="fa-solid fa-sparkles text-brand-500"></i> Belajar, progres, dan eksplorasi dalam satu tempat</p>
       </div>

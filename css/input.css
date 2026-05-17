@@ -35,6 +35,14 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+  
   .card-hover {
     transition: transform .2s, box-shadow .2s;
   }

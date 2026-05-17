@@ -124,7 +124,7 @@
   }
 
   .section-title {
-    @apply font-display text-[clamp(1.8rem, 3vw, 2.5rem)] leading-tight text-slate-900 dark:text-white;
+    @apply font-display text-[clamp(1.8rem,3vw,2.5rem)] leading-tight text-slate-900 dark:text-white;
   }
 
   .section-desc {

@@ -47,6 +47,13 @@ function showStep(step) {
 }
 
 function nextStep(step) {
+  if (step === 2) {
+    const checked = document.querySelectorAll('input[type="checkbox"]:checked');
+    if (checked.length === 0) {
+      alert('Pilih setidaknya satu bidang minat terlebih dahulu!');
+      return;
+    }
+  }
   currentStep = step;
   showStep(currentStep);
 }

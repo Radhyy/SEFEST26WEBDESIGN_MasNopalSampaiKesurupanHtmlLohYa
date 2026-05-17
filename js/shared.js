@@ -30,7 +30,7 @@ const NAVBAR_HTML = `
           <i id="themeIcon" class="fa-solid fa-moon text-base"></i>
         </button>
         <a class="inline-flex items-center rounded-full border border-[#dbe3f8] bg-white px-5 py-2.5 text-sm font-bold text-slate-900 transition hover:bg-[#eef3ff] dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100" href="/pages/login">Login</a>
-        <a class="inline-flex items-center gap-2 rounded-full bg-linear-to-br from-brand-500 to-[#3f6ef0] px-5 py-2.5 text-sm font-bold text-white shadow-[0_8px_20px_rgba(47,91,211,0.25)] transition hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(47,91,211,0.35)]" href="/pages/register">
+        <a class="inline-flex items-center gap-2 rounded-full bg-linear-to-br from-brand-500 to-[#3f6ef0] px-5 py-2.5 text-sm font-bold text-white shadow-brand-sm transition hover:-translate-y-0.5 hover:shadow-brand-md" href="/pages/register">
           <i class="fa-solid fa-rocket"></i> Mulai Sekarang
         </a>
       </div>

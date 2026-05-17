@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const pwd = document.getElementById("password").value;
 
       if (email === "budi@worksim.id" && pwd === "password123") {
-        window.location.href = "features/skill-passport/index.html";
+        window.location.href = "features/skill-passport/";
       } else {
         alert(
           "Email atau password salah!\nGunakan akun dummy:\nEmail: budi@worksim.id\nPassword: password123",

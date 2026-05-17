@@ -71,10 +71,10 @@ const FOOTER_HTML = `
           <p class="mb-4 text-sm font-bold uppercase tracking-[0.08em] text-brand-500">Navigasi</p>
           <div class="grid gap-3 text-[0.95rem] text-slate-600">
             <a class="transition hover:text-brand-500" href="${rootPath}index.html">Home</a>
-            <a class="transition hover:text-brand-500" href="${rootPath}pages/ai-career-advisor/index.html">AI Advisor</a>
-            <a class="transition hover:text-brand-500" href="${rootPath}pages/learning-roadmap/index.html">Roadmap</a>
-            <a class="transition hover:text-brand-500" href="${rootPath}pages/career-simulation/index.html">Simulasi</a>
-            <a class="transition hover:text-brand-500" href="${rootPath}pages/skill-passport/index.html">Skill Passport</a>
+            <a class="transition hover:text-brand-500" href="${rootPath}pages/ai-career-advisor/">AI Advisor</a>
+            <a class="transition hover:text-brand-500" href="${rootPath}pages/learning-roadmap/">Roadmap</a>
+            <a class="transition hover:text-brand-500" href="${rootPath}pages/career-simulation/">Simulasi</a>
+            <a class="transition hover:text-brand-500" href="${rootPath}pages/skill-passport/">Skill Passport</a>
           </div>
         </div>
         <div>
@@ -91,7 +91,7 @@ const FOOTER_HTML = `
           <div class="rounded-2xl border border-[#dbe3f8] bg-linear-to-br from-[#f8faff] to-[#eef3ff] p-4 shadow-[0_10px_24px_rgba(47,91,211,0.07)]">
             <p class="text-[0.9rem] font-semibold text-slate-900">Mulai cek jalur kariermu</p>
             <p class="mt-2 text-[0.9rem] leading-7 text-slate-500">Gunakan demo roadmap untuk melihat langkah yang paling masuk akal dari skill saat ini ke role target.</p>
-            <a class="mt-4 inline-flex items-center gap-2 rounded-xl bg-linear-to-br from-brand-500 to-[#3f6ef0] px-4 py-2.5 text-sm font-bold text-white shadow-[0_8px_20px_rgba(47,91,211,0.22)] transition hover:-translate-y-0.5" href="${rootPath}pages/learning-roadmap/index.html">
+            <a class="mt-4 inline-flex items-center gap-2 rounded-xl bg-linear-to-br from-brand-500 to-[#3f6ef0] px-4 py-2.5 text-sm font-bold text-white shadow-[0_8px_20px_rgba(47,91,211,0.22)] transition hover:-translate-y-0.5" href="${rootPath}pages/learning-roadmap/">
               Lihat Roadmap <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
@@ -113,6 +113,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const footerPlaceholder = document.getElementById("footer-placeholder");
   if (footerPlaceholder) footerPlaceholder.outerHTML = FOOTER_HTML;
+
+  // ─── Active Nav Highlight ────────────────────────────────────────────────
+  const navLinks = document.querySelectorAll("header nav a");
+  const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+  navLinks.forEach((link) => {
+    const linkPath = link.getAttribute("href").replace(/\/+$/, "") || "/";
+    if (currentPath === linkPath) {
+      link.classList.add("bg-[#eaf0ff]", "dark:bg-white/10", "text-brand-500");
+    }
+  });
 
   // ─── Dark Mode Toggle ─────────────────────────────────────────────────────
   const html = document.documentElement;

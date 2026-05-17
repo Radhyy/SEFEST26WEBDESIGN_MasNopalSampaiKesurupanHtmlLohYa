@@ -1,57 +1,95 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Career Simulation Mode – WorkSim</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode:"class",
-      theme:{extend:{
-        fontFamily:{sans:["Plus Jakarta Sans","sans-serif"],display:["Sora","sans-serif"]},
-        colors:{brand:{50:"#eef3ff",100:"#dbe5ff",200:"#c0d0ff",500:"#2f5bd3",600:"#1d43b4",900:"#0f1f5c"}}
-      }}
-    };
-  </script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css"/>
-  <script src="../../shared.js" defer></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="../../css/output.css" />
+
+  <script src="../../js/shared.js" defer></script>
   <style>
-    .card-hover{transition:transform .2s,box-shadow .2s}
-    .card-hover:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(47,91,211,.15)}
-    .tag{display:inline-flex;align-items:center;gap:4px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:3px 10px;border-radius:999px}
-    @keyframes pulse-ring{0%,100%{box-shadow:0 0 0 0 rgba(47,91,211,.4)}50%{box-shadow:0 0 0 8px rgba(47,91,211,0)}}
-    .pulse{animation:pulse-ring 2s ease-in-out infinite}
+    .card-hover {
+      transition: transform .2s, box-shadow .2s
+    }
+
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(47, 91, 211, .15)
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      padding: 3px 10px;
+      border-radius: 999px
+    }
+
+    @keyframes pulse-ring {
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(47, 91, 211, .4)
+      }
+
+      50% {
+        box-shadow: 0 0 0 8px rgba(47, 91, 211, 0)
+      }
+    }
+
+    .pulse {
+      animation: pulse-ring 2s ease-in-out infinite
+    }
   </style>
 </head>
-<body class="bg-[radial-gradient(circle_at_10%_-10%,#e7ecff_0%,#f8fafc_50%)] dark:bg-[radial-gradient(circle_at_10%_-10%,#1b2840_0%,#0b1220_50%)] text-slate-900 dark:text-slate-100 transition-colors duration-300">
+
+<body
+  class="bg-[radial-gradient(circle_at_10%_-10%,#e7ecff_0%,#f8fafc_50%)] dark:bg-[radial-gradient(circle_at_10%_-10%,#1b2840_0%,#0b1220_50%)] text-slate-900 dark:text-slate-100 transition-colors duration-300">
 
   <div id="navbar-placeholder"></div>
 
   <!-- ===== LOCKED HERO BANNER ===== -->
   <section class="relative overflow-hidden border-b border-slate-100 dark:border-slate-800">
     <!-- decorative blobs -->
-    <div class="pointer-events-none absolute -top-32 -left-32 w-[480px] h-[480px] rounded-full bg-brand-500/8 blur-3xl"></div>
-    <div class="pointer-events-none absolute -bottom-20 right-0 w-[360px] h-[360px] rounded-full bg-purple-500/6 blur-3xl"></div>
+    <div class="pointer-events-none absolute -top-32 -left-32 w-[480px] h-[480px] rounded-full bg-brand-500/8 blur-3xl">
+    </div>
+    <div
+      class="pointer-events-none absolute -bottom-20 right-0 w-[360px] h-[360px] rounded-full bg-purple-500/6 blur-3xl">
+    </div>
 
     <div class="relative mx-auto max-w-5xl px-6 py-16 text-center">
       <!-- lock badge -->
-      <div class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-300 mb-6">
+      <div
+        class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-300 mb-6">
         <i class="fa-solid fa-lock text-amber-500"></i> Khusus Level Freelance
       </div>
 
-      <h1 class="font-display text-[clamp(2rem,5vw,3.5rem)] font-bold text-slate-900 dark:text-white leading-tight mb-4">
+      <h1
+        class="font-display text-[clamp(2rem,5vw,3.5rem)] font-bold text-slate-900 dark:text-white leading-tight mb-4">
         Career <span class="text-brand-500">Simulation</span> Mode
       </h1>
       <p class="mx-auto max-w-2xl text-slate-500 dark:text-slate-400 text-base sm:text-lg leading-relaxed mb-8">
-        Rasakan pengalaman kerja nyata — terima brief dari klien, kerjakan project berbasis deadline, dan dapatkan feedback profesional. Fitur ini tersedia setelah kamu mencapai <strong class="text-amber-500">Level Freelance</strong>.
+        Rasakan pengalaman kerja nyata — terima brief dari klien, kerjakan project berbasis deadline, dan dapatkan
+        feedback profesional. Fitur ini tersedia setelah kamu mencapai <strong class="text-amber-500">Level
+          Freelance</strong>.
       </p>
 
       <!-- Unlock progress -->
-      <div class="inline-flex flex-col items-center gap-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl px-8 py-5 mb-6 shadow-sm">
+      <div
+        class="inline-flex flex-col items-center gap-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl px-8 py-5 mb-6 shadow-sm">
         <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest">Progress Unlocking</p>
         <div class="flex items-center gap-4">
           <div class="text-right">
@@ -67,17 +105,25 @@
           </div>
         </div>
         <a href="../learning-roadmap/roadmap-frontend/index.html"
-           class="inline-flex items-center gap-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold px-6 py-2.5 text-sm transition-all hover:-translate-y-0.5 shadow-lg">
+          class="inline-flex items-center gap-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold px-6 py-2.5 text-sm transition-all hover:-translate-y-0.5 shadow-lg">
           <i class="fa-solid fa-bolt"></i> Lanjutkan Belajar untuk Unlock
         </a>
       </div>
 
       <!-- Feature preview chips -->
       <div class="flex flex-wrap justify-center gap-2 mt-2">
-        <span class="tag bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700"><i class="fa-solid fa-briefcase"></i> Project Nyata</span>
-        <span class="tag bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700"><i class="fa-solid fa-clock"></i> Deadline Asli</span>
-        <span class="tag bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700"><i class="fa-solid fa-comments"></i> Feedback Klien</span>
-        <span class="tag bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700"><i class="fa-solid fa-trophy"></i> XP Bonus</span>
+        <span
+          class="tag bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700"><i
+            class="fa-solid fa-briefcase"></i> Project Nyata</span>
+        <span
+          class="tag bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700"><i
+            class="fa-solid fa-clock"></i> Deadline Asli</span>
+        <span
+          class="tag bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700"><i
+            class="fa-solid fa-comments"></i> Feedback Klien</span>
+        <span
+          class="tag bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700"><i
+            class="fa-solid fa-trophy"></i> XP Bonus</span>
       </div>
     </div>
   </section>
@@ -89,29 +135,39 @@
     <div class="flex items-center justify-between mb-6 flex-wrap gap-4">
       <div>
         <h2 class="font-display text-xl font-bold text-slate-900 dark:text-white">Project Simulasi Tersedia</h2>
-        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Preview project yang bisa dikerjakan setelah unlock</p>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Preview project yang bisa dikerjakan setelah unlock
+        </p>
       </div>
       <!-- Filter tabs -->
       <div class="flex gap-1 bg-slate-100 dark:bg-slate-800 rounded-xl p-1">
-        <button class="px-4 py-1.5 rounded-lg text-sm font-semibold bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm">Semua</button>
-        <button class="px-4 py-1.5 rounded-lg text-sm font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-700">UI Slicing</button>
-        <button class="px-4 py-1.5 rounded-lg text-sm font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-700">Full Project</button>
-        <button class="px-4 py-1.5 rounded-lg text-sm font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-700">Bug Fix</button>
+        <button
+          class="px-4 py-1.5 rounded-lg text-sm font-semibold bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm">Semua</button>
+        <button
+          class="px-4 py-1.5 rounded-lg text-sm font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-700">UI
+          Slicing</button>
+        <button
+          class="px-4 py-1.5 rounded-lg text-sm font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-700">Full
+          Project</button>
+        <button
+          class="px-4 py-1.5 rounded-lg text-sm font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-700">Bug
+          Fix</button>
       </div>
     </div>
 
     <!-- Project cards grid (blurred = locked) -->
     <div class="relative">
       <!-- Lock overlay -->
-      <div class="absolute inset-0 z-20 flex flex-col items-center justify-center rounded-2xl bg-gradient-to-b from-transparent via-white/60 dark:via-slate-900/60 to-white dark:to-slate-900 backdrop-blur-[2px]">
+      <div
+        class="absolute inset-0 z-20 flex flex-col items-center justify-center rounded-2xl bg-gradient-to-b from-transparent via-white/60 dark:via-slate-900/60 to-white dark:to-slate-900 backdrop-blur-[2px]">
         <div class="text-center p-8">
           <div class="w-16 h-16 rounded-2xl bg-brand-500 pulse mx-auto mb-4 flex items-center justify-center shadow-xl">
             <i class="fa-solid fa-lock text-white text-xl"></i>
           </div>
           <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-2">Fitur Terkunci</h3>
-          <p class="text-slate-500 dark:text-slate-400 text-sm max-w-xs mx-auto mb-4">Capai Level Freelance untuk mengakses semua project simulasi</p>
+          <p class="text-slate-500 dark:text-slate-400 text-sm max-w-xs mx-auto mb-4">Capai Level Freelance untuk
+            mengakses semua project simulasi</p>
           <a href="../learning-roadmap/roadmap-frontend/index.html"
-             class="inline-flex items-center gap-2 rounded-xl bg-brand-500 text-white font-bold px-6 py-3 hover:-translate-y-0.5 hover:bg-brand-600 transition-all text-sm shadow-lg">
+            class="inline-flex items-center gap-2 rounded-xl bg-brand-500 text-white font-bold px-6 py-3 hover:-translate-y-0.5 hover:bg-brand-600 transition-all text-sm shadow-lg">
             <i class="fa-solid fa-bolt"></i> Mulai Belajar
           </a>
         </div>
@@ -121,15 +177,18 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pointer-events-none select-none">
 
         <!-- Card 1 -->
-        <a href="project-detail.html" class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden card-hover block">
+        <a href="project-detail.html"
+          class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden card-hover block">
           <div class="h-2 bg-gradient-to-r from-brand-500 to-[#4f46e5]"></div>
           <div class="p-5">
             <div class="flex items-start justify-between mb-3">
               <span class="tag bg-amber-100 text-amber-700">🎨 UI Slicing</span>
-              <div class="flex items-center gap-1 text-xs text-slate-400"><i class="fa-solid fa-clock text-xs"></i> 3 hari</div>
+              <div class="flex items-center gap-1 text-xs text-slate-400"><i class="fa-solid fa-clock text-xs"></i> 3
+                hari</div>
             </div>
             <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">Landing Page Startup Tech</h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Slice UI dari Figma design file menjadi HTML/CSS yang pixel-perfect dan responsive.</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Slice UI dari Figma design file
+              menjadi HTML/CSS yang pixel-perfect dan responsive.</p>
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-1.5">
                 <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">HTML</span>
@@ -138,22 +197,26 @@
               <span class="text-xs text-slate-400"><i class="fa-solid fa-users text-xs"></i> 128 dikerjakan</span>
             </div>
           </div>
-          <div class="border-t border-slate-100 dark:border-slate-700 px-5 py-3 bg-slate-50 dark:bg-slate-900/40 flex items-center justify-between">
+          <div
+            class="border-t border-slate-100 dark:border-slate-700 px-5 py-3 bg-slate-50 dark:bg-slate-900/40 flex items-center justify-between">
             <span class="text-xs font-bold text-emerald-600">+200 XP</span>
             <span class="text-xs text-slate-400 font-medium">Brief tersedia</span>
           </div>
         </a>
 
         <!-- Card 2 -->
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden">
+        <div
+          class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden">
           <div class="h-2 bg-gradient-to-r from-purple-500 to-pink-500"></div>
           <div class="p-5">
             <div class="flex items-start justify-between mb-3">
               <span class="tag bg-purple-100 text-purple-700">⚡ Full Project</span>
-              <div class="flex items-center gap-1 text-xs text-slate-400"><i class="fa-solid fa-clock text-xs"></i> 7 hari</div>
+              <div class="flex items-center gap-1 text-xs text-slate-400"><i class="fa-solid fa-clock text-xs"></i> 7
+                hari</div>
             </div>
             <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">Dashboard Manajemen Inventori</h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Bangun dashboard interaktif dengan React, lengkap dengan tabel data, grafik, dan filter.</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Bangun dashboard interaktif
+              dengan React, lengkap dengan tabel data, grafik, dan filter.</p>
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-1.5">
                 <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">React</span>
@@ -162,22 +225,26 @@
               <span class="text-xs text-slate-400"><i class="fa-solid fa-users text-xs"></i> 64 dikerjakan</span>
             </div>
           </div>
-          <div class="border-t border-slate-100 dark:border-slate-700 px-5 py-3 bg-slate-50 dark:bg-slate-900/40 flex items-center justify-between">
+          <div
+            class="border-t border-slate-100 dark:border-slate-700 px-5 py-3 bg-slate-50 dark:bg-slate-900/40 flex items-center justify-between">
             <span class="text-xs font-bold text-emerald-600">+500 XP</span>
             <span class="text-xs text-slate-400 font-medium">Brief tersedia</span>
           </div>
         </div>
 
         <!-- Card 3 -->
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden">
+        <div
+          class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden">
           <div class="h-2 bg-gradient-to-r from-emerald-500 to-teal-500"></div>
           <div class="p-5">
             <div class="flex items-start justify-between mb-3">
               <span class="tag bg-emerald-100 text-emerald-700">🐛 Bug Fix</span>
-              <div class="flex items-center gap-1 text-xs text-slate-400"><i class="fa-solid fa-clock text-xs"></i> 1 hari</div>
+              <div class="flex items-center gap-1 text-xs text-slate-400"><i class="fa-solid fa-clock text-xs"></i> 1
+                hari</div>
             </div>
             <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">Fix Form Validation E-Commerce</h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Perbaiki bug pada form checkout yang menyebabkan error saat submit pada mobile device.</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Perbaiki bug pada form checkout
+              yang menyebabkan error saat submit pada mobile device.</p>
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-1.5">
                 <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">JS</span>
@@ -186,22 +253,26 @@
               <span class="text-xs text-slate-400"><i class="fa-solid fa-users text-xs"></i> 89 dikerjakan</span>
             </div>
           </div>
-          <div class="border-t border-slate-100 dark:border-slate-700 px-5 py-3 bg-slate-50 dark:bg-slate-900/40 flex items-center justify-between">
+          <div
+            class="border-t border-slate-100 dark:border-slate-700 px-5 py-3 bg-slate-50 dark:bg-slate-900/40 flex items-center justify-between">
             <span class="text-xs font-bold text-emerald-600">+100 XP</span>
             <span class="text-xs text-slate-400 font-medium">Brief tersedia</span>
           </div>
         </div>
 
         <!-- Card 4 -->
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden">
+        <div
+          class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden">
           <div class="h-2 bg-gradient-to-r from-brand-500 to-[#4f46e5]"></div>
           <div class="p-5">
             <div class="flex items-start justify-between mb-3">
               <span class="tag bg-amber-100 text-amber-700">🎨 UI Slicing</span>
-              <div class="flex items-center gap-1 text-xs text-slate-400"><i class="fa-solid fa-clock text-xs"></i> 5 hari</div>
+              <div class="flex items-center gap-1 text-xs text-slate-400"><i class="fa-solid fa-clock text-xs"></i> 5
+                hari</div>
             </div>
             <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">Halaman Login & Register App</h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Slice UI auth flow dari Figma dengan animasi transisi dan validasi form yang smooth.</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Slice UI auth flow dari Figma
+              dengan animasi transisi dan validasi form yang smooth.</p>
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-1.5">
                 <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">HTML</span>
@@ -210,22 +281,26 @@
               <span class="text-xs text-slate-400"><i class="fa-solid fa-users text-xs"></i> 201 dikerjakan</span>
             </div>
           </div>
-          <div class="border-t border-slate-100 dark:border-slate-700 px-5 py-3 bg-slate-50 dark:bg-slate-900/40 flex items-center justify-between">
+          <div
+            class="border-t border-slate-100 dark:border-slate-700 px-5 py-3 bg-slate-50 dark:bg-slate-900/40 flex items-center justify-between">
             <span class="text-xs font-bold text-emerald-600">+300 XP</span>
             <span class="text-xs text-slate-400 font-medium">Brief tersedia</span>
           </div>
         </div>
 
         <!-- Card 5 -->
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden">
+        <div
+          class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden">
           <div class="h-2 bg-gradient-to-r from-rose-500 to-orange-500"></div>
           <div class="p-5">
             <div class="flex items-start justify-between mb-3">
               <span class="tag bg-rose-100 text-rose-700">🔥 Tantangan</span>
-              <div class="flex items-center gap-1 text-xs text-slate-400"><i class="fa-solid fa-clock text-xs"></i> 14 hari</div>
+              <div class="flex items-center gap-1 text-xs text-slate-400"><i class="fa-solid fa-clock text-xs"></i> 14
+                hari</div>
             </div>
             <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">Clone Twitter/X Feed Halaman</h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Recreate feed Twitter dengan infinite scroll, like animation, dan dark mode toggle.</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Recreate feed Twitter dengan
+              infinite scroll, like animation, dan dark mode toggle.</p>
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-1.5">
                 <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">React</span>
@@ -234,22 +309,26 @@
               <span class="text-xs text-slate-400"><i class="fa-solid fa-users text-xs"></i> 33 dikerjakan</span>
             </div>
           </div>
-          <div class="border-t border-slate-100 dark:border-slate-700 px-5 py-3 bg-slate-50 dark:bg-slate-900/40 flex items-center justify-between">
+          <div
+            class="border-t border-slate-100 dark:border-slate-700 px-5 py-3 bg-slate-50 dark:bg-slate-900/40 flex items-center justify-between">
             <span class="text-xs font-bold text-emerald-600">+800 XP</span>
             <span class="text-xs text-slate-400 font-medium">Brief tersedia</span>
           </div>
         </div>
 
         <!-- Card 6 -->
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden">
+        <div
+          class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden">
           <div class="h-2 bg-gradient-to-r from-teal-500 to-cyan-500"></div>
           <div class="p-5">
             <div class="flex items-start justify-between mb-3">
               <span class="tag bg-teal-100 text-teal-700">⚡ Full Project</span>
-              <div class="flex items-center gap-1 text-xs text-slate-400"><i class="fa-solid fa-clock text-xs"></i> 10 hari</div>
+              <div class="flex items-center gap-1 text-xs text-slate-400"><i class="fa-solid fa-clock text-xs"></i> 10
+                hari</div>
             </div>
             <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">Sistem Booking Restoran Online</h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Bangun halaman booking restoran dengan kalender interaktif dan konfirmasi reservasi.</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Bangun halaman booking restoran
+              dengan kalender interaktif dan konfirmasi reservasi.</p>
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-1.5">
                 <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Vue.js</span>
@@ -258,7 +337,8 @@
               <span class="text-xs text-slate-400"><i class="fa-solid fa-users text-xs"></i> 47 dikerjakan</span>
             </div>
           </div>
-          <div class="border-t border-slate-100 dark:border-slate-700 px-5 py-3 bg-slate-50 dark:bg-slate-900/40 flex items-center justify-between">
+          <div
+            class="border-t border-slate-100 dark:border-slate-700 px-5 py-3 bg-slate-50 dark:bg-slate-900/40 flex items-center justify-between">
             <span class="text-xs font-bold text-emerald-600">+450 XP</span>
             <span class="text-xs text-slate-400 font-medium">Brief tersedia</span>
           </div>
@@ -273,44 +353,54 @@
   <section class="mx-auto max-w-6xl px-4 sm:px-6 pb-20">
     <div class="text-center mb-10">
       <h2 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-2">Cara Kerja Simulasi</h2>
-      <p class="text-slate-500 dark:text-slate-400 text-sm">Alur pengerjaan project simulasi dari awal hingga feedback</p>
+      <p class="text-slate-500 dark:text-slate-400 text-sm">Alur pengerjaan project simulasi dari awal hingga feedback
+      </p>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <div class="text-center">
-        <div class="w-14 h-14 rounded-2xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-500 text-2xl mx-auto mb-4 shadow-sm">
+        <div
+          class="w-14 h-14 rounded-2xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-500 text-2xl mx-auto mb-4 shadow-sm">
           <i class="fa-solid fa-file-lines"></i>
         </div>
         <div class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-1">01</div>
         <h3 class="font-bold text-slate-900 dark:text-white mb-1.5">Terima Brief</h3>
-        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Baca brief dari "klien" virtual — meliputi konteks, requirement, dan aset yang tersedia.</p>
+        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Baca brief dari "klien" virtual — meliputi
+          konteks, requirement, dan aset yang tersedia.</p>
       </div>
       <div class="text-center">
-        <div class="w-14 h-14 rounded-2xl bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center text-amber-600 text-2xl mx-auto mb-4 shadow-sm">
+        <div
+          class="w-14 h-14 rounded-2xl bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center text-amber-600 text-2xl mx-auto mb-4 shadow-sm">
           <i class="fa-solid fa-code"></i>
         </div>
         <div class="text-xs font-bold uppercase tracking-widest text-amber-600 mb-1">02</div>
         <h3 class="font-bold text-slate-900 dark:text-white mb-1.5">Kerjakan Task</h3>
-        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Selesaikan project sesuai deadline dan spesifikasi yang diberikan.</p>
+        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Selesaikan project sesuai deadline dan
+          spesifikasi yang diberikan.</p>
       </div>
       <div class="text-center">
-        <div class="w-14 h-14 rounded-2xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center text-purple-600 text-2xl mx-auto mb-4 shadow-sm">
+        <div
+          class="w-14 h-14 rounded-2xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center text-purple-600 text-2xl mx-auto mb-4 shadow-sm">
           <i class="fa-solid fa-upload"></i>
         </div>
         <div class="text-xs font-bold uppercase tracking-widest text-purple-600 mb-1">03</div>
         <h3 class="font-bold text-slate-900 dark:text-white mb-1.5">Submit Hasil</h3>
-        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Upload link GitHub atau preview hasil kerja kamu ke platform WorkSim.</p>
+        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Upload link GitHub atau preview hasil
+          kerja kamu ke platform WorkSim.</p>
       </div>
       <div class="text-center">
-        <div class="w-14 h-14 rounded-2xl bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center text-emerald-600 text-2xl mx-auto mb-4 shadow-sm">
+        <div
+          class="w-14 h-14 rounded-2xl bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center text-emerald-600 text-2xl mx-auto mb-4 shadow-sm">
           <i class="fa-solid fa-star"></i>
         </div>
         <div class="text-xs font-bold uppercase tracking-widest text-emerald-600 mb-1">04</div>
         <h3 class="font-bold text-slate-900 dark:text-white mb-1.5">Dapat Feedback</h3>
-        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Terima feedback detail dan XP reward berdasarkan kualitas hasil kerja.</p>
+        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Terima feedback detail dan XP reward
+          berdasarkan kualitas hasil kerja.</p>
       </div>
     </div>
   </section>
 
   <div id="footer-placeholder"></div>
 </body>
+
 </html>

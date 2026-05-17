@@ -102,6 +102,7 @@ Animasi elemen yang muncul saat pengguna menggulir, menggunakan `IntersectionObs
 ```
 worksim_cli/
 ├── index.html                     # Beranda
+├── README.md                      # Dokumentasi proyek
 ├── package.json                   # Konfigurasi npm & dependensi
 ├── package-lock.json
 ├── .gitignore
@@ -111,8 +112,15 @@ worksim_cli/
 │   │   └── WorksimLogo.png
 │   ├── hero/
 │   │   └── phone.png
-│   ├── decor/                     # Dekorasi SVG
-│   └── arrows/                    # SVG panah
+│   ├── decor/
+│   │   ├── blob-soft.svg
+│   │   ├── burst.svg
+│   │   ├── curve-accent.svg
+│   │   └── dots-blue.svg
+│   └── arrows/
+│       ├── curve-down.svg
+│       ├── curve-left.svg
+│       └── curve-right.svg
 │
 ├── css/
 │   ├── input.css                  # Sumber CSS (Tailwind + kustom)
@@ -122,21 +130,27 @@ worksim_cli/
 │   ├── shared.js                  # Navbar, footer, dark mode, scroll reveal
 │   ├── home.js                    # Interaktivitas beranda
 │   ├── login.js                   # Logika login
-│   └── register.js                # Logika register
+│   ├── register.js                # Logika register
+│   ├── ai-career-advisor.js       # Logika kuis AI Career Advisor
+│   └── roadmap-frontend.js        # Logika roadmap Frontend interaktif
 │
 └── pages/
-    ├── login/index.html
-    ├── register/index.html
-    ├── ai-career-advisor/index.html
+    ├── login/
+    │   └── index.html             # Form login (dummy auth)
+    ├── register/
+    │   └── index.html             # Form registrasi
+    ├── ai-career-advisor/
+    │   └── index.html             # Kuis minat karier 3 langkah
     ├── learning-roadmap/
     │   ├── index.html             # Daftar roadmap
     │   └── roadmap-frontend/
     │       ├── index.html         # Roadmap Frontend interaktif
-    │       └── temp.js
+    │       └── temp.js            # Sisa file lama (tidak dipakai)
     ├── career-simulation/
     │   ├── index.html             # Lobby simulasi
     │   └── project-detail.html    # Detail & submit proyek
-    └── skill-passport/index.html
+    └── skill-passport/
+        └── index.html             # Profil gamifikasi
 ```
 
 ---
@@ -225,8 +239,8 @@ Kami sangat terbuka terhadap kontribusi! Karena proyek ini masih dalam tahap awa
 - [ ] Menghubungkan dengan backend / database
 - [ ] Membuat Career Simulation benar-benar fungsional
 - [ ] Menambahkan unit test
-- [ ] Refaktor kode JavaScript agar lebih modular
-- [ ] Memperbaiki tautan navigasi yang belum konsisten
+- [x] Refaktor kode JavaScript agar lebih modular
+- [x] Memperbaiki tautan navigasi yang belum konsisten
 - [ ] Membuat halaman 404 kustom
 - [ ] Optimalisasi performa dan aksesibilitas
 
@@ -272,7 +286,7 @@ Kami sangat terbuka terhadap kontribusi! Karena proyek ini masih dalam tahap awa
 - **Data dummy** — pengguna, XP, badges, dan aktivitas masih berupa data hardcoded
 - **Hanya Frontend roadmap** yang sudah diimplementasikan — roadmap lainnya masih "Coming Soon"
 - **Career Simulation terkunci** — membutuhkan mekanisme leveling yang belum diintegrasikan penuh
-- **Navigasi belum konsisten** — beberapa tautan menggunakan path `features/` tapi direktori sebenarnya adalah `pages/`
+- **Navigasi sudah konsisten** — seluruh tautan footer sudah menggunakan `pages/` bukan `features/`, navbar menggunakan path absolut `/pages/...`
 - **Belum ada environment variable** — `.env` sudah di-`.gitignore` sebagai persiapan
 - **Belum ada test** — test script di `package.json` masih placeholder
 

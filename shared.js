@@ -14,9 +14,9 @@ for (let i = 0; i < scripts.length; i++) {
 }
 
 const NAVBAR_HTML = `
-<header class="sticky top-0 z-30 border-b border-transparent bg-transparent transition-colors duration-300" id="site-header">
-  <div class="mx-auto flex min-h-[88px] w-[98vw] max-w-[1320px] items-center">
-    <div class="hidden w-full items-center justify-between rounded-full border border-[#dbe3f8] bg-[#f7faff] p-2 shadow-[0_10px_26px_rgba(47,91,211,0.14)] lg:flex dark:border-slate-600 dark:bg-[#111c2f]">
+<header class="sticky top-0 z-30 w-full" id="site-header" style="padding: 0 1vw; border-bottom: 1px solid transparent; transition: padding 0.75s cubic-bezier(0.25,0.46,0.45,0.94), background 0.75s cubic-bezier(0.25,0.46,0.45,0.94), border-color 0.75s cubic-bezier(0.25,0.46,0.45,0.94);">
+  <div class="mx-auto flex min-h-[88px] w-full max-w-[1320px] items-center" id="navbar-outer">
+    <div id="navbar-pill" class="hidden w-full items-center justify-between lg:flex" style="border-radius: 9999px; border: 1px solid #dbe3f8; background: #f7faff; padding: 0.5rem; box-shadow: 0 10px 26px rgba(47,91,211,0.14); transition: border-radius 0.75s cubic-bezier(0.25,0.46,0.45,0.94), padding 0.75s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.75s cubic-bezier(0.25,0.46,0.45,0.94), border-color 0.75s cubic-bezier(0.25,0.46,0.45,0.94), background 0.75s cubic-bezier(0.25,0.46,0.45,0.94);">
       <a href="${rootPath}index.html" class="px-4 font-display text-[1.3rem] font-bold tracking-[-0.02em]">Work<span class="text-brand-500">Sim</span></a>
       <nav class="flex items-center gap-1 text-[0.95rem] font-semibold text-slate-600 dark:text-slate-200">
         <a class="rounded-full px-4 py-2 transition hover:bg-[#eaf0ff] dark:hover:bg-white/10" href="${rootPath}index.html">Home</a>
@@ -138,6 +138,62 @@ document.addEventListener('DOMContentLoaded', () => {
       updateIcons(isDark);
     });
   });
+
+  // ─── Navbar Scroll Morph: Capsule → Normal ────────────────────────────────
+  const siteHeader  = document.getElementById('site-header');
+  const navbarOuter = document.getElementById('navbar-outer');
+  const navbarPill  = document.getElementById('navbar-pill');
+
+  const SCROLL_THRESHOLD = 60;
+
+  function applyScrollState(scrolled) {
+    if (!siteHeader || !navbarPill) return;
+    const isDark = html.classList.contains('dark');
+
+    if (scrolled) {
+      // ── Scrolled: full-width flat navbar ──
+      siteHeader.style.padding         = '0';
+      siteHeader.style.background      = isDark ? 'rgba(11,18,32,0.9)' : 'rgba(247,250,255,0.9)';
+      siteHeader.style.borderColor     = isDark ? 'rgba(71,85,105,0.5)' : 'rgba(219,229,248,1)';
+      siteHeader.style.backdropFilter  = 'blur(20px)';
+
+      navbarPill.style.borderRadius = '0';
+      navbarPill.style.borderColor  = 'transparent';
+      navbarPill.style.boxShadow    = 'none';
+      navbarPill.style.padding      = '0.5rem 1.5rem';
+      navbarPill.style.background   = 'transparent';
+    } else {
+      // ── Top: capsule pill ──
+      siteHeader.style.padding         = '0 1vw';
+      siteHeader.style.background      = 'transparent';
+      siteHeader.style.borderColor     = 'transparent';
+      siteHeader.style.backdropFilter  = 'none';
+
+      navbarPill.style.borderRadius = '9999px';
+      navbarPill.style.borderColor  = isDark ? 'rgb(71,85,105)' : '#dbe3f8';
+      navbarPill.style.boxShadow    = '0 10px 26px rgba(47,91,211,0.14)';
+      navbarPill.style.padding      = '0.5rem';
+      navbarPill.style.background   = isDark ? '#111c2f' : '#f7faff';
+    }
+  }
+
+  // Re-apply on dark mode toggle to keep colors consistent
+  const _origUpdateIcons = updateIcons;
+  ['themeToggle', 'themeToggleMobile'].forEach(id => {
+    const btn = document.getElementById(id);
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      // Recompute scroll state after theme switch
+      setTimeout(() => applyScrollState(window.scrollY > SCROLL_THRESHOLD), 0);
+    });
+  });
+
+  window.addEventListener('scroll', () => {
+    applyScrollState(window.scrollY > SCROLL_THRESHOLD);
+  }, { passive: true });
+
+  // Apply on load
+  applyScrollState(window.scrollY > SCROLL_THRESHOLD);
 
   // ─── Scroll Reveal ────────────────────────────────────────────────────────
   const revealEls = document.querySelectorAll('.reveal');

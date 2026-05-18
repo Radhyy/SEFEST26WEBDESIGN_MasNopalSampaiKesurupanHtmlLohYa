@@ -4,31 +4,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Login - WorkSim</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
     rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="shared.js" defer></script>
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ["Plus Jakarta Sans", "sans-serif"],
-            display: ["Sora", "sans-serif"],
-          },
-          colors: {
-            brand: { 50: "#eef3ff", 100: "#dbe5ff", 500: "#2f5bd3", 600: "#1d43b4" },
-          },
-        },
-      },
-    };
-  </script>
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="../../css/output.css" />
+
+  <script src="../../js/shared.js" defer></script>  
+  <script src="../../js/login.js" defer></script>
   <style>
     /* Animated Gradient Background */
     .bg-animate {
@@ -76,54 +65,7 @@
       }
     }
   </style>
-  <script>
-    // Inisialisasi Dark Mode
-    if (localStorage.getItem("theme") === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    function toggleTheme() {
-      if (document.documentElement.classList.contains("dark")) {
-        document.documentElement.classList.remove("dark");
-        localStorage.setItem("theme", "light");
-      } else {
-        document.documentElement.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-      }
-    }
-    
-    function togglePassword(inputId, iconContainer) {
-      const input = document.getElementById(inputId);
-      const icon = iconContainer.querySelector("i");
-      if (input.type === "password") {
-        input.type = "text";
-        icon.classList.remove("fa-eye");
-        icon.classList.add("fa-eye-slash");
-      } else {
-        input.type = "password";
-        icon.classList.remove("fa-eye-slash");
-        icon.classList.add("fa-eye");
-      }
-    }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const form = document.getElementById("loginForm");
-      if (form) {
-        form.addEventListener("submit", (e) => {
-          e.preventDefault();
-          const email = document.getElementById("email").value;
-          const pwd = document.getElementById("password").value;
-          
-          if (email === "budi@worksim.id" && pwd === "password123") {
-            window.location.href = "features/skill-passport/index.html";
-          } else {
-            alert("Email atau password salah!\nGunakan akun dummy:\nEmail: budi@worksim.id\nPassword: password123");
-          }
-        });
-      }
-    });
-  </script>
 </head>
 
 <body
@@ -132,11 +74,11 @@
   <div id="navbar-placeholder"></div>
 
   <!-- Logo Dekorasi Kanan Tengah -->
-  <img src="assets/logo/WorksimLogo.png" alt="" class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] lg:w-[800px] opacity-30 pointer-events-none dark:hidden" />
-  <img src="assets/logo/WorksimLogo.png" alt="" class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] lg:w-[800px] opacity-30 pointer-events-none hidden dark:block" />
+  <img src="/assets/logo/WorksimLogo.png" alt="" class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 w-150 lg:w-200 opacity-30 pointer-events-none dark:hidden" />
+  <img src="/assets/logo/WorksimLogo.png" alt="" class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 w-150 lg:w-200 opacity-30 pointer-events-none hidden dark:block" />
 
   <!-- Konten Utama: Form Login -->
-  <main class="flex-grow flex items-center justify-center p-4 relative z-10">
+  <main class="grow flex items-center justify-center p-4 relative z-10">
     <div class="w-full max-w-md">
 
       <!-- Card Container dengan Glassmorphism -->
@@ -200,9 +142,9 @@
 
         <!-- Divider -->
         <div class="mt-8 relative flex items-center">
-          <div class="flex-grow border-t border-slate-200 dark:border-slate-700"></div>
-          <span class="flex-shrink-0 mx-4 text-slate-400 text-sm">Atau masuk dengan</span>
-          <div class="flex-grow border-t border-slate-200 dark:border-slate-700"></div>
+          <div class="grow border-t border-slate-200 dark:border-slate-700"></div>
+          <span class="shrink-0 mx-4 text-slate-400 text-sm">Atau masuk dengan</span>
+          <div class="grow border-t border-slate-200 dark:border-slate-700"></div>
         </div>
 
         <!-- Social Login -->

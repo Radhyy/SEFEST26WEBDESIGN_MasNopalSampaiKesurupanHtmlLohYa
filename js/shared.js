@@ -148,8 +148,8 @@ function escapeHTML(value) {
 function getAuthActionsHTML(user) {
   if (!user) {
     return `
-        <a class="inline-flex items-center rounded-full border border-[#dbe3f8] bg-white px-5 py-2.5 text-sm font-bold text-slate-900 transition hover:bg-brand-50 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100" href="/pages/login/">Login</a>
-        <a class="inline-flex items-center gap-2 rounded-full bg-linear-to-br from-brand-500 to-[#3f6ef0] px-5 py-2.5 text-sm font-bold text-white shadow-brand-sm transition hover:-translate-y-0.5 hover:shadow-brand-md" href="/pages/register/">
+        <a class="inline-flex min-h-11 items-center rounded-full border border-[#dbe3f8] bg-white px-5 py-2.5 text-sm font-bold text-slate-900 transition hover:bg-brand-50 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100" href="/pages/login/">Login</a>
+        <a class="inline-flex min-h-11 items-center gap-2 rounded-full bg-linear-to-br from-brand-500 to-[#3f6ef0] px-5 py-2.5 text-sm font-bold text-white shadow-brand-sm transition hover:-translate-y-0.5 hover:shadow-brand-md" href="/pages/register/">
           <i class="fa-solid fa-rocket"></i> Mulai Sekarang
         </a>`;
   }
@@ -157,7 +157,7 @@ function getAuthActionsHTML(user) {
   const name = escapeHTML(user.name);
   const avatar = escapeHTML(user.avatar || createAvatar(user.name));
   return `
-        <a class="inline-flex items-center gap-2 rounded-full border border-[#dbe3f8] bg-white py-1.5 pl-2 pr-4 text-sm font-bold text-slate-900 transition hover:bg-brand-50 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100" href="/pages/skill-passport/" aria-label="Buka profil ${name}">
+        <a class="inline-flex min-h-11 items-center gap-2 rounded-full border border-[#dbe3f8] bg-white py-1.5 pl-2 pr-4 text-sm font-bold text-slate-900 transition hover:bg-brand-50 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100" href="/pages/skill-passport/" aria-label="Buka profil ${name}">
           <img src="${avatar}" alt="${name}" class="h-8 w-8 rounded-full border border-[#dbe3f8] bg-brand-50 object-cover">
           <span class="truncate" style="max-width: 8rem;">${name}</span>
         </a>
@@ -168,13 +168,13 @@ function getAuthActionsHTML(user) {
 
 function getMobileAuthActionsHTML(user) {
   if (!user) {
-    return `<a class="inline-flex items-center rounded-full bg-linear-to-br from-brand-500 to-[#3f6ef0] px-4 py-2.5 text-sm font-bold text-white" href="/pages/login/">Mulai</a>`;
+    return `<a class="inline-flex min-h-10 items-center rounded-full bg-linear-to-br from-brand-500 to-[#3f6ef0] px-4 py-2.5 text-sm font-bold text-white" href="/pages/login/">Mulai</a>`;
   }
 
   const name = escapeHTML(user.name);
   const avatar = escapeHTML(user.avatar || createAvatar(user.name));
   return `
-        <a class="inline-flex items-center gap-2 rounded-full border border-[#dbe3f8] bg-white py-1.5 pl-1.5 pr-3 text-xs font-bold text-slate-900 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100" style="max-width: 9.5rem;" href="/pages/skill-passport/" aria-label="Buka profil ${name}">
+        <a class="inline-flex min-h-10 items-center gap-2 rounded-full border border-[#dbe3f8] bg-white py-1.5 pl-1.5 pr-3 text-xs font-bold text-slate-900 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100" style="max-width: 9.5rem;" href="/pages/skill-passport/" aria-label="Buka profil ${name}">
           <img src="${avatar}" alt="${name}" class="h-7 w-7 rounded-full border border-[#dbe3f8] bg-brand-50 object-cover">
           <span class="truncate">${name}</span>
         </a>
@@ -185,7 +185,7 @@ function getMobileAuthActionsHTML(user) {
 
 const NAVBAR_HTML = `
 <header class="sticky top-0 z-30 w-full" id="site-header" style="padding: 0 1vw; border-bottom: 1px solid transparent; transition: padding 0.75s cubic-bezier(0.25,0.46,0.45,0.94), background 0.75s cubic-bezier(0.25,0.46,0.45,0.94), border-color 0.75s cubic-bezier(0.25,0.46,0.45,0.94);">
-  <div class="mx-auto flex min-h-22 w-full max-w-330 items-center" id="navbar-outer">
+  <div class="mx-auto flex min-h-18 w-full max-w-310 items-center px-4 sm:px-6 lg:min-h-22 lg:px-0 2xl:max-w-330" id="navbar-outer">
     <div id="navbar-pill" class="hidden w-full items-center justify-between lg:flex" style="border-radius: 9999px; border: 1px solid #dbe3f8; background: #f7faff; padding: 0.5rem; box-shadow: 0 10px 26px rgba(47,91,211,0.14); transition: border-radius 0.75s cubic-bezier(0.25,0.46,0.45,0.94), padding 0.75s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.75s cubic-bezier(0.25,0.46,0.45,0.94), border-color 0.75s cubic-bezier(0.25,0.46,0.45,0.94), background 0.75s cubic-bezier(0.25,0.46,0.45,0.94);">
       <a href="/" class="px-4 font-display text-[1.3rem] font-bold tracking-[-0.02em]">Work<span class="text-brand-500">Sim</span></a>
       <nav class="flex items-center gap-1 text-[0.95rem] font-semibold text-slate-600 dark:text-slate-200">
@@ -202,8 +202,8 @@ const NAVBAR_HTML = `
         <div id="authActions" class="flex items-center gap-2"></div>
       </div>
     </div>
-    <div class="flex w-full items-center justify-between lg:hidden">
-      <a href="/" class="font-display text-[1.3rem] font-bold tracking-[-0.02em]">Work<span class="text-brand-500">Sim</span></a>
+    <div class="flex w-full items-center justify-between rounded-full border border-[#dbe3f8]/80 bg-white/85 px-3 py-2 shadow-[0_10px_26px_rgba(47,91,211,0.10)] backdrop-blur lg:hidden dark:border-slate-700/80 dark:bg-slate-900/85">
+      <a href="/" class="inline-flex min-h-10 items-center font-display text-[1.3rem] font-bold tracking-[-0.02em]">Work<span class="text-brand-500">Sim</span></a>
       <div class="flex items-center gap-2">
         <button id="themeToggleMobile" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#b8cdfa] bg-[#e3edff] text-brand-500 dark:border-slate-500 dark:bg-slate-900 dark:text-[#ffd166]" aria-label="Ganti tema mobile">
           <i id="themeIconMobile" class="fa-solid fa-moon text-sm"></i>
@@ -218,11 +218,11 @@ const FOOTER_HTML = `
 <footer id="kontak" class="relative overflow-hidden border-t border-[#dce5fb] bg-linear-to-b from-[#f7faff] to-brand-50 py-8 pb-7 dark:border-slate-700 dark:from-[#0a1020] dark:to-[#111c2f]">
   <div class="pointer-events-none absolute -left-24 top-0 h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(47,91,211,0.14)_0%,transparent_72%)] dark:opacity-30"></div>
   <div class="pointer-events-none absolute -right-20 -bottom-16 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(23,190,187,0.12)_0%,transparent_70%)] dark:opacity-30"></div>
-  <div class="mx-auto w-[98vw] max-w-330">
-    <div class="rounded-[28px] border border-white/70 bg-white/80 p-6 shadow-[0_14px_40px_rgba(20,24,38,0.07)] backdrop-blur lg:p-8 dark:border-slate-700 dark:bg-slate-900/80">
-      <div class="grid gap-8 lg:grid-cols-[1.15fr_0.85fr_0.7fr_0.65fr] lg:items-start">
+  <div class="wide-page">
+    <div class="rounded-[28px] border border-white/70 bg-white/80 p-5 shadow-[0_14px_40px_rgba(20,24,38,0.07)] backdrop-blur sm:p-6 lg:p-8 dark:border-slate-700 dark:bg-slate-900/80">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.15fr_0.85fr_0.7fr_0.65fr] lg:items-start">
         <div>
-          <a href="${rootPath}" class="inline-flex items-center font-display text-[1.3rem] font-bold tracking-[-0.02em]">
+          <a href="${rootPath}" class="inline-flex min-h-10 items-center font-display text-[1.3rem] font-bold tracking-[-0.02em]">
             <img src="${rootPath}assets/logo/WorksimLogo.webp" alt="Logo WorkSim" class="h-15 w-15">
             Work<span class="text-brand-500">Sim</span>
           </a>
@@ -235,11 +235,11 @@ const FOOTER_HTML = `
         <div>
           <p class="mb-4 text-sm font-bold uppercase tracking-[0.08em] text-brand-500">Navigasi</p>
           <div class="grid gap-3 text-[0.95rem] text-slate-600 dark:text-slate-300">
-            <a class="transition hover:text-brand-500" href="${rootPath}index.html">Home</a>
-            <a class="transition hover:text-brand-500" href="${rootPath}pages/ai-career-advisor/">AI Advisor</a>
-            <a class="transition hover:text-brand-500" href="${rootPath}pages/learning-roadmap/">Roadmap</a>
-            <a class="transition hover:text-brand-500" href="${rootPath}pages/career-simulation/">Simulasi</a>
-            <a class="transition hover:text-brand-500" href="${rootPath}pages/skill-passport/">Skill Passport</a>
+            <a class="inline-flex min-h-10 items-center transition hover:text-brand-500" href="${rootPath}index.html">Home</a>
+            <a class="inline-flex min-h-10 items-center transition hover:text-brand-500" href="${rootPath}pages/ai-career-advisor/">AI Advisor</a>
+            <a class="inline-flex min-h-10 items-center transition hover:text-brand-500" href="${rootPath}pages/learning-roadmap/">Roadmap</a>
+            <a class="inline-flex min-h-10 items-center transition hover:text-brand-500" href="${rootPath}pages/career-simulation/">Simulasi</a>
+            <a class="inline-flex min-h-10 items-center transition hover:text-brand-500" href="${rootPath}pages/skill-passport/">Skill Passport</a>
           </div>
         </div>
         <div>
@@ -262,7 +262,7 @@ const FOOTER_HTML = `
           </div>
         </div>
       </div>
-      <div class="mt-8 flex flex-col gap-3 border-t border-[#e7edfb] pt-5 text-sm text-slate-500 lg:flex-row lg:items-center lg:justify-between dark:border-slate-700 dark:text-slate-400">
+      <div class="mt-8 flex flex-col gap-3 border-t border-[#e7edfb] pt-5 text-sm text-slate-500 xl:flex-row xl:items-center xl:justify-between dark:border-slate-700 dark:text-slate-400">
         <p>&copy; 2026 WorkSim. Dibangun untuk membantu perjalanan karier digital jadi lebih terarah.</p>
         <p class="inline-flex items-center gap-2"><i class="fa-solid fa-sparkles text-brand-500"></i> Belajar, progres, dan eksplorasi dalam satu tempat</p>
       </div>
@@ -290,7 +290,18 @@ document.addEventListener("DOMContentLoaded", () => {
   ["logoutButton", "logoutButtonMobile"].forEach((id) => {
     const btn = document.getElementById(id);
     if (!btn) return;
-    btn.addEventListener("click", logoutUser);
+    btn.addEventListener("click", async () => {
+      const result = await Swal.fire({
+        title: "Keluar dari akun?",
+        text: "Kamu akan keluar dari sesi akun saat ini dan perlu login kembali untuk mengakses dashboard serta fitur lainnya. Pastikan semua pekerjaanmu sudah tersimpan sebelum melanjutkan.",
+        confirmButtonText: "Keluar",
+        cancelButtonText: "Batal",
+      });
+
+      if (result.isConfirmed) {
+        logoutUser();
+      }
+    });
   });
 
   // Active Nav Highlight

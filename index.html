@@ -23,7 +23,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="./css/output.css" />
 
-  <script src="./js/shared.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  <script src="/js/alert.js" defer></script>
+  <script src="/js/shared.js" defer></script>
   <script src="./js/home.js" defer></script>
 </head>
 
@@ -44,21 +46,21 @@
         src="/assets/decor/dots-blue.svg" alt="" aria-hidden="true" />
       <img class="pointer-events-none absolute right-[6%] top-[42%] -z-10 hidden w-40 opacity-65 lg:block"
         src="/assets/decor/blob-soft.svg" alt="" aria-hidden="true" />
-      <div class="reveal translate-y-6 opacity-0 transition-all duration-700">
+      <div class="reveal max-w-135 translate-y-6 opacity-0 transition-all duration-700 lg:pl-2 xl:pl-6">
         <p class="eyebrow">
           <i class="fa-solid fa-sparkles"></i>
           Platform Karier Digital Modern
         </p>
-        <h1 class="font-display text-[clamp(2.35rem,4.8vw,4.1rem)] leading-[1.1] tracking-[-0.03em]">Temukan <span
+        <h1 class="font-display text-[clamp(2.2rem,3.15vw,3.15rem)] leading-[1.09] tracking-[-0.01em]">Temukan <span
             class="text-brand-500">arah karier</span> yang paling cocok dengan potensi kamu</h1>
-        <p class="mt-4 max-w-[55ch] text-slate-500">Dari minat, skill, hingga kepribadian, sistem akan merekomendasikan
+        <p class="mt-4 max-w-[52ch] text-[0.95rem] leading-7 text-slate-500 lg:text-[0.98rem]">Dari minat, skill, hingga kepribadian, sistem akan merekomendasikan
           jalur terbaik dan roadmap belajar yang jelas.</p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a class="btn-primary" href="/pages/ai-career-advisor/">
+        <div class="mobile-stack-actions mt-6">
+          <a class="btn-primary touch-target w-full sm:w-auto" href="/pages/ai-career-advisor/">
             Coba Career Check
             <i class="fa-solid fa-arrow-right"></i>
           </a>
-          <a class="btn-secondary" href="#roadmap">
+          <a class="btn-secondary touch-target w-full sm:w-auto" href="#roadmap">
             <i class="fa-solid fa-play"></i>
             Lihat Demo Roadmap
           </a>
@@ -81,15 +83,18 @@
       </div>
 
       <div
-        class="reveal relative flex w-full justify-center translate-y-6 opacity-0 transition-all duration-700 lg:block lg:max-w-140 lg:justify-self-end">
+        class="reveal relative flex w-full justify-center translate-y-6 opacity-0 transition-all duration-700 lg:block lg:max-w-150 lg:justify-self-center xl:max-w-165">
+        <div
+          class="pointer-events-none absolute left-1/2 top-1/2 -z-10 hidden h-82 w-82 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-100/55 blur-2xl lg:block dark:bg-brand-900/25">
+        </div>
         <img
-          class="mx-auto h-auto w-[85%] max-w-85 object-contain transition-transform duration-500 hover:scale-105 lg:max-w-105"
+          class="mx-auto h-auto w-[74%] max-w-78 object-contain transition-transform duration-500 hover:scale-105 sm:max-w-86 lg:w-[86%] lg:max-w-118 xl:max-w-128"
           src="/assets/hero/phone.webp" alt="Aplikasi WorkSim" />
       </div>
     </section>
 
     <section
-      class="reveal container-page translate-y-6 pt-10 pb-14 opacity-0 transition-all duration-700 lg:pt-14 lg:pb-24">
+      class="reveal wide-page translate-y-6 pt-10 pb-14 opacity-0 transition-all duration-700 lg:pt-14 lg:pb-24">
       <h2 class="mb-7 font-display text-[clamp(1.45rem,2.5vw,2.1rem)]">Alur Belajar yang Simpel dan Terarah</h2>
       <div class="relative grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         <article class="step-card">
@@ -149,7 +154,7 @@
               kecocokan spesifik</li>
           </ul>
 
-          <a href="/pages/ai-career-advisor/" class="btn-primary-lg">
+          <a href="/pages/ai-career-advisor/" class="btn-primary-lg touch-target w-full justify-center sm:w-auto">
             Coba Analisis AI <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
@@ -262,7 +267,7 @@
               di setiap bab</li>
           </ul>
 
-          <a href="/pages/learning-roadmap/" class="btn-primary-lg">
+          <a href="/pages/learning-roadmap/" class="btn-primary-lg touch-target w-full justify-center sm:w-auto">
             Eksplor Roadmap <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
@@ -289,7 +294,7 @@
               nyata yang siap dipamerkan</li>
           </ul>
 
-          <a href="/pages/career-simulation/" class="btn-primary-lg">
+          <a href="/pages/career-simulation/" class="btn-primary-lg touch-target w-full justify-center sm:w-auto">
             Mulai Simulasi <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
@@ -393,7 +398,7 @@
               portfolio yang interaktif</li>
           </ul>
 
-          <a href="/pages/skill-passport/" class="btn-primary-lg">
+          <a href="/pages/skill-passport/" class="btn-primary-lg touch-target w-full justify-center sm:w-auto">
             Lihat Passport <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
@@ -402,23 +407,23 @@
     </section>
 
     <section
-      class="reveal mx-auto my-10 flex justify-between w-[98vw] max-w-330 translate-y-6 gap-5 rounded-3xl bg-linear-to-br from-brand-500 via-[#315ed6] to-[#2c7ac2] p-15 text-white opacity-0 shadow-brand-sm transition-all duration-700 lg:my-12 lg:grid-cols-[1.3fr_0.9fr] dark:from-brand-900 dark:via-[#0a1848] dark:to-[#061030]">
+      class="reveal wide-page my-10 grid translate-y-6 gap-6 rounded-3xl bg-linear-to-br from-brand-500 via-[#315ed6] to-[#2c7ac2] p-5 text-white opacity-0 shadow-brand-sm transition-all duration-700 sm:p-8 lg:my-12 lg:grid-cols-[1.25fr_0.75fr] lg:p-12 dark:from-brand-900 dark:via-[#0a1848] dark:to-[#061030]">
       <div>
         <h2 class="mb-2 font-display text-[clamp(1.4rem,2.7vw,2rem)]">Dapatkan update karier tiap minggu</h2>
         <p class="max-w-[55ch] text-[#dfe9ff] dark:text-slate-400">Tips belajar, trend industri, dan challenge mingguan
           langsung ke inbox
           kamu.</p>
-        <form class="mt-4 flex flex-wrap gap-2.5">
+        <form class="mt-4 flex flex-col gap-2.5 sm:flex-row">
           <input
-            class="min-w-55 flex-1 rounded-xl border-0 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 shadow-sm outline-none dark:bg-slate-800 dark:text-slate-100 dark:placeholder-slate-500"
+            class="min-w-0 flex-1 rounded-xl border-0 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 shadow-sm outline-none dark:bg-slate-800 dark:text-slate-100 dark:placeholder-slate-500"
             type="email" placeholder="Masukkan email" aria-label="Email" />
-          <button type="button" class="btn-primary">
+          <button type="button" class="btn-primary touch-target justify-center">
             Kirim
             <i class="fa-solid fa-paper-plane"></i>
           </button>
         </form>
       </div>
-      <img class="max-h-62.5 rounded-2xl object-cover"
+      <img class="hidden h-full max-h-62.5 w-full rounded-2xl object-cover sm:block"
         src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80"
         alt="Tim mentor dan komunitas" />
     </section>

@@ -4,4 +4,6 @@ node_modules/
 dist/
 build/
 .playwright-mcp/
+.playwright-cli/
 css/output.css
+output/

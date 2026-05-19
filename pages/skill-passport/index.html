@@ -21,7 +21,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="../../css/output.css" />
 
-  <script src="../../js/shared.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  <script src="/js/alert.js" defer></script>
+  <script src="/js/shared.js" defer></script>
   <style>
     /* Radar Chart Background Simulation (Hexagon CSS trick) */
     .radar-bg {
@@ -39,7 +41,7 @@
 
   <div id="navbar-placeholder"></div>
 
-  <main class="grow mx-auto w-full max-w-6xl px-4 sm:px-6 py-8">
+  <main class="grow content-page py-6 sm:py-8">
 
     <!-- Hero / Profile Header -->
     <div
@@ -50,11 +52,11 @@
       </div>
 
       <!-- Profile Info -->
-      <div class="px-6 pb-6 relative flex flex-col sm:flex-row sm:items-center justify-between gap-6 mt-0">
+      <div class="px-4 pb-5 relative flex flex-col sm:flex-row sm:items-center justify-between gap-6 mt-0 sm:px-6 sm:pb-6">
         <div class="flex flex-col sm:flex-row sm:items-center gap-5">
           <!-- Avatar -->
           <div
-            class="w-24 h-24 sm:w-28 sm:h-28 rounded-[1.5rem] border-4 border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-700 shadow-lg flex items-center justify-center text-4xl overflow-hidden relative shrink-0 -mt-12 sm:-mt-16 z-10">
+            class="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl border-4 border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-700 shadow-lg flex items-center justify-center text-4xl overflow-hidden relative shrink-0 -mt-12 sm:-mt-16 z-10">
             <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=BudiSantoso&backgroundColor=b6e3f4"
               alt="Budi Santoso" class="w-full h-full object-cover">
           </div>
@@ -66,13 +68,13 @@
                 class="fa-solid fa-location-dot text-xs"></i> Jakarta</p>
           </div>
         </div>
-        <div class="flex gap-3 sm:pt-4">
+        <div class="grid w-full grid-cols-1 gap-3 sm:w-auto sm:grid-cols-2 sm:pt-4">
           <button
-            class="inline-flex items-center gap-2 rounded-xl bg-slate-100 dark:bg-slate-700 px-4 py-2.5 text-sm font-semibold text-slate-700 dark:text-slate-300 transition-colors hover:bg-slate-200 dark:hover:bg-slate-600">
+            class="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-slate-100 dark:bg-slate-700 px-4 py-2.5 text-sm font-semibold text-slate-700 dark:text-slate-300 transition-colors hover:bg-slate-200 dark:hover:bg-slate-600">
             <i class="fa-solid fa-share-nodes"></i> Bagikan
           </button>
           <a href="../../pages/learning-roadmap/"
-            class="inline-flex items-center gap-2 rounded-xl bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-brand-600 hover:-translate-y-0.5 shadow-lg shadow-brand-500/30">
+            class="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-brand-600 hover:-translate-y-0.5 shadow-lg shadow-brand-500/30">
             Lanjut Belajar
           </a>
         </div>
@@ -130,11 +132,11 @@
 
         <!-- Badges & Pencapaian -->
         <div class="rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-6 shadow-sm">
-          <div class="flex justify-between items-center mb-5">
+          <div class="flex flex-wrap justify-between items-center gap-3 mb-5">
             <h3 class="font-bold text-slate-900 dark:text-white">Pencapaian</h3>
-            <button class="text-xs font-semibold text-brand-500 hover:text-brand-600">Lihat Semua</button>
+            <button class="inline-flex min-h-9 items-center text-xs font-semibold text-brand-500 hover:text-brand-600">Lihat Semua</button>
           </div>
-          <div class="grid grid-cols-3 gap-3">
+          <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
             <div class="flex flex-col items-center text-center gap-2 group cursor-pointer">
               <div
                 class="w-14 h-14 rounded-full bg-amber-100 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 flex items-center justify-center text-amber-500 text-xl transition-transform group-hover:scale-110 shadow-sm shadow-amber-500/20">
@@ -216,7 +218,7 @@
 
             <!-- Radar Mockup -->
             <div
-              class="relative aspect-square w-full max-w-[200px] mx-auto radar-bg rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center overflow-hidden">
+              class="relative aspect-square w-full max-w-50 mx-auto radar-bg rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center overflow-hidden">
               <!-- Polygon / Shape -->
               <svg viewBox="0 0 100 100" class="absolute inset-0 w-full h-full p-4">
                 <!-- Grid Lines -->
@@ -247,18 +249,18 @@
 
         <!-- Histori Project & Task -->
         <div class="rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-6 shadow-sm">
-          <div class="flex justify-between items-center mb-6">
+          <div class="flex flex-col gap-4 mb-6 sm:flex-row sm:items-center sm:justify-between">
             <h3 class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
               <i class="fa-solid fa-list-check text-brand-500"></i> Riwayat Penyelesaian
             </h3>
             <!-- Tabs -->
-            <div class="flex gap-1 bg-slate-100 dark:bg-slate-900 rounded-lg p-1">
+            <div class="scroll-tabs bg-slate-100 dark:bg-slate-900">
               <button
-                class="px-3 py-1 text-xs font-semibold bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded shadow-sm">Semua</button>
+                class="inline-flex min-h-9 shrink-0 items-center rounded bg-white px-3 py-1 text-xs font-semibold text-slate-900 shadow-sm dark:bg-slate-800 dark:text-white">Semua</button>
               <button
-                class="px-3 py-1 text-xs font-semibold text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">Roadmap</button>
+                class="inline-flex min-h-9 shrink-0 items-center px-3 py-1 text-xs font-semibold text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">Roadmap</button>
               <button
-                class="px-3 py-1 text-xs font-semibold text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">Simulasi</button>
+                class="inline-flex min-h-9 shrink-0 items-center px-3 py-1 text-xs font-semibold text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">Simulasi</button>
             </div>
           </div>
 

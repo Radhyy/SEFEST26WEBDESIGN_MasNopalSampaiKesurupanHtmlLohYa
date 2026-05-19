@@ -290,7 +290,18 @@ document.addEventListener("DOMContentLoaded", () => {
   ["logoutButton", "logoutButtonMobile"].forEach((id) => {
     const btn = document.getElementById(id);
     if (!btn) return;
-    btn.addEventListener("click", logoutUser);
+    btn.addEventListener("click", async () => {
+      const result = await Swal.fire({
+        title: "Keluar dari akun?",
+        text: "Kamu akan keluar dari sesi akun saat ini dan perlu login kembali untuk mengakses dashboard serta fitur lainnya. Pastikan semua pekerjaanmu sudah tersimpan sebelum melanjutkan.",
+        confirmButtonText: "Keluar",
+        cancelButtonText: "Batal",
+      });
+
+      if (result.isConfirmed) {
+        logoutUser();
+      }
+    });
   });
 
   // Active Nav Highlight

@@ -33,18 +33,27 @@ function togglePassword(inputId, iconContainer) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const registerLink = document.querySelector('a[href="../register/"]');
+  const redirect = new URLSearchParams(window.location.search).get("redirect");
+  if (registerLink && redirect) {
+    registerLink.href = `../register/?redirect=${encodeURIComponent(redirect)}`;
+  }
+
   const form = document.getElementById("loginForm");
   if (form) {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       const email = document.getElementById("email").value;
       const pwd = document.getElementById("password").value;
+      const user = window.WorkSimAuth?.loginUser(email, pwd);
 
-      if (email === "budi@worksim.id" && pwd === "password123") {
-        window.location.href = "features/skill-passport/";
+      if (user) {
+        window.location.href = window.WorkSimAuth.getRedirectTarget(
+          "/pages/skill-passport/",
+        );
       } else {
         alert(
-          "Email atau password salah!\nGunakan akun dummy:\nEmail: budi@worksim.id\nPassword: password123",
+          "Email atau password salah!\nGunakan akun yang sudah didaftarkan atau akun dummy:\nEmail: budi@worksim.id\nPassword: password123",
         );
       }
     });

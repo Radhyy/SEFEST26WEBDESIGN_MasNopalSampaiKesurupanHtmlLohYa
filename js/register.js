@@ -31,3 +31,30 @@ function togglePassword(inputId, iconContainer) {
     icon.classList.add("fa-eye");
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const loginLink = document.querySelector('a[href="../login/"]');
+  const redirect = new URLSearchParams(window.location.search).get("redirect");
+  if (loginLink && redirect) {
+    loginLink.href = `../login/?redirect=${encodeURIComponent(redirect)}`;
+  }
+
+  const form = document.getElementById("registerForm");
+  if (!form) return;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    window.WorkSimAuth?.registerUser({
+      name,
+      email,
+      password,
+    });
+    window.location.href = window.WorkSimAuth.getRedirectTarget(
+      "/pages/skill-passport/",
+    );
+  });
+});

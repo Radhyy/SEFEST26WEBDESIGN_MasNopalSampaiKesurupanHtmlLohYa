@@ -13,6 +13,176 @@ for (let i = 0; i < scripts.length; i++) {
   }
 }
 
+// Demo Auth Helper
+const AUTH_USER_KEY = "worksim_user";
+const AUTH_SESSION_KEY = "worksim_session";
+const DUMMY_USER = {
+  name: "Budi Santoso",
+  email: "budi@worksim.id",
+  password: "password123",
+  avatar:
+    "https://api.dicebear.com/7.x/avataaars/svg?seed=BudiSantoso&backgroundColor=b6e3f4",
+};
+
+const PROTECTED_PATHS = [
+  "/pages/skill-passport",
+  "/pages/career-simulation",
+  "/pages/learning-roadmap",
+  "/pages/ai-career-advisor",
+];
+
+function readJSON(key) {
+  try {
+    return JSON.parse(localStorage.getItem(key));
+  } catch (error) {
+    return null;
+  }
+}
+
+function writeJSON(key, value) {
+  localStorage.setItem(key, JSON.stringify(value));
+}
+
+function createAvatar(name) {
+  const seed = encodeURIComponent((name || "WorkSim User").replace(/\s+/g, ""));
+  return `https://api.dicebear.com/7.x/avataaars/svg?seed=${seed}&backgroundColor=b6e3f4`;
+}
+
+function sanitizeRedirectPath(path) {
+  if (!path) return "/pages/skill-passport/";
+  try {
+    const url = new URL(path, window.location.origin);
+    if (url.origin !== window.location.origin) return "/pages/skill-passport/";
+    return `${url.pathname}${url.search}${url.hash}`;
+  } catch (error) {
+    return "/pages/skill-passport/";
+  }
+}
+
+function getRedirectTarget(fallback = "/pages/skill-passport/") {
+  const params = new URLSearchParams(window.location.search);
+  return sanitizeRedirectPath(params.get("redirect") || fallback);
+}
+
+function isProtectedPath(pathname) {
+  const currentPath = pathname.replace(/\/+$/, "");
+  return PROTECTED_PATHS.some(
+    (path) => currentPath === path || currentPath.startsWith(`${path}/`),
+  );
+}
+
+function getStoredUser() {
+  const storedUser = readJSON(AUTH_USER_KEY);
+  return storedUser && storedUser.email ? storedUser : null;
+}
+
+function getCurrentUser() {
+  const session = readJSON(AUTH_SESSION_KEY);
+  if (!session || !session.email) return null;
+
+  const storedUser = getStoredUser();
+  if (storedUser && storedUser.email === session.email) return storedUser;
+  if (DUMMY_USER.email === session.email) return DUMMY_USER;
+  return null;
+}
+
+function loginUser(email, password) {
+  const normalizedEmail = email.trim().toLowerCase();
+  const storedUser = getStoredUser();
+  const users = [storedUser, DUMMY_USER].filter(Boolean);
+  const matchedUser = users.find(
+    (user) =>
+      user.email.toLowerCase() === normalizedEmail && user.password === password,
+  );
+
+  if (!matchedUser) return null;
+  writeJSON(AUTH_SESSION_KEY, {
+    email: matchedUser.email,
+    loggedInAt: new Date().toISOString(),
+  });
+  return matchedUser;
+}
+
+function registerUser({ name, email, password }) {
+  const user = {
+    name: name.trim(),
+    email: email.trim().toLowerCase(),
+    password,
+    avatar: createAvatar(name),
+  };
+  writeJSON(AUTH_USER_KEY, user);
+  writeJSON(AUTH_SESSION_KEY, {
+    email: user.email,
+    loggedInAt: new Date().toISOString(),
+  });
+  return user;
+}
+
+function logoutUser() {
+  localStorage.removeItem(AUTH_SESSION_KEY);
+  window.location.href = "/";
+}
+
+window.WorkSimAuth = {
+  createAvatar,
+  getCurrentUser,
+  getRedirectTarget,
+  loginUser,
+  logoutUser,
+  registerUser,
+};
+
+if (isProtectedPath(window.location.pathname) && !getCurrentUser()) {
+  const redirect = encodeURIComponent(
+    `${window.location.pathname}${window.location.search}${window.location.hash}`,
+  );
+  window.location.replace(`/pages/login/?redirect=${redirect}`);
+}
+
+function escapeHTML(value) {
+  const div = document.createElement("div");
+  div.textContent = value || "";
+  return div.innerHTML;
+}
+
+function getAuthActionsHTML(user) {
+  if (!user) {
+    return `
+        <a class="inline-flex items-center rounded-full border border-[#dbe3f8] bg-white px-5 py-2.5 text-sm font-bold text-slate-900 transition hover:bg-brand-50 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100" href="/pages/login/">Login</a>
+        <a class="inline-flex items-center gap-2 rounded-full bg-linear-to-br from-brand-500 to-[#3f6ef0] px-5 py-2.5 text-sm font-bold text-white shadow-brand-sm transition hover:-translate-y-0.5 hover:shadow-brand-md" href="/pages/register/">
+          <i class="fa-solid fa-rocket"></i> Mulai Sekarang
+        </a>`;
+  }
+
+  const name = escapeHTML(user.name);
+  const avatar = escapeHTML(user.avatar || createAvatar(user.name));
+  return `
+        <a class="inline-flex items-center gap-2 rounded-full border border-[#dbe3f8] bg-white py-1.5 pl-2 pr-4 text-sm font-bold text-slate-900 transition hover:bg-brand-50 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100" href="/pages/skill-passport/" aria-label="Buka profil ${name}">
+          <img src="${avatar}" alt="${name}" class="h-8 w-8 rounded-full border border-[#dbe3f8] bg-brand-50 object-cover">
+          <span class="truncate" style="max-width: 8rem;">${name}</span>
+        </a>
+        <button id="logoutButton" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#dbe3f8] bg-white text-slate-600 transition hover:text-red-500 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-200" aria-label="Keluar">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </button>`;
+}
+
+function getMobileAuthActionsHTML(user) {
+  if (!user) {
+    return `<a class="inline-flex items-center rounded-full bg-linear-to-br from-brand-500 to-[#3f6ef0] px-4 py-2.5 text-sm font-bold text-white" href="/pages/login/">Mulai</a>`;
+  }
+
+  const name = escapeHTML(user.name);
+  const avatar = escapeHTML(user.avatar || createAvatar(user.name));
+  return `
+        <a class="inline-flex items-center gap-2 rounded-full border border-[#dbe3f8] bg-white py-1.5 pl-1.5 pr-3 text-xs font-bold text-slate-900 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100" style="max-width: 9.5rem;" href="/pages/skill-passport/" aria-label="Buka profil ${name}">
+          <img src="${avatar}" alt="${name}" class="h-7 w-7 rounded-full border border-[#dbe3f8] bg-brand-50 object-cover">
+          <span class="truncate">${name}</span>
+        </a>
+        <button id="logoutButtonMobile" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#dbe3f8] bg-white text-slate-600 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-200" aria-label="Keluar">
+          <i class="fa-solid fa-right-from-bracket text-sm"></i>
+        </button>`;
+}
+
 const NAVBAR_HTML = `
 <header class="sticky top-0 z-30 w-full" id="site-header" style="padding: 0 1vw; border-bottom: 1px solid transparent; transition: padding 0.75s cubic-bezier(0.25,0.46,0.45,0.94), background 0.75s cubic-bezier(0.25,0.46,0.45,0.94), border-color 0.75s cubic-bezier(0.25,0.46,0.45,0.94);">
   <div class="mx-auto flex min-h-22 w-full max-w-330 items-center" id="navbar-outer">
@@ -29,10 +199,7 @@ const NAVBAR_HTML = `
         <button id="themeToggle" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#b8cdfa] bg-[#e3edff] text-brand-500 transition hover:-translate-y-0.5 hover:border-brand-500 dark:border-slate-500 dark:bg-slate-900 dark:text-[#ffd166]" aria-label="Ganti tema">
           <i id="themeIcon" class="fa-solid fa-moon text-base"></i>
         </button>
-        <a class="inline-flex items-center rounded-full border border-[#dbe3f8] bg-white px-5 py-2.5 text-sm font-bold text-slate-900 transition hover:bg-brand-50 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100" href="/pages/login">Login</a>
-        <a class="inline-flex items-center gap-2 rounded-full bg-linear-to-br from-brand-500 to-[#3f6ef0] px-5 py-2.5 text-sm font-bold text-white shadow-brand-sm transition hover:-translate-y-0.5 hover:shadow-brand-md" href="/pages/register">
-          <i class="fa-solid fa-rocket"></i> Mulai Sekarang
-        </a>
+        <div id="authActions" class="flex items-center gap-2"></div>
       </div>
     </div>
     <div class="flex w-full items-center justify-between lg:hidden">
@@ -41,7 +208,7 @@ const NAVBAR_HTML = `
         <button id="themeToggleMobile" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#b8cdfa] bg-[#e3edff] text-brand-500 dark:border-slate-500 dark:bg-slate-900 dark:text-[#ffd166]" aria-label="Ganti tema mobile">
           <i id="themeIconMobile" class="fa-solid fa-moon text-sm"></i>
         </button>
-        <a class="inline-flex items-center rounded-full bg-linear-to-br from-brand-500 to-[#3f6ef0] px-4 py-2.5 text-sm font-bold text-white" href="/pages/login">Mulai</a>
+        <div id="authActionsMobile" class="flex items-center gap-2"></div>
       </div>
     </div>
   </div>
@@ -103,7 +270,7 @@ const FOOTER_HTML = `
   </div>
 </footer>`;
 
-// ─── Inject Components ───────────────────────────────────────────────────────
+// Inject Components
 document.addEventListener("DOMContentLoaded", () => {
   // Inject Navbar before <main> or at top of body
   const navPlaceholder = document.getElementById("navbar-placeholder");
@@ -112,7 +279,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const footerPlaceholder = document.getElementById("footer-placeholder");
   if (footerPlaceholder) footerPlaceholder.outerHTML = FOOTER_HTML;
 
-  // ─── Active Nav Highlight ────────────────────────────────────────────────
+  // Auth-aware Navbar
+  const currentUser = getCurrentUser();
+  const authActions = document.getElementById("authActions");
+  const authActionsMobile = document.getElementById("authActionsMobile");
+  if (authActions) authActions.innerHTML = getAuthActionsHTML(currentUser);
+  if (authActionsMobile) {
+    authActionsMobile.innerHTML = getMobileAuthActionsHTML(currentUser);
+  }
+  ["logoutButton", "logoutButtonMobile"].forEach((id) => {
+    const btn = document.getElementById(id);
+    if (!btn) return;
+    btn.addEventListener("click", logoutUser);
+  });
+
+  // Active Nav Highlight
   const navLinks = document.querySelectorAll("header nav a");
   const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
   navLinks.forEach((link) => {
@@ -122,7 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ─── Dark Mode Toggle ─────────────────────────────────────────────────────
+  // Dark Mode Toggle
   const html = document.documentElement;
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") html.classList.add("dark");

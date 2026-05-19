@@ -1,0 +1,209 @@
+{
+    "Web_Security": {
+        "description": "Web Security adalah praktik melindungi aplikasi web, server, database, dan user dari serangan cyber.",
+        "Hashing_Algorithms": {
+            "description": "Hashing adalah proses mengubah data menjadi string unik menggunakan algoritma tertentu.",
+            "concepts": {
+                "one_way": "Hash tidak bisa dikembalikan ke bentuk asli",
+                "fixed_length": "Output hash memiliki panjang tetap",
+                "deterministic": "Input sama menghasilkan hash sama"
+            },
+            "algorithms": {
+                "MD5": {
+                    "description": "Algoritma hashing lama",
+                    "status": "Tidak aman",
+                    "weakness": [
+                        "Collision attack",
+                        "Cepat dibobol"
+                    ]
+                },
+                "SHA1": {
+                    "description": "Versi lebih baik dari MD5",
+                    "status": "Deprecated",
+                    "weakness": [
+                        "Collision vulnerability"
+                    ]
+                },
+                "SHA256": {
+                    "description": "Hashing modern dari keluarga SHA-2",
+                    "status": "Aman"
+                },
+                "bcrypt": {
+                    "description": "Hashing password dengan salt",
+                    "status": "Recommended untuk password"
+                },
+                "Argon2": {
+                    "description": "Password hashing modern",
+                    "status": "Most secure modern hashing"
+                }
+            },
+            "security_concepts": {
+                "salt": "Random value untuk memperkuat hash",
+                "rainbow_table": "Database hash untuk cracking password",
+                "brute_force": "Mencoba semua kombinasi password"
+            },
+            "use_cases": [
+                "Password Storage",
+                "Data Integrity",
+                "Digital Signature"
+            ],
+            "examples": {
+                "sha256_example": {
+                    "input": "password123",
+                    "output": "ef92b778ba..."
+                },
+                "bcrypt_nodejs": {
+                    "code": "const hash = await bcrypt.hash(password, 10)"
+                },
+                "python_hash": {
+                    "code": "hashlib.sha256(b'hello').hexdigest()"
+                }
+            }
+        },
+        "CORS": {
+            "description": "CORS (Cross-Origin Resource Sharing) adalah mekanisme keamanan browser untuk mengatur akses resource antar domain.",
+            "concepts": {
+                "origin": "Gabungan protocol, domain, dan port",
+                "same_origin_policy": "Browser hanya mengizinkan request dari origin yang sama",
+                "cross_origin": "Request dari domain berbeda"
+            },
+            "headers": {
+                "access_control_allow_origin": "Menentukan domain yang diizinkan",
+                "access_control_allow_methods": "Method HTTP yang diizinkan",
+                "access_control_allow_headers": "Header yang diizinkan"
+            },
+            "common_errors": [
+                "Blocked by CORS policy",
+                "No Access-Control-Allow-Origin header"
+            ],
+            "advantages": [
+                "Mencegah akses sembarangan",
+                "Keamanan browser"
+            ],
+            "disadvantages": [
+                "Sering menyebabkan error development"
+            ],
+            "examples": {
+                "express_cors": {
+                    "code": "app.use(cors())"
+                },
+                "manual_header": {
+                    "code": "Access-Control-Allow-Origin: *"
+                },
+                "frontend_request": {
+                    "scenario": "Frontend localhost:3000 request API localhost:5000"
+                }
+            }
+        },
+        "OWASP_Top_10": {
+            "description": "OWASP Top 10 adalah daftar 10 kerentanan keamanan web paling berbahaya.",
+            "vulnerabilities": {
+                "A01_Broken_Access_Control": {
+                    "description": "User bisa mengakses resource tanpa izin",
+                    "example": "User biasa mengakses admin panel"
+                },
+                "A02_Cryptographic_Failures": {
+                    "description": "Kesalahan enkripsi atau hashing",
+                    "example": "Password disimpan plaintext"
+                },
+                "A03_Injection": {
+                    "description": "Input user dimasukkan langsung ke query",
+                    "example": "SQL Injection"
+                },
+                "A04_Insecure_Design": {
+                    "description": "Desain aplikasi tidak aman",
+                    "example": "Tidak ada rate limiting"
+                },
+                "A05_Security_Misconfiguration": {
+                    "description": "Konfigurasi server salah",
+                    "example": "Debug mode aktif di production"
+                },
+                "A06_Vulnerable_Components": {
+                    "description": "Menggunakan library rentan",
+                    "example": "Pakai package lama yang punya CVE"
+                },
+                "A07_Authentication_Failures": {
+                    "description": "Autentikasi lemah",
+                    "example": "Password terlalu sederhana"
+                },
+                "A08_Software_Data_Integrity_Failures": {
+                    "description": "Update atau software tidak terpercaya",
+                    "example": "Install dependency malicious"
+                },
+                "A09_Security_Logging_Failures": {
+                    "description": "Tidak ada monitoring/logging",
+                    "example": "Serangan tidak terdeteksi"
+                },
+                "A10_Server_Side_Request_Forgery": {
+                    "description": "Server melakukan request ke target internal",
+                    "example": "SSRF ke localhost database"
+                }
+            },
+            "security_practices": [
+                "Input Validation",
+                "Parameterized Query",
+                "HTTPS",
+                "Rate Limiting",
+                "Authentication",
+                "Authorization",
+                "Logging",
+                "Dependency Update"
+            ],
+            "examples": {
+                "sql_injection": {
+                    "unsafe_query": "SELECT * FROM users WHERE username = '"
+                },
+                "safe_query": {
+                    "example": "Prepared Statement / Parameterized Query"
+                },
+                "xss_example": {
+                    "attack": "<script>alert('Hacked')</script>"
+                },
+                "rate_limit_example": {
+                    "scenario": "Limit login attempt 5x per minute"
+                }
+            }
+        },
+        "Security_Best_Practices": {
+            "authentication": [
+                "JWT",
+                "OAuth2",
+                "2FA"
+            ],
+            "password_security": [
+                "bcrypt",
+                "Argon2",
+                "Strong Password"
+            ],
+            "network_security": [
+                "HTTPS",
+                "Firewall",
+                "VPN"
+            ],
+            "application_security": [
+                "Input Validation",
+                "Sanitization",
+                "Escape HTML"
+            ],
+            "server_security": [
+                "Update dependency",
+                "Disable debug mode",
+                "Environment variables"
+            ]
+        },
+        "Real_World_Usage": {
+            "hashing": [
+                "Password login system",
+                "Token verification"
+            ],
+            "cors": [
+                "Frontend React ke backend API"
+            ],
+            "owasp": [
+                "Security audit",
+                "Penetration testing",
+                "Web hardening"
+            ]
+        }
+    }
+}

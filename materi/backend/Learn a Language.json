@@ -1,0 +1,379 @@
+{
+    "Learn_A_Language": {
+        "JavaScript_NodeJS": {
+            "description": "JavaScript adalah bahasa pemrograman utama web development. Node.js memungkinkan JavaScript berjalan di server.",
+            "use_cases": [
+                "Frontend Web",
+                "Backend API",
+                "Realtime App",
+                "Chat Application",
+                "Game Development",
+                "REST API",
+                "Microservices"
+            ],
+            "syntax_basics": {
+                "variables": [
+                    "var",
+                    "let",
+                    "const"
+                ],
+                "data_types": [
+                    "String",
+                    "Number",
+                    "Boolean",
+                    "Object",
+                    "Array",
+                    "Null",
+                    "Undefined"
+                ],
+                "operators": [
+                    "+",
+                    "-",
+                    "*",
+                    "/",
+                    "===",
+                    "!=="
+                ]
+            },
+            "conditions": {
+                "if_else": "if(condition){ } else { }",
+                "switch": "switch(expression){ }"
+            },
+            "loops": {
+                "for": "for(let i=0;i<10;i++)",
+                "while": "while(condition)",
+                "for_of": "for(const item of array)"
+            },
+            "functions": {
+                "normal_function": "function test(){}",
+                "arrow_function": "const test = () => {}"
+            },
+            "oop": {
+                "concepts": [
+                    "Class",
+                    "Object",
+                    "Inheritance",
+                    "Encapsulation",
+                    "Polymorphism"
+                ]
+            },
+            "async_programming": {
+                "concepts": [
+                    "Callback",
+                    "Promise",
+                    "Async Await"
+                ]
+            },
+            "package_manager": [
+                "npm",
+                "yarn",
+                "pnpm"
+            ],
+            "frameworks": [
+                "Express.js",
+                "Next.js",
+                "NestJS",
+                "React",
+                "Vue"
+            ],
+            "advantages": [
+                "Cepat untuk web development",
+                "Fullstack satu bahasa",
+                "Ecosystem besar"
+            ],
+            "disadvantages": [
+                "Type safety lemah",
+                "Callback hell",
+                "Runtime error lebih sering"
+            ],
+            "real_world_usage": [
+                "Netflix",
+                "Discord",
+                "PayPal",
+                "LinkedIn"
+            ],
+            "examples": {
+                "hello_world": {
+                    "code": "console.log('Hello World')"
+                },
+                "api_server": {
+                    "code": "const express=require('express'); const app=express(); app.get('/',(req,res)=>res.send('Hello')); app.listen(3000)"
+                },
+                "async_example": {
+                    "code": "async function getData(){ const res = await fetch('/api') }"
+                }
+            }
+        },
+        "Python": {
+            "description": "Python adalah bahasa general purpose yang populer untuk AI, automation, backend, dan data science.",
+            "use_cases": [
+                "AI",
+                "Machine Learning",
+                "Automation",
+                "Web Backend",
+                "Cybersecurity",
+                "Data Science",
+                "Scripting"
+            ],
+            "syntax_basics": {
+                "variables": [
+                    "x = 10",
+                    "name = 'Python'"
+                ],
+                "data_types": [
+                    "int",
+                    "float",
+                    "str",
+                    "list",
+                    "tuple",
+                    "dict",
+                    "set"
+                ]
+            },
+            "conditions": {
+                "if_else": "if condition: else:"
+            },
+            "loops": {
+                "for": "for i in range(10)",
+                "while": "while condition"
+            },
+            "functions": {
+                "definition": "def test():"
+            },
+            "oop": {
+                "concepts": [
+                    "Class",
+                    "Object",
+                    "Inheritance",
+                    "Method"
+                ]
+            },
+            "async_programming": {
+                "concepts": [
+                    "asyncio",
+                    "threading",
+                    "multiprocessing"
+                ]
+            },
+            "package_manager": [
+                "pip",
+                "poetry"
+            ],
+            "frameworks": [
+                "Django",
+                "Flask",
+                "FastAPI"
+            ],
+            "advantages": [
+                "Syntax mudah",
+                "Bagus untuk AI",
+                "Banyak library"
+            ],
+            "disadvantages": [
+                "Lebih lambat dari Go/C++",
+                "GIL limitation"
+            ],
+            "real_world_usage": [
+                "Instagram",
+                "OpenAI",
+                "YouTube"
+            ],
+            "examples": {
+                "hello_world": {
+                    "code": "print('Hello World')"
+                },
+                "api_example": {
+                    "code": "from flask import Flask\napp = Flask(__name__)\n@app.route('/')\ndef home(): return 'Hello'"
+                },
+                "oop_example": {
+                    "code": "class User:\n  def __init__(self,name):\n    self.name=name"
+                }
+            }
+        },
+        "Go": {
+            "description": "Go adalah bahasa pemrograman modern dari Google yang fokus pada concurrency dan performance.",
+            "use_cases": [
+                "Backend API",
+                "Cloud Computing",
+                "DevOps",
+                "Microservices",
+                "CLI Tools"
+            ],
+            "syntax_basics": {
+                "variables": [
+                    "var x int",
+                    "name := 'Go'"
+                ],
+                "data_types": [
+                    "int",
+                    "string",
+                    "bool",
+                    "struct",
+                    "slice",
+                    "map"
+                ]
+            },
+            "concurrency": {
+                "goroutine": "go function()",
+                "channel": "channel communication"
+            },
+            "package_manager": [
+                "go mod"
+            ],
+            "frameworks": [
+                "Gin",
+                "Fiber",
+                "Echo"
+            ],
+            "advantages": [
+                "Cepat",
+                "Concurrency kuat",
+                "Compiled language"
+            ],
+            "disadvantages": [
+                "Generic dulu terbatas",
+                "Syntax sederhana tapi verbose"
+            ],
+            "real_world_usage": [
+                "Docker",
+                "Kubernetes",
+                "Terraform"
+            ],
+            "examples": {
+                "hello_world": {
+                    "code": "package main\nimport \"fmt\"\nfunc main(){ fmt.Println(\"Hello\") }"
+                },
+                "goroutine_example": {
+                    "code": "go func(){ fmt.Println('Running') }()"
+                },
+                "api_example": {
+                    "code": "r.GET('/', func(c *gin.Context){ c.JSON(200, gin.H{'message':'hello'}) })"
+                }
+            }
+        },
+        "Java": {
+            "description": "Java adalah bahasa enterprise yang stabil dan digunakan untuk backend besar serta Android development.",
+            "use_cases": [
+                "Enterprise Application",
+                "Android",
+                "Banking System",
+                "Backend API"
+            ],
+            "oop": {
+                "concepts": [
+                    "Class",
+                    "Object",
+                    "Interface",
+                    "Abstraction",
+                    "Inheritance"
+                ]
+            },
+            "frameworks": [
+                "Spring Boot",
+                "Hibernate"
+            ],
+            "advantages": [
+                "Stabil",
+                "Enterprise ready",
+                "Strong OOP"
+            ],
+            "disadvantages": [
+                "Verbose",
+                "Memory usage besar"
+            ],
+            "real_world_usage": [
+                "Android",
+                "Banking",
+                "Enterprise ERP"
+            ],
+            "examples": {
+                "hello_world": {
+                    "code": "public class Main { public static void main(String[] args){ System.out.println('Hello'); }}"
+                },
+                "oop_example": {
+                    "code": "class User { String name; }"
+                },
+                "spring_example": {
+                    "code": "@RestController public class App { @GetMapping('/') public String home(){ return 'Hello'; }}"
+                }
+            }
+        },
+        "CSharp": {
+            "description": "C# adalah bahasa dari Microsoft untuk desktop app, game development, dan backend.",
+            "use_cases": [
+                "Game Development",
+                "Desktop App",
+                "Backend API",
+                "Enterprise App"
+            ],
+            "frameworks": [
+                ".NET",
+                "ASP.NET",
+                "Unity"
+            ],
+            "oop": {
+                "concepts": [
+                    "Class",
+                    "Object",
+                    "Interface",
+                    "Polymorphism"
+                ]
+            },
+            "advantages": [
+                "Modern syntax",
+                "Powerful ecosystem",
+                "Strong type safety"
+            ],
+            "disadvantages": [
+                "Lebih berat dibanding Go",
+                "Kurang populer di Linux server"
+            ],
+            "real_world_usage": [
+                "Unity Games",
+                "Microsoft Services",
+                "Enterprise Software"
+            ],
+            "examples": {
+                "hello_world": {
+                    "code": "Console.WriteLine('Hello World');"
+                },
+                "api_example": {
+                    "code": "app.MapGet('/', () => 'Hello World');"
+                },
+                "unity_example": {
+                    "code": "public class Player : MonoBehaviour {}"
+                }
+            }
+        },
+        "Comparison": {
+            "performance": {
+                "fastest": [
+                    "Go",
+                    "Java",
+                    "C#"
+                ],
+                "slowest": [
+                    "Python"
+                ]
+            },
+            "best_for_web": [
+                "JavaScript",
+                "Python",
+                "Go"
+            ],
+            "best_for_enterprise": [
+                "Java",
+                "C#"
+            ],
+            "best_for_ai": [
+                "Python"
+            ],
+            "best_for_concurrency": [
+                "Go"
+            ],
+            "best_for_game_dev": [
+                "C#"
+            ]
+        }
+    }
+}

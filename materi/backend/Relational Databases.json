@@ -1,0 +1,162 @@
+{
+    "Relational_Databases": {
+        "description": "Relational Database menggunakan tabel, row, column, dan SQL untuk menyimpan data terstruktur.",
+        "common_concepts": {
+            "table": "Tempat penyimpanan data",
+            "row": "1 data record",
+            "column": "Field data",
+            "primary_key": "Identifier unik",
+            "foreign_key": "Relasi antar tabel",
+            "index": "Mempercepat query",
+            "sql": "Structured Query Language"
+        },
+        "PostgreSQL": {
+            "description": "PostgreSQL adalah relational database open-source yang powerful dan advanced.",
+            "features": [
+                "ACID Compliance",
+                "JSON Support",
+                "Advanced Query",
+                "Extensions",
+                "Full Text Search"
+            ],
+            "advantages": [
+                "Stabil",
+                "Advanced SQL",
+                "Highly scalable",
+                "Strong concurrency"
+            ],
+            "disadvantages": [
+                "Lebih kompleks",
+                "Memory usage lebih besar"
+            ],
+            "use_cases": [
+                "Enterprise Application",
+                "Financial System",
+                "Analytics",
+                "GIS System"
+            ],
+            "commands": {
+                "connect": "psql -U postgres",
+                "create_database": "CREATE DATABASE app;",
+                "show_tables": "\\dt",
+                "select": "SELECT * FROM users;"
+            },
+            "data_types": [
+                "INTEGER",
+                "TEXT",
+                "BOOLEAN",
+                "JSONB",
+                "TIMESTAMP"
+            ],
+            "examples": {
+                "create_table": {
+                    "query": "CREATE TABLE users(id SERIAL PRIMARY KEY, name TEXT);"
+                },
+                "insert_data": {
+                    "query": "INSERT INTO users(name) VALUES('Radhiyya');"
+                },
+                "select_data": {
+                    "query": "SELECT * FROM users;"
+                }
+            }
+        },
+        "MySQL": {
+            "description": "MySQL adalah relational database populer untuk web development.",
+            "features": [
+                "Fast Query",
+                "Replication",
+                "Transaction",
+                "High Compatibility"
+            ],
+            "advantages": [
+                "Mudah digunakan",
+                "Cepat",
+                "Popular",
+                "Cocok web hosting"
+            ],
+            "disadvantages": [
+                "Advanced feature lebih sedikit dibanding PostgreSQL"
+            ],
+            "use_cases": [
+                "Website",
+                "CMS",
+                "Laravel",
+                "WordPress"
+            ],
+            "commands": {
+                "connect": "mysql -u root -p",
+                "show_database": "SHOW DATABASES;",
+                "show_tables": "SHOW TABLES;"
+            },
+            "storage_engine": [
+                "InnoDB",
+                "MyISAM"
+            ],
+            "examples": {
+                "create_table": {
+                    "query": "CREATE TABLE products(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255));"
+                },
+                "insert": {
+                    "query": "INSERT INTO products(name) VALUES('Laptop');"
+                }
+            }
+        },
+        "MariaDB": {
+            "description": "MariaDB adalah fork MySQL yang open-source dan kompatibel dengan MySQL.",
+            "features": [
+                "MySQL Compatible",
+                "Open Source",
+                "Optimized Performance"
+            ],
+            "advantages": [
+                "Gratis",
+                "Kompatibel MySQL",
+                "Community driven"
+            ],
+            "disadvantages": [
+                "Beberapa enterprise tools fokus ke MySQL"
+            ],
+            "use_cases": [
+                "Shared Hosting",
+                "Linux Server",
+                "Web Application"
+            ],
+            "examples": {
+                "create_database": {
+                    "query": "CREATE DATABASE school;"
+                },
+                "create_table": {
+                    "query": "CREATE TABLE students(id INT PRIMARY KEY, name VARCHAR(100));"
+                }
+            }
+        },
+        "SQL_Concepts": {
+            "crud": {
+                "create": "INSERT",
+                "read": "SELECT",
+                "update": "UPDATE",
+                "delete": "DELETE"
+            },
+            "joins": [
+                "INNER JOIN",
+                "LEFT JOIN",
+                "RIGHT JOIN"
+            ],
+            "normalization": [
+                "1NF",
+                "2NF",
+                "3NF"
+            ],
+            "transactions": [
+                "BEGIN",
+                "COMMIT",
+                "ROLLBACK"
+            ]
+        },
+        "comparison": {
+            "most_advanced": "PostgreSQL",
+            "most_popular": "MySQL",
+            "most_open_source_friendly": "MariaDB"
+        }
+    }
+}

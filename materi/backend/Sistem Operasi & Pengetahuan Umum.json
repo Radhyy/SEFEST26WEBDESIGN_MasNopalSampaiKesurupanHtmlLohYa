@@ -1,0 +1,239 @@
+{
+  "Terminal_Usage": {
+    "description": "Terminal adalah antarmuka berbasis teks untuk berinteraksi dengan sistem operasi.",
+    "topics": {
+      "navigation": [
+        "pwd",
+        "ls",
+        "cd"
+      ],
+      "file_management": [
+        "touch",
+        "mkdir",
+        "rm",
+        "cp",
+        "mv"
+      ],
+      "permissions": [
+        "chmod",
+        "chown"
+      ],
+      "process_monitoring": [
+        "ps",
+        "top",
+        "htop"
+      ],
+      "networking": [
+        "ping",
+        "ip a",
+        "netstat"
+      ],
+      "package_management": [
+        "apt",
+        "yum"
+      ],
+      "docker": [
+        "docker ps",
+        "docker start",
+        "docker stop"
+      ],
+      "git": [
+        "git clone",
+        "git commit",
+        "git push"
+      ]
+    },
+    "examples": {
+      "navigation_example": {
+        "command": "cd /home/user/project",
+        "result": "Pindah ke folder project"
+      },
+      "file_example": {
+        "command": "touch index.html",
+        "result": "Membuat file HTML kosong"
+      },
+      "permission_example": {
+        "command": "chmod 755 app.sh",
+        "result": "Memberi izin execute pada file"
+      },
+      "docker_example": {
+        "command": "docker ps",
+        "result": "Menampilkan container yang sedang berjalan"
+      }
+    }
+  },
+  "How_OS_Works": {
+    "description": "Operating System menghubungkan hardware dengan software dan user.",
+    "components": {
+      "kernel": {
+        "description": "Inti sistem operasi",
+        "functions": [
+          "CPU scheduling",
+          "Memory management",
+          "Device management",
+          "File system management"
+        ]
+      },
+      "shell": {
+        "description": "Interface user dengan OS",
+        "examples": [
+          "Bash",
+          "Zsh",
+          "PowerShell"
+        ]
+      },
+      "file_system": {
+        "description": "Mengatur file dan folder",
+        "linux_directories": [
+          "/home",
+          "/etc",
+          "/var",
+          "/usr"
+        ]
+      }
+    },
+    "boot_process": [
+      "BIOS/UEFI",
+      "Bootloader",
+      "Kernel loading",
+      "Driver loading",
+      "System services",
+      "Login"
+    ],
+    "memory_management": {
+      "concepts": [
+        "RAM",
+        "Virtual Memory",
+        "Swap",
+        "Paging"
+      ]
+    },
+    "cpu_scheduling": {
+      "algorithms": [
+        "FCFS",
+        "Round Robin",
+        "Priority Scheduling"
+      ]
+    },
+    "examples": {
+      "kernel_example": {
+        "scenario": "Saat membuka Chrome",
+        "explanation": "Kernel mengalokasikan RAM dan CPU untuk Chrome"
+      },
+      "memory_example": {
+        "scenario": "RAM penuh",
+        "explanation": "OS menggunakan swap memory pada disk"
+      },
+      "boot_example": {
+        "scenario": "Laptop dinyalakan",
+        "explanation": "BIOS menjalankan bootloader lalu memuat kernel Linux"
+      }
+    }
+  },
+  "Process_Management": {
+    "description": "Process adalah program yang sedang berjalan.",
+    "topics": {
+      "process_lifecycle": [
+        "New",
+        "Ready",
+        "Running",
+        "Waiting",
+        "Terminated"
+      ],
+      "pid": "Process ID",
+      "foreground_background": [
+        "Foreground process",
+        "Background process"
+      ],
+      "daemon": [
+        "nginx",
+        "mysql",
+        "sshd"
+      ],
+      "ipc": [
+        "Pipe",
+        "Socket",
+        "Shared Memory",
+        "Message Queue"
+      ],
+      "context_switching": "Perpindahan CPU antar process"
+    },
+    "examples": {
+      "process_example": {
+        "command": "python app.py",
+        "result": "Menjalankan process Python"
+      },
+      "background_example": {
+        "command": "python app.py &",
+        "result": "Menjalankan process di background"
+      },
+      "kill_example": {
+        "command": "kill -9 1234",
+        "result": "Mematikan process dengan PID 1234"
+      },
+      "daemon_example": {
+        "scenario": "Nginx berjalan di server",
+        "explanation": "Nginx berjalan sebagai daemon/service background"
+      }
+    }
+  },
+  "Threads_and_Concurrency": {
+    "description": "Thread adalah unit eksekusi kecil dalam process.",
+    "topics": {
+      "thread": {
+        "description": "Subtask dalam process"
+      },
+      "multithreading": {
+        "description": "Menjalankan banyak thread"
+      },
+      "concurrency": {
+        "description": "Task berjalan bergantian"
+      },
+      "parallelism": {
+        "description": "Task berjalan bersamaan di multi-core"
+      },
+      "race_condition": {
+        "description": "Data conflict antar thread"
+      },
+      "mutex": {
+        "description": "Lock untuk sinkronisasi"
+      },
+      "deadlock": {
+        "description": "Thread saling menunggu resource"
+      },
+      "async_programming": {
+        "description": "Programming asynchronous"
+      }
+    },
+    "examples": {
+      "thread_example": {
+        "scenario": "Browser membuka video YouTube",
+        "threads": [
+          "UI Thread",
+          "Video Decode Thread",
+          "Network Thread"
+        ]
+      },
+      "race_condition_example": {
+        "code": "counter += 1",
+        "problem": "Dua thread mengubah counter bersamaan sehingga hasil salah"
+      },
+      "mutex_example": {
+        "scenario": "Database transaction",
+        "explanation": "Mutex mencegah dua thread mengedit data bersamaan"
+      },
+      "deadlock_example": {
+        "scenario": "Thread A menunggu resource B, Thread B menunggu resource A",
+        "result": "Program macet"
+      },
+      "async_example": {
+        "javascript_code": "async function getData(){ const res = await fetch('/api') }",
+        "result": "Request berjalan asynchronous"
+      },
+      "parallelism_example": {
+        "scenario": "Render video menggunakan 8 core CPU",
+        "result": "Semua core bekerja bersamaan"
+      }
+    }
+  }
+}

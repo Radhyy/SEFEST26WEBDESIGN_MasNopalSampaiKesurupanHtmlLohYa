@@ -1,0 +1,133 @@
+{
+  "Version_Control": {
+    "description": "Version Control System (VCS) adalah sistem untuk melacak perubahan kode, kolaborasi tim, dan manajemen source code.",
+    "Git": {
+      "description": "Git adalah distributed version control system yang dibuat oleh Linus Torvalds.",
+      "concepts": {
+        "repository": "Tempat penyimpanan source code",
+        "commit": "Snapshot perubahan code",
+        "branch": "Cabang pengembangan",
+        "merge": "Menggabungkan branch",
+        "clone": "Mengambil repository",
+        "pull": "Mengambil update terbaru",
+        "push": "Mengirim perubahan ke remote repository"
+      },
+      "commands": {
+        "git_init": "git init",
+        "git_clone": "git clone <url>",
+        "git_status": "git status",
+        "git_add": "git add .",
+        "git_commit": "git commit -m 'message'",
+        "git_push": "git push origin main",
+        "git_pull": "git pull origin main",
+        "git_branch": "git branch",
+        "git_checkout": "git checkout branch_name",
+        "git_merge": "git merge branch_name"
+      },
+      "workflow": [
+        "Create repository",
+        "Clone repository",
+        "Edit files",
+        "git add",
+        "git commit",
+        "git push"
+      ],
+      "advantages": [
+        "Distributed",
+        "Fast",
+        "Branching powerful",
+        "Offline support"
+      ],
+      "examples": {
+        "clone_repository": {
+          "command": "git clone https://github.com/user/project.git"
+        },
+        "commit_changes": {
+          "command": "git add . && git commit -m 'Update UI'"
+        },
+        "push_changes": {
+          "command": "git push origin main"
+        }
+      }
+    },
+    "GitHub": {
+      "description": "GitHub adalah platform hosting Git berbasis cloud milik Microsoft.",
+      "features": [
+        "Repository Hosting",
+        "Pull Request",
+        "GitHub Actions",
+        "Issues",
+        "CI/CD",
+        "Project Management"
+      ],
+      "use_cases": [
+        "Open Source",
+        "Portfolio",
+        "Team Collaboration",
+        "CI/CD"
+      ],
+      "advantages": [
+        "Popular",
+        "Large community",
+        "Good integrations"
+      ],
+      "examples": {
+        "create_repo": {
+          "steps": [
+            "Login GitHub",
+            "Click New Repository",
+            "Push local repository"
+          ]
+        },
+        "github_actions": {
+          "example": "Auto deploy after push"
+        }
+      }
+    },
+    "GitLab": {
+      "description": "GitLab adalah platform DevOps lengkap untuk repository, CI/CD, monitoring, dan deployment.",
+      "features": [
+        "Repository Hosting",
+        "Built-in CI/CD",
+        "Container Registry",
+        "DevOps Pipeline",
+        "Issue Tracking"
+      ],
+      "advantages": [
+        "CI/CD sangat kuat",
+        "Self-hosted support",
+        "Enterprise ready"
+      ],
+      "use_cases": [
+        "Enterprise DevOps",
+        "CI/CD Pipeline",
+        "Self-hosted Git"
+      ],
+      "examples": {
+        "gitlab_pipeline": {
+          "file": ".gitlab-ci.yml"
+        },
+        "deploy_example": {
+          "scenario": "Auto deploy Docker container setelah push"
+        }
+      }
+    },
+    "Best_Practices": {
+      "commit_messages": [
+        "fix: resolve login bug",
+        "feat: add authentication",
+        "docs: update README"
+      ],
+      "branch_naming": [
+        "feature/login",
+        "fix/navbar",
+        "hotfix/api-error"
+      ],
+      "gitignore": [
+        "node_modules",
+        ".env",
+        "dist"
+      ]
+    }
+  }
+}

@@ -1,0 +1,223 @@
+{
+    "APIs_and_Communication": {
+        "description": "API (Application Programming Interface) adalah mekanisme komunikasi antar aplikasi atau service.",
+        "REST": {
+            "description": "REST (Representational State Transfer) adalah arsitektur API berbasis HTTP.",
+            "concepts": {
+                "resource": "Data atau object yang diakses API",
+                "endpoint": "URL API",
+                "http_methods": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                ],
+                "status_codes": [
+                    "200 OK",
+                    "201 Created",
+                    "400 Bad Request",
+                    "401 Unauthorized",
+                    "404 Not Found",
+                    "500 Internal Server Error"
+                ]
+            },
+            "features": [
+                "Stateless",
+                "HTTP Based",
+                "JSON Response",
+                "Simple Architecture"
+            ],
+            "advantages": [
+                "Mudah dipahami",
+                "Popular",
+                "Compatible dengan banyak platform"
+            ],
+            "disadvantages": [
+                "Overfetching",
+                "Underfetching",
+                "Multiple request"
+            ],
+            "use_cases": [
+                "Mobile App Backend",
+                "CRUD API",
+                "Public API"
+            ],
+            "examples": {
+                "get_users": {
+                    "method": "GET",
+                    "endpoint": "/api/users"
+                },
+                "create_user": {
+                    "method": "POST",
+                    "endpoint": "/api/users",
+                    "body": {
+                        "name": "Radhiyya",
+                        "email": "raa@example.com"
+                    }
+                },
+                "json_response": {
+                    "response": {
+                        "id": 1,
+                        "name": "Radhiyya"
+                    }
+                }
+            }
+        },
+        "GraphQL": {
+            "description": "GraphQL adalah query language untuk API yang dibuat Facebook.",
+            "concepts": {
+                "query": "Mengambil data",
+                "mutation": "Mengubah data",
+                "subscription": "Realtime update"
+            },
+            "features": [
+                "Single Endpoint",
+                "Flexible Query",
+                "Typed Schema",
+                "Efficient Data Fetching"
+            ],
+            "advantages": [
+                "Tidak overfetching",
+                "Flexible",
+                "Frontend friendly"
+            ],
+            "disadvantages": [
+                "Lebih kompleks",
+                "Caching lebih sulit"
+            ],
+            "use_cases": [
+                "Frontend SPA",
+                "Mobile App",
+                "Complex Data Relationship"
+            ],
+            "examples": {
+                "query_example": {
+                    "query": "query { users { id name } }"
+                },
+                "mutation_example": {
+                    "query": "mutation { createUser(name:\"Radhiyya\") { id } }"
+                },
+                "response_example": {
+                    "response": {
+                        "data": {
+                            "users": [
+                                {
+                                    "id": 1,
+                                    "name": "Radhiyya"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "gRPC": {
+            "description": "gRPC adalah high performance RPC framework dari Google menggunakan Protocol Buffers.",
+            "concepts": {
+                "rpc": "Remote Procedure Call",
+                "protobuf": "Protocol Buffers untuk serialization",
+                "service": "Definisi komunikasi service"
+            },
+            "features": [
+                "HTTP/2",
+                "Binary Protocol",
+                "Streaming",
+                "High Performance"
+            ],
+            "advantages": [
+                "Sangat cepat",
+                "Strong typing",
+                "Efficient communication"
+            ],
+            "disadvantages": [
+                "Sulit debug manual",
+                "Tidak readable seperti JSON"
+            ],
+            "use_cases": [
+                "Microservices",
+                "Realtime System",
+                "Internal Service Communication"
+            ],
+            "examples": {
+                "protobuf_example": {
+                    "code": "service UserService { rpc GetUser(UserRequest) returns (UserResponse); }"
+                },
+                "request_example": {
+                    "request": {
+                        "id": 1
+                    }
+                },
+                "response_example": {
+                    "response": {
+                        "id": 1,
+                        "name": "Radhiyya"
+                    }
+                }
+            }
+        },
+        "API_Concepts": {
+            "authentication": [
+                "JWT",
+                "OAuth",
+                "API Key",
+                "Session"
+            ],
+            "authorization": [
+                "Role Based Access",
+                "Permission"
+            ],
+            "security": [
+                "HTTPS",
+                "Rate Limiting",
+                "CORS",
+                "Input Validation"
+            ],
+            "api_design": [
+                "Versioning",
+                "Naming Convention",
+                "Pagination",
+                "Filtering"
+            ],
+            "serialization": [
+                "JSON",
+                "XML",
+                "Protocol Buffers"
+            ]
+        },
+        "Comparison": {
+            "REST": {
+                "best_for": [
+                    "Simple CRUD",
+                    "Public API"
+                ]
+            },
+            "GraphQL": {
+                "best_for": [
+                    "Flexible frontend query",
+                    "Complex relational data"
+                ]
+            },
+            "gRPC": {
+                "best_for": [
+                    "Microservices",
+                    "High performance communication"
+                ]
+            }
+        },
+        "Real_World_Usage": {
+            "REST": [
+                "Twitter API",
+                "GitHub API"
+            ],
+            "GraphQL": [
+                "Facebook",
+                "Shopify"
+            ],
+            "gRPC": [
+                "Google Internal Services",
+                "Kubernetes"
+            ]
+        }
+    }
+}

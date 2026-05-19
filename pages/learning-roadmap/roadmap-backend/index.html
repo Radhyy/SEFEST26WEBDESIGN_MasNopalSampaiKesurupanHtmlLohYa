@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
+  <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+
+  <title>Backend Developer Roadmap - WorkSim</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="../../../css/output.css" />
+
+  <script src="../../../js/shared.js" defer></script>
+  <script src="../../../js/roadmap-backend.js" defer></script>
+  <style>
+    .custom-scrollbar::-webkit-scrollbar {
+      height: 8px;
+      width: 6px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background-color: #cbd5e1;
+      border-radius: 20px;
+    }
+
+    .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+      background-color: #334155;
+    }
+
+    /* Animation for SVG path drawing */
+    .path-draw {
+      stroke-dashoffset: 1000;
+      animation: dash 1.5s ease-out forwards;
+    }
+
+    @keyframes dash {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(200%);
+      }
+    }
+  </style>
+</head>
+
+<body
+  class="overflow-x-hidden bg-[radial-gradient(circle_at_10%_-10%,#e7ecff_0%,#f8fafc_45%)] text-slate-900 transition-colors duration-300 dark:bg-[radial-gradient(circle_at_10%_-10%,#1b2840_0%,#0b1220_45%)] dark:text-slate-100">
+
+  <!-- Navbar Placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <main class="min-h-[calc(100vh-88px)] relative flex flex-col items-center">
+    <!-- Hero / Title -->
+    <section class="relative w-[98vw] max-w-330 px-4 pt-12 pb-8 text-center mt-4">
+      <!-- Back Navigation – pojok kiri, sejajar dengan konten hero -->
+      <div class="absolute left-4 top-12">
+        <a href="../"
+          class="group inline-flex items-center gap-2.5 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-5 py-2.5 text-sm font-semibold text-slate-600 dark:text-slate-300 shadow-sm hover:border-brand-300 hover:text-brand-500 dark:hover:border-brand-600 dark:hover:text-brand-400 hover:shadow-md transition-all duration-200">
+          <span
+            class="grid h-6 w-6 place-items-center rounded-full bg-slate-100 dark:bg-slate-700 group-hover:bg-brand-100 dark:group-hover:bg-brand-900/50 transition-colors">
+            <i class="fa-solid fa-arrow-left text-[10px]"></i>
+          </span>
+          Semua Roadmap
+        </a>
+      </div>
+
+      <!-- Hero Content – tetap di tengah -->
+      <div
+        class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-brand-50 px-4 py-2 text-xs font-bold uppercase tracking-widest text-brand-500 dark:border-brand-900 dark:bg-brand-900/20 mb-6 shadow-sm">
+        <i class="fa-solid fa-server"></i> Learning Path
+      </div>
+      <h1
+        class="font-display text-[clamp(2rem,4vw,3.5rem)] leading-tight tracking-tight text-slate-900 dark:text-white mb-4">
+        Backend <span class="text-brand-500">Developer</span>
+      </h1>
+      <p class="mx-auto max-w-2xl text-slate-500 dark:text-slate-400">
+        Panduan komprehensif bercabang untuk menguasai ekosistem Backend. Klik pada setiap modul (baik utama maupun
+        percabangan) untuk melihat detail materi dan contoh penerapannya.
+      </p>
+    </section>
+
+    <!-- Roadmap Timeline Container -->
+    <section class="w-full px-4 pb-24 flex justify-center relative overflow-x-auto custom-scrollbar">
+      <div class="min-w-[1000px] w-full max-w-6xl relative py-10" id="roadmap-container">
+        <!-- Center Vertical Solid Line -->
+        <div class="absolute left-1/2 top-10 bottom-28 w-[2px] -translate-x-1/2 bg-[#5e82f4] dark:bg-slate-600 z-0">
+        </div>
+
+        <!-- SVG for Curved Dotted Lines -->
+        <svg id="svg-lines" class="absolute inset-0 w-full h-full pointer-events-none z-0"></svg>
+
+        <!-- Nodes Container -->
+        <div id="nodes-container" class="relative z-10 flex flex-col gap-8">
+          <!-- Rendered via JS -->
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Side Panel Overlay -->
+  <div id="side-panel-overlay" onclick="closePanel()"
+    class="fixed inset-0 z-40 bg-slate-900/30 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+  </div>
+
+  <!-- Side Panel Drawer -->
+  <aside id="side-panel"
+    class="fixed right-0 top-0 z-50 h-full w-full max-w-[500px] translate-x-full transform border-l border-white/50 bg-white/95 p-6 shadow-[[-20px_0_40px_rgba(0,0,0,0.1)]] backdrop-blur-xl transition-transform duration-300 dark:border-slate-700/50 dark:bg-slate-900/95 sm:p-8 flex flex-col">
+    <!-- Panel Header -->
+    <div class="flex items-center justify-between border-b border-slate-200 pb-4 dark:border-slate-800">
+      <div class="flex gap-5">
+        <button id="materi-tab-btn" onclick="switchPanelTab('materi')" class="font-semibold text-brand-500 border-b-2 border-brand-500 pb-1 flex items-center gap-2">
+          <i class="fa-solid fa-layer-group"></i> Materi & Resources
+        </button>
+        <button id="example-tab-btn" onclick="switchPanelTab('example')" class="font-semibold text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors pb-1 flex items-center gap-2">
+          <i class="fa-solid fa-code"></i> Example
+        </button>
+      </div>
+      <button onclick="closePanel()"
+        class="grid h-8 w-8 place-items-center rounded-full bg-slate-100 text-slate-500 transition-colors hover:bg-slate-200 hover:text-slate-800 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-slate-700 dark:hover:text-white">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Panel Body -->
+    <div class="flex-1 overflow-y-auto py-6 pr-2 custom-scrollbar relative" id="panel-content-wrapper">
+      <!-- Content for Materi Tab -->
+      <div id="panel-content-materi" class="absolute inset-x-0 pr-2 transition-opacity duration-300 opacity-100">
+        <!-- Injected via JS -->
+      </div>
+      
+      <!-- Content for Example Tab -->
+      <div id="panel-content-example" class="absolute inset-x-0 pr-2 transition-opacity duration-300 opacity-0 pointer-events-none">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </aside>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ===== XP / Gamification Widget (Fixed Bottom-Left) ===== -->
+  <div id="xp-widget" class="fixed bottom-6 left-6 z-50 w-[260px] select-none">
+    <!-- Collapsed toggle button (always visible when widget is collapsed) -->
+    <button id="xp-toggle"
+      onclick="document.getElementById('xp-card').classList.toggle('hidden'); this.classList.toggle('hidden')"
+      class="mb-2 w-full flex items-center gap-2 rounded-2xl bg-brand-500 text-white px-4 py-2.5 shadow-xl font-bold text-sm hover:-translate-y-0.5 transition-all">
+      <i class="fa-solid fa-bolt text-yellow-300"></i>
+      <span>240 XP · Lv.1 Beginner</span>
+      <i class="fa-solid fa-chevron-up ml-auto text-xs opacity-70"></i>
+    </button>
+
+    <!-- Main XP Card -->
+    <div id="xp-card"
+      class="hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)] overflow-hidden">
+
+      <!-- Card Header -->
+      <div class="bg-linear-to-r from-brand-500 to-[#4f46e5] px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <!-- Level badge -->
+          <div class="relative">
+            <div
+              class="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center text-white font-display font-bold text-base shadow-inner">
+              2
+            </div>
+            <div
+              class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-yellow-400 flex items-center justify-center">
+              <i class="fa-solid fa-star text-[7px] text-yellow-800"></i>
+            </div>
+          </div>
+          <div>
+            <p class="text-white/70 text-[0.6rem] font-bold uppercase tracking-widest leading-none mb-0.5">Level 1</p>
+            <p class="text-white font-bold text-sm leading-none">Beginner</p>
+          </div>
+        </div>
+        <!-- XP total -->
+        <div class="text-right">
+          <p class="text-white/70 text-[0.6rem] font-bold uppercase tracking-widest leading-none mb-0.5">Total XP</p>
+          <p class="text-white font-display font-bold text-lg leading-none">240</p>
+        </div>
+        <!-- Collapse button -->
+        <button
+          onclick="document.getElementById('xp-card').classList.add('hidden'); document.getElementById('xp-toggle').classList.remove('hidden')"
+          class="ml-2 w-6 h-6 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors">
+          <i class="fa-solid fa-chevron-down text-[9px]"></i>
+        </button>
+      </div>
+
+      <!-- Progress section -->
+      <div class="px-4 pt-3 pb-1">
+        <div class="flex justify-between items-center mb-1.5">
+          <span class="text-[0.68rem] font-bold text-slate-500 dark:text-slate-400">Menuju Level 2 · Intermediate</span>
+          <span class="text-[0.68rem] font-bold text-brand-500">240 / 500</span>
+        </div>
+        <!-- Progress bar -->
+        <div class="relative h-2.5 rounded-full bg-slate-100 dark:bg-slate-700 overflow-hidden">
+          <div class="h-full rounded-full bg-linear-to-r from-brand-500 to-[#4f46e5] transition-all duration-700"
+            style="width: 48%"></div>
+          <!-- Shimmer effect -->
+          <div
+            class="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent -translate-x-full animate-[shimmer_2s_ease-in-out_infinite]">
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="mx-4 my-2 h-px bg-slate-100 dark:bg-slate-700"></div>
+
+      <!-- Recent activity -->
+      <div class="px-4 pb-3">
+        <p class="text-[0.65rem] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-2">Aktivitas
+          Terakhir</p>
+        <div class="space-y-1.5">
+          <div class="flex items-center gap-2.5">
+            <div
+              class="w-6 h-6 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-check text-emerald-600 dark:text-emerald-400 text-[9px]"></i>
+            </div>
+            <span class="text-xs text-slate-600 dark:text-slate-300 flex-1 truncate">HTML Selesai</span>
+            <span class="text-[0.65rem] font-bold text-emerald-600 dark:text-emerald-400 shrink-0">+50 XP</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <div
+              class="w-6 h-6 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-check text-emerald-600 dark:text-emerald-400 text-[9px]"></i>
+            </div>
+            <span class="text-xs text-slate-600 dark:text-slate-300 flex-1 truncate">CSS Layouts</span>
+            <span class="text-[0.65rem] font-bold text-emerald-600 dark:text-emerald-400 shrink-0">+30 XP</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <div class="w-6 h-6 rounded-lg bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-clock text-brand-500 text-[9px]"></i>
+            </div>
+            <span class="text-xs text-slate-400 dark:text-slate-500 flex-1 truncate">JavaScript – berlangsung</span>
+            <span class="text-[0.65rem] font-bold text-slate-400 shrink-0">+?? XP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Level roadmap strip: vertical steps -->
+      <div class="bg-slate-50 dark:bg-slate-900/50 px-4 py-3 space-y-1.5">
+        <p class="text-[0.6rem] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-2">Jalur Level
+        </p>
+
+        <!-- Lv 1: Beginner (active) -->
+        <div class="flex items-center gap-2.5">
+          <div
+            class="w-6 h-6 rounded-full bg-brand-500 ring-2 ring-brand-200 flex items-center justify-center shrink-0">
+            <span class="text-white font-bold text-[9px]">1</span>
+          </div>
+          <div class="flex-1">
+            <p class="text-[0.75rem] font-bold text-brand-500 leading-none">Beginner</p>
+            <p class="text-[0.6rem] text-slate-400 leading-none mt-0.5">Untuk pemula & yang baru belajar</p>
+          </div>
+          <span
+            class="text-[0.6rem] font-bold text-brand-500 bg-brand-50 dark:bg-brand-900/40 px-1.5 py-0.5 rounded-full shrink-0">Aktif</span>
+        </div>
+
+        <div class="ml-3 w-px h-3 bg-slate-200 dark:bg-slate-700"></div>
+
+        <!-- Lv 2: Intermediate (locked) -->
+        <div class="flex items-center gap-2.5 opacity-50">
+          <div class="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-lock text-slate-400 text-[8px]"></i>
+          </div>
+          <div class="flex-1">
+            <p class="text-[0.75rem] font-bold text-slate-500 dark:text-slate-400 leading-none">Intermediate</p>
+            <p class="text-[0.6rem] text-slate-400 leading-none mt-0.5">Materi lanjutan yang lebih dalam</p>
+          </div>
+        </div>
+
+        <div class="ml-3 w-px h-3 bg-slate-200 dark:bg-slate-700"></div>
+
+        <!-- Lv 3: Freelance (locked) -->
+        <div class="flex items-center gap-2.5 opacity-50">
+          <div class="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-lock text-slate-400 text-[8px]"></i>
+          </div>
+          <div class="flex-1">
+            <p class="text-[0.75rem] font-bold text-slate-500 dark:text-slate-400 leading-none">Freelance</p>
+            <p class="text-[0.6rem] text-amber-500 font-bold leading-none mt-0.5">🎯 Buka Career Simulation Mode</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end xp-card -->
+  </div><!-- end xp-widget -->
+
+</body>
+
+</html>

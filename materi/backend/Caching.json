@@ -1,0 +1,158 @@
+{
+    "Caching": {
+        "description": "Caching adalah teknik menyimpan data sementara agar akses data menjadi lebih cepat dan mengurangi beban database/server.",
+        "concepts": {
+            "cache_hit": "Data ditemukan di cache",
+            "cache_miss": "Data tidak ditemukan di cache",
+            "ttl": "Time To Live, waktu kadaluarsa cache",
+            "in_memory": "Data disimpan di RAM"
+        },
+        "Redis": {
+            "description": "Redis adalah in-memory NoSQL database yang sering digunakan untuk caching, realtime system, dan message broker.",
+            "features": [
+                "In-memory storage",
+                "Super fast",
+                "Pub/Sub",
+                "Persistence",
+                "TTL Expiration",
+                "Data Structures"
+            ],
+            "data_structures": [
+                "String",
+                "Hash",
+                "List",
+                "Set",
+                "Sorted Set"
+            ],
+            "advantages": [
+                "Sangat cepat",
+                "Realtime friendly",
+                "Support banyak data structure",
+                "TTL built-in"
+            ],
+            "disadvantages": [
+                "RAM usage besar",
+                "Tidak cocok untuk data sangat besar jika RAM kecil"
+            ],
+            "use_cases": [
+                "Session Store",
+                "API Cache",
+                "Realtime Chat",
+                "Leaderboard",
+                "Queue System"
+            ],
+            "commands": {
+                "set": "SET user Radhiyya",
+                "get": "GET user",
+                "delete": "DEL user",
+                "ttl": "TTL user",
+                "expire": "EXPIRE user 60"
+            },
+            "examples": {
+                "basic_cache": {
+                    "command": "SET user:1 'Radhiyya'"
+                },
+                "retrieve_cache": {
+                    "command": "GET user:1"
+                },
+                "ttl_example": {
+                    "command": "SETEX token 60 abc123"
+                },
+                "leaderboard_example": {
+                    "command": "ZADD leaderboard 100 player1"
+                },
+                "nodejs_example": {
+                    "code": "const redis = require('redis'); const client = redis.createClient();"
+                }
+            }
+        },
+        "Memcached": {
+            "description": "Memcached adalah distributed memory caching system untuk mempercepat aplikasi web.",
+            "features": [
+                "Simple Key-Value",
+                "Distributed Cache",
+                "Very Fast",
+                "Lightweight"
+            ],
+            "advantages": [
+                "Ringan",
+                "Cepat",
+                "Simple"
+            ],
+            "disadvantages": [
+                "Tidak punya advanced data structure",
+                "Tidak ada persistence",
+                "Fitur lebih sedikit dibanding Redis"
+            ],
+            "use_cases": [
+                "Database Query Cache",
+                "Session Cache",
+                "Website Performance"
+            ],
+            "commands": {
+                "set": "set key value",
+                "get": "get key",
+                "delete": "delete key"
+            },
+            "examples": {
+                "store_cache": {
+                    "command": "set username 0 60 8"
+                },
+                "retrieve_cache": {
+                    "command": "get username"
+                },
+                "php_example": {
+                    "code": "$memcached->set('user', 'Radhiyya', 60);"
+                }
+            }
+        },
+        "Caching_Strategies": {
+            "cache_aside": {
+                "description": "Application cek cache dulu sebelum database"
+            },
+            "write_through": {
+                "description": "Data ditulis ke cache dan database bersamaan"
+            },
+            "write_back": {
+                "description": "Data ditulis ke cache dulu lalu database belakangan"
+            },
+            "read_through": {
+                "description": "Cache otomatis mengambil data dari database"
+            }
+        },
+        "Cache_Problems": {
+            "cache_invalidation": "Data cache harus diperbarui saat data asli berubah",
+            "stale_data": "Data cache sudah lama/tidak update",
+            "cache_stampede": "Banyak request bersamaan saat cache expired"
+        },
+        "Comparison": {
+            "Redis": {
+                "best_for": [
+                    "Realtime app",
+                    "Advanced caching",
+                    "Queue",
+                    "Pub/Sub"
+                ]
+            },
+            "Memcached": {
+                "best_for": [
+                    "Simple cache",
+                    "Web acceleration"
+                ]
+            },
+            "fastest_setup": "Memcached",
+            "most_features": "Redis"
+        },
+        "Real_World_Usage": {
+            "Redis": [
+                "Discord",
+                "Twitter Timeline Cache",
+                "Gaming Leaderboard"
+            ],
+            "Memcached": [
+                "WordPress",
+                "Facebook Legacy Cache"
+            ]
+        }
+    }
+}

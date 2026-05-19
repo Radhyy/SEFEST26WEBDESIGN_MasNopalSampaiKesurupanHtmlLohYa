@@ -1,0 +1,160 @@
+{
+  "NoSQL_Databases": {
+    "description": "NoSQL Database digunakan untuk data non-relasional, scalable system, dan high performance application.",
+    "types": {
+      "document_database": "MongoDB",
+      "key_value_database": "Redis",
+      "wide_column_database": "Cassandra"
+    },
+    "MongoDB": {
+      "description": "MongoDB adalah document database berbasis JSON/BSON.",
+      "features": [
+        "Flexible Schema",
+        "JSON Document",
+        "Horizontal Scaling",
+        "Replication"
+      ],
+      "advantages": [
+        "Schema fleksibel",
+        "Cocok data dinamis",
+        "Cepat development"
+      ],
+      "disadvantages": [
+        "Join lebih terbatas",
+        "Data consistency lebih kompleks"
+      ],
+      "use_cases": [
+        "Realtime App",
+        "CMS",
+        "E-commerce",
+        "Big Data"
+      ],
+      "concepts": {
+        "database": "Kumpulan collection",
+        "collection": "Mirip table",
+        "document": "Mirip row"
+      },
+      "commands": {
+        "show_databases": "show dbs",
+        "use_database": "use app",
+        "show_collections": "show collections"
+      },
+      "examples": {
+        "insert_document": {
+          "query": "db.users.insertOne({name:'Radhiyya', age:17})"
+        },
+        "find_document": {
+          "query": "db.users.find()"
+        }
+      }
+    },
+    "Redis": {
+      "description": "Redis adalah in-memory key-value database untuk caching dan realtime system.",
+      "features": [
+        "In-memory",
+        "Very Fast",
+        "Pub/Sub",
+        "TTL Expiration"
+      ],
+      "advantages": [
+        "Super cepat",
+        "Cocok caching",
+        "Realtime communication"
+      ],
+      "disadvantages": [
+        "Data di RAM",
+        "Tidak cocok data kompleks besar"
+      ],
+      "use_cases": [
+        "Caching",
+        "Session Store",
+        "Leaderboard",
+        "Realtime Chat"
+      ],
+      "data_structures": [
+        "String",
+        "List",
+        "Set",
+        "Hash",
+        "Sorted Set"
+      ],
+      "commands": {
+        "set": "SET name Radhiyya",
+        "get": "GET name",
+        "delete": "DEL name"
+      },
+      "examples": {
+        "cache_example": {
+          "command": "SET user:1 'Radhiyya'"
+        },
+        "ttl_example": {
+          "command": "SETEX token 60 abc123"
+        }
+      }
+    },
+    "Cassandra": {
+      "description": "Cassandra adalah distributed NoSQL database untuk high availability dan massive scalability.",
+      "features": [
+        "Distributed Architecture",
+        "Fault Tolerance",
+        "Horizontal Scaling",
+        "High Availability"
+      ],
+      "advantages": [
+        "Scalable",
+        "No single point of failure",
+        "Cocok big data"
+      ],
+      "disadvantages": [
+        "Query terbatas",
+        "Learning curve tinggi"
+      ],
+      "use_cases": [
+        "Big Data",
+        "IoT",
+        "Analytics",
+        "Large Scale Application"
+      ],
+      "concepts": {
+        "keyspace": "Mirip database",
+        "column_family": "Mirip table"
+      },
+      "examples": {
+        "create_keyspace": {
+          "query": "CREATE KEYSPACE app WITH replication = {'class':'SimpleStrategy','replication_factor':1};"
+        },
+        "create_table": {
+          "query": "CREATE TABLE users(id UUID PRIMARY KEY, name TEXT);"
+        }
+      }
+    },
+    "NoSQL_Concepts": {
+      "horizontal_scaling": "Menambah server untuk meningkatkan kapasitas",
+      "replication": "Menyalin data ke banyak node",
+      "sharding": "Membagi data ke beberapa server",
+      "eventual_consistency": "Data konsisten setelah beberapa waktu"
+    },
+    "comparison": {
+      "best_for_documents": "MongoDB",
+      "fastest_cache": "Redis",
+      "best_for_massive_scaling": "Cassandra"
+    },
+    "real_world_usage": {
+      "MongoDB": [
+        "Gaming",
+        "CMS",
+        "Social Media"
+      ],
+      "Redis": [
+        "Discord Cache",
+        "Session Login",
+        "Realtime Notification"
+      ],
+      "Cassandra": [
+        "Netflix",
+        "Facebook Messaging",
+        "IoT Platform"
+      ]
+    }
+  }
+}

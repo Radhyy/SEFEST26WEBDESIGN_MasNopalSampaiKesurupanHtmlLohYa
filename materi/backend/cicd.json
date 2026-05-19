@@ -1,0 +1,352 @@
+{
+    "CI_CD_DevOps_Cloud": {
+        "description": "CI/CD dan Cloud Engineering adalah praktik modern software development untuk automation, deployment, scalability, monitoring, dan infrastructure management.",
+        "CI_CD_Fundamentals": {
+            "CI": {
+                "full_name": "Continuous Integration",
+                "description": "Developer menggabungkan code secara rutin ke repository utama lalu menjalankan automation testing/build."
+            },
+            "CD": {
+                "full_name": "Continuous Delivery / Continuous Deployment",
+                "description": "Automation release aplikasi ke staging atau production."
+            },
+            "pipeline": {
+                "description": "Serangkaian automation step.",
+                "stages": [
+                    "Code",
+                    "Build",
+                    "Test",
+                    "Security Scan",
+                    "Package",
+                    "Deploy",
+                    "Monitor"
+                ]
+            },
+            "benefits": [
+                "Deployment cepat",
+                "Mengurangi human error",
+                "Testing otomatis",
+                "Feedback developer lebih cepat",
+                "Scalable workflow"
+            ]
+        },
+        "GitHub_Actions": {
+            "description": "GitHub Actions adalah automation platform bawaan GitHub.",
+            "core_concepts": {
+                "workflow": "Automation process",
+                "job": "Kumpulan task",
+                "step": "Perintah dalam job",
+                "runner": "Machine yang menjalankan workflow",
+                "event_trigger": [
+                    "push",
+                    "pull_request",
+                    "release",
+                    "schedule"
+                ]
+            },
+            "features": [
+                "CI/CD",
+                "Auto Testing",
+                "Docker Build",
+                "Deployment",
+                "Cron Jobs",
+                "Security Scanning"
+            ],
+            "workflow_structure": {
+                "name": "Workflow name",
+                "on": "Trigger event",
+                "jobs": "Task collection"
+            },
+            "examples": {
+                "basic_workflow": {
+                    "yaml": "name: CI\non: [push]\njobs:\n  build:\n    runs-on: ubuntu-latest"
+                },
+                "nodejs_pipeline": {
+                    "yaml": "steps:\n- uses: actions/checkout@v3\n- run: npm install\n- run: npm test"
+                },
+                "docker_push": {
+                    "scenario": "Build lalu push Docker image ke DockerHub"
+                },
+                "deploy_vps": {
+                    "scenario": "Auto SSH deploy ke Ubuntu VPS"
+                }
+            },
+            "security": {
+                "github_secrets": "Menyimpan API key/token",
+                "permissions": "Mengatur akses workflow"
+            }
+        },
+        "GitLab_CI": {
+            "description": "GitLab CI adalah built-in DevOps automation dari GitLab.",
+            "core_concepts": {
+                "runner": "Executor pipeline",
+                "stage": "Tahapan pipeline",
+                "job": "Task automation"
+            },
+            "features": [
+                "Integrated CI/CD",
+                "Container Registry",
+                "Security Scan",
+                "Auto DevOps",
+                "Self Hosted"
+            ],
+            "pipeline_structure": {
+                "stages": [
+                    "build",
+                    "test",
+                    "deploy"
+                ]
+            },
+            "examples": {
+                "basic_pipeline": {
+                    "yaml": "stages:\n - build\n - deploy"
+                },
+                "laravel_pipeline": {
+                    "scenario": "Testing Laravel lalu deploy otomatis"
+                },
+                "docker_pipeline": {
+                    "scenario": "Build container lalu deploy"
+                }
+            },
+            "advantages": [
+                "DevOps lengkap",
+                "CI/CD powerful",
+                "Enterprise ready"
+            ]
+        },
+        "Docker": {
+            "description": "Docker adalah platform containerization untuk menjalankan aplikasi secara portable.",
+            "concepts": {
+                "container": "Runtime aplikasi terisolasi",
+                "image": "Blueprint container",
+                "dockerfile": "File build image",
+                "registry": "Tempat penyimpanan image"
+            },
+            "architecture": {
+                "docker_engine": "Core runtime",
+                "docker_daemon": "Service utama Docker",
+                "docker_cli": "Command line Docker"
+            },
+            "features": [
+                "Environment consistency",
+                "Isolation",
+                "Lightweight",
+                "Fast startup",
+                "Portable deployment"
+            ],
+            "commands": {
+                "docker_build": "docker build -t app .",
+                "docker_run": "docker run -p 3000:3000 app",
+                "docker_ps": "docker ps",
+                "docker_stop": "docker stop id",
+                "docker_images": "docker images",
+                "docker_logs": "docker logs container"
+            },
+            "dockerfile_concepts": {
+                "FROM": "Base image",
+                "WORKDIR": "Working directory",
+                "COPY": "Copy files",
+                "RUN": "Execute command",
+                "CMD": "Default command"
+            },
+            "examples": {
+                "nodejs_dockerfile": {
+                    "code": "FROM node:20\nWORKDIR /app\nCOPY . .\nRUN npm install\nCMD ['npm','start']"
+                },
+                "nginx_container": {
+                    "command": "docker run -p 8080:80 nginx"
+                },
+                "laravel_container": {
+                    "scenario": "PHP + Nginx + MySQL containerized"
+                }
+            },
+            "docker_compose": {
+                "description": "Menjalankan multi-container app.",
+                "examples": {
+                    "compose_file": {
+                        "yaml": "services:\n  app:\n    build: .\n  db:\n    image: mysql"
+                    }
+                }
+            }
+        },
+        "Kubernetes": {
+            "description": "Kubernetes adalah orchestration platform untuk container management.",
+            "core_concepts": {
+                "pod": "Unit terkecil deployment",
+                "deployment": "Mengatur replica aplikasi",
+                "service": "Networking antar pod",
+                "namespace": "Logical isolation",
+                "cluster": "Kumpulan node"
+            },
+            "architecture": {
+                "master_node": "Control plane",
+                "worker_node": "Menjalankan container",
+                "etcd": "Distributed key-value storage"
+            },
+            "features": [
+                "Auto Scaling",
+                "Self Healing",
+                "Rolling Update",
+                "Service Discovery",
+                "Load Balancing"
+            ],
+            "commands": {
+                "get_pods": "kubectl get pods",
+                "get_services": "kubectl get svc",
+                "describe_pod": "kubectl describe pod podname",
+                "apply_yaml": "kubectl apply -f app.yml"
+            },
+            "examples": {
+                "deployment_yaml": {
+                    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: app"
+                },
+                "service_yaml": {
+                    "yaml": "kind: Service\nspec:\n  type: LoadBalancer"
+                },
+                "autoscaling": {
+                    "command": "kubectl autoscale deployment app --cpu-percent=70"
+                }
+            },
+            "advantages": [
+                "Massive scalability",
+                "Production ready",
+                "Cloud native"
+            ],
+            "disadvantages": [
+                "Complex",
+                "Steep learning curve"
+            ]
+        },
+        "AWS_Cloud": {
+            "description": "AWS adalah cloud platform terbesar untuk infrastructure dan cloud services.",
+            "core_services": {
+                "EC2": {
+                    "description": "Virtual machine cloud"
+                },
+                "S3": {
+                    "description": "Object storage"
+                },
+                "RDS": {
+                    "description": "Managed database"
+                },
+                "Lambda": {
+                    "description": "Serverless compute"
+                },
+                "ECS": {
+                    "description": "Container service"
+                },
+                "EKS": {
+                    "description": "Managed Kubernetes"
+                },
+                "CloudFront": {
+                    "description": "CDN service"
+                },
+                "IAM": {
+                    "description": "Access management"
+                }
+            },
+            "cloud_concepts": {
+                "iaas": "Infrastructure as a Service",
+                "paas": "Platform as a Service",
+                "saas": "Software as a Service",
+                "serverless": "Tanpa manage server"
+            },
+            "examples": {
+                "deploy_ec2": {
+                    "scenario": "Deploy Node.js app ke Ubuntu EC2"
+                },
+                "s3_storage": {
+                    "scenario": "Menyimpan image portfolio"
+                },
+                "lambda_function": {
+                    "scenario": "Serverless image resize API"
+                }
+            },
+            "advantages": [
+                "Highly scalable",
+                "Reliable",
+                "Global infrastructure"
+            ]
+        },
+        "DevOps_Practices": {
+            "infrastructure_as_code": {
+                "tools": [
+                    "Terraform",
+                    "Ansible"
+                ]
+            },
+            "monitoring": {
+                "tools": [
+                    "Prometheus",
+                    "Grafana",
+                    "Datadog"
+                ]
+            },
+            "logging": {
+                "tools": [
+                    "ELK Stack",
+                    "Grafana Loki"
+                ]
+            },
+            "security": {
+                "concepts": [
+                    "Secrets Management",
+                    "Container Scanning",
+                    "Vulnerability Assessment"
+                ]
+            }
+        },
+        "Deployment_Strategies": {
+            "blue_green": {
+                "description": "Dua environment production"
+            },
+            "rolling_update": {
+                "description": "Update bertahap"
+            },
+            "canary_release": {
+                "description": "Deploy ke sebagian user dulu"
+            }
+        },
+        "Production_Architecture": {
+            "frontend": [
+                "React",
+                "Next.js"
+            ],
+            "backend": [
+                "Node.js",
+                "Go",
+                "Laravel"
+            ],
+            "database": [
+                "PostgreSQL",
+                "Redis"
+            ],
+            "deployment": [
+                "Docker",
+                "Kubernetes",
+                "AWS"
+            ],
+            "monitoring": [
+                "Grafana",
+                "Prometheus"
+            ]
+        },
+        "Real_World_Usage": {
+            "Docker": [
+                "Microservices",
+                "Laravel container",
+                "Node.js API"
+            ],
+            "Kubernetes": [
+                "Netflix",
+                "Spotify",
+                "Google Cloud Native Apps"
+            ],
+            "AWS": [
+                "Enterprise Infrastructure",
+                "Cloud Hosting",
+                "Serverless Backend"
+            ]
+        }
+    }
+}

@@ -1,0 +1,210 @@
+{
+    "Testing": {
+        "description": "Testing adalah proses memastikan aplikasi berjalan dengan benar, aman, dan sesuai kebutuhan.",
+        "Unit_Testing": {
+            "description": "Unit Testing menguji bagian kecil aplikasi seperti function atau method secara terpisah.",
+            "concepts": {
+                "unit": "Komponen kecil seperti function/class",
+                "isolated_testing": "Test dilakukan tanpa dependency eksternal",
+                "mocking": "Membuat object/data palsu untuk testing"
+            },
+            "features": [
+                "Fast execution",
+                "Isolated",
+                "Easy debugging"
+            ],
+            "advantages": [
+                "Bug cepat ditemukan",
+                "Mudah maintenance",
+                "Memastikan function berjalan benar"
+            ],
+            "disadvantages": [
+                "Tidak mengetes integrasi antar system",
+                "Perlu banyak test case"
+            ],
+            "frameworks": {
+                "JavaScript": [
+                    "Jest",
+                    "Vitest",
+                    "Mocha"
+                ],
+                "Python": [
+                    "PyTest",
+                    "unittest"
+                ],
+                "Java": [
+                    "JUnit"
+                ],
+                "CSharp": [
+                    "xUnit",
+                    "NUnit"
+                ]
+            },
+            "examples": {
+                "javascript_example": {
+                    "code": "test('add function', () => { expect(add(1,2)).toBe(3) })"
+                },
+                "python_example": {
+                    "code": "def test_add(): assert add(1,2) == 3"
+                },
+                "mock_example": {
+                    "scenario": "Mock database response agar tidak connect database asli"
+                }
+            }
+        },
+        "Integration_Testing": {
+            "description": "Integration Testing menguji komunikasi antar module atau service.",
+            "concepts": {
+                "module_integration": "Pengujian antar komponen",
+                "real_dependency": "Menggunakan database/API asli atau semi-asli"
+            },
+            "features": [
+                "Test antar service",
+                "Memastikan flow berjalan",
+                "Validasi database dan API"
+            ],
+            "advantages": [
+                "Mendeteksi masalah komunikasi antar system",
+                "Lebih realistis"
+            ],
+            "disadvantages": [
+                "Lebih lambat",
+                "Setup lebih kompleks"
+            ],
+            "frameworks": {
+                "JavaScript": [
+                    "Supertest",
+                    "Jest"
+                ],
+                "Python": [
+                    "PyTest",
+                    "TestClient"
+                ],
+                "Java": [
+                    "Spring Test"
+                ]
+            },
+            "examples": {
+                "api_database_test": {
+                    "scenario": "API register user menyimpan data ke database"
+                },
+                "nodejs_example": {
+                    "code": "request(app).get('/users').expect(200)"
+                },
+                "database_example": {
+                    "scenario": "Testing insert dan select data MySQL"
+                }
+            }
+        },
+        "E2E_Testing": {
+            "description": "End-to-End Testing menguji seluruh aplikasi dari sisi user.",
+            "concepts": {
+                "full_flow_testing": "Mengetes alur lengkap aplikasi",
+                "user_simulation": "Mensimulasikan user asli"
+            },
+            "features": [
+                "Test UI",
+                "Test frontend dan backend",
+                "Automation browser"
+            ],
+            "advantages": [
+                "Mendeteksi bug nyata",
+                "Testing paling realistis"
+            ],
+            "disadvantages": [
+                "Paling lambat",
+                "Kompleks",
+                "Butuh environment lengkap"
+            ],
+            "frameworks": {
+                "JavaScript": [
+                    "Cypress",
+                    "Playwright",
+                    "Selenium"
+                ],
+                "Python": [
+                    "Selenium"
+                ]
+            },
+            "examples": {
+                "login_flow": {
+                    "scenario": "User membuka website lalu login hingga dashboard tampil"
+                },
+                "cypress_example": {
+                    "code": "cy.visit('/login'); cy.get('#email').type('test@mail.com')"
+                },
+                "playwright_example": {
+                    "code": "await page.goto('https://app.com')"
+                }
+            }
+        },
+        "Testing_Concepts": {
+            "assertion": "Memastikan hasil sesuai ekspektasi",
+            "test_case": "Skenario pengujian",
+            "test_suite": "Kumpulan test",
+            "coverage": "Persentase code yang dites",
+            "mocking": "Dependency palsu",
+            "stubbing": "Mengontrol output function"
+        },
+        "Testing_Strategies": {
+            "test_pyramid": {
+                "bottom": "Unit Testing",
+                "middle": "Integration Testing",
+                "top": "E2E Testing"
+            },
+            "ci_cd_testing": {
+                "description": "Testing otomatis saat deploy"
+            },
+            "regression_testing": {
+                "description": "Memastikan update tidak merusak fitur lama"
+            }
+        },
+        "Best_Practices": {
+            "unit_testing": [
+                "Test function kecil",
+                "Gunakan mocking",
+                "Jangan test terlalu banyak logic sekaligus"
+            ],
+            "integration_testing": [
+                "Gunakan test database",
+                "Pisahkan environment testing"
+            ],
+            "e2e_testing": [
+                "Test flow penting saja",
+                "Jangan terlalu banyak E2E"
+            ]
+        },
+        "Comparison": {
+            "Unit_Testing": {
+                "speed": "Fast",
+                "scope": "Small",
+                "complexity": "Low"
+            },
+            "Integration_Testing": {
+                "speed": "Medium",
+                "scope": "Medium",
+                "complexity": "Medium"
+            },
+            "E2E_Testing": {
+                "speed": "Slow",
+                "scope": "Full Application",
+                "complexity": "High"
+            }
+        },
+        "Real_World_Usage": {
+            "Unit_Testing": [
+                "Testing utility function",
+                "Testing calculator logic"
+            ],
+            "Integration_Testing": [
+                "API + Database",
+                "Authentication flow"
+            ],
+            "E2E_Testing": [
+                "Checkout e-commerce",
+                "Login dashboard",
+                "Payment system"
+            ]
+        }
+    }
+}

@@ -1,0 +1,141 @@
+{
+  "Package_Managers": {
+    "description": "Package manager digunakan untuk menginstall, mengupdate, dan mengelola dependency project JavaScript/Node.js.",
+    "npm": {
+      "description": "npm adalah package manager default Node.js.",
+      "commands": {
+        "init": "npm init",
+        "install": "npm install package_name",
+        "install_dev": "npm install -D package_name",
+        "uninstall": "npm uninstall package_name",
+        "run_script": "npm run dev"
+      },
+      "files": [
+        "package.json",
+        "package-lock.json"
+      ],
+      "features": [
+        "Dependency management",
+        "Script runner",
+        "Versioning"
+      ],
+      "advantages": [
+        "Default Node.js",
+        "Huge ecosystem",
+        "Simple"
+      ],
+      "disadvantages": [
+        "Install lebih lambat",
+        "node_modules besar"
+      ],
+      "examples": {
+        "install_express": {
+          "command": "npm install express"
+        },
+        "run_project": {
+          "command": "npm run dev"
+        }
+      }
+    },
+    "yarn": {
+      "description": "Yarn adalah package manager yang dibuat Facebook untuk performa dan dependency management lebih baik.",
+      "commands": {
+        "init": "yarn init",
+        "install": "yarn add package_name",
+        "install_dev": "yarn add -D package_name",
+        "remove": "yarn remove package_name",
+        "run": "yarn dev"
+      },
+      "files": [
+        "package.json",
+        "yarn.lock"
+      ],
+      "features": [
+        "Fast install",
+        "Lockfile consistency",
+        "Caching"
+      ],
+      "advantages": [
+        "Lebih cepat dari npm lama",
+        "Stable dependency resolution"
+      ],
+      "disadvantages": [
+        "Kadang compatibility issue"
+      ],
+      "examples": {
+        "install_react": {
+          "command": "yarn add react"
+        },
+        "run_project": {
+          "command": "yarn dev"
+        }
+      }
+    },
+    "pnpm": {
+      "description": "pnpm adalah package manager modern dengan efisiensi storage dan performa tinggi.",
+      "commands": {
+        "init": "pnpm init",
+        "install": "pnpm add package_name",
+        "install_dev": "pnpm add -D package_name",
+        "remove": "pnpm remove package_name",
+        "run": "pnpm dev"
+      },
+      "files": [
+        "package.json",
+        "pnpm-lock.yaml"
+      ],
+      "features": [
+        "Symlink dependency",
+        "Disk efficient",
+        "Fast install"
+      ],
+      "advantages": [
+        "Storage hemat",
+        "Install sangat cepat",
+        "Dependency strict"
+      ],
+      "disadvantages": [
+        "Kadang package lama incompatible"
+      ],
+      "examples": {
+        "install_nextjs": {
+          "command": "pnpm add next"
+        },
+        "run_project": {
+          "command": "pnpm dev"
+        }
+      }
+    },
+    "Comparison": {
+      "speed": {
+        "fastest": "pnpm",
+        "medium": "yarn",
+        "slowest": "npm"
+      },
+      "storage_efficiency": {
+        "best": "pnpm"
+      },
+      "ecosystem": {
+        "largest": "npm"
+      },
+      "lock_files": {
+        "npm": "package-lock.json",
+        "yarn": "yarn.lock",
+        "pnpm": "pnpm-lock.yaml"
+      }
+    },
+    "Real_World_Usage": {
+      "npm": [
+        "React Projects",
+        "Node.js API"
+      ],
+      "yarn": [
+        "Large frontend projects"
+      ],
+      "pnpm": [
+        "Monorepo",
+        "Enterprise frontend"
+      ]
+    }
+  }
+}

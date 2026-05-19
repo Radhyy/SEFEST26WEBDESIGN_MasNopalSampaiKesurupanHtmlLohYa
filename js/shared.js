@@ -55,10 +55,8 @@ const FOOTER_HTML = `
     <div class="rounded-[28px] border border-white/70 bg-white/80 p-6 shadow-[0_14px_40px_rgba(20,24,38,0.07)] backdrop-blur lg:p-8 dark:border-slate-700 dark:bg-slate-900/80">
       <div class="grid gap-8 lg:grid-cols-[1.15fr_0.85fr_0.7fr_0.65fr] lg:items-start">
         <div>
-          <a href="${rootPath}index.html" class="inline-flex items-center gap-2 font-display text-[1.3rem] font-bold tracking-[-0.02em]">
-            <span class="grid h-10 w-10 place-items-center rounded-2xl bg-linear-to-br from-brand-500 to-[#17bebb] text-white shadow-[0_10px_20px_rgba(47,91,211,0.22)]">
-              <i class="fa-solid fa-compass"></i>
-            </span>
+          <a href="${rootPath}" class="inline-flex items-center font-display text-[1.3rem] font-bold tracking-[-0.02em]">
+            <img src="${rootPath}assets/logo/WorksimLogo.webp" alt="Logo WorkSim" class="h-15 w-15">
             Work<span class="text-brand-500">Sim</span>
           </a>
           <p class="mt-4 max-w-[34ch] text-[0.94rem] leading-7 text-slate-500 dark:text-slate-400">Platform eksplorasi karier digital untuk pelajar, mahasiswa, dan career switcher yang ingin belajar dengan arah yang lebih jelas.</p>
@@ -87,13 +85,13 @@ const FOOTER_HTML = `
           </div>
         </div>
         <div>
-          <p class="mb-4 text-sm font-bold uppercase tracking-[0.08em] text-brand-500">Next step</p>
+          <p class="mb-4 text-sm font-bold uppercase tracking-[0.08em] text-brand-500">Mitra Kami</p>
           <div class="rounded-2xl border border-[#dbe3f8] bg-linear-to-br from-[#f8faff] to-brand-50 p-4 shadow-[0_10px_24px_rgba(47,91,211,0.07)] dark:border-slate-600 dark:from-[#1a2640] dark:to-[#111c2f]">
-            <p class="text-[0.9rem] font-semibold text-slate-900 dark:text-white">Mulai cek jalur kariermu</p>
-            <p class="mt-2 text-[0.9rem] leading-7 text-slate-500 dark:text-slate-400">Gunakan demo roadmap untuk melihat langkah yang paling masuk akal dari skill saat ini ke role target.</p>
-            <a class="mt-4 inline-flex items-center gap-2 rounded-xl bg-linear-to-br from-brand-500 to-[#3f6ef0] px-4 py-2.5 text-sm font-bold text-white shadow-[0_8px_20px_rgba(47,91,211,0.22)] transition hover:-translate-y-0.5" href="${rootPath}pages/learning-roadmap/">
-              Lihat Roadmap <i class="fa-solid fa-arrow-right"></i>
-            </a>
+            <div class="mb-4 flex flex-wrap items-center gap-3">
+              <img src="${rootPath}assets/partners/skomda-full.webp" alt="Partner 1" class="h-8">
+              <img src="${rootPath}assets/partners/scs.webp" alt="Partner 2" class="h-10 rounded-full">
+              <img src="${rootPath}assets/partners/fiksi.webp" alt="Partner 3" class="h-12">
+            </div>
           </div>
         </div>
       </div>

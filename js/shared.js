@@ -203,14 +203,26 @@ const NAVBAR_HTML = `
         <div id="authActions" class="flex items-center gap-2"></div>
       </div>
     </div>
-    <div class="flex w-full items-center justify-between rounded-full border border-[#dbe3f8]/80 bg-white/85 px-3 py-2 shadow-[0_10px_26px_rgba(47,91,211,0.10)] backdrop-blur lg:hidden dark:border-slate-700/80 dark:bg-slate-900/85">
-      <a href="/" class="inline-flex min-h-10 items-center font-display text-[1.3rem] font-bold tracking-[-0.02em]">Work<span class="text-brand-500">Sim</span></a>
-      <div class="flex items-center gap-2">
-        <button id="themeToggleMobile" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#b8cdfa] bg-[#e3edff] text-brand-500 dark:border-slate-500 dark:bg-slate-900 dark:text-[#ffd166]" aria-label="Ganti tema tampilan WorkSim antara mode terang dan gelap" aria-pressed="false">
-          <i id="themeIconMobile" class="fa-solid fa-moon text-sm"></i>
-        </button>
-        <div id="authActionsMobile" class="flex items-center gap-2"></div>
+    <div class="w-full lg:hidden">
+      <div class="flex w-full items-center justify-between rounded-full border border-[#dbe3f8]/80 bg-white/85 px-3 py-2 shadow-[0_10px_26px_rgba(47,91,211,0.10)] backdrop-blur dark:border-slate-700/80 dark:bg-slate-900/85">
+        <a href="/" class="inline-flex min-h-10 items-center font-display text-[1.3rem] font-bold tracking-[-0.02em]">Work<span class="text-brand-500">Sim</span></a>
+        <div class="flex items-center gap-2">
+          <button id="themeToggleMobile" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#b8cdfa] bg-[#e3edff] text-brand-500 dark:border-slate-500 dark:bg-slate-900 dark:text-[#ffd166]" aria-label="Ganti tema tampilan WorkSim antara mode terang dan gelap" aria-pressed="false">
+            <i id="themeIconMobile" class="fa-solid fa-moon text-sm"></i>
+          </button>
+          <div id="authActionsMobile" class="flex items-center gap-2"></div>
+          <button id="mobileMenuToggle" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#b8cdfa] bg-white text-slate-700 transition hover:text-brand-500 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100" aria-label="Buka menu navigasi" aria-controls="mobileMenu" aria-expanded="false">
+            <i id="mobileMenuIcon" class="fa-solid fa-bars text-sm"></i>
+          </button>
+        </div>
       </div>
+      <nav id="mobileMenu" class="mt-2 grid gap-1 overflow-hidden rounded-3xl border border-[#dbe3f8]/80 bg-white/95 px-3 text-sm font-bold text-slate-700 shadow-[0_16px_32px_rgba(47,91,211,0.13)] backdrop-blur dark:border-slate-700/80 dark:bg-slate-900/95 dark:text-slate-100" style="max-height: 0; opacity: 0; padding-top: 0; padding-bottom: 0; transform: translateY(-8px); pointer-events: none; transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.3s ease, transform 0.3s ease;">
+        <a class="rounded-2xl px-4 py-3 transition hover:bg-[#eaf0ff] dark:hover:bg-white/10" href="/">Home</a>
+        <a class="rounded-2xl px-4 py-3 transition hover:bg-[#eaf0ff] dark:hover:bg-white/10" href="/pages/ai-career-advisor/">AI Advisor</a>
+        <a class="rounded-2xl px-4 py-3 transition hover:bg-[#eaf0ff] dark:hover:bg-white/10" href="/pages/learning-roadmap/">Roadmap</a>
+        <a class="rounded-2xl px-4 py-3 transition hover:bg-[#eaf0ff] dark:hover:bg-white/10" href="/pages/career-simulation/">Simulasi</a>
+        <a class="rounded-2xl px-4 py-3 transition hover:bg-[#eaf0ff] dark:hover:bg-white/10" href="/pages/skill-passport/">Skill Passport</a>
+      </nav>
     </div>
   </div>
 </header>`;
@@ -314,6 +326,46 @@ document.addEventListener("DOMContentLoaded", () => {
       link.classList.add("bg-[#eaf0ff]", "dark:bg-white/10", "text-brand-500");
     }
   });
+
+  // Mobile Menu Toggle
+  const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const mobileMenuIcon = document.getElementById("mobileMenuIcon");
+
+  function setMobileMenuOpen(isOpen) {
+    if (!mobileMenuToggle || !mobileMenu || !mobileMenuIcon) return;
+
+    mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
+    mobileMenuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Tutup menu navigasi" : "Buka menu navigasi",
+    );
+    mobileMenuIcon.className = isOpen
+      ? "fa-solid fa-xmark text-sm"
+      : "fa-solid fa-bars text-sm";
+
+    mobileMenu.style.maxHeight = isOpen ? `${mobileMenu.scrollHeight + 24}px` : "0";
+    mobileMenu.style.opacity = isOpen ? "1" : "0";
+    mobileMenu.style.paddingTop = isOpen ? "0.75rem" : "0";
+    mobileMenu.style.paddingBottom = isOpen ? "0.75rem" : "0";
+    mobileMenu.style.transform = isOpen ? "translateY(0)" : "translateY(-8px)";
+    mobileMenu.style.pointerEvents = isOpen ? "auto" : "none";
+  }
+
+  if (mobileMenuToggle && mobileMenu) {
+    mobileMenuToggle.addEventListener("click", () => {
+      const isOpen = mobileMenuToggle.getAttribute("aria-expanded") === "true";
+      setMobileMenuOpen(!isOpen);
+    });
+
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => setMobileMenuOpen(false));
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 1024) setMobileMenuOpen(false);
+    });
+  }
 
   // Dark Mode Toggle
   const html = document.documentElement;

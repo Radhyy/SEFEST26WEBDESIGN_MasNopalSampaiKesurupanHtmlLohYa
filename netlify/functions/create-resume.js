@@ -17,6 +17,30 @@ function cleanString(value) {
   return typeof value === "string" ? value.trim() : "";
 }
 
+function getRuntimeInfo() {
+  return {
+    deployContext: cleanString(process.env.CONTEXT),
+    siteName: cleanString(process.env.SITE_NAME),
+    nodeVersion: process.version,
+    hasProcessEnvKey: Boolean(cleanString(process.env.USERESUME_API_KEY)),
+    hasNetlifyEnvApi: Boolean(globalThis.Netlify?.env?.get),
+  };
+}
+
+function getEnvValue(key) {
+  const processValue = cleanString(process.env[key]);
+  if (processValue) return processValue;
+
+  try {
+    const netlifyValue = cleanString(globalThis.Netlify?.env?.get?.(key));
+    if (netlifyValue) return netlifyValue;
+  } catch (error) {
+    return "";
+  }
+
+  return "";
+}
+
 function mapProficiency(score, fallback) {
   if (fallback) return fallback;
   const value = Number(score || 0);
@@ -73,10 +97,12 @@ exports.handler = async (event) => {
     return json(405, { error: "Method not allowed. Use POST." });
   }
 
-  const apiKey = process.env.USERESUME_API_KEY;
+  const apiKey = getEnvValue("USERESUME_API_KEY");
   if (!apiKey) {
     return json(500, {
-      error: "USERESUME_API_KEY belum dikonfigurasi di environment Netlify.",
+      error:
+        "USERESUME_API_KEY belum tersedia di runtime Netlify Function. Pastikan variable diset untuk scope Functions dan deploy ulang site.",
+      runtime: getRuntimeInfo(),
     });
   }
 

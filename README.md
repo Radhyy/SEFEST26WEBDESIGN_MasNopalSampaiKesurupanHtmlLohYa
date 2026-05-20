@@ -1,75 +1,119 @@
 # WorkSim
 
-WorkSim adalah platform eksplorasi dan simulasi karier berbasis web untuk membantu siswa, fresh graduate, dan career switcher menemukan arah karier digital yang lebih jelas. Di dalamnya ada AI Career Advisor, learning roadmap interaktif, career simulation, dan Skill Passport yang mencatat progres belajar pengguna.
+WorkSim adalah website eksplorasi karier digital yang dibuat sebagai karya final untuk lomba **SEFEST 2026 bidang Web Design** yang diselenggarakan oleh **Himpunan Mahasiswa Software Engineering Telkom University**.
 
-> Status: Development aktif. Beberapa fitur masih berupa prototipe, tetapi Skill Passport sudah mulai memakai data dinamis dari browser storage dan sudah disiapkan untuk integrasi generate CV via Useresume.
+Fokus utama project ini adalah tampilan, desain antarmuka, pengalaman pengguna, interaksi frontend, dan alur simulasi produk berbasis web. WorkSim belum menggunakan backend, database, atau sistem autentikasi sungguhan. Seluruh data demo disimpan di browser menggunakan `localStorage` dan `sessionStorage`.
 
 ---
 
-## Daftar Isi
+## Ringkasan
 
-- [Fitur Utama](#fitur-utama)
-- [Tech Stack](#tech-stack)
-- [Integrasi Useresume](#integrasi-useresume)
-- [Struktur Proyek](#struktur-proyek)
-- [Cara Memulai Development](#cara-memulai-development)
-- [Scripts yang Tersedia](#scripts-yang-tersedia)
-- [Catatan Data Lokal](#catatan-data-lokal)
-- [Panduan Kontribusi](#panduan-kontribusi)
-- [Roadmap](#roadmap)
-- [Tim Pengembang](#tim-pengembang)
+WorkSim membantu pelajar, fresh graduate, dan career switcher mengeksplorasi karier digital melalui beberapa halaman utama:
+
+- Landing page dengan positioning produk dan highlight fitur.
+- AI Career Advisor berbasis kuis sederhana di sisi frontend.
+- Learning Roadmap interaktif untuk beberapa jalur karier digital.
+- Career Simulation sebagai preview pengalaman kerja berbasis brief project.
+- Skill Passport untuk menampilkan profil, XP, badge, distribusi skill, dan riwayat aktivitas.
+- Login dan register demo berbasis browser storage.
+- Dark mode lintas halaman.
+
+Project ini dirancang sebagai **static web prototype** yang dapat dijalankan tanpa server aplikasi.
+
+---
+
+## Status Project
+
+Status: **Final untuk kebutuhan lomba Web Design SEFEST 2026**.
+
+Catatan penting:
+
+- Tidak ada backend aplikasi.
+- Tidak ada database.
+- Login/register hanya simulasi frontend.
+- Progress user hanya tersimpan di browser pengguna.
+- Fitur AI Career Advisor masih rule-based, bukan AI API sungguhan.
+- Fitur Generate CV di Skill Passport memakai Netlify Function sebagai proxy aman untuk membaca API key Useresume dari environment variable.
 
 ---
 
 ## Fitur Utama
 
+### Landing Page
+
+Halaman utama memperkenalkan WorkSim sebagai platform eksplorasi karier digital dengan visual modern, navigasi responsif, CTA, highlight fitur, dan section pendukung.
+
 ### AI Career Advisor
 
-Kuis interaktif 3 langkah yang menganalisis minat dan tingkat keahlian pengguna, lalu memberikan rekomendasi karier secara instan di sisi klien.
+Kuis 3 langkah yang memberikan rekomendasi karier berdasarkan minat pengguna.
 
-- Pilih bidang minat seperti desain, coding, data, atau manajemen.
-- Tentukan tingkat keahlian.
-- Dapatkan rekomendasi karier beserta deskripsi singkat.
+- Pilihan minat seperti desain, coding, data, dan bisnis.
+- Pilihan tingkat keahlian.
+- Hasil rekomendasi karier ditentukan oleh logika frontend.
 
-### Learning Roadmap Interaktif
+### Learning Roadmap
 
-Roadmap berbentuk diagram pohon untuk membantu pengguna belajar secara bertahap.
+Halaman roadmap berisi visual jalur belajar interaktif.
 
-- Roadmap Frontend sudah interaktif.
-- Node roadmap memiliki panel materi, contoh, dan sumber belajar.
-- XP disimpan melalui widget progres dan disinkronkan ke `localStorage`.
-- Roadmap lain tersedia sebagai halaman/track tambahan atau masih dalam pengembangan.
+- Roadmap ditampilkan sebagai node dan cabang materi.
+- Panel materi muncul saat node dipilih.
+- Materi dibaca dari file JSON lokal di folder `materi/`.
+- XP diberikan saat user membaca materi atau membuka contoh.
+- Progress disimpan ke browser storage.
 
 ### Career Simulation
 
-Simulasi kerja berbasis project dan brief.
+Prototype simulasi kerja berbasis project.
 
-- Preview berbagai tipe project seperti UI Slicing, Full Project, Bug Fix, dan Tantangan.
-- Ada halaman detail project dengan brief, requirement, deadline, dan form submit.
-- Mode akses penuh masih berupa demo/prototipe.
+- Preview daftar project seperti UI Slicing, Full Project, Bug Fix, dan Tantangan.
+- Unlock mode berdasarkan XP.
+- Halaman detail project berisi brief, requirement, deadline, form submit, dan feedback demo.
+- Submit project hanya simulasi frontend.
 
 ### Skill Passport
 
-Profil gamifikasi pengguna yang menampilkan progres belajar.
+Halaman profil gamifikasi untuk menampilkan perkembangan belajar user.
 
-- Data profil membaca akun demo dari `worksim_user` dan detail tambahan dari `worksim_profile`.
-- Progres XP, skill, badge, dan aktivitas membaca `worksim_progress`.
-- Menampilkan level, XP, badges, skill distribution, dan activity timeline.
-- Tersedia tombol share passport.
-- Tersedia tombol Generate CV yang mengirim data Skill Passport ke Netlify Function.
+- Profil user demo.
+- Level dan XP.
+- Badge pencapaian.
+- Distribusi skill.
+- Riwayat aktivitas.
+- Tombol share.
+- Tombol Generate CV yang mengirim data Skill Passport ke Netlify Function.
 
 ### Generate CV dengan Useresume
 
-Skill Passport sudah disiapkan untuk membuat CV berbasis data profil dan skill pengguna.
+Fitur Generate CV memakai API Useresume untuk membuat CV dari data Skill Passport. Karena API key tidak aman jika ditaruh langsung di frontend, WorkSim menggunakan Netlify Function sebagai serverless proxy.
 
-- Frontend memanggil `/.netlify/functions/create-resume`.
-- API key Useresume hanya dibaca dari environment variable Netlify.
-- Response Useresume dengan `data.file_url` ditampilkan sebagai link PDF CV.
-- Jika API belum tersedia saat demo lokal, UI menampilkan mode demo/error yang ramah.
+Alur singkat:
+
+1. Frontend Skill Passport mengirim data profil dan skill ke `/.netlify/functions/create-resume`.
+2. Netlify Function membaca `USERESUME_API_KEY` dari environment variable.
+3. Function meneruskan payload ke Useresume API.
+4. Response dari Useresume dikirim kembali ke frontend.
+
+Catatan: Netlify Function ini hanya dipakai untuk menjaga API key tetap aman. WorkSim tetap belum menggunakan backend aplikasi, database, atau autentikasi server-side.
+
+### Login dan Register Demo
+
+Autentikasi hanya untuk kebutuhan simulasi pengalaman pengguna.
+
+- Data akun disimpan di `localStorage`.
+- Session login disimpan di `localStorage`.
+- Tidak ada validasi server.
+- Tidak ada database user.
+
+Dummy login bawaan:
+
+```txt
+Email: budi@worksim.id
+Password: password123
+```
 
 ### Dark Mode
 
-Dukungan tema terang dan gelap disimpan di `localStorage` dan digunakan lintas halaman.
+Tema terang dan gelap tersedia di seluruh halaman utama. Preferensi tema disimpan di `localStorage`.
 
 ---
 
@@ -79,245 +123,176 @@ Dukungan tema terang dan gelap disimpan di `localStorage` dan digunakan lintas h
 | --- | --- |
 | HTML5 | Struktur halaman |
 | Tailwind CSS v4 | Styling utility-first |
-| CSS3 | Custom styling dan animasi |
-| Vanilla JavaScript | Interaksi frontend tanpa framework |
-| SweetAlert2 | Toast dan dialog UI |
+| CSS3 | Custom styling, layout, animasi, dan responsive design |
+| Vanilla JavaScript | Interaksi frontend |
+| SweetAlert2 | Toast dan modal |
 | Font Awesome 6 | Ikon UI |
-| Google Fonts | Plus Jakarta Sans dan Sora |
-| DiceBear API | Avatar pengguna |
-| Netlify Functions | Proxy aman untuk Useresume API |
-| Useresume API | Generate CV PDF |
-
-Catatan: WorkSim tetap tidak memakai framework frontend dan belum memakai database. Satu-satunya server-side runtime saat ini adalah Netlify Function untuk menjaga API key Useresume tetap aman.
-
----
-
-## Integrasi Useresume
-
-Fitur generate CV menggunakan Netlify Function:
-
-```txt
-POST /.netlify/functions/create-resume
-```
-
-Function akan memetakan data WorkSim ke payload Useresume:
-
-- `profile.name` -> `content.name`
-- `profile.role` -> `content.role`
-- `profile.email` -> `content.email`
-- `profile.phone` -> `content.phone`
-- `profile.address` -> `content.address`
-- `profile.summary` -> `content.summary`
-- `progress.skills[]` -> `content.skills[]`
-
-Response Useresume yang didukung:
-
-```js
-{
-  success: true,
-  data: {
-    file_url: "https://useresume-platform.com/resume/john-doe-resume.pdf",
-    file_url_expires_at: 1728388800000,
-    file_expires_at: 1728388800000,
-    file_size_bytes: 251904
-  },
-  meta: {
-    run_id: "run_123456789",
-    credits_used: 1,
-    credits_remaining: 499
-  }
-}
-```
-
-Frontend akan menampilkan tombol untuk membuka PDF dari `data.file_url`.
-
-### Environment Variable
-
-Buat file `.env` untuk development lokal atau isi environment variable di dashboard Netlify:
-
-```env
-USERESUME_API_KEY=your_useresume_api_key
-```
-
-Contoh template tersedia di `.env.example`.
+| Google Fonts | Typography |
+| DiceBear API | Avatar demo |
+| Netlify Functions | Proxy aman untuk API key Useresume |
+| Useresume API | Generate CV dari Skill Passport |
+| Browser Storage | Penyimpanan data demo |
 
 ---
 
-## Struktur Proyek
+## Struktur Project
 
 ```txt
 worksim_cli/
-├── index.html
-├── README.md
-├── package.json
-├── netlify.toml
-├── .env.example
-├── assets/
-├── css/
-│   ├── input.css
-│   └── output.css
-├── js/
-│   ├── shared.js
-│   ├── skill-passport.js
-│   ├── xp-widget.js
-│   ├── login.js
-│   ├── register.js
-│   ├── ai-career-advisor.js
-│   └── roadmap-*.js
-├── netlify/
-│   └── functions/
-│       └── create-resume.js
-└── pages/
-    ├── login/
-    ├── register/
-    ├── ai-career-advisor/
-    ├── learning-roadmap/
-    ├── career-simulation/
-    └── skill-passport/
+|-- index.html
+|-- README.md
+|-- package.json
+|-- netlify.toml
+|-- assets/
+|-- css/
+|   |-- input.css
+|   `-- output.css
+|-- js/
+|   |-- shared.js
+|   |-- skill-passport.js
+|   |-- xp-widget.js
+|   |-- login.js
+|   |-- register.js
+|   |-- ai-career-advisor.js
+|   `-- roadmap-*.js
+|-- materi/
+|   `-- ...
+|-- netlify/
+|   `-- functions/
+|       `-- create-resume.js
+`-- pages/
+    |-- login/
+    |-- register/
+    |-- ai-career-advisor/
+    |-- learning-roadmap/
+    |-- career-simulation/
+    |-- skill-passport/
+    |-- privacy/
+    `-- terms/
 ```
 
 ---
 
-## Cara Memulai Development
+## Data Lokal
 
-### Prasyarat
-
-- Node.js v18 atau lebih baru
-- npm
-- Git
-- Netlify (via npx)
-
-### Setup
-
-```bash
-git clone https://github.com/Radhyy/WEB-DESIGN-SEFEST.git
-cd WEB-DESIGN-SEFEST
-npm install
-```
-
-Salin environment template:
-
-```bash
-cp .env.example .env
-```
-
-Isi `USERESUME_API_KEY` di `.env`.
-
-### Menjalankan Tailwind
-
-```bash
-npm run dev
-```
-
-Perintah ini hanya menjalankan Tailwind watch dan mengompilasi `css/input.css` ke `css/output.css`.
-
-### Menjalankan Website dengan Netlify Function
-
-Untuk fitur Generate CV, jalankan website melalui Netlify Dev:
-
-```bash
-npx netlify dev
-```
-
-Buka:
-
-```txt
-http://localhost:8888
-```
-
-Jika memakai VS Code Live Server di `http://127.0.0.1:5500`, pastikan `netlify dev` tetap berjalan di `http://localhost:8888`. Script Skill Passport akan mengarahkan request function dari Live Server ke port `8888`.
-
-### Build Produksi
-
-```bash
-npm run build
-```
-
-Untuk deploy Netlify, pastikan environment variable `USERESUME_API_KEY` sudah diisi di dashboard Netlify.
-
----
-
-## Scripts yang Tersedia
-
-| Script | Deskripsi |
-| --- | --- |
-| `npm run dev` | Watch Tailwind dan compile CSS otomatis |
-| `npm run build` | Build Tailwind minified |
-| `npm test` | Placeholder, belum ada test otomatis |
-
----
-
-## Catatan Data Lokal
-
-WorkSim masih memakai browser storage untuk prototipe:
+Karena belum menggunakan backend, beberapa data disimpan langsung di browser.
 
 | Key | Storage | Isi |
 | --- | --- | --- |
 | `worksim_user` | `localStorage` | Akun demo/register user |
 | `worksim_session` | `localStorage` | Status login demo |
-| `worksim_profile` | `localStorage` | Data profil untuk Skill Passport dan CV |
-| `worksim_progress` | `localStorage` | XP, skill, badge, dan aktivitas permanen |
-| `worksim_xp_progress` | `sessionStorage` | Progress XP lama/kompatibilitas widget |
-| `theme` | `localStorage` | Tema terang/gelap |
+| `worksim_profile` | `localStorage` | Data profil Skill Passport |
+| `worksim_progress` | `localStorage` | XP, completed nodes, badge, skill, dan aktivitas |
+| `worksim_xp_progress` | `sessionStorage` | Progress XP sementara/kompatibilitas widget |
+| `theme` | `localStorage` | Preferensi tema terang/gelap |
 
-Dummy login bawaan:
+Data ini hanya berada di perangkat/browser pengguna dan akan hilang jika storage browser dihapus.
+
+---
+
+## Cara Menjalankan
+
+### Prasyarat
+
+- Node.js v18 atau lebih baru
+- npm
+
+**1. Install Dependency**
+
+```bash
+npm install
+```
+
+**2. Development Tailwind**
+
+```bash
+npm run dev
+```
+
+Script ini menjalankan Tailwind watch dari `css/input.css` ke `css/output.css`.
+
+**3. Build CSS**
+
+```bash
+npm run build
+```
+
+**4. Jalankan Website**
+
+Untuk melihat tampilan web saja, project bisa dibuka lewat Live Server atau static server lokal.
+
+Contoh:
 
 ```txt
-Email: budi@worksim.id
-Password: password123
+http://127.0.0.1:5500
+```
+
+Untuk mencoba fitur Generate CV yang membutuhkan Netlify Function, jalankan:
+
+```bash
+npx netlify dev
+```
+
+Website akan tersedia di:
+
+```txt
+http://localhost:8888
+```
+
+Jika membuka website lewat **Live Server / Five Server**, pastikan Netlify Dev tetap berjalan agar endpoint `/.netlify/functions/create-resume` bisa diakses.
+
+### Environment Variable untuk Generate CV
+
+Buat file `.env` dari template `.env.example`, lalu isi API key Useresume:
+
+```env
+USERESUME_API_KEY=your_useresume_api_key
+```
+
+Untuk deploy, isi environment variable yang sama di dashboard Netlify:
+
+```txt
+USERESUME_API_KEY
 ```
 
 ---
 
-## Panduan Kontribusi
+## Scripts
 
-1. Fork repositori ini.
-2. Buat branch baru.
-3. Lakukan perubahan sesuai pola kode yang sudah ada.
-4. Pastikan halaman tetap responsif dan mendukung dark mode.
-5. Jangan commit `node_modules/`, `.env`, build output, atau file rahasia.
-6. Jalankan pengecekan sintaks untuk file JS yang diubah jika memungkinkan.
-7. Buat Pull Request ke branch utama.
-
-Pedoman penting:
-
-- API key eksternal tidak boleh ditaruh di frontend.
-- Gunakan Netlify Function untuk integrasi yang membutuhkan secret.
-- Pertahankan pola Vanilla JS dan HTML statis yang sudah ada.
-- Hindari menambah framework besar tanpa diskusi.
+| Script | Deskripsi |
+| --- | --- |
+| `npm run dev` | Watch Tailwind CSS |
+| `npm run build` | Build Tailwind CSS minified |
+| `npm test` | Placeholder, belum ada test otomatis |
 
 ---
 
-## Roadmap
+## Batasan Project
 
-### Tersedia
+WorkSim dibuat untuk kebutuhan lomba desain web, sehingga prioritasnya adalah UI, UX, visual, responsiveness, dan storytelling produk. Beberapa fitur masih berupa simulasi:
 
-- [x] Landing page
-- [x] Login dan register demo
-- [x] AI Career Advisor
-- [x] Learning Roadmap Frontend interaktif
-- [x] XP widget
-- [x] Skill Passport dinamis berbasis localStorage
-- [x] Generate CV via Netlify Function dan Useresume
-- [x] Career Simulation preview
-- [x] Dark mode
+- Login/register belum aman untuk produksi.
+- Progress belum tersinkron antar perangkat.
+- Career Simulation belum memproses submit secara nyata.
+- AI Career Advisor belum memakai model AI eksternal.
+- Skill Passport belum mengambil data dari database.
+- Generate CV belum menjadi fitur produksi utama.
 
-### Dalam Pengembangan
+---
 
-- [ ] Form edit profil Skill Passport
-- [ ] Mapping project simulasi ke bagian pengalaman/project CV
-- [ ] Career Simulation fungsional penuh
-- [ ] Roadmap non-Frontend yang lebih lengkap
-- [ ] Sistem autentikasi dan database sungguhan
-- [ ] Test otomatis
+## Pengembangan Lanjutan
 
-### Rencana Mendatang
+Beberapa ide yang dapat dikembangkan setelah versi lomba:
 
-- [ ] Dashboard pengguna
-- [ ] Integrasi GitHub/API eksternal lain
-- [ ] Mode offline/PWA
-- [ ] Forum atau diskusi komunitas
-- [ ] Dukungan multi-bahasa
+- Backend dan database user.
+- Autentikasi sungguhan.
+- Dashboard user.
+- Skill Passport yang menghitung skill dari progress roadmap secara dinamis.
+- Rekomendasi peningkatan skill berdasarkan skill terlemah.
+- Pilihan target CV berdasarkan posisi atau tujuan lamaran.
+- Career Simulation dengan penilaian otomatis.
+- Integrasi AI untuk feedback project dan career guidance.
+- PWA atau mode offline.
 
 ---
 
@@ -329,10 +304,18 @@ Pedoman penting:
 
 ---
 
-## Lisensi
+## Lomba
 
-Proyek ini menggunakan ISC License. Lihat `package.json` untuk detail.
+Project ini dibuat untuk:
+
+```txt
+SEFEST 2026
+Bidang: Web Design
+Penyelenggara: Himpunan Mahasiswa Software Engineering Telkom University
+```
 
 ---
 
-Dibuat untuk SEFEST 2026.
+## Lisensi
+
+Project ini menggunakan lisensi ISC sesuai `package.json`.

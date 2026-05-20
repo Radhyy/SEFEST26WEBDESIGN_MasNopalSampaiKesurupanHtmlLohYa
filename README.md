@@ -185,13 +185,7 @@ worksim_cli/
 - Node.js v18 atau lebih baru
 - npm
 - Git
-- Netlify CLI untuk menjalankan function secara lokal
-
-Install Netlify CLI jika belum ada:
-
-```bash
-npm install -g netlify-cli
-```
+- Netlify (via npx)
 
 ### Setup
 
@@ -222,7 +216,7 @@ Perintah ini hanya menjalankan Tailwind watch dan mengompilasi `css/input.css` k
 Untuk fitur Generate CV, jalankan website melalui Netlify Dev:
 
 ```bash
-netlify dev
+npx netlify dev
 ```
 
 Buka:

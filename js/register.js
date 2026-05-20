@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
       password,
     });
     window.location.href = window.WorkSimAuth.getRedirectTarget(
-      "/pages/skill-passport/",
+      "/pages/ai-career-advisor/",
     );
   });
 });

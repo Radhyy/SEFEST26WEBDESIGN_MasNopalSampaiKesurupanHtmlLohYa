@@ -1,8 +1,11 @@
-// ─── WorkSim Shared Components ─────────────────────────────────────────────
-// Inject this script on any page to get the navbar & footer automatically.
+// ====== WorkSim Shared Components ======
+// Navbar, footer, auth, dan data shared untuk semua halaman.
+// ====== WorkSim Shared Components end ======
 
-// ─── Path Helper ─────────────────────────────────────────────────────────────
-// Mendapatkan relative path ke root directory berdasarkan src dari script ini
+
+
+
+// ====== Path Helper ======
 let rootPath = "";
 const scripts = document.getElementsByTagName("script");
 for (let i = 0; i < scripts.length; i++) {
@@ -12,8 +15,12 @@ for (let i = 0; i < scripts.length; i++) {
     break;
   }
 }
+// ====== Path Helper end ======
 
-// Demo Auth Helper
+
+
+
+// ====== Auth Helper ======
 const AUTH_USER_KEY = "worksim_user";
 const AUTH_SESSION_KEY = "worksim_session";
 const DUMMY_USER = {
@@ -134,7 +141,24 @@ window.WorkSimAuth = {
   logoutUser,
   registerUser,
 };
+// ====== Auth Helper end ======
 
+
+
+
+// ====== Protected Route ======
+if (isProtectedPath(window.location.pathname) && !getCurrentUser()) {
+  const redirect = encodeURIComponent(
+    `${window.location.pathname}${window.location.search}${window.location.hash}`,
+  );
+  window.location.replace(`/pages/login/?redirect=${redirect}`);
+}
+// ====== Protected Route end ======
+
+
+
+
+// ====== Skill Passport Data ======
 const WORKSIM_PROFILE_KEY = "worksim_profile";
 const WORKSIM_PROGRESS_KEY = "worksim_progress";
 const WORKSIM_PROGRESS_SESSION_KEY = "worksim_xp_progress";
@@ -347,14 +371,12 @@ window.WorkSimData = {
   saveProfile,
   saveProgress,
 };
+// ====== Skill Passport Data end ======
 
-if (isProtectedPath(window.location.pathname) && !getCurrentUser()) {
-  const redirect = encodeURIComponent(
-    `${window.location.pathname}${window.location.search}${window.location.hash}`,
-  );
-  window.location.replace(`/pages/login/?redirect=${redirect}`);
-}
 
+
+
+// ====== Navbar Auth UI ======
 function escapeHTML(value) {
   const div = document.createElement("div");
   div.textContent = value || "";
@@ -398,7 +420,12 @@ function getMobileAuthActionsHTML(user) {
           <i class="fa-solid fa-right-from-bracket"></i>
         </button>`;
 }
+// ====== Navbar Auth UI end ======
 
+
+
+
+// ====== Navbar Template ======
 const NAVBAR_HTML = `
 <header class="sticky top-0 z-30 w-full" id="site-header" style="padding: 0 1vw; border-bottom: 1px solid transparent; transition: padding 0.75s cubic-bezier(0.25,0.46,0.45,0.94), background 0.75s cubic-bezier(0.25,0.46,0.45,0.94), border-color 0.75s cubic-bezier(0.25,0.46,0.45,0.94);">
   <div class="mx-auto flex min-h-18 w-full max-w-310 items-center px-4 sm:px-6 lg:min-h-22 lg:px-0 2xl:max-w-330" id="navbar-outer">
@@ -443,7 +470,12 @@ const NAVBAR_HTML = `
     </div>
   </div>
 </header>`;
+// ====== Navbar Template end ======
 
+
+
+
+// ====== Footer Template ======
 const FOOTER_HTML = `
 <footer id="kontak" class="relative overflow-hidden border-t border-[#dce5fb] bg-linear-to-b from-[#f7faff] to-brand-50 py-8 pb-7 dark:border-slate-700 dark:from-[#0a1020] dark:to-[#111c2f]">
   <div class="pointer-events-none absolute -left-24 top-0 h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(47,91,211,0.14)_0%,transparent_72%)] dark:opacity-30"></div>
@@ -499,17 +531,24 @@ const FOOTER_HTML = `
     </div>
   </div>
 </footer>`;
+// ====== Footer Template end ======
 
-// Inject Components
+
+
+
+// ====== Inject Components ======
 document.addEventListener("DOMContentLoaded", () => {
-  // Inject Navbar before <main> or at top of body
   const navPlaceholder = document.getElementById("navbar-placeholder");
   if (navPlaceholder) navPlaceholder.outerHTML = NAVBAR_HTML;
 
   const footerPlaceholder = document.getElementById("footer-placeholder");
   if (footerPlaceholder) footerPlaceholder.outerHTML = FOOTER_HTML;
+  // ====== Inject Components end ======
 
-  // Auth-aware Navbar
+
+
+
+  // ====== Auth Navbar ======
   const currentUser = getCurrentUser();
   const authActions = document.getElementById("authActions");
   const authActionsMobile = document.getElementById("authActionsMobile");
@@ -533,8 +572,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+  // ====== Auth Navbar end ======
 
-  // Active Nav Highlight
+
+
+
+  // ====== Active Nav ======
   const navLinks = document.querySelectorAll("header nav a");
   const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
   navLinks.forEach((link) => {
@@ -543,8 +586,12 @@ document.addEventListener("DOMContentLoaded", () => {
       link.classList.add("bg-[#eaf0ff]", "dark:bg-white/10", "text-brand-500");
     }
   });
+  // ====== Active Nav end ======
 
-  // Mobile Menu Toggle
+
+
+
+  // ====== Mobile Menu ======
   const mobileMenuToggle = document.getElementById("mobileMenuToggle");
   const mobileMenu = document.getElementById("mobileMenu");
   const mobileMenuIcon = document.getElementById("mobileMenuIcon");
@@ -583,8 +630,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (window.innerWidth >= 1024) setMobileMenuOpen(false);
     });
   }
+  // ====== Mobile Menu end ======
 
-  // Dark Mode Toggle
+
+
+
+  // ====== Dark Mode ======
   const html = document.documentElement;
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") html.classList.add("dark");
@@ -615,8 +666,12 @@ document.addEventListener("DOMContentLoaded", () => {
       updateIcons(isDark);
     });
   });
+  // ====== Dark Mode end ======
 
-  // ─── Navbar Scroll Morph: Capsule → Normal ────────────────────────────────
+
+
+
+  // ====== Navbar Scroll Morph ======
   const siteHeader  = document.getElementById('site-header');
   const navbarOuter = document.getElementById('navbar-outer');
   const navbarPill  = document.getElementById('navbar-pill');
@@ -630,8 +685,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const isDark = html.classList.contains('dark');
 
     if (scrolled) {
-      // ── Scrolled: full-width flat navbar ──
       siteHeader.style.padding         = '0';
+      siteHeader.style.marginTop       = '0';
       siteHeader.style.background      = isDark ? 'rgba(11,18,32,0.9)' : 'rgba(247,250,255,0.9)';
       siteHeader.style.borderColor     = isDark ? 'rgba(71,85,105,0.5)' : 'rgba(219,229,248,1)';
       siteHeader.style.backdropFilter  = 'blur(20px)';
@@ -651,8 +706,8 @@ document.addEventListener("DOMContentLoaded", () => {
         navbarPillMobile.style.background   = 'transparent';
       }
     } else {
-      // ── Top: capsule pill ──
       siteHeader.style.padding         = '0 1vw';
+      siteHeader.style.marginTop       = '0.75rem';
       siteHeader.style.background      = 'transparent';
       siteHeader.style.borderColor     = 'transparent';
       siteHeader.style.backdropFilter  = 'none';
@@ -673,26 +728,37 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
+  // ====== Navbar Scroll Morph end ======
 
-  // Re-apply on dark mode toggle to keep colors consistent
+
+
+
+  // ====== Theme Sync ======
   const _origUpdateIcons = updateIcons;
   ['themeToggle', 'themeToggleMobile'].forEach(id => {
     const btn = document.getElementById(id);
     if (!btn) return;
     btn.addEventListener('click', () => {
-      // Recompute scroll state after theme switch
       setTimeout(() => applyScrollState(window.scrollY > SCROLL_THRESHOLD), 0);
     });
   });
+  // ====== Theme Sync end ======
 
+
+
+
+  // ====== Scroll State Init ======
   window.addEventListener('scroll', () => {
     applyScrollState(window.scrollY > SCROLL_THRESHOLD);
   }, { passive: true });
 
-  // Apply on load
   applyScrollState(window.scrollY > SCROLL_THRESHOLD);
+  // ====== Scroll State Init end ======
 
-  // ─── Scroll Reveal ────────────────────────────────────────────────────────
+
+
+
+  // ====== Scroll Reveal ======
   const revealEls = document.querySelectorAll(".reveal");
   if (revealEls.length) {
     const observer = new IntersectionObserver(
@@ -708,4 +774,5 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     revealEls.forEach((el) => observer.observe(el));
   }
+  // ====== Scroll Reveal end ======
 });

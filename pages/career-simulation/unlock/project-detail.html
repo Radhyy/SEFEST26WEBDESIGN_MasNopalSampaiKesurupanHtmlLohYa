@@ -74,19 +74,20 @@
         <i class="fa-solid fa-arrow-left text-xs"></i> Semua Project
       </a>
       <!-- Tabs -->
-      <div class="flex w-full gap-5 overflow-x-auto sm:w-auto">
-        <button class="tab-active min-h-10 text-sm font-semibold pb-0 shrink-0">
+      <div class="flex w-full gap-5 overflow-x-auto sm:w-auto" role="tablist" aria-label="Navigasi detail project">
+        <button type="button" data-project-tab="brief" role="tab" aria-selected="true" aria-controls="panel-brief"
+          class="tab-active min-h-10 text-sm font-semibold pb-0 shrink-0">
           <i class="fa-solid fa-file-lines mr-1.5"></i> Brief Klien
         </button>
-        <button
+        <button type="button" data-project-tab="submit" role="tab" aria-selected="false" aria-controls="panel-submit"
           class="min-h-10 text-sm font-semibold text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 shrink-0">
           <i class="fa-solid fa-upload mr-1.5"></i> Submit
         </button>
-        <button
+        <button type="button" data-project-tab="feedback" role="tab" aria-selected="false" aria-controls="panel-feedback"
           class="min-h-10 text-sm font-semibold text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 shrink-0">
           <i class="fa-solid fa-comments mr-1.5"></i> Feedback
         </button>
-        <button
+        <button type="button" data-project-tab="solutions" role="tab" aria-selected="false" aria-controls="panel-solutions"
           class="min-h-10 text-sm font-semibold text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 shrink-0">
           <i class="fa-solid fa-users mr-1.5"></i> Solusi Lain
         </button>
@@ -102,7 +103,8 @@
   <div class="content-page py-6 sm:py-8 grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
 
     <!-- ===== LEFT: Brief Content ===== -->
-    <div class="lg:col-span-2 space-y-6">
+    <div class="lg:col-span-2">
+      <div id="panel-brief" data-project-panel="brief" role="tabpanel" class="block space-y-6">
 
       <!-- Project Title -->
       <div>
@@ -248,6 +250,82 @@
           </span>
         </div>
       </div>
+      </div>
+
+      <div id="panel-submit" data-project-panel="submit" role="tabpanel" class="hidden space-y-6">
+        <div class="rounded-2xl border border-brand-200 dark:border-brand-800 bg-white dark:bg-slate-800 p-5">
+          <h2 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-2">Submit Hasil Kerja</h2>
+          <p class="text-sm leading-7 text-slate-500 dark:text-slate-400">Kirim repository dan preview agar klien virtual bisa menilai struktur kode, responsivitas, serta catatan pengerjaanmu.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5">
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Wajib</p>
+              <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Link GitHub repository publik.</li>
+                <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Minimal semua section utama sudah responsive.</li>
+                <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Catatan singkat pendekatan slicing.</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Opsional</p>
+              <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                <li class="flex gap-2"><i class="fa-solid fa-star text-amber-500 mt-1"></i> Link live preview Vercel atau Netlify.</li>
+                <li class="flex gap-2"><i class="fa-solid fa-star text-amber-500 mt-1"></i> Animasi micro-interaction ringan.</li>
+                <li class="flex gap-2"><i class="fa-solid fa-star text-amber-500 mt-1"></i> Screenshot hasil mobile dan desktop.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-900/20 p-5">
+          <p class="text-sm text-amber-800 dark:text-amber-200"><strong>Tips:</strong> area submit lengkap tetap tersedia di sidebar kanan agar kamu bisa mengirim tanpa kehilangan konteks brief.</p>
+        </div>
+      </div>
+
+      <div id="panel-feedback" data-project-panel="feedback" role="tabpanel" class="hidden space-y-6">
+        <div class="rounded-2xl border border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-900/20 p-5">
+          <p class="text-xs font-bold uppercase tracking-widest text-emerald-600 mb-2">Preview Feedback Klien</p>
+          <h2 class="font-display text-2xl font-bold text-slate-900 dark:text-white">Belum ada feedback baru</h2>
+          <p class="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-300">Setelah hasil dikirim, WorkSim akan menampilkan evaluasi untuk pixel accuracy, responsive layout, semantic HTML, dan kerapian CSS.</p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5">
+            <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Rubrik</p>
+            <p class="text-sm text-slate-600 dark:text-slate-300">Tampilan, aksesibilitas, struktur kode, dan konsistensi dengan brief.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5">
+            <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Reward</p>
+            <p class="text-sm text-slate-600 dark:text-slate-300">XP final akan dihitung dari kualitas submit dan bonus opsional yang terpenuhi.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="panel-solutions" data-project-panel="solutions" role="tabpanel" class="hidden space-y-6">
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5">
+          <h2 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-2">Solusi Lain dari Komunitas</h2>
+          <p class="text-sm leading-7 text-slate-500 dark:text-slate-400">Bandingkan pendekatan setelah kamu submit, supaya proses belajar tetap jujur dan reflektif.</p>
+        </div>
+        <div class="grid gap-4">
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 p-5">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <p class="font-bold text-slate-900 dark:text-white">Clean CSS Grid Approach</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Fokus pada layout sederhana, semantic section, dan responsive breakpoint minimal.</p>
+              </div>
+              <span class="rounded-full bg-brand-100 px-3 py-1 text-xs font-bold text-brand-600 dark:bg-brand-900/40 dark:text-brand-300">Coming soon</span>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 p-5">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <p class="font-bold text-slate-900 dark:text-white">Tailwind Utility First</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Menggunakan utility class untuk menjaga spacing dan typography tetap konsisten.</p>
+              </div>
+              <span class="rounded-full bg-brand-100 px-3 py-1 text-xs font-bold text-brand-600 dark:bg-brand-900/40 dark:text-brand-300">Coming soon</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
 
@@ -374,6 +452,29 @@
   </div><!-- end grid -->
 
   <div id="footer-placeholder"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const tabs = document.querySelectorAll("[data-project-tab]");
+      const panels = document.querySelectorAll("[data-project-panel]");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const activePanel = tab.dataset.projectTab;
+          tabs.forEach((item) => {
+            const isActive = item === tab;
+            item.setAttribute("aria-selected", String(isActive));
+            item.classList.toggle("tab-active", isActive);
+            item.classList.toggle("text-slate-400", !isActive);
+          });
+          panels.forEach((panel) => {
+            const isActive = panel.dataset.projectPanel === activePanel;
+            panel.classList.toggle("hidden", !isActive);
+            panel.classList.toggle("block", isActive);
+          });
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

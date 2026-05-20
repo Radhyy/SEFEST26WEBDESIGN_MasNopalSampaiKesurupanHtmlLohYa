@@ -161,7 +161,7 @@ function getAuthActionsHTML(user) {
           <img src="${avatar}" alt="${name}" class="h-8 w-8 rounded-full border border-[#dbe3f8] bg-brand-50 object-cover">
           <span class="truncate" style="max-width: 8rem;">${name}</span>
         </a>
-        <button id="logoutButton" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#dbe3f8] bg-white text-slate-600 transition hover:text-red-500 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-200" aria-label="Keluar">
+        <button id="logoutButton" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#dbe3f8] bg-white text-slate-600 transition hover:text-red-500 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-200" aria-label="Keluar dari akun WorkSim">
           <i class="fa-solid fa-right-from-bracket"></i>
         </button>`;
 }
@@ -178,7 +178,7 @@ function getMobileAuthActionsHTML(user) {
           <img src="${avatar}" alt="${name}" class="h-7 w-7 rounded-full border border-[#dbe3f8] bg-brand-50 object-cover">
           <span class="truncate">${name}</span>
         </a>
-        <button id="logoutButtonMobile" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#dbe3f8] bg-white text-slate-600 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-200" aria-label="Keluar">
+        <button id="logoutButtonMobile" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#dbe3f8] bg-white text-slate-600 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-200" aria-label="Keluar dari akun WorkSim">
           <i class="fa-solid fa-right-from-bracket text-sm"></i>
         </button>`;
 }
@@ -196,7 +196,7 @@ const NAVBAR_HTML = `
         <a class="rounded-full px-4 py-2 transition hover:bg-[#eaf0ff] dark:hover:bg-white/10" href="/pages/skill-passport/">Skill Passport</a>
       </nav>
       <div class="flex items-center gap-2">
-        <button id="themeToggle" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#b8cdfa] bg-[#e3edff] text-brand-500 transition hover:-translate-y-0.5 hover:border-brand-500 dark:border-slate-500 dark:bg-slate-900 dark:text-[#ffd166]" aria-label="Ganti tema">
+        <button id="themeToggle" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#b8cdfa] bg-[#e3edff] text-brand-500 transition hover:-translate-y-0.5 hover:border-brand-500 dark:border-slate-500 dark:bg-slate-900 dark:text-[#ffd166]" aria-label="Ganti tema tampilan WorkSim antara mode terang dan gelap" aria-pressed="false">
           <i id="themeIcon" class="fa-solid fa-moon text-base"></i>
         </button>
         <div id="authActions" class="flex items-center gap-2"></div>
@@ -205,7 +205,7 @@ const NAVBAR_HTML = `
     <div class="flex w-full items-center justify-between rounded-full border border-[#dbe3f8]/80 bg-white/85 px-3 py-2 shadow-[0_10px_26px_rgba(47,91,211,0.10)] backdrop-blur lg:hidden dark:border-slate-700/80 dark:bg-slate-900/85">
       <a href="/" class="inline-flex min-h-10 items-center font-display text-[1.3rem] font-bold tracking-[-0.02em]">Work<span class="text-brand-500">Sim</span></a>
       <div class="flex items-center gap-2">
-        <button id="themeToggleMobile" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#b8cdfa] bg-[#e3edff] text-brand-500 dark:border-slate-500 dark:bg-slate-900 dark:text-[#ffd166]" aria-label="Ganti tema mobile">
+        <button id="themeToggleMobile" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#b8cdfa] bg-[#e3edff] text-brand-500 dark:border-slate-500 dark:bg-slate-900 dark:text-[#ffd166]" aria-label="Ganti tema tampilan WorkSim antara mode terang dan gelap" aria-pressed="false">
           <i id="themeIconMobile" class="fa-solid fa-moon text-sm"></i>
         </button>
         <div id="authActionsMobile" class="flex items-center gap-2"></div>
@@ -326,6 +326,11 @@ document.addEventListener("DOMContentLoaded", () => {
       el.className = isDark
         ? "fa-solid fa-sun text-base"
         : "fa-solid fa-moon text-base";
+    });
+    ["themeToggle", "themeToggleMobile"].forEach((id) => {
+      const btn = document.getElementById(id);
+      if (!btn) return;
+      btn.setAttribute("aria-pressed", String(isDark));
     });
   }
   updateIcons(html.classList.contains("dark"));

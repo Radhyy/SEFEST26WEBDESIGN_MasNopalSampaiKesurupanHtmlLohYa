@@ -140,16 +140,16 @@
         </p>
       </div>
       <!-- Filter tabs -->
-      <div class="scroll-tabs bg-slate-100 dark:bg-slate-800">
-        <button
+      <div class="scroll-tabs bg-slate-100 dark:bg-slate-800" role="group" aria-label="Filter project simulasi">
+        <button type="button" data-career-filter="all" aria-pressed="true"
           class="scroll-tab bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm">Semua</button>
-        <button
+        <button type="button" data-career-filter="ui-slicing" aria-pressed="false"
           class="scroll-tab text-slate-500 dark:text-slate-400 hover:text-slate-700">UI
           Slicing</button>
-        <button
+        <button type="button" data-career-filter="full-project" aria-pressed="false"
           class="scroll-tab text-slate-500 dark:text-slate-400 hover:text-slate-700">Full
           Project</button>
-        <button
+        <button type="button" data-career-filter="bug-fix" aria-pressed="false"
           class="scroll-tab text-slate-500 dark:text-slate-400 hover:text-slate-700">Bug
           Fix</button>
       </div>
@@ -184,7 +184,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pointer-events-none select-none">
 
         <!-- Card 1 -->
-        <a href="unlock/project-detail.html"
+        <a href="unlock/project-detail.html" data-career-card data-category="ui-slicing"
           class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden card-hover block">
           <div class="h-2 bg-linear-to-r from-brand-500 to-[#4f46e5]"></div>
           <div class="p-5">
@@ -212,7 +212,7 @@
         </a>
 
         <!-- Card 2 -->
-        <div
+        <div data-career-card data-category="full-project"
           class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden">
           <div class="h-2 bg-linear-to-r from-purple-500 to-pink-500"></div>
           <div class="p-5">
@@ -240,7 +240,7 @@
         </div>
 
         <!-- Card 3 -->
-        <div
+        <div data-career-card data-category="bug-fix"
           class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden">
           <div class="h-2 bg-linear-to-r from-emerald-500 to-teal-500"></div>
           <div class="p-5">
@@ -268,7 +268,7 @@
         </div>
 
         <!-- Card 4 -->
-        <div
+        <div data-career-card data-category="ui-slicing"
           class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden">
           <div class="h-2 bg-linear-to-r from-brand-500 to-[#4f46e5]"></div>
           <div class="p-5">
@@ -296,7 +296,7 @@
         </div>
 
         <!-- Card 5 -->
-        <div
+        <div data-career-card data-category="tantangan"
           class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden">
           <div class="h-2 bg-linear-to-r from-rose-500 to-orange-500"></div>
           <div class="p-5">
@@ -324,7 +324,7 @@
         </div>
 
         <!-- Card 6 -->
-        <div
+        <div data-career-card data-category="full-project"
           class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden">
           <div class="h-2 bg-linear-to-r from-teal-500 to-cyan-500"></div>
           <div class="p-5">
@@ -408,6 +408,36 @@
   </section>
 
   <div id="footer-placeholder"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const filterButtons = document.querySelectorAll("[data-career-filter]");
+      const cards = document.querySelectorAll("[data-career-card]");
+
+      function setActiveFilter(activeButton) {
+        filterButtons.forEach((button) => {
+          const isActive = button === activeButton;
+          button.setAttribute("aria-pressed", String(isActive));
+          button.classList.toggle("bg-white", isActive);
+          button.classList.toggle("dark:bg-slate-700", isActive);
+          button.classList.toggle("text-slate-900", isActive);
+          button.classList.toggle("dark:text-white", isActive);
+          button.classList.toggle("shadow-sm", isActive);
+          button.classList.toggle("text-slate-500", !isActive);
+          button.classList.toggle("dark:text-slate-400", !isActive);
+        });
+      }
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const activeFilter = button.dataset.careerFilter;
+          setActiveFilter(button);
+          cards.forEach((card) => {
+            card.classList.toggle("hidden", activeFilter !== "all" && card.dataset.category !== activeFilter);
+          });
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

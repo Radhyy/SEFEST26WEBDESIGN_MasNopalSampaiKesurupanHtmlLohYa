@@ -12,12 +12,22 @@ window.xpProgress = {
 window.xpWidgetHidden = true;
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Hanya inisialisasi jika user login. Jika null, tetap inisialisasi agar terlihat tapi tidak tersimpan permanen.
-  let progressStr = sessionStorage.getItem("worksim_xp_progress");
-  if (progressStr) {
-    try {
-      window.xpProgress = JSON.parse(progressStr);
-    } catch (e) {}
+  // Hanya inisialisasi jika user login. Progress disalin ke localStorage agar Skill Passport bisa merender data permanen.
+  if (window.WorkSimData) {
+    const storedProgress = window.WorkSimData.getProgress();
+    window.xpProgress = {
+      ...window.xpProgress,
+      xp: storedProgress.xp || 0,
+      completedNodes: storedProgress.completedNodes || {},
+      activity: storedProgress.activity || [],
+    };
+  } else {
+    let progressStr = sessionStorage.getItem("worksim_xp_progress");
+    if (progressStr) {
+      try {
+        window.xpProgress = JSON.parse(progressStr);
+      } catch (e) {}
+    }
   }
   
   const container = document.createElement("div");
@@ -35,7 +45,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 window.saveXPProgress = function() {
-  sessionStorage.setItem("worksim_xp_progress", JSON.stringify(window.xpProgress));
+  if (window.WorkSimData) {
+    window.WorkSimData.saveProgress(window.xpProgress);
+  } else {
+    sessionStorage.setItem("worksim_xp_progress", JSON.stringify(window.xpProgress));
+  }
   renderXPWidgetUI();
 }
 

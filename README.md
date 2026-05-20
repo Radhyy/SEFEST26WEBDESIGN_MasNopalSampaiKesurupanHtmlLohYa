@@ -1,156 +1,179 @@
-# WorkSim 🚀
+# WorkSim
 
-**WorkSim** adalah platform eksplorasi & simulasi karier berbasis web yang dirancang untuk membantu siswa dan fresh graduate menemukan arah karier yang paling cocok dengan potensi mereka. Mulai dari asesmen minat berbasis AI, learning roadmap interaktif, simulasi kerja nyata, hingga passport digital yang mencatat seluruh progres belajar — semuanya dalam satu ekosistem.
+WorkSim adalah platform eksplorasi dan simulasi karier berbasis web untuk membantu siswa, fresh graduate, dan career switcher menemukan arah karier digital yang lebih jelas. Di dalamnya ada AI Career Advisor, learning roadmap interaktif, career simulation, dan Skill Passport yang mencatat progres belajar pengguna.
 
-> ⚠️ **Status: Development Aktif** — Proyek ini masih dalam tahap pengembangan awal. Banyak fitur yang belum stabil, belum konsisten, dan masih berupa prototipe. Cocok untuk eksperimen dan kontribusi awal.
+> Status: Development aktif. Beberapa fitur masih berupa prototipe, tetapi Skill Passport sudah mulai memakai data dinamis dari browser storage dan sudah disiapkan untuk integrasi generate CV via Useresume.
 
 ---
 
 ## Daftar Isi
 
 - [Fitur Utama](#fitur-utama)
-- [Tampilan Proyek](#tampilan-proyek)
 - [Tech Stack](#tech-stack)
+- [Integrasi Useresume](#integrasi-useresume)
 - [Struktur Proyek](#struktur-proyek)
 - [Cara Memulai Development](#cara-memulai-development)
 - [Scripts yang Tersedia](#scripts-yang-tersedia)
+- [Catatan Data Lokal](#catatan-data-lokal)
 - [Panduan Kontribusi](#panduan-kontribusi)
 - [Roadmap](#roadmap)
-- [Catatan Pengembangan](#catatan-pengembangan)
 - [Tim Pengembang](#tim-pengembang)
-- [Lisensi](#lisensi)
 
 ---
 
 ## Fitur Utama
 
-### 🧠 AI Career Advisor
-Kuis interaktif 3 langkah yang menganalisis minat dan tingkat keahlian pengguna, lalu memberikan rekomendasi karier secara instan — semuanya dijalankan di sisi klien.
+### AI Career Advisor
 
-- **Langkah 1**: Pilih bidang minat (Desain, Coding, Data, Manajemen)
-- **Langkah 2**: Tentukan tingkat keahlian
-- **Langkah 3**: Dapatkan hasil rekomendasi karier beserta deskripsi singkat
+Kuis interaktif 3 langkah yang menganalisis minat dan tingkat keahlian pengguna, lalu memberikan rekomendasi karier secara instan di sisi klien.
 
-### 🗺️ Learning Roadmap Interaktif
-Learning roadmap berbentuk diagram pohon (branching) yang menampilkan jalur belajar Frontend Development secara visual.
+- Pilih bidang minat seperti desain, coding, data, atau manajemen.
+- Tentukan tingkat keahlian.
+- Dapatkan rekomendasi karier beserta deskripsi singkat.
 
-- Node-node yang saling terhubung dengan garis SVG
-- Panel samping yang berisi deskripsi, ide proyek, dan sumber belajar gratis
-- Progress tracking dengan checklist per node
-- **Rencana**: Backend, Full Stack, DevOps, Mobile, AI Engineer, dan lainnya
+### Learning Roadmap Interaktif
 
-### 🎮 Career Simulation
-Simulasi kerja dunia nyata dengan sistem proyek dan submission.
+Roadmap berbentuk diagram pohon untuk membantu pengguna belajar secara bertahap.
 
-- Berbagai tipe proyek: UI Slicing, Full Project, Bug Fix, Tantangan
-- Sistem deadline dan countdown timer
-- Form submission (tautan GitHub, live preview, catatan)
-- **Saat ini**: Terkunci — membutuhkan Level Freelance (1500 XP) untuk mengakses
+- Roadmap Frontend sudah interaktif.
+- Node roadmap memiliki panel materi, contoh, dan sumber belajar.
+- XP disimpan melalui widget progres dan disinkronkan ke `localStorage`.
+- Roadmap lain tersedia sebagai halaman/track tambahan atau masih dalam pengembangan.
 
-### 🛂 Skill Passport
-Passport digital / profil pengguna yang menampilkan seluruh pencapaian belajar secara visual dan gamifikasi.
+### Career Simulation
 
-- Level & XP Progress (Beginner → Intermediate → Freelance)
-- Badges / pencapaian
-- Skill distribution chart (radar chart SVG)
-- Activity history timeline
-- Menggunakan avatar dari DiceBear API
+Simulasi kerja berbasis project dan brief.
 
-### 🌙 Dark Mode
-Dukungan tema terang dan gelap penuh yang disimpan ke `localStorage`, diintegrasikan ke seluruh halaman.
+- Preview berbagai tipe project seperti UI Slicing, Full Project, Bug Fix, dan Tantangan.
+- Ada halaman detail project dengan brief, requirement, deadline, dan form submit.
+- Mode akses penuh masih berupa demo/prototipe.
 
-### ✨ Scroll Reveal
-Animasi elemen yang muncul saat pengguna menggulir, menggunakan `IntersectionObserver` native.
+### Skill Passport
 
----
+Profil gamifikasi pengguna yang menampilkan progres belajar.
 
-## Tampilan Proyek
+- Data profil membaca akun demo dari `worksim_user` dan detail tambahan dari `worksim_profile`.
+- Progres XP, skill, badge, dan aktivitas membaca `worksim_progress`.
+- Menampilkan level, XP, badges, skill distribution, dan activity timeline.
+- Tersedia tombol share passport.
+- Tersedia tombol Generate CV yang mengirim data Skill Passport ke Netlify Function.
 
-| Halaman | Deskripsi |
-|---------|-----------|
-| **Landing Page** | Halaman utama dengan hero, fitur, CTA, newsletter |
-| **Login** | Form login dengan dummy auth (email: `budi@worksim.id`, sandi: `password123`) |
-| **Register** | Form pendaftaran pengguna baru |
-| **AI Career Advisor** | Kuis minat karier 3 langkah |
-| **Learning Roadmaps** | Daftar semua roadmap (Frontend available, sisanya coming soon) |
-| **Frontend Roadmap** | Diagram roadmap Frontend interaktif dengan side panel & XP |
-| **Career Simulation** | Lobby simulasi proyek (terkunci) dengan daftar proyek preview |
-| **Project Detail** | Detail proyek, brief klien, form submit, deadline countdown |
-| **Skill Passport** | Profil pengguna gamifikasi dengan XP, level, badges, skill chart |
+### Generate CV dengan Useresume
+
+Skill Passport sudah disiapkan untuk membuat CV berbasis data profil dan skill pengguna.
+
+- Frontend memanggil `/.netlify/functions/create-resume`.
+- API key Useresume hanya dibaca dari environment variable Netlify.
+- Response Useresume dengan `data.file_url` ditampilkan sebagai link PDF CV.
+- Jika API belum tersedia saat demo lokal, UI menampilkan mode demo/error yang ramah.
+
+### Dark Mode
+
+Dukungan tema terang dan gelap disimpan di `localStorage` dan digunakan lintas halaman.
 
 ---
 
 ## Tech Stack
 
 | Teknologi | Kegunaan |
-|-----------|----------|
-| **HTML5** | Struktur halaman |
-| **Tailwind CSS v4** | Utility-first CSS framework untuk styling cepat dan konsisten |
-| **CSS3** | Kustom styling (animasi, glassmorphism, gradient) |
-| **Vanilla JavaScript (ES6+)** | Seluruh logika interaktif tanpa framework |
-| **Font Awesome 6** | Ikon UI |
-| **Google Fonts** | Plus Jakarta Sans & Sora |
-| **DiceBear API** | Avatar pengguna |
-| **Git** | Version control |
+| --- | --- |
+| HTML5 | Struktur halaman |
+| Tailwind CSS v4 | Styling utility-first |
+| CSS3 | Custom styling dan animasi |
+| Vanilla JavaScript | Interaksi frontend tanpa framework |
+| SweetAlert2 | Toast dan dialog UI |
+| Font Awesome 6 | Ikon UI |
+| Google Fonts | Plus Jakarta Sans dan Sora |
+| DiceBear API | Avatar pengguna |
+| Netlify Functions | Proxy aman untuk Useresume API |
+| Useresume API | Generate CV PDF |
 
-> **Catatan**: Proyek ini **tidak menggunakan** framework frontend (React, Vue, dll.), backend, database, atau API server. Semua data bersifat statis / hardcoded di sisi klien. `localStorage` digunakan untuk persistensi tema.
+Catatan: WorkSim tetap tidak memakai framework frontend dan belum memakai database. Satu-satunya server-side runtime saat ini adalah Netlify Function untuk menjaga API key Useresume tetap aman.
+
+---
+
+## Integrasi Useresume
+
+Fitur generate CV menggunakan Netlify Function:
+
+```txt
+POST /.netlify/functions/create-resume
+```
+
+Function akan memetakan data WorkSim ke payload Useresume:
+
+- `profile.name` -> `content.name`
+- `profile.role` -> `content.role`
+- `profile.email` -> `content.email`
+- `profile.phone` -> `content.phone`
+- `profile.address` -> `content.address`
+- `profile.summary` -> `content.summary`
+- `progress.skills[]` -> `content.skills[]`
+
+Response Useresume yang didukung:
+
+```js
+{
+  success: true,
+  data: {
+    file_url: "https://useresume-platform.com/resume/john-doe-resume.pdf",
+    file_url_expires_at: 1728388800000,
+    file_expires_at: 1728388800000,
+    file_size_bytes: 251904
+  },
+  meta: {
+    run_id: "run_123456789",
+    credits_used: 1,
+    credits_remaining: 499
+  }
+}
+```
+
+Frontend akan menampilkan tombol untuk membuka PDF dari `data.file_url`.
+
+### Environment Variable
+
+Buat file `.env` untuk development lokal atau isi environment variable di dashboard Netlify:
+
+```env
+USERESUME_API_KEY=your_useresume_api_key
+```
+
+Contoh template tersedia di `.env.example`.
 
 ---
 
 ## Struktur Proyek
 
-```
+```txt
 worksim_cli/
-├── index.html                     # Beranda
-├── README.md                      # Dokumentasi proyek
-├── package.json                   # Konfigurasi npm & dependensi
-├── package-lock.json
-├── .gitignore
-│
-├── assets/                        # Aset statis
-│   ├── logo/
-│   │   └── WorksimLogo.png
-│   ├── hero/
-│   │   └── phone.png
-│   ├── decor/
-│   │   ├── blob-soft.svg
-│   │   ├── burst.svg
-│   │   ├── curve-accent.svg
-│   │   └── dots-blue.svg
-│   └── arrows/
-│       ├── curve-down.svg
-│       ├── curve-left.svg
-│       └── curve-right.svg
-│
+├── index.html
+├── README.md
+├── package.json
+├── netlify.toml
+├── .env.example
+├── assets/
 ├── css/
-│   ├── input.css                  # Sumber CSS (Tailwind + kustom)
-│   └── output.css                 # Output Tailwind (dihasilkan)
-│
+│   ├── input.css
+│   └── output.css
 ├── js/
-│   ├── shared.js                  # Navbar, footer, dark mode, scroll reveal
-│   ├── home.js                    # Interaktivitas beranda
-│   ├── login.js                   # Logika login
-│   ├── register.js                # Logika register
-│   ├── ai-career-advisor.js       # Logika kuis AI Career Advisor
-│   └── roadmap-frontend.js        # Logika roadmap Frontend interaktif
-│
+│   ├── shared.js
+│   ├── skill-passport.js
+│   ├── xp-widget.js
+│   ├── login.js
+│   ├── register.js
+│   ├── ai-career-advisor.js
+│   └── roadmap-*.js
+├── netlify/
+│   └── functions/
+│       └── create-resume.js
 └── pages/
     ├── login/
-    │   └── index.html             # Form login (dummy auth)
     ├── register/
-    │   └── index.html             # Form registrasi
     ├── ai-career-advisor/
-    │   └── index.html             # Kuis minat karier 3 langkah
     ├── learning-roadmap/
-    │   ├── index.html             # Daftar roadmap
-    │   └── roadmap-frontend/
-    │       ├── index.html         # Roadmap Frontend interaktif
-    │       └── temp.js            # Sisa file lama (tidak dipakai)
     ├── career-simulation/
-    │   ├── index.html             # Lobby simulasi
-    │   └── project-detail.html    # Detail & submit proyek
     └── skill-passport/
-        └── index.html             # Profil gamifikasi
 ```
 
 ---
@@ -159,29 +182,56 @@ worksim_cli/
 
 ### Prasyarat
 
-- [Node.js](https://nodejs.org/) (v18 atau lebih baru)
-- npm (bawaan Node.js)
+- Node.js v18 atau lebih baru
+- npm
 - Git
+- Netlify CLI untuk menjalankan function secara lokal
 
-### Langkah-langkah
+Install Netlify CLI jika belum ada:
 
 ```bash
-# 1. Clone repositori
+npm install -g netlify-cli
+```
+
+### Setup
+
+```bash
 git clone https://github.com/Radhyy/WEB-DESIGN-SEFEST.git
 cd WEB-DESIGN-SEFEST
-
-# 2. Install dependensi
 npm install
+```
 
-# 3. Jalankan Tailwind dalam mode watch
+Salin environment template:
+
+```bash
+cp .env.example .env
+```
+
+Isi `USERESUME_API_KEY` di `.env`.
+
+### Menjalankan Tailwind
+
+```bash
 npm run dev
 ```
 
-Perintah `npm run dev` akan mengkompilasi `css/input.css` ke `css/output.css` secara otomatis setiap kali ada perubahan.
+Perintah ini hanya menjalankan Tailwind watch dan mengompilasi `css/input.css` ke `css/output.css`.
 
-### Menjalankan di Browser
+### Menjalankan Website dengan Netlify Function
 
-Karena ini adalah website statis murni (tanpa server), anda bisa langsung membuka file `index.html` di browser, atau menggunakan ekstensi VS Code seperti **Live Server** untuk hot-reload.
+Untuk fitur Generate CV, jalankan website melalui Netlify Dev:
+
+```bash
+netlify dev
+```
+
+Buka:
+
+```txt
+http://localhost:8888
+```
+
+Jika memakai VS Code Live Server di `http://127.0.0.1:5500`, pastikan `netlify dev` tetap berjalan di `http://localhost:8888`. Script Skill Passport akan mengarahkan request function dari Live Server ke port `8888`.
 
 ### Build Produksi
 
@@ -189,110 +239,96 @@ Karena ini adalah website statis murni (tanpa server), anda bisa langsung membuk
 npm run build
 ```
 
-Menghasilkan `css/output.css` versi minified.
+Untuk deploy Netlify, pastikan environment variable `USERESUME_API_KEY` sudah diisi di dashboard Netlify.
 
 ---
 
 ## Scripts yang Tersedia
 
 | Script | Deskripsi |
-|--------|-----------|
-| `npm run dev` | Mode development — watch Tailwind & compile otomatis |
-| `npm run build` | Build produksi — Tailwind minified |
-| `npm test` | Placeholder (belum ada test) |
+| --- | --- |
+| `npm run dev` | Watch Tailwind dan compile CSS otomatis |
+| `npm run build` | Build Tailwind minified |
+| `npm test` | Placeholder, belum ada test otomatis |
+
+---
+
+## Catatan Data Lokal
+
+WorkSim masih memakai browser storage untuk prototipe:
+
+| Key | Storage | Isi |
+| --- | --- | --- |
+| `worksim_user` | `localStorage` | Akun demo/register user |
+| `worksim_session` | `localStorage` | Status login demo |
+| `worksim_profile` | `localStorage` | Data profil untuk Skill Passport dan CV |
+| `worksim_progress` | `localStorage` | XP, skill, badge, dan aktivitas permanen |
+| `worksim_xp_progress` | `sessionStorage` | Progress XP lama/kompatibilitas widget |
+| `theme` | `localStorage` | Tema terang/gelap |
+
+Dummy login bawaan:
+
+```txt
+Email: budi@worksim.id
+Password: password123
+```
 
 ---
 
 ## Panduan Kontribusi
 
-Kami sangat terbuka terhadap kontribusi! Karena proyek ini masih dalam tahap awal, setiap bantuan sangat berarti.
+1. Fork repositori ini.
+2. Buat branch baru.
+3. Lakukan perubahan sesuai pola kode yang sudah ada.
+4. Pastikan halaman tetap responsif dan mendukung dark mode.
+5. Jangan commit `node_modules/`, `.env`, build output, atau file rahasia.
+6. Jalankan pengecekan sintaks untuk file JS yang diubah jika memungkinkan.
+7. Buat Pull Request ke branch utama.
 
-### Cara Berkontribusi
+Pedoman penting:
 
-1. **Fork** repositori ini
-2. Buat branch baru: `git checkout -b feat/fitur-anda`
-3. Lakukan perubahan yang diinginkan
-4. Pastikan tidak merusak halaman lain
-5. Commit dengan pesan yang deskriptif:
-   ```
-   feat: menambahkan fitur X
-   fix: memperbaiki bug Y pada halaman Z
-   refactor: memisahkan logika A ke file terpisah
-   style: menyesuaikan warna tombol dengan brand guide
-   ```
-6. Push ke branch: `git push origin feat/fitur-anda`
-7. Buat **Pull Request** ke branch `main`
-
-### Pedoman
-
-- **Konsistensi**: Ikuti gaya kode yang sudah ada (format HTML, struktur CSS, pola JS)
-- **Tidak ada backend**: Jangan menambahkan dependensi server/backend tanpa diskusi terlebih dahulu
-- **Dark mode**: Pastikan fitur baru mendukung tema terang dan gelap
-- **Responsif**: Pastikan halaman tetap rapi di berbagai ukuran layar
-- **Jangan commit** `node_modules/`, `css/output.css`, atau file hasil build lainnya
-- Uji perubahanmu di beberapa browser jika memungkinkan
-
-### Hal yang Bisa Dikerjakan
-
-- [ ] Menambahkan roadmap untuk peran lain (Backend, DevOps, Mobile, dll.)
-- [ ] Implementasi sistem autentikasi sungguhan
-- [ ] Menghubungkan dengan backend / database
-- [ ] Membuat Career Simulation benar-benar fungsional
-- [ ] Menambahkan unit test
-- [x] Refaktor kode JavaScript agar lebih modular
-- [x] Memperbaiki tautan navigasi yang belum konsisten
-- [ ] Membuat halaman 404 kustom
-- [ ] Optimalisasi performa dan aksesibilitas
+- API key eksternal tidak boleh ditaruh di frontend.
+- Gunakan Netlify Function untuk integrasi yang membutuhkan secret.
+- Pertahankan pola Vanilla JS dan HTML statis yang sudah ada.
+- Hindari menambah framework besar tanpa diskusi.
 
 ---
 
 ## Roadmap
 
-### ✅ Tersedia
-- [x] Landing page dengan hero dan fitur
-- [x] AI Career Advisor (quiz 3 langkah)
-- [x] Learning Roadmap — Frontend Developer (interaktif)
-- [x] Daftar roadmap (dengan kategori)
-- [x] Login & Register (dummy auth)
-- [x] Skill Passport (profil gamifikasi)
-- [x] Career Simulation (lobby + project preview)
+### Tersedia
+
+- [x] Landing page
+- [x] Login dan register demo
+- [x] AI Career Advisor
+- [x] Learning Roadmap Frontend interaktif
+- [x] XP widget
+- [x] Skill Passport dinamis berbasis localStorage
+- [x] Generate CV via Netlify Function dan Useresume
+- [x] Career Simulation preview
 - [x] Dark mode
-- [x] Scroll reveal animations
 
-### 🔄 Dalam Pengembangan
-- [ ] Career Simulation — fungsional penuh (submit, feedback, solusi)
-- [ ] Roadmap Backend Developer
-- [ ] Roadmap Full Stack Developer
-- [ ] Sistem autentikasi nyata
+### Dalam Pengembangan
+
+- [ ] Form edit profil Skill Passport
+- [ ] Mapping project simulasi ke bagian pengalaman/project CV
+- [ ] Career Simulation fungsional penuh
+- [ ] Roadmap non-Frontend yang lebih lengkap
+- [ ] Sistem autentikasi dan database sungguhan
+- [ ] Test otomatis
+
+### Rencana Mendatang
+
 - [ ] Dashboard pengguna
-
-### 📅 Rencana Mendatang
-- [ ] Roadmap DevOps, Mobile, Data Analyst, AI Engineer
-- [ ] Roadmap berbasis skill (Web Security, Software Testing, dll.)
-- [ ] Sistem database & API backend
-- [ ] Fitur forum / diskusi
-- [ ] Integrasi dengan layanan eksternal (GitHub API, dll.)
-- [ ] Progressive Web App (PWA)
-- [ ] Mode offline
+- [ ] Integrasi GitHub/API eksternal lain
+- [ ] Mode offline/PWA
+- [ ] Forum atau diskusi komunitas
 - [ ] Dukungan multi-bahasa
 
 ---
 
-## Catatan Pengembangan
-
-### Yang Perlu Diketahui
-
-- **Tidak ada backend** — seluruh aplikasi berjalan di sisi klien (static site)
-- **Data dummy** — pengguna, XP, badges, dan aktivitas masih berupa data hardcoded
-- **Hanya Frontend roadmap** yang sudah diimplementasikan — roadmap lainnya masih "Coming Soon"
-- **Career Simulation terkunci** — membutuhkan mekanisme leveling yang belum diintegrasikan penuh
-- **Navigasi sudah konsisten** — seluruh tautan footer sudah menggunakan `pages/` bukan `features/`, navbar menggunakan path absolut `/pages/...`
-- **Belum ada environment variable** — `.env` sudah di-`.gitignore` sebagai persiapan
-- **Belum ada test** — test script di `package.json` masih placeholder
-
----
-
 ## Tim Pengembang
+
 - Muhammad Naufal Rafa Al As'ad
 - Aliezzar Wijaya
 - Radhiyya Alea Akbar
@@ -301,8 +337,8 @@ Kami sangat terbuka terhadap kontribusi! Karena proyek ini masih dalam tahap awa
 
 ## Lisensi
 
-Proyek ini dilisensikan di bawah **ISC License**. Lihat file `package.json` untuk detail lebih lanjut.
+Proyek ini menggunakan ISC License. Lihat `package.json` untuk detail.
 
 ---
 
-> Dibuat dengan ❤️ untuk SEFEST 2026
+Dibuat untuk SEFEST 2026.

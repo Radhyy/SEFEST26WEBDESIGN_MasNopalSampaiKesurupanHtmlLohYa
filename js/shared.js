@@ -104,6 +104,8 @@ function loginUser(email, password) {
 }
 
 function registerUser({ name, email, password }) {
+  localStorage.removeItem(WORKSIM_PROFILE_KEY);
+  localStorage.removeItem(WORKSIM_PROGRESS_KEY);
   const user = {
     name: name.trim(),
     email: email.trim().toLowerCase(),
@@ -131,6 +133,219 @@ window.WorkSimAuth = {
   loginUser,
   logoutUser,
   registerUser,
+};
+
+const WORKSIM_PROFILE_KEY = "worksim_profile";
+const WORKSIM_PROGRESS_KEY = "worksim_progress";
+const WORKSIM_PROGRESS_SESSION_KEY = "worksim_xp_progress";
+
+const WORKSIM_LEVELS = [
+  { level: 1, name: "Beginner", threshold: 0, nextThreshold: 500 },
+  { level: 2, name: "Intermediate", threshold: 500, nextThreshold: 1000 },
+  { level: 3, name: "Freelance", threshold: 1000, nextThreshold: 2000 },
+  { level: 4, name: "Professional", threshold: 2000, nextThreshold: null },
+];
+
+const DEFAULT_SKILLS = [
+  { name: "HTML & CSS", proficiency: 85, color: "brand", resumeProficiency: "Advanced" },
+  { name: "JavaScript Basics", proficiency: 60, color: "purple", resumeProficiency: "Intermediate" },
+  { name: "Web Accessibility", proficiency: 40, color: "emerald", resumeProficiency: "Beginner" },
+  { name: "React.js Framework", proficiency: 10, color: "amber", resumeProficiency: "Beginner" },
+];
+
+const DEFAULT_BADGES = [
+  { name: "7 Hari Runtun", icon: "fa-fire", tone: "amber" },
+  { name: "HTML Master", icon: "fa-code", tone: "emerald" },
+  { name: "Project Pertama", icon: "fa-check-double", tone: "brand" },
+  { name: "A11y Aware", icon: "fa-universal-access", tone: "purple", extra: true },
+  { name: "Bug Hunter", icon: "fa-bug-slash", tone: "rose", extra: true },
+  { name: "CSS Layout", icon: "fa-layer-group", tone: "cyan", extra: true },
+];
+
+const DEFAULT_ACTIVITIES = [
+  {
+    title: 'Menyelesaikan UI Slicing "Landing Page Startup Tech"',
+    description: "Mendapat +250 XP dan feedback rating 4.8 dari klien.",
+    type: "simulasi",
+    dateLabel: "Hari ini",
+    icon: "fa-check",
+    tone: "emerald",
+  },
+  {
+    title: 'Menamatkan Modul "Semantic HTML5"',
+    description: "Menyelesaikan 5 materi bacaan dan 1 kuis dengan nilai 100.",
+    type: "roadmap",
+    dateLabel: "2 Hari lalu",
+    icon: "fa-book-open",
+    tone: "brand",
+  },
+  {
+    title: "Memulai Jalur Frontend Developer",
+    description: "Bergabung dengan WorkSim dan memilih karir Frontend Developer.",
+    type: "general",
+    dateLabel: "1 Minggu lalu",
+    icon: "fa-play",
+    tone: "purple",
+  },
+  {
+    title: "Menyelesaikan Latihan CSS Flexbox",
+    description: "Mendapat +120 XP dari latihan layout responsive.",
+    type: "roadmap",
+    dateLabel: "2 Minggu lalu",
+    icon: "fa-code",
+    tone: "brand",
+    extra: true,
+  },
+  {
+    title: "Mencoba Brief Landing Page Pertama",
+    description: "Menyimpan draft awal sebelum masuk mode simulasi penuh.",
+    type: "simulasi",
+    dateLabel: "3 Minggu lalu",
+    icon: "fa-briefcase",
+    tone: "amber",
+    extra: true,
+  },
+];
+
+function readSessionJSON(key) {
+  try {
+    return JSON.parse(sessionStorage.getItem(key));
+  } catch (error) {
+    return null;
+  }
+}
+
+function getDefaultProfile(user) {
+  const fallbackUser = user || DUMMY_USER;
+  return {
+    name: fallbackUser.name || "WorkSim User",
+    email: fallbackUser.email || "",
+    avatar: fallbackUser.avatar || createAvatar(fallbackUser.name),
+    role: "Calon Frontend Developer",
+    phone: "",
+    address: "Jakarta",
+    summary:
+      "Pembelajar frontend yang aktif membangun fondasi HTML, CSS, JavaScript, aksesibilitas, dan praktik simulasi kerja berbasis project di WorkSim.",
+  };
+}
+
+function buildActivitiesFromWidget(activity = []) {
+  return Array.isArray(activity)
+    ? activity.slice(-5).reverse().map((item) => ({
+        title: item.name || item.title || "Aktivitas WorkSim",
+        description: item.xp ? `Mendapat +${item.xp} XP dari roadmap belajar.` : "Aktivitas belajar tersimpan.",
+        type: "roadmap",
+        dateLabel: "Baru saja",
+        icon: "fa-check",
+        tone: "emerald",
+      }))
+    : [];
+}
+
+function normalizeProgress(progress = {}) {
+  const xp = Number(progress.xp || 0);
+  const activityFromWidget = buildActivitiesFromWidget(progress.activity);
+
+  return {
+    xp,
+    completedNodes: progress.completedNodes || {},
+    activity: Array.isArray(progress.activity) ? progress.activity : [],
+    skills: Array.isArray(progress.skills) && progress.skills.length ? progress.skills : DEFAULT_SKILLS,
+    badges: Array.isArray(progress.badges) && progress.badges.length ? progress.badges : DEFAULT_BADGES,
+    activities: Array.isArray(progress.activities) && progress.activities.length
+      ? progress.activities
+      : [...activityFromWidget, ...DEFAULT_ACTIVITIES].slice(0, 8),
+  };
+}
+
+function getProfile() {
+  const currentUser = getCurrentUser() || DUMMY_USER;
+  const defaults = getDefaultProfile(currentUser);
+  const storedProfile = readJSON(WORKSIM_PROFILE_KEY) || {};
+  const profile = {
+    ...defaults,
+    ...storedProfile,
+    name: storedProfile.name || currentUser.name || defaults.name,
+    email: storedProfile.email || currentUser.email || defaults.email,
+    avatar: storedProfile.avatar || currentUser.avatar || defaults.avatar,
+  };
+  writeJSON(WORKSIM_PROFILE_KEY, profile);
+  return profile;
+}
+
+function saveProfile(profile) {
+  const current = getProfile();
+  const nextProfile = { ...current, ...profile };
+  writeJSON(WORKSIM_PROFILE_KEY, nextProfile);
+  return nextProfile;
+}
+
+function getProgress() {
+  const localProgress = readJSON(WORKSIM_PROGRESS_KEY);
+  const sessionProgress = readSessionJSON(WORKSIM_PROGRESS_SESSION_KEY);
+  const progress = normalizeProgress(localProgress || sessionProgress || {});
+  writeJSON(WORKSIM_PROGRESS_KEY, progress);
+  return progress;
+}
+
+function saveProgress(progress) {
+  const existingProgress = readJSON(WORKSIM_PROGRESS_KEY) || {};
+  const mergedProgress = { ...existingProgress, ...progress };
+
+  if (Array.isArray(progress.activity)) {
+    const widgetActivities = buildActivitiesFromWidget(progress.activity);
+    const existingActivities = Array.isArray(existingProgress.activities)
+      ? existingProgress.activities.filter((item) => item.dateLabel !== "Baru saja")
+      : DEFAULT_ACTIVITIES;
+    mergedProgress.activities = [...widgetActivities, ...existingActivities].slice(0, 8);
+  }
+
+  const nextProgress = normalizeProgress(mergedProgress);
+  writeJSON(WORKSIM_PROGRESS_KEY, nextProgress);
+  sessionStorage.setItem(
+    WORKSIM_PROGRESS_SESSION_KEY,
+    JSON.stringify({
+      xp: nextProgress.xp,
+      completedNodes: nextProgress.completedNodes,
+      activity: nextProgress.activity,
+    }),
+  );
+  return nextProgress;
+}
+
+function getLevelInfo(xp = 0) {
+  const currentLevel = WORKSIM_LEVELS.reduce((active, level) => (
+    xp >= level.threshold ? level : active
+  ), WORKSIM_LEVELS[0]);
+  const nextThreshold = currentLevel.nextThreshold;
+  const progressPercent = nextThreshold
+    ? Math.min(((xp - currentLevel.threshold) / (nextThreshold - currentLevel.threshold)) * 100, 100)
+    : 100;
+  return {
+    ...currentLevel,
+    progressPercent,
+    remainingXP: nextThreshold ? Math.max(nextThreshold - xp, 0) : 0,
+    targetXP: nextThreshold || xp,
+  };
+}
+
+function getResumeRequestData() {
+  const profile = getProfile();
+  const progress = getProgress();
+  return { profile, progress };
+}
+
+window.WorkSimData = {
+  DEFAULT_ACTIVITIES,
+  DEFAULT_BADGES,
+  DEFAULT_SKILLS,
+  WORKSIM_LEVELS,
+  getLevelInfo,
+  getProfile,
+  getProgress,
+  getResumeRequestData,
+  saveProfile,
+  saveProgress,
 };
 
 if (isProtectedPath(window.location.pathname) && !getCurrentUser()) {

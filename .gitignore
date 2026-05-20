@@ -7,3 +7,6 @@ build/
 .playwright-cli/
 css/output.css
 output/
+.env
+# Local Netlify folder
+.netlify

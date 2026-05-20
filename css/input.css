@@ -144,7 +144,7 @@
   }
 
   .step-card {
-    @apply rounded-2xl border border-[#dbe3f8] bg-white p-6 shadow-step;
+    @apply rounded-2xl border border-[#dbe3f8] bg-white p-6 shadow-step dark:border-slate-800 dark:bg-slate-800/40;
   }
 
   .wide-page {

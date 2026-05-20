@@ -1,0 +1,51 @@
+{
+  "Testing_Fundamentals": {
+    "description": "Testing fundamentals adalah dasar pengujian software untuk memastikan aplikasi berjalan sesuai kebutuhan, bebas bug, dan stabil sebelum production.",
+
+    "main_goals": [
+      "Menemukan bug lebih awal",
+      "Meningkatkan kualitas aplikasi",
+      "Memastikan fitur sesuai requirement",
+      "Mengurangi error di production",
+      "Mendukung CI/CD"
+    ],
+
+    "core_concepts": [
+      {
+        "name": "Test Case",
+        "description": "Skenario untuk menguji fitur"
+      },
+      {
+        "name": "Assertion",
+        "description": "Pengecekan hasil sesuai ekspektasi"
+      },
+      {
+        "name": "Mocking",
+        "description": "Meniru dependency untuk testing"
+      },
+      {
+        "name": "Test Suite",
+        "description": "Kumpulan test case"
+      }
+    ],
+
+    "Test_Pyramid": {
+      "description": "Konsep struktur testing berdasarkan level pengujian.",
+
+      "levels": [
+        "Unit Testing (paling banyak, paling cepat)",
+        "Integration Testing (sedang)",
+        "E2E Testing (paling sedikit, paling lambat)"
+      ]
+    },
+
+    "Types_of_Testing": [
+      "Unit Testing",
+      "Integration Testing",
+      "End-to-End Testing",
+      "Functional Testing",
+      "Performance Testing",
+      "Security Testing"
+    ]
+  }
+}

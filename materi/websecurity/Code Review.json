@@ -1,0 +1,103 @@
+{
+  "Nmap": {
+    "description": "Nmap (Network Mapper) adalah tools untuk scanning jaringan yang digunakan untuk menemukan host, port terbuka, dan service yang berjalan di dalam sebuah jaringan.",
+
+    "main_goals": [
+      "Mencari host aktif dalam jaringan",
+      "Mendeteksi port terbuka",
+      "Mengetahui service yang berjalan",
+      "Identifikasi sistem operasi",
+      "Network security auditing"
+    ],
+
+    "features": [
+      "Port scanning TCP/UDP",
+      "Service version detection",
+      "OS fingerprinting",
+      "NSE scripting engine",
+      "Network discovery"
+    ],
+
+    "use_cases": [
+      "Penetration testing",
+      "Network audit",
+      "Security assessment",
+      "Troubleshooting jaringan"
+    ],
+
+    "example": {
+      "title": "Basic Command",
+      "code": "nmap -sV 192.168.1.1"
+    }
+  },
+
+  "Wireshark": {
+    "description": "Wireshark adalah tools packet analyzer untuk menangkap dan menganalisis traffic jaringan secara detail.",
+
+    "main_goals": [
+      "Analisis paket jaringan",
+      "Monitoring traffic real-time",
+      "Troubleshooting network",
+      "Analisis keamanan jaringan",
+      "Debugging aplikasi network"
+    ],
+
+    "features": [
+      "Packet capture real-time",
+      "Protocol analysis (HTTP, TCP, DNS)",
+      "Filtering traffic",
+      "Deep packet inspection",
+      "Export packet data"
+    ],
+
+    "use_cases": [
+      "Network troubleshooting",
+      "Cybersecurity analysis",
+      "Detect suspicious traffic",
+      "Learning networking"
+    ],
+
+    "example": {
+      "title": "Filter Example",
+      "code": "http.request || tcp.port == 443"
+    }
+  },
+
+  "Code_Review": {
+    "description": "Code Review adalah proses pemeriksaan kode oleh developer lain untuk memastikan kualitas, keamanan, dan struktur kode sebelum masuk production.",
+
+    "main_goals": [
+      "Meningkatkan kualitas kode",
+      "Menemukan bug lebih awal",
+      "Meningkatkan keamanan aplikasi",
+      "Menjaga standar coding",
+      "Kolaborasi tim"
+    ],
+
+    "types": [
+      "Manual review",
+      "Pull request review",
+      "Peer review",
+      "Automated review"
+    ],
+
+    "aspects": [
+      "Readability",
+      "Security",
+      "Performance",
+      "Maintainability"
+    ],
+
+    "tools": [
+      "GitHub PR",
+      "GitLab MR",
+      "SonarQube",
+      "ESLint"
+    ],
+
+    "example": {
+      "title": "Review Flow",
+      "code": "Code -> Pull Request -> Review -> Fix -> Merge"
+    }
+  }
+}

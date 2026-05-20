@@ -1,0 +1,72 @@
+{
+  "Component_Driven_Development_CDD": {
+    "description": "Component Driven Development (CDD) adalah pendekatan pengembangan UI di mana aplikasi dibangun dari komponen-komponen kecil yang berdiri sendiri, lalu dikombinasikan menjadi UI yang lebih besar. Fokus utama CDD adalah membangun, menguji, dan mengelola komponen secara terpisah sebelum digunakan dalam aplikasi utama.",
+
+    "main_goals": [
+      "Membangun UI dari komponen kecil yang reusable",
+      "Meningkatkan konsistensi UI antar halaman",
+      "Mempermudah testing dan debugging komponen",
+      "Mempercepat development UI",
+      "Memisahkan logic setiap komponen"
+    ],
+
+    "core_principles": [
+      "Isolated components (komponen berdiri sendiri)",
+      "Reusability (komponen dapat digunakan ulang)",
+      "Composability (komponen bisa digabung)",
+      "Single responsibility per component"
+    ]
+  },
+
+  "Storybook": {
+    "description": "Storybook adalah tools untuk mengembangkan, mendokumentasikan, dan menguji UI components secara terisolasi tanpa menjalankan seluruh aplikasi. Storybook sering digunakan dalam design system dan component library development.",
+
+    "main_goals": [
+      "Mengembangkan UI components secara terpisah",
+      "Mendokumentasikan komponen UI",
+      "Menguji visual dan behavior komponen",
+      "Mendukung design system development",
+      "Mempercepat kolaborasi designer dan developer"
+    ],
+
+    "features": [
+      "Component sandbox environment",
+      "Live component preview",
+      "Add-ons ecosystem",
+      "Interactive UI testing",
+      "Design system documentation"
+    ],
+
+    "use_cases": [
+      "Design system development",
+      "UI component library",
+      "Frontend testing environment",
+      "Prototyping UI"
+    ]
+  },
+
+  "Visual_Testing": {
+    "description": "Visual Testing adalah metode pengujian yang memastikan tampilan UI tidak berubah secara tidak sengaja. Testing ini membandingkan hasil visual UI dengan baseline sebelumnya untuk mendeteksi perubahan layout, warna, atau elemen UI.",
+
+    "main_goals": [
+      "Mendeteksi perubahan UI secara otomatis",
+      "Menjaga konsistensi visual",
+      "Mencegah UI regression",
+      "Memastikan design system tetap stabil"
+    ],
+
+    "types": [
+      "Screenshot comparison testing",
+      "UI regression testing",
+      "Snapshot testing",
+      "Pixel-by-pixel comparison"
+    ],
+
+    "tools_examples": [
+      "Storybook test addon",
+      "Chromatic",
+      "Percy",
+      "Playwright visual testing"
+    ]
+  }
+}

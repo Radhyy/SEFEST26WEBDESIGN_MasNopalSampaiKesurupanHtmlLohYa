@@ -1,0 +1,212 @@
+{
+  "Node_js_and_Backend": {
+    "description": "Node.js adalah runtime JavaScript berbasis V8 Engine yang memungkinkan JavaScript berjalan di server-side untuk membangun backend applications dan API.",
+
+    "main_goals": [
+      "Membangun backend server menggunakan JavaScript",
+      "Membuat REST API",
+      "Menangani request dan response",
+      "Mengelola komunikasi client-server",
+      "Membangun aplikasi real-time"
+    ],
+
+    "core_concepts": [
+      "Event-driven architecture",
+      "Non-blocking I/O",
+      "Asynchronous programming",
+      "Single-threaded runtime"
+    ],
+
+    "common_use_cases": [
+      "REST APIs",
+      "Realtime chat apps",
+      "Authentication systems",
+      "Backend services"
+    ],
+
+    "examples": [
+      "Realtime chat application",
+      "Authentication backend",
+      "File upload server",
+      "Realtime notification system"
+    ],
+
+    "code_example": {
+      "title": "Basic Node.js Server Example",
+      "code": "const http = require('http');\nhttp.createServer((req, res) => {\n  res.end('Hello Node.js');\n}).listen(3000);"
+    },
+
+    "real_world_use_cases": [
+      "Social media backend",
+      "Streaming services",
+      "Realtime collaboration apps",
+      "RESTful backend APIs"
+    ]
+  },
+
+  "Express_js": {
+    "description": "Express.js adalah framework backend minimalis untuk Node.js yang digunakan untuk membangun API dan web server dengan cepat dan fleksibel.",
+
+    "features": [
+      "Routing system",
+      "Middleware support",
+      "REST API development",
+      "Request & response handling",
+      "Flexible backend architecture"
+    ],
+
+    "benefits": [
+      "Lightweight framework",
+      "Cepat dipelajari",
+      "Ekosistem besar",
+      "Mudah integrasi dengan database"
+    ],
+
+    "examples": [
+      "REST API server",
+      "Authentication API",
+      "CRUD backend",
+      "Microservices backend"
+    ],
+
+    "code_example": {
+      "title": "Express Server Example",
+      "code": "const express = require('express');\nconst app = express();\n\napp.get('/', (req, res) => {\n  res.send('Hello Express');\n});\n\napp.listen(3000);"
+    },
+
+    "real_world_use_cases": [
+      "SaaS backend",
+      "E-commerce API",
+      "Admin dashboard backend",
+      "Mobile app backend"
+    ]
+  },
+
+  "REST_API_Design": {
+    "description": "REST API Design adalah pendekatan untuk membuat API berbasis HTTP dengan struktur endpoint yang konsisten, mudah dipahami, dan scalable.",
+
+    "core_principles": [
+      "Resource-based endpoints",
+      "Stateless communication",
+      "HTTP methods usage",
+      "JSON data exchange"
+    ],
+
+    "common_methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "PATCH",
+      "DELETE"
+    ],
+
+    "best_practices": [
+      "Gunakan endpoint yang konsisten",
+      "Gunakan status code HTTP dengan benar",
+      "Pisahkan logic dan routing",
+      "Gunakan versioning API"
+    ],
+
+    "examples": [
+      "/api/users",
+      "/api/products",
+      "/api/auth/login",
+      "/api/orders"
+    ],
+
+    "code_example": {
+      "title": "REST API Endpoint Example",
+      "code": "app.get('/api/users', (req, res) => {\n  res.json([{ id: 1, name: 'John' }]);\n});"
+    },
+
+    "real_world_use_cases": [
+      "Mobile application backend",
+      "Frontend-backend communication",
+      "Third-party integrations",
+      "Cloud-based services"
+    ]
+  },
+
+  "Middleware_and_Routing": {
+    "description": "Middleware adalah fungsi yang berjalan di antara request dan response dalam Express.js, sedangkan routing digunakan untuk menentukan endpoint dan logic API.",
+
+    "Middleware": {
+      "description": "Middleware digunakan untuk memproses request sebelum mencapai route handler.",
+
+      "examples": [
+        "Authentication middleware",
+        "Logging middleware",
+        "Error handling middleware",
+        "JSON parser middleware"
+      ],
+
+      "code_example": {
+        "title": "Middleware Example",
+        "code": "app.use((req, res, next) => {\n  console.log(req.method);\n  next();\n});"
+      }
+    },
+
+    "Routing": {
+      "description": "Routing menentukan bagaimana server merespons request berdasarkan URL dan HTTP method.",
+
+      "features": [
+        "Route parameters",
+        "Nested routes",
+        "Dynamic endpoints"
+      ],
+
+      "examples": [
+        "/users/:id",
+        "/products/:slug",
+        "/dashboard/admin"
+      ],
+
+      "code_example": {
+        "title": "Route Example",
+        "code": "app.get('/users/:id', (req, res) => {\n  res.send(req.params.id);\n});"
+      }
+    },
+
+    "real_world_use_cases": [
+      "Authentication systems",
+      "Admin dashboards",
+      "API gateways",
+      "Secure backend routing"
+    ]
+  },
+
+  "Environment_and_Config": {
+    "description": "Environment & Config digunakan untuk mengelola konfigurasi aplikasi seperti database URL, API key, dan environment production/development secara aman.",
+
+    "main_goals": [
+      "Memisahkan config dari source code",
+      "Meningkatkan keamanan aplikasi",
+      "Mendukung multi-environment setup",
+      "Mempermudah deployment"
+    ],
+
+    "common_tools": [
+      ".env files",
+      "dotenv package",
+      "Environment variables"
+    ],
+
+    "examples": [
+      "DATABASE_URL",
+      "JWT_SECRET",
+      "PORT"
+    ],
+
+    "code_example": {
+      "title": "dotenv Example",
+      "code": "require('dotenv').config();\nconsole.log(process.env.PORT);"
+    },
+
+    "real_world_use_cases": [
+      "Cloud deployment",
+      "Production environment setup",
+      "Secure API key management",
+      "Database configuration"
+    ]
+  }
+}

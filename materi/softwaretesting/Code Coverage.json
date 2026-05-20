@@ -1,0 +1,55 @@
+{
+  "Stress_Testing": {
+    "description": "Stress Testing adalah jenis performance testing yang digunakan untuk menguji batas maksimal sistem dengan memberikan beban ekstrem hingga sistem mengalami penurunan performa atau kegagalan. Tujuannya adalah mengetahui titik lemah sistem dan bagaimana sistem bereaksi dalam kondisi kritis.",
+
+    "main_goals": [
+      "Menemukan batas maksimum sistem",
+      "Mengidentifikasi titik kegagalan (breaking point)",
+      "Menganalisis perilaku sistem saat overload",
+      "Menguji kemampuan recovery sistem",
+      "Meningkatkan ketahanan aplikasi"
+    ],
+
+    "scenarios": [
+      "Lonjakan traffic tiba-tiba",
+      "Request berlebihan ke API",
+      "Server overload",
+      "Database stress",
+      "Memory usage tinggi"
+    ],
+
+    "example": {
+      "title": "Stress Test Concept",
+      "code": "Normal Load -> Spike Traffic -> System Overload -> Failure Analysis -> Recovery Test"
+    }
+  },
+
+  "Code_Coverage": {
+    "description": "Code coverage adalah metrik yang digunakan untuk mengukur seberapa banyak bagian kode yang telah diuji oleh automated testing. Semakin tinggi coverage, semakin banyak kode yang sudah diverifikasi melalui test.",
+
+    "types": [
+      "Line Coverage",
+      "Function Coverage",
+      "Branch Coverage",
+      "Statement Coverage"
+    ],
+
+    "main_goals": [
+      "Mengukur kualitas testing",
+      "Menemukan kode yang belum diuji",
+      "Meningkatkan reliability aplikasi",
+      "Mendukung test-driven development"
+    ],
+
+    "importance": [
+      "Mencegah bug tersembunyi",
+      "Meningkatkan confidence sebelum deploy",
+      "Memastikan semua logic penting diuji"
+    ],
+
+    "example": {
+      "title": "Coverage Example",
+      "code": "1000 lines code -> 850 tested -> 85% coverage"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "Secure_Coding_Practices": {
+    "description": "Secure coding practices adalah cara menulis kode yang aman untuk mencegah celah keamanan sejak awal pengembangan aplikasi.",
+
+    "principles": [
+      "Least Privilege",
+      "Defense in Depth",
+      "Fail Securely",
+      "Avoid Hardcoded Secrets"
+    ],
+
+    "importance": [
+      "Mencegah exploit sejak awal",
+      "Mengurangi risiko data breach",
+      "Meningkatkan keamanan aplikasi",
+      "Mengurangi biaya perbaikan bug"
+    ],
+
+    "example": {
+      "bad": "SELECT * FROM users WHERE id =",
+      "good": "Use prepared statement / parameterized query"
+    }
+  },
+
+  "Input_Validation": {
+    "description": "Input validation adalah proses memeriksa data yang masuk ke sistem agar sesuai format dan aman digunakan.",
+
+    "types": [
+      "Client-side validation",
+      "Server-side validation"
+    ],
+
+    "best_practices": [
+      "Gunakan whitelist input",
+      "Validasi format data",
+      "Batasi panjang input",
+      "Selalu validasi di server"
+    ],
+
+    "example": {
+      "code": "if (!email.includes('@')) throw Error('Invalid email')"
+    }
+  },
+
+  "Output_Encoding": {
+    "description": "Output encoding adalah proses mengubah data sebelum ditampilkan agar tidak dieksekusi sebagai kode berbahaya.",
+
+    "types": [
+      "HTML Encoding",
+      "URL Encoding",
+      "JavaScript Encoding"
+    ],
+
+    "benefits": [
+      "Mencegah XSS",
+      "Mengamankan tampilan data",
+      "Menghindari script execution"
+    ],
+
+    "example": {
+      "input": "<script>alert(1)</script>",
+      "output": "&lt;script&gt;alert(1)&lt;/script&gt;"
+    }
+  }
+}

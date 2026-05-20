@@ -1,0 +1,169 @@
+{
+  "Local_Storage_and_Databases": {
+    "description": "Local Storage dan Database digunakan untuk menyimpan data aplikasi secara lokal di device pengguna.",
+    "main_goals": [
+      "Menyimpan data offline",
+      "Caching data aplikasi",
+      "Menyimpan user preferences",
+      "Mengurangi request API",
+      "Meningkatkan performa aplikasi"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Persistence",
+        "function": "Data tetap tersimpan setelah aplikasi ditutup"
+      },
+      {
+        "concept": "Offline Storage",
+        "function": "Data tersedia tanpa internet"
+      },
+      {
+        "concept": "CRUD",
+        "function": "Create, Read, Update, Delete data"
+      },
+      {
+        "concept": "Serialization",
+        "function": "Mengubah object menjadi format penyimpanan"
+      }
+    ],
+    "advantages": [
+      "Aplikasi bisa offline",
+      "Performa lebih cepat",
+      "Mengurangi penggunaan internet",
+      "User experience lebih baik"
+    ],
+    "best_practices": [
+      "Gunakan encryption untuk data sensitif",
+      "Pisahkan database layer",
+      "Gunakan indexing",
+      "Backup data penting"
+    ],
+    "example": {
+      "title": "Local Storage Flow",
+      "code": "App -> Local Database -> Read / Write Data"
+    }
+  },
+
+  "Shared_Preferences": {
+    "description": "Shared Preferences digunakan untuk menyimpan data sederhana seperti settings, token login, atau theme aplikasi.",
+    "important_features": [
+      {
+        "feature": "Key-Value Storage",
+        "function": "Menyimpan data berbentuk key dan value"
+      },
+      {
+        "feature": "Persistent Storage",
+        "function": "Data tetap tersimpan"
+      },
+      {
+        "feature": "Simple API",
+        "function": "Mudah digunakan"
+      }
+    ],
+    "common_use_cases": [
+      "Theme mode",
+      "Login token",
+      "App settings",
+      "User preferences"
+    ],
+    "advantages": [
+      "Ringan",
+      "Mudah digunakan",
+      "Cocok untuk data kecil"
+    ],
+    "best_practices": [
+      "Jangan simpan data sensitif tanpa encryption",
+      "Gunakan untuk data kecil saja"
+    ],
+    "example": {
+      "title": "Shared Preferences Example",
+      "code": "prefs.setString('token', '12345');"
+    }
+  },
+
+  "SQLite_Room": {
+    "description": "SQLite adalah database lokal relational untuk mobile apps, sedangkan Room adalah abstraction library Android untuk SQLite.",
+    "official_website": "https://www.sqlite.org",
+    "important_features": [
+      {
+        "feature": "Relational Database",
+        "function": "Menggunakan tabel dan relasi"
+      },
+      {
+        "feature": "SQL Queries",
+        "function": "Mengelola data menggunakan SQL"
+      },
+      {
+        "feature": "Offline Support",
+        "function": "Data tersedia offline"
+      },
+      {
+        "feature": "Room ORM",
+        "function": "Mempermudah penggunaan SQLite di Android"
+      }
+    ],
+    "advantages": [
+      "Stabil",
+      "Support relational data",
+      "Powerful queries",
+      "Cocok untuk data kompleks"
+    ],
+    "best_practices": [
+      "Gunakan indexing",
+      "Pisahkan database layer",
+      "Gunakan migration"
+    ],
+    "example": {
+      "title": "SQLite Query Example",
+      "code": "SELECT * FROM users WHERE id = 1;"
+    }
+  },
+
+  "Hive_Isar": {
+    "description": "Hive dan Isar adalah database NoSQL lokal untuk Flutter yang cepat dan ringan.",
+    "official_website": "https://isar.dev",
+    "important_features": [
+      {
+        "feature": "NoSQL Database",
+        "function": "Database tanpa tabel relational"
+      },
+      {
+        "feature": "Fast Performance",
+        "function": "Akses data sangat cepat"
+      },
+      {
+        "feature": "Lightweight",
+        "function": "Ringan untuk mobile apps"
+      },
+      {
+        "feature": "Object Storage",
+        "function": "Menyimpan object langsung"
+      }
+    ],
+    "difference": [
+      {
+        "database": "Hive",
+        "description": "Simple dan ringan"
+      },
+      {
+        "database": "Isar",
+        "description": "Lebih modern dan powerful"
+      }
+    ],
+    "advantages": [
+      "Cepat",
+      "Mudah digunakan",
+      "Cocok Flutter",
+      "Offline ready"
+    ],
+    "best_practices": [
+      "Gunakan adapter/model",
+      "Pisahkan database service",
+      "Backup data penting"
+    ],
+    "example": {
+      "title": "Hive Example",
+      "code": "var box = await Hive.openBox('settings');"
+    }
+  }
+}

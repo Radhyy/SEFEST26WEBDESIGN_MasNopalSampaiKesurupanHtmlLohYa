@@ -1,0 +1,225 @@
+{
+  "Learn_a_Framework": {
+    "description": "Frontend Framework adalah tools atau library JavaScript yang digunakan untuk membangun User Interface (UI) dan aplikasi web modern dengan lebih cepat, terstruktur, dan efisien.",
+    "why_use_frameworks": [
+      "Membuat UI lebih interaktif",
+      "Mempermudah pengelolaan state",
+      "Komponen dapat digunakan ulang",
+      "Meningkatkan efisiensi development",
+      "Mempermudah scaling project"
+    ],
+    "common_concepts": [
+      {
+        "concept": "Components",
+        "function": "Bagian UI yang dapat digunakan ulang"
+      },
+      {
+        "concept": "Props",
+        "function": "Mengirim data antar component"
+      },
+      {
+        "concept": "State",
+        "function": "Menyimpan data dinamis"
+      },
+      {
+        "concept": "Reactivity",
+        "function": "UI otomatis update saat data berubah"
+      },
+      {
+        "concept": "Routing",
+        "function": "Navigasi antar halaman"
+      }
+    ],
+    "best_practices": [
+      "Pisahkan component berdasarkan fungsi",
+      "Gunakan reusable components",
+      "Jaga struktur folder tetap rapi",
+      "Gunakan state management bila diperlukan",
+      "Pelajari lifecycle framework"
+    ],
+    "example": {
+      "title": "Simple Component Concept",
+      "code": "function Button() {\n  return <button>Click Me</button>;\n}"
+    }
+  },
+
+  "React": {
+    "description": "React adalah JavaScript library yang dikembangkan Meta untuk membangun User Interface berbasis component.",
+    "official_website": "https://react.dev",
+    "important_features": [
+      {
+        "feature": "Component Based",
+        "function": "UI dibangun menggunakan component"
+      },
+      {
+        "feature": "Virtual DOM",
+        "function": "Rendering lebih cepat dan efisien"
+      },
+      {
+        "feature": "Hooks",
+        "function": "Mengelola state dan lifecycle"
+      },
+      {
+        "feature": "JSX",
+        "function": "Menulis HTML di dalam JavaScript"
+      }
+    ],
+    "advantages": [
+      "Komunitas besar",
+      "Ekosistem luas",
+      "Banyak library pendukung",
+      "Cocok untuk SPA",
+      "Performa tinggi"
+    ],
+    "best_practices": [
+      "Gunakan functional components",
+      "Gunakan hooks dibanding class component",
+      "Pisahkan component reusable",
+      "Gunakan state management bila project besar"
+    ],
+    "example": {
+      "title": "React Component Example",
+      "code": "function App() {\n  return (\n    <div>\n      <h1>Hello React</h1>\n    </div>\n  );\n}\n\nexport default App;"
+    }
+  },
+
+  "Vue_js": {
+    "description": "Vue.js adalah progressive JavaScript framework yang mudah dipelajari dan fleksibel untuk membangun UI.",
+    "official_website": "https://vuejs.org",
+    "important_features": [
+      {
+        "feature": "Reactive Data Binding",
+        "function": "Data otomatis sinkron dengan UI"
+      },
+      {
+        "feature": "Single File Components",
+        "function": "HTML, CSS, dan JS dalam satu file"
+      },
+      {
+        "feature": "Directives",
+        "function": "Kontrol tampilan menggunakan atribut khusus"
+      }
+    ],
+    "advantages": [
+      "Mudah dipelajari",
+      "Dokumentasi lengkap",
+      "Sintaks sederhana",
+      "Performa baik"
+    ],
+    "best_practices": [
+      "Gunakan component modular",
+      "Gunakan props dan emits dengan benar",
+      "Pisahkan logic menggunakan composables"
+    ],
+    "example": {
+      "title": "Vue Component Example",
+      "code": "<template>\n  <h1>Hello Vue</h1>\n</template>\n\n<script>\nexport default {\n  name: 'App'\n}\n</script>"
+    }
+  },
+
+  "Angular": {
+    "description": "Angular adalah framework TypeScript lengkap yang dikembangkan Google untuk membangun aplikasi web skala besar.",
+    "official_website": "https://angular.dev",
+    "important_features": [
+      {
+        "feature": "TypeScript Based",
+        "function": "Menggunakan TypeScript secara default"
+      },
+      {
+        "feature": "Dependency Injection",
+        "function": "Manajemen dependency lebih mudah"
+      },
+      {
+        "feature": "Two Way Data Binding",
+        "function": "Sinkronisasi data dua arah"
+      },
+      {
+        "feature": "Built-in Routing",
+        "function": "Navigasi bawaan framework"
+      }
+    ],
+    "advantages": [
+      "Cocok untuk enterprise",
+      "Struktur project jelas",
+      "Fitur lengkap bawaan",
+      "Scalable"
+    ],
+    "best_practices": [
+      "Gunakan module terpisah",
+      "Gunakan services untuk logic",
+      "Ikuti struktur Angular CLI"
+    ],
+    "example": {
+      "title": "Angular Component Example",
+      "code": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  template: '<h1>Hello Angular</h1>'\n})\nexport class AppComponent {}"
+    }
+  },
+
+  "Svelte": {
+    "description": "Svelte adalah frontend framework yang mengcompile kode menjadi JavaScript murni sehingga menghasilkan performa tinggi.",
+    "official_website": "https://svelte.dev",
+    "important_features": [
+      {
+        "feature": "No Virtual DOM",
+        "function": "Rendering langsung tanpa virtual DOM"
+      },
+      {
+        "feature": "Reactive Syntax",
+        "function": "Reactivity sederhana"
+      },
+      {
+        "feature": "Small Bundle Size",
+        "function": "Ukuran build lebih kecil"
+      }
+    ],
+    "advantages": [
+      "Performa sangat cepat",
+      "Sintaks sederhana",
+      "Ukuran bundle kecil",
+      "Mudah dipelajari"
+    ],
+    "best_practices": [
+      "Pisahkan component dengan baik",
+      "Gunakan stores untuk global state",
+      "Gunakan reactive statement seperlunya"
+    ],
+    "example": {
+      "title": "Svelte Component Example",
+      "code": "<script>\n  let name = 'Svelte';\n</script>\n\n<h1>Hello {name}</h1>"
+    }
+  },
+
+  "Solid_JS": {
+    "description": "Solid JS adalah frontend library modern dengan reactive system yang sangat cepat tanpa Virtual DOM.",
+    "official_website": "https://www.solidjs.com",
+    "important_features": [
+      {
+        "feature": "Fine-grained Reactivity",
+        "function": "Update UI sangat efisien"
+      },
+      {
+        "feature": "JSX Support",
+        "function": "Menggunakan sintaks mirip React"
+      },
+      {
+        "feature": "No Virtual DOM",
+        "function": "Rendering langsung ke DOM"
+      }
+    ],
+    "advantages": [
+      "Performa tinggi",
+      "Reactive system modern",
+      "Bundle size kecil",
+      "Sintaks familiar untuk React developer"
+    ],
+    "best_practices": [
+      "Gunakan signal untuk state",
+      "Pisahkan component reusable",
+      "Optimalkan reactive computation"
+    ],
+    "example": {
+      "title": "Solid JS Example",
+      "code": "import { createSignal } from 'solid-js';\n\nfunction App() {\n  const [count, setCount] = createSignal(0);\n\n  return (\n    <button onClick={() => setCount(count() + 1)}>\n      {count()}\n    </button>\n  );\n}\n\nexport default App;"
+    }
+  }
+}

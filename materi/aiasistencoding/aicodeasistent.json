@@ -1,0 +1,73 @@
+{
+  "AI_Code_Assistants": {
+    "description": "AI Code Assistants adalah tools berbasis Artificial Intelligence yang membantu developer dalam menulis, melengkapi, menjelaskan, dan memperbaiki kode secara otomatis atau semi-otomatis. Tools ini meningkatkan produktivitas dan mengurangi waktu pengembangan software.",
+
+    "main_goals": [
+      "Mempercepat penulisan kode",
+      "Membantu debugging dan error fixing",
+      "Memberikan saran kode otomatis",
+      "Meningkatkan produktivitas developer",
+      "Mengurangi boilerplate code"
+    ],
+
+    "core_features": [
+      "Autocompletion berbasis AI",
+      "Code explanation",
+      "Bug detection assistance",
+      "Refactoring suggestions",
+      "Context-aware coding support"
+    ]
+  },
+
+  "GitHub_Copilot": {
+    "description": "GitHub Copilot adalah AI coding assistant dari GitHub dan OpenAI yang memberikan autocomplete kode secara real-time berdasarkan konteks file yang sedang ditulis.",
+
+    "features": [
+      "AI code completion",
+      "Context-aware suggestions",
+      "Support banyak bahasa pemrograman",
+      "Integrasi dengan VS Code dan IDE lain"
+    ],
+
+    "use_cases": [
+      "Menulis boilerplate code",
+      "Generate function otomatis",
+      "Membantu debugging",
+      "Speed up development"
+    ]
+  },
+
+  "Codeium": {
+    "description": "Codeium adalah AI code assistant gratis yang menyediakan autocomplete dan code generation dengan dukungan banyak bahasa pemrograman dan IDE.",
+
+    "features": [
+      "Free AI autocomplete",
+      "Multi-language support",
+      "Fast code suggestions",
+      "IDE integration"
+    ],
+
+    "strengths": [
+      "Gratis digunakan",
+      "Performa cepat",
+      "Ringan untuk developer"
+    ]
+  },
+
+  "Tabnine": {
+    "description": "Tabnine adalah AI code completion tool yang fokus pada privacy dan on-device AI suggestions untuk membantu developer menulis kode lebih cepat.",
+
+    "features": [
+      "AI-powered autocomplete",
+      "Local AI model support",
+      "Team learning model",
+      "IDE integration"
+    ],
+
+    "focus": [
+      "Privacy-first AI coding",
+      "Enterprise usage",
+      "Secure code suggestions"
+    ]
+  }
+}

@@ -1,326 +1,117 @@
 const roadmapData = [
   {
     main: {
-      id: "internet",
-      title: "Internet",
-      desc: "Dasar dari bagaimana web bekerja secara teknis.",
+      id: "ai_coding_basics",
+      title: "AI Coding Fundamentals",
+      desc: "Memahami bagaimana Large Language Models (LLM) bekerja dan batasan konteksnya (Context Windows & Tokens).",
     },
     left: [],
     right: [
-      { id: "dns", title: "DNS and how it works?" },
-      { id: "http", title: "What is HTTP?" },
-      { id: "hosting", title: "What is Hosting?" },
-      { id: "browsers", title: "Browsers and how they work?" },
+      { id: "llm_mechanics", title: "How LLMs Work" },
+      { id: "context_windows", title: "Context Windows & Tokens" },
+      { id: "ai_limitations", title: "AI Limitations & Hallucinations" },
     ],
   },
   {
     main: {
-      id: "html",
-      title: "HTML",
-      desc: "HyperText Markup Language. Fondasi utama dari setiap website.",
+      id: "prompt_eng",
+      title: "Prompt Engineering for Devs",
+      desc: "Teknik menyusun instruksi yang efektif agar AI menghasilkan kode yang akurat.",
     },
     left: [
-      { id: "semantic", title: "Semantic HTML", badge: "green" },
-      { id: "forms", title: "Forms and Validations", badge: "green" },
-      { id: "a11y", title: "Accessibility", badge: "purple" },
+      { id: "zero_few_shot", title: "Zero-shot & Few-shot", badge: "green" },
+      { id: "chain_of_thought", title: "Chain of Thought (CoT)", badge: "purple" },
     ],
-    right: [],
+    right: [
+      { id: "role_prompting", title: "Role Prompting", badge: "purple" },
+      { id: "system_prompts", title: "System Prompts", badge: "green" },
+    ],
   },
   {
     main: {
-      id: "css",
-      title: "CSS",
-      desc: "Bahasa stylesheet yang digunakan untuk mendesain presentasi dokumen.",
+      id: "ai_extensions",
+      title: "AI Code Assistants",
+      desc: "Plugin dan ekstensi AI yang berjalan di dalam IDE tradisional seperti VS Code.",
     },
     left: [
       {
-        id: "beginner_projects",
-        title: "Beginner Project Ideas",
-        desc: "HTML, CSS and JavaScript are the backbone of web development. Make sure to practice by building lots of projects.",
+        id: "ai_projects",
+        title: "Coding Exercises",
+        desc: "Coba generate boilerplate dan unit test otomatis menggunakan Copilot.",
         isProjectBox: true,
       },
     ],
     right: [
-      { id: "layouts", title: "Making Layouts (Flexbox/Grid)", badge: "green" },
-      { id: "responsive", title: "Responsive Design", badge: "green" },
-      { id: "animations", title: "Animations", badge: "purple" },
+      { id: "github_copilot", title: "GitHub Copilot", badge: "purple" },
+      { id: "codeium", title: "Codeium", badge: "green" },
+      { id: "tabnine", title: "Tabnine", badge: "purple" },
     ],
   },
   {
     main: {
-      id: "javascript",
-      title: "JavaScript",
-      desc: "Bahasa pemrograman inti untuk membuat web menjadi interaktif.",
+      id: "ai_native_ides",
+      title: "AI-Native IDEs",
+      desc: "Code editor generasi baru yang dibangun secara native dengan integrasi AI mendalam.",
+    },
+    left: [{ id: "cursor", title: "Cursor", badge: "green" }, { id: "windsurf", title: "Windsurf", badge: "purple" }],
+    right: [
+      { id: "zed_ai", title: "Zed AI", badge: "green" },
+      { id: "pearai", title: "PearAI", badge: "purple" },
+    ],
+  },
+  {
+    main: {
+      id: "ai_chatbots",
+      title: "Web Chatbots for Devs",
+      desc: "Chatbot AI berbasis web untuk membantu developer coding, debugging, dan belajar tanpa setup lokal.",
     },
     left: [
-      { id: "dom", title: "DOM Manipulation", badge: "green" },
-      { id: "fetch", title: "Fetch API / Ajax", badge: "green" },
+      { id: "claude", title: "Claude 3.5 Sonnet", badge: "purple" },
     ],
     right: [
-      { id: "es6", title: "ES6+ Syntax", badge: "green" },
-      { id: "hoisting", title: "Hoisting & Closures", badge: "purple" },
-    ],
-  },
-  {
-    main: {
-      id: "vcs",
-      title: "Version Control",
-      desc: "Sistem untuk melacak dan mengelola perubahan kode seiring waktu.",
-    },
-    left: [{ id: "git", title: "Git", badge: "green" }],
-    right: [],
-  },
-  {
-    main: {
-      id: "hosting",
-      title: "VCS Hosting",
-      desc: "Layanan cloud untuk menyimpan repository code dan berkolaborasi.",
-    },
-    left: [
-      {
-        id: "vcs_hosting_left",
-        title: "GitLab & GitHub",
-        isHorizontal: true,
-        children: [
-          { id: "gitlab", title: "GitLab", badge: "green" },
-          { id: "github", title: "GitHub", badge: "green" },
-        ],
-      },
-    ],
-    right: [
-      {
-        id: "pkg_mgr",
-        title: "Package Managers",
-        isGroup: true,
-        children: [
-          { id: "npm", title: "npm", badge: "green" },
-          { id: "yarn", title: "yarn", badge: "purple" },
-          { id: "pnpm", title: "pnpm", badge: "green" },
-          { id: "bun", title: "Bun", badge: "purple" },
-        ],
-      },
+      { id: "chatgpt", title: "ChatGPT (GPT-4o)", badge: "green" },
     ],
   },
   {
     main: { id: "project_spacer", title: "", type: "spacer" },
     left: [
       {
-        id: "project_ideas",
-        title: "Intermediate Project Ideas",
-        desc: "At this point, you should be able to build modern vanilla JS frontend applications.",
+        id: "refactoring_projects",
+        title: "Refactoring Projects",
+        desc: "Gunakan fitur 'Composer' di Cursor untuk me-refactor file codebase lama.",
         isProjectBox: true,
       },
     ],
-    right: [
-      {
-        id: "css_fw",
-        title: "CSS Frameworks",
-        isGroupBottom: true,
-        children: [{ id: "tailwind", title: "Tailwind CSS", badge: "green" }],
-      },
-    ],
-  },
-  {
-    main: {
-      id: "frameworks",
-      title: "Learn a Framework",
-      desc: "Library canggih untuk membuat UI modern skala besar.",
-    },
-    left: [
-      { id: "react", title: "React", badge: "green" },
-      { id: "vue", title: "Vue.js", badge: "purple" },
-      { id: "angular", title: "Angular", badge: "purple" },
-      { id: "svelte", title: "Svelte", badge: "purple" },
-      { id: "solid", title: "Solid JS", badge: "purple" },
-    ],
-    right: [
-      { id: "ai_dev_text", title: "AI in Development", isTextNode: true },
-    ],
-  },
-  {
-    main: {
-      id: "ai_coding",
-      title: "AI Assisted Coding",
-      desc: "Tools dan platform AI untuk mempercepat penulisan kode.",
-    },
-    left: [
-      { id: "claude", title: "Claude Code", badge: "green" },
-      { id: "cursor", title: "Cursor", badge: "green" },
-      { id: "copilot", title: "Copilot", badge: "purple" },
-      { id: "antigravity", title: "Antigravity", badge: "purple" },
-    ],
-    right: [
-      { id: "learn_basics", title: "Learn the Basics", isRightHeading: true },
-    ],
-  },
-  {
-    main: {
-      id: "prompting",
-      title: "Prompting Techniques",
-      desc: "Teknik memberikan instruksi yang efektif ke AI.",
-    },
-    left: [
-      { id: "prompt_eng", title: "Prompt Engineering", isSolidBlue: true },
-    ],
-    right: [
-      {
-        id: "llm_group_1",
-        isVerticalGroup: true,
-        children: [
-          { id: "how_llms", title: "How LLMs work", badge: "green" },
-          {
-            id: "ai_vs_trad",
-            title: "AI vs Traditional Coding",
-            badge: "green",
-          },
-          { id: "applications", title: "Applications", badge: "purple" },
-        ],
-      },
-    ],
-  },
-  {
-    main: {
-      id: "agents",
-      title: "Agents",
-      desc: "Sistem AI otonom yang dapat menjalankan serangkaian tugas.",
-    },
-    left: [
-      { id: "ai_agents_rm", title: "AI Agents Roadmap", isSolidBlue: true },
-    ],
-    right: [
-      {
-        id: "llm_group_2",
-        isVerticalGroup: true,
-        children: [
-          { id: "code_reviews", title: "Code Reviews", badge: "green" },
-          { id: "refactoring", title: "Refactoring", badge: "green" },
-          { id: "docs_gen", title: "Docs Generation", badge: "purple" },
-        ],
-      },
-    ],
-  },
-  {
-    main: { id: "mcp", title: "MCP", desc: "Model Context Protocol." },
-    left: [],
     right: [],
   },
   {
     main: {
-      id: "skills",
-      title: "Skills",
-      desc: "Kemampuan spesifik yang diberikan ke AI Agent.",
-    },
-    left: [],
-    right: [],
-  },
-  {
-    main: {
-      id: "implementing_ai",
-      title: "Implementing AI",
-      desc: "Menerapkan AI di real-world project.",
+      id: "agentic_coding",
+      title: "Agentic Coding & MCP",
+      desc: "Sistem AI agen yang bisa berpikir, merencanakan, dan mengeksekusi kode secara mandiri.",
     },
     left: [
-      { id: "gemini", title: "Gemini", badge: "green" },
-      { id: "openai", title: "OpenAI", badge: "green" },
-      { id: "anthropic", title: "Anthropic", badge: "purple" },
+      { id: "cline", title: "Cline (formerly Claude Dev)", badge: "green" },
+      { id: "devin", title: "Devin / OpenDevin", badge: "purple" },
     ],
     right: [
-      { id: "adv_frontend", title: "Advanced Frontend", isTextNode: true },
+      { id: "mcp_protocol", title: "Model Context Protocol (MCP)", badge: "green", isRightHeading: true },
+      { id: "auto_gpt", title: "AutoGPT / BabyAGI", badge: "purple" },
     ],
   },
   {
     main: {
-      id: "bundlers",
-      title: "Module Bundlers",
-      desc: "Alat untuk memaketkan banyak file menjadi satu file (bundle).",
-    },
-    left: [{ id: "auth_strat", title: "Auth Strategies", isLeftHeading: true }],
-    right: [
-      { id: "linters", title: "Linters & Formatters", isRightHeading: true },
-    ],
-  },
-  {
-    main: {
-      id: "bundlers_children",
-      type: "center-group",
-      children: [
-        {
-          id: "vite",
-          title: "Vite",
-          isFull: true,
-          badge: "purple",
-          align: "right",
-        },
-        { id: "swc", title: "SWC", badge: "green", align: "left" },
-        { id: "esbuild", title: "esbuild", badge: "purple", align: "right" },
-        { id: "rollup", title: "Rollup", badge: "green", align: "left" },
-        { id: "rolldown", title: "Rolldown" },
-        {
-          id: "parcel",
-          title: "Parcel",
-          isFull: true,
-          badge: "green",
-          align: "left",
-        },
-      ],
-    },
-    left: [{ id: "testing_row", isTestingRow: true }],
-    right: [
-      {
-        id: "linters_group",
-        isVerticalGroup: true,
-        style: "yellow",
-        children: [
-          { id: "biome", title: "Biome", badge: "green" },
-          { id: "prettier", title: "Prettier", badge: "purple" },
-          { id: "eslint", title: "ESLint", badge: "purple" },
-        ],
-      },
-    ],
-  },
-  {
-    main: {
-      id: "adv_projects",
-      type: "project-box",
-      title: "Advanced Project Ideas",
-      desc: "At this point you should have the expertise of an intermediate level frontend developer. Keep practicing and sharpening your skills.",
+      id: "ai_in_cicd",
+      title: "AI in Testing & CI/CD",
+      desc: "Mengotomatiskan review kode dan pembuatan tes dengan AI langsung di pipeline.",
     },
     left: [
-      {
-        id: "testing_group",
-        isVerticalGroup: true,
-        style: "yellow",
-        children: [
-          { id: "vitest", title: "Vitest", badge: "purple" },
-          { id: "playwright", title: "Playwright", badge: "purple" },
-          { id: "cypress", title: "Cypress", badge: "green" },
-          { id: "jest", title: "Jest", badge: "green" },
-        ],
-      },
+      { id: "ai_code_review", title: "AI Pull Request Reviewers", badge: "green" },
+      { id: "test_gen", title: "Automated Test Generation", badge: "purple" },
     ],
     right: [
-      {
-        id: "security_group",
-        isVerticalGroup: true,
-        style: "yellow",
-        children: [
-          { id: "cors", title: "CORS", badge: "purple" },
-          { id: "https", title: "HTTPS", badge: "purple" },
-          { id: "csp", title: "CSP", badge: "purple" },
-          { id: "owasp", title: "OWASP Risks", badge: "purple" },
-        ],
-      },
-    ],
-  },
-  {
-    main: {
-      id: "web_apis",
-      title: "Web APIs",
-      desc: "API bawaan browser untuk memanipulasi DOM dan fitur device.",
-    },
-    left: [],
-    right: [
-      { id: "web_security", title: "Web Security", isRightHeading: true },
+      { id: "snyk_ai", title: "Snyk DeepCode AI", badge: "purple" },
+      { id: "github_adv_sec", title: "GitHub Advanced Security AI", badge: "green" },
     ],
   },
   {
@@ -340,26 +131,8 @@ const resourcesDB = {
     { type: "video", title: "Crash Course di YouTube", url: "#" },
     { type: "game", title: "Latihan Interaktif (Practice)", url: "#" },
   ],
-  internet: [
-    { type: "article", title: "Bagaimana Internet Bekerja?", url: "#" },
-    { type: "video", title: "Crash Course Networking", url: "#" },
-  ],
-  html: [
-    { type: "course", title: "HTML Full Course untuk Pemula", url: "#" },
-    { type: "article", title: "Panduan MDN Web Docs", url: "#" },
-  ],
-  css: [
-    { type: "game", title: "Flexbox Froggy", url: "#" },
-    { type: "game", title: "Grid Garden", url: "#" },
-    { type: "video", title: "CSS Masterclass", url: "#" },
-  ],
-  javascript: [
-    { type: "course", title: "JavaScript Fundamentals", url: "#" },
-    { type: "article", title: "JavaScript.info", url: "#" },
-  ],
-  react: [
-    { type: "course", title: "React 18 for Beginners", url: "#" },
-    { type: "article", title: "Dokumentasi Resmi React.dev", url: "#" },
+  math_stats: [
+    { type: "article", title: "Statistik untuk Data Science", url: "#" },
   ],
 };
 
@@ -961,7 +734,7 @@ let jsonDataCache = {};
 async function fetchMateri(filename) {
   if (jsonDataCache[filename]) return jsonDataCache[filename];
   try {
-    const res = await fetch(`../../../materi/frontend/${encodeURIComponent(filename)}`);
+    const res = await fetch(`../../../materi/aiasistencoding/${encodeURIComponent(filename)}`);
     if (res.ok) {
       const data = await res.json();
       jsonDataCache[filename] = data;
@@ -1012,91 +785,50 @@ function extractExample(obj) {
 }
 
 const nodeMapping = {
-  // HTML
-  "semantic": { file: "html.json", rootKey: "HTML", key: "Semantic_HTML" },
-  "forms": { file: "html.json", rootKey: "HTML", key: "Forms_and_Validations" },
-  "a11y": { file: "html.json", rootKey: "HTML", key: "Accessibility" },
-  // CSS
-  "layouts": { file: "css.json", rootKey: "CSS", key: "Making_Layouts_Flexbox_Grid" },
-  "responsive": { file: "css.json", rootKey: "CSS", key: "Responsive_Design" },
-  "animations": { file: "css.json", rootKey: "CSS", key: "Animations" },
-  // JavaScript
-  "dom": { file: "javascript.json", rootKey: "JavaScript", key: "DOM_Manipulation" },
-  "fetch": { file: "javascript.json", rootKey: "JavaScript", key: "Fetch_API_Ajax" },
-  "es6": { file: "javascript.json", rootKey: "JavaScript", key: "ES6_Plus_Syntax" },
-  "hoisting": { file: "javascript.json", rootKey: "JavaScript", key: "Hoisting_and_Closures" },
-  // Version Control
-  "vcs": { file: "version-control.json", rootKey: "Git_and_Version_Control", key: "Version_Control" },
-  "git": { file: "version-control.json", rootKey: "Git_and_Version_Control", key: "Git" },
-  // VCS Hosting
-  "github": { file: "vcs-hosting.json", key: "GitHub" },
-  "gitlab": { file: "vcs-hosting.json", key: "GitLab" },
-  // Package Managers
-  "npm": { file: "pakage-manager", key: "npm" },
-  "yarn": { file: "pakage-manager", key: "yarn" },
-  "pnpm": { file: "pakage-manager", key: "pnpm" },
-  "bun": { file: "pakage-manager", key: "Bun" },
-  // CSS Frameworks
-  "tailwind": { file: "cssframework.json", key: "Tailwind_CSS" },
-  // Learn a Framework
-  "react": { file: "learnaframewoek.json", key: "React" },
-  "vue": { file: "learnaframewoek.json", key: "Vue_js" },
-  "angular": { file: "learnaframewoek.json", key: "Angular" },
-  "svelte": { file: "learnaframewoek.json", key: "Svelte" },
-  "solid": { file: "learnaframewoek.json", key: "Solid_JS" },
-  // AI Assisted Coding
-  "claude": { file: "aiasistencoding.json", key: "Claude_Code" },
-  "cursor": { file: "aiasistencoding.json", key: "Cursor" },
-  "copilot": { file: "aiasistencoding.json", key: "Copilot" },
-  "antigravity": { file: "aiasistencoding.json", key: "Antigravity" },
-  // Prompting
-  "prompt_eng": { file: "prompt.json", key: "Prompt_Engineering" },
-  "prompting": { file: "prompt.json", key: "Prompting_Techniques" },
-  // Learn the Basics (AI)
-  "how_llms": { file: "learnthebasic.json", rootKey: "AI_Development_Basics", key: "How_LLMs_Work" },
-  "ai_vs_trad": { file: "learnthebasic.json", rootKey: "AI_Development_Basics", key: "AI_vs_Traditional_Coding" },
-  "applications": { file: "learnthebasic.json", rootKey: "AI_Development_Basics", key: "Applications" },
-  "code_reviews": { file: "learnthebasic.json", rootKey: "AI_Development_Basics", key: "Code_Reviews" },
-  "refactoring": { file: "learnthebasic.json", rootKey: "AI_Development_Basics", key: "Refactoring" },
-  "docs_gen": { file: "learnthebasic.json", rootKey: "AI_Development_Basics", key: "Docs_Generation" },
-  "learn_basics": { file: "learnthebasic.json", rootKey: "AI_Development_Basics", key: "Learn_the_Basics" },
-  // Agents
-  "agents": { file: "agent.json", key: "Agents" },
-  "ai_agents_rm": { file: "agent.json", key: "AI_Agents_Roadmap" },
-  // MCP & Skills
-  "mcp": { file: "mcp&skill.json", key: "MCP" },
-  "skills": { file: "mcp&skill.json", key: "Skills" },
-  // Implementing AI
-  "implementing_ai": { file: "impementingai.json", key: "Implementing_AI" },
-  "gemini": { file: "impementingai.json", key: "Gemini" },
-  "openai": { file: "impementingai.json", key: "OpenAI" },
-  "anthropic": { file: "impementingai.json", key: "Anthropic" },
-  // Module Bundlers
-  "bundlers": { file: "modulebundler.json", key: "Module_Bundlers" },
-  "vite": { file: "modulebundler.json", key: "Vite" },
-  "swc": { file: "modulebundler.json", key: "SWC" },
-  "esbuild": { file: "modulebundler.json", key: "esbuild" },
-  "rollup": { file: "modulebundler.json", key: "Rollup" },
-  "rolldown": { file: "modulebundler.json", key: "Rolldown" },
-  "parcel": { file: "modulebundler.json", key: "Parcel" },
-  // Linters & Formatters
-  "biome": { file: "linter&formater.json", key: "Biome" },
-  "prettier": { file: "linter&formater.json", key: "Prettier" },
-  "eslint": { file: "linter&formater.json", key: "ESLint" },
-  "linters": { file: "linter&formater.json", key: "Linters_and_Formatters" },
-  // Testing
-  "testing": { file: "Testing.Json", key: "Testing" },
-  "vitest": { file: "Testing.Json", key: "Vitest" },
-  "playwright": { file: "Testing.Json", key: "Playwright" },
-  "cypress": { file: "Testing.Json", key: "Cypress" },
-  "jest": { file: "Testing.Json", key: "Jest" },
-  // Web Security & APIs
-  "web_security": { file: "Web APIs Web Security.json", key: "Web_Security" },
-  "cors": { file: "Web APIs Web Security.json", key: "CORS" },
-  "https": { file: "Web APIs Web Security.json", key: "HTTPS" },
-  "csp": { file: "Web APIs Web Security.json", key: "CSP" },
-  "owasp": { file: "Web APIs Web Security.json", key: "OWASP_Risks" },
-  "web_apis": { file: "Web APIs Web Security.json", key: "Web_APIs" },
+  // AI Coding Fundamentals — file: "AI Coding Fundamentals.json"
+  "ai_coding_basics": { file: "AI Coding Fundamentals.json", key: "AI_Coding_Fundamentals" },
+  "llm_mechanics": { file: "AI Coding Fundamentals.json", key: "How_LLMs_Work" },
+  "context_windows": { file: "AI Coding Fundamentals.json", key: "Context_Windows_and_Tokens" },
+  "ai_limitations": { file: "AI Coding Fundamentals.json", key: "AI_Limitations_and_Hallucinations" },
+
+  // Prompt Engineering for Devs — file: "Prompt Engineering for Devs.json"
+  "prompt_eng": { file: "Prompt Engineering for Devs.json", key: "Prompt_Engineering" },
+  "zero_few_shot": { file: "Prompt Engineering for Devs.json", key: "Prompt_Engineering" },
+  "chain_of_thought": { file: "Prompt Engineering for Devs.json", key: "Prompt_Engineering" },
+  "role_prompting": { file: "Prompt Engineering for Devs.json", key: "Prompt_Engineering" },
+  "system_prompts": { file: "Prompt Engineering for Devs.json", key: "Prompt_Engineering" },
+
+  // AI Code Assistants — file: "aicodeasistent.json"
+  "ai_extensions": { file: "aicodeasistent.json", key: "AI_Code_Assistants" },
+  "github_copilot": { file: "aicodeasistent.json", key: "GitHub_Copilot" },
+  "codeium": { file: "aicodeasistent.json", key: "Codeium" },
+  "tabnine": { file: "aicodeasistent.json", key: "Tabnine" },
+
+  // AI-Native IDEs — file: "AI-Native IDEs.json"
+  "ai_native_ides": { file: "AI-Native IDEs.json", key: "AI_Native_IDEs" },
+  "cursor": { file: "AI-Native IDEs.json", key: "Cursor" },
+  "windsurf": { file: "AI-Native IDEs.json", key: "Windsurf" },
+  "zed_ai": { file: "AI-Native IDEs.json", key: "Zed_AI" },
+  "pearai": { file: "AI-Native IDEs.json", key: "PearAI" },
+
+  // Web Chatbots for Devs — file: "Web Chatbots for Devs.json"
+  "ai_chatbots": { file: "Web Chatbots for Devs.json", key: "Web_Chatbots_for_Devs" },
+  "claude": { file: "Web Chatbots for Devs.json", key: "Claude_3_5_Sonnet" },
+  "chatgpt": { file: "Web Chatbots for Devs.json", key: "ChatGPT_GPT_4o" },
+
+  // Agentic Coding & MCP — file: "Agentic Coding & MC.json"
+  "agentic_coding": { file: "Agentic Coding & MC.json", key: "Agentic_Coding_and_MCP" },
+  "cline": { file: "Agentic Coding & MC.json", key: "Cline_Claude_Dev" },
+  "devin": { file: "Agentic Coding & MC.json", key: "Devin_OpenDevin" },
+  "mcp_protocol": { file: "Agentic Coding & MC.json", key: "Model_Context_Protocol_MCP" },
+  "auto_gpt": { file: "Agentic Coding & MC.json", key: "AutoGPT_BabyAGI" },
+
+  // AI in Testing & CI/CD — file: "ai in testing and cicd.json"
+  "ai_in_cicd": { file: "ai in testing and cicd.json", key: "AI_in_Testing_and_CI_CD" },
+  "ai_code_review": { file: "ai in testing and cicd.json", key: "AI_Pull_Request_Reviewers" },
+  "test_gen": { file: "ai in testing and cicd.json", key: "Automated_Test_Generation" },
+  "snyk_ai": { file: "ai in testing and cicd.json", key: "Snyk_DeepCode_AI" },
+  "github_adv_sec": { file: "ai in testing and cicd.json", key: "GitHub_Advanced_Security_AI" }
 };
 
 async function openPanel(id, title, category, desc) {
@@ -1111,7 +843,12 @@ async function openPanel(id, title, category, desc) {
       if (mapping.rootKey && dataFile[mapping.rootKey]) {
         rootData = dataFile[mapping.rootKey];
       }
-      const dataObj = rootData[mapping.key];
+      
+      let dataObj = rootData[mapping.key];
+      if (mapping.subKey && dataObj) {
+        dataObj = dataObj[mapping.subKey];
+      }
+
       if (dataObj) {
         actualDesc = generateHtmlFromJson(dataObj);
         exampleObj = extractExample(dataObj);

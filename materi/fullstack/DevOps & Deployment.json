@@ -1,0 +1,201 @@
+{
+  "DevOps_and_Deployment": {
+    "description": "DevOps & Deployment adalah praktik untuk otomatisasi build, testing, deployment, monitoring, dan pengelolaan infrastruktur aplikasi agar development lebih cepat, stabil, dan scalable.",
+
+    "main_goals": [
+      "Mempercepat software delivery",
+      "Mengotomatisasi deployment",
+      "Mengurangi human error",
+      "Meningkatkan scalability aplikasi",
+      "Menjamin kestabilan production"
+    ],
+
+    "core_concepts": [
+      "Continuous Integration",
+      "Continuous Deployment",
+      "Infrastructure Automation",
+      "Containerization",
+      "Cloud Deployment",
+      "Monitoring"
+    ],
+
+    "examples": [
+      "Automatic deployment",
+      "CI/CD pipeline",
+      "Containerized applications",
+      "Cloud hosting workflow",
+      "Production infrastructure management"
+    ],
+
+    "real_world_use_cases": [
+      "Auto deploy SaaS application",
+      "Microservices deployment",
+      "Realtime rollback system",
+      "Production server automation"
+    ]
+  },
+
+  "Docker": {
+    "description": "Docker digunakan untuk menjalankan aplikasi dalam container agar environment tetap konsisten di development maupun production.",
+
+    "features": [
+      "Containerization",
+      "Portable environments",
+      "Environment consistency",
+      "Fast deployment",
+      "Microservices support"
+    ],
+
+    "advantages": [
+      "Mengurangi environment mismatch",
+      "Deployment lebih stabil",
+      "Mudah dipindahkan antar server",
+      "Cocok untuk CI/CD workflow"
+    ],
+
+    "examples": [
+      "Containerized Node.js API",
+      "Dockerized PostgreSQL database",
+      "Multi-container application"
+    ],
+
+    "example": {
+      "title": "Docker Run Example",
+      "code": "docker run -p 3000:3000 my-app"
+    },
+
+    "Dockerfile_example": {
+      "title": "Simple Dockerfile",
+      "code": "FROM node:20\nWORKDIR /app\nCOPY . .\nRUN npm install\nCMD [\"npm\", \"start\"]"
+    },
+
+    "docker_compose_example": {
+      "title": "Docker Compose Example",
+      "code": "services:\n  app:\n    build: .\n    ports:\n      - '3000:3000'"
+    }
+  },
+
+  "CI_CD_GitHub_Actions": {
+    "description": "GitHub Actions digunakan untuk mengotomatisasi testing, build, dan deployment aplikasi melalui workflow berbasis repository GitHub.",
+
+    "features": [
+      "Workflow automation",
+      "Automated testing",
+      "Deployment pipelines",
+      "Scheduled jobs",
+      "GitHub integration"
+    ],
+
+    "main_goals": [
+      "Automasi testing",
+      "Automasi deployment",
+      "Menjaga kualitas code",
+      "Mempercepat release aplikasi"
+    ],
+
+    "example": {
+      "title": "GitHub Actions Workflow",
+      "code": "name: Deploy\non: push\njobs:\n  build:\n    runs-on: ubuntu-latest"
+    },
+
+    "automation_examples": [
+      "Auto testing",
+      "Auto deployment",
+      "Lint checking",
+      "Build automation",
+      "Docker image build"
+    ],
+
+    "workflow_example": {
+      "title": "CI/CD Workflow",
+      "code": "Developer Push Code → GitHub Actions Run Tests → Build App → Deploy to Production"
+    }
+  },
+
+  "Vercel_and_Railway": {
+    "description": "Vercel dan Railway mempermudah hosting aplikasi frontend maupun backend dengan deployment otomatis berbasis Git.",
+
+    "Vercel": {
+      "description": "Vercel sangat populer untuk deployment Next.js dan frontend modern.",
+
+      "features": [
+        "Serverless deployment",
+        "Edge network",
+        "GitHub auto deploy",
+        "Preview deployment"
+      ],
+
+      "examples": [
+        "Deploy Next.js website",
+        "Frontend portfolio hosting",
+        "Landing page deployment"
+      ]
+    },
+
+    "Railway": {
+      "description": "Railway mempermudah deployment backend dan database dengan konfigurasi sederhana.",
+
+      "features": [
+        "Backend hosting",
+        "Database hosting",
+        "Environment variable management",
+        "Simple cloud deployment"
+      ],
+
+      "examples": [
+        "Deploy Express API",
+        "Host PostgreSQL database",
+        "Deploy fullstack apps"
+      ]
+    },
+
+    "examples": [
+      "Deploy Next.js ke Vercel",
+      "Deploy Express API ke Railway",
+      "Auto deployment via GitHub",
+      "Cloud database hosting"
+    ]
+  },
+
+  "Nginx_and_Reverse_Proxy": {
+    "description": "Nginx digunakan sebagai web server dan reverse proxy untuk mengatur traffic aplikasi, load balancing, caching, dan keamanan production server.",
+
+    "features": [
+      "Reverse proxy",
+      "Load balancing",
+      "Static file serving",
+      "SSL termination",
+      "High-performance web server"
+    ],
+
+    "advantages": [
+      "Performa tinggi",
+      "Stabil untuk production",
+      "Mudah handle traffic besar",
+      "Cocok untuk microservices"
+    ],
+
+    "Nginx_example": {
+      "title": "Basic Reverse Proxy",
+      "code": "location / {\n  proxy_pass http://localhost:3000;\n}"
+    },
+
+    "SSL_example": {
+      "title": "HTTPS SSL Config",
+      "code": "listen 443 ssl;\nssl_certificate /etc/ssl/cert.pem;"
+    },
+
+    "use_cases": [
+      "Load balancing",
+      "SSL termination",
+      "Serving static files",
+      "Backend proxying",
+      "Production web server"
+    ],
+
+    "workflow_example": {
+      "title": "Reverse Proxy Flow",
+      "code": "Client Request → Nginx → Backend Server → Response"
+    }
+  }
+}

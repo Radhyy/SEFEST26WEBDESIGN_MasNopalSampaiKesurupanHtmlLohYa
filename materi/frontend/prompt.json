@@ -1,0 +1,191 @@
+{
+  "Prompt_Engineering": {
+    "description": "Prompt Engineering adalah teknik membuat instruksi atau pertanyaan yang efektif untuk mendapatkan hasil terbaik dari AI.",
+    "goals": [
+      "Mendapatkan jawaban lebih akurat",
+      "Mengontrol output AI",
+      "Meningkatkan kualitas hasil",
+      "Menghemat waktu development",
+      "Membantu automasi workflow"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Prompt",
+        "function": "Instruksi atau pertanyaan untuk AI"
+      },
+      {
+        "concept": "Context",
+        "function": "Informasi tambahan agar AI lebih memahami tugas"
+      },
+      {
+        "concept": "Role Prompting",
+        "function": "Memberikan peran tertentu pada AI"
+      },
+      {
+        "concept": "Constraints",
+        "function": "Batasan pada output AI"
+      }
+    ],
+    "best_practices": [
+      "Gunakan instruksi yang jelas",
+      "Berikan context yang cukup",
+      "Pisahkan task kompleks menjadi kecil",
+      "Gunakan format output yang spesifik",
+      "Lakukan iterasi prompt"
+    ],
+    "common_mistakes": [
+      "Prompt terlalu umum",
+      "Tidak memberikan context",
+      "Terlalu banyak instruksi dalam satu prompt",
+      "Tidak menentukan format output"
+    ],
+    "example": {
+      "title": "Basic Prompt Example",
+      "code": "Create a responsive login page using HTML, CSS, and JavaScript with dark mode and glassmorphism design."
+    }
+  },
+
+  "Prompting_Techniques": {
+    "Zero_Shot_Prompting": {
+      "description": "Zero-shot prompting adalah teknik memberikan instruksi tanpa contoh tambahan.",
+      "advantages": [
+        "Cepat digunakan",
+        "Cocok untuk task sederhana",
+        "Prompt lebih singkat"
+      ],
+      "best_use_cases": [
+        "Menjawab pertanyaan",
+        "Generate kode sederhana",
+        "Ringkasan teks"
+      ],
+      "example": {
+        "title": "Zero Shot Example",
+        "code": "Explain what Flexbox is in CSS."
+      }
+    },
+
+    "One_Shot_Prompting": {
+      "description": "One-shot prompting memberikan satu contoh sebelum AI menjalankan tugas.",
+      "advantages": [
+        "AI lebih memahami format",
+        "Output lebih konsisten"
+      ],
+      "best_use_cases": [
+        "Formatting output",
+        "Code generation",
+        "Structured response"
+      ],
+      "example": {
+        "title": "One Shot Example",
+        "code": "Example:\nInput: HTML\nOutput: Markup language for web pages\n\nNow explain:\nCSS"
+      }
+    },
+
+    "Few_Shot_Prompting": {
+      "description": "Few-shot prompting memberikan beberapa contoh agar AI memahami pola yang diinginkan.",
+      "advantages": [
+        "Hasil lebih akurat",
+        "Format output lebih stabil",
+        "Cocok untuk task kompleks"
+      ],
+      "best_use_cases": [
+        "Classification",
+        "Data formatting",
+        "Complex code generation"
+      ],
+      "example": {
+        "title": "Few Shot Example",
+        "code": "Input: React\nOutput: Frontend Library\n\nInput: Vue\nOutput: Frontend Framework\n\nInput: Node.js\nOutput:"
+      }
+    },
+
+    "Role_Based_Prompting": {
+      "description": "Role-based prompting memberikan peran tertentu kepada AI agar jawaban lebih sesuai konteks.",
+      "advantages": [
+        "Jawaban lebih spesifik",
+        "Meningkatkan kualitas output",
+        "Cocok untuk simulasi expert"
+      ],
+      "best_use_cases": [
+        "AI coding assistant",
+        "Teacher simulation",
+        "Technical explanation"
+      ],
+      "example": {
+        "title": "Role Prompt Example",
+        "code": "You are a senior frontend developer. Create a responsive dashboard using React and Tailwind CSS."
+      }
+    },
+
+    "Chain_of_Thought": {
+      "description": "Chain of Thought prompting meminta AI menjelaskan langkah berpikir secara bertahap.",
+      "advantages": [
+        "Meningkatkan reasoning",
+        "Cocok untuk problem solving",
+        "Jawaban lebih detail"
+      ],
+      "best_use_cases": [
+        "Matematika",
+        "Debugging",
+        "Complex logic"
+      ],
+      "example": {
+        "title": "Chain of Thought Example",
+        "code": "Explain step by step how authentication works in JWT."
+      }
+    },
+
+    "Structured_Output_Prompting": {
+      "description": "Teknik untuk meminta AI menghasilkan output dalam format tertentu seperti JSON, Markdown, atau tabel.",
+      "advantages": [
+        "Output lebih rapi",
+        "Mudah diproses program",
+        "Konsisten"
+      ],
+      "best_use_cases": [
+        "API response",
+        "Data generation",
+        "Automation"
+      ],
+      "example": {
+        "title": "JSON Output Example",
+        "code": "Create a JSON object for a user profile with name, age, and email."
+      }
+    },
+
+    "Constraint_Prompting": {
+      "description": "Teknik memberikan batasan tertentu pada output AI.",
+      "advantages": [
+        "Output lebih terkontrol",
+        "Mengurangi jawaban tidak relevan"
+      ],
+      "best_use_cases": [
+        "Short responses",
+        "Code optimization",
+        "UI generation"
+      ],
+      "example": {
+        "title": "Constraint Prompt Example",
+        "code": "Create a navbar using only HTML and CSS without JavaScript."
+      }
+    },
+
+    "Iterative_Prompting": {
+      "description": "Teknik memperbaiki hasil AI secara bertahap melalui prompt lanjutan.",
+      "advantages": [
+        "Hasil lebih detail",
+        "Memperbaiki kesalahan output",
+        "Meningkatkan kualitas hasil akhir"
+      ],
+      "best_use_cases": [
+        "UI/UX design",
+        "Code refinement",
+        "Content writing"
+      ],
+      "example": {
+        "title": "Iterative Prompt Example",
+        "code": "Step 1: Create a login page.\nStep 2: Add responsive design.\nStep 3: Add dark mode."
+      }
+    }
+  }
+}

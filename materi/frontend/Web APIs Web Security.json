@@ -1,0 +1,256 @@
+    {
+  "Web_Security": {
+    "description": "Web Security adalah praktik melindungi website, aplikasi web, server, dan data pengguna dari ancaman keamanan digital.",
+    "main_goals": [
+      "Melindungi data pengguna",
+      "Mencegah serangan hacker",
+      "Menjaga keamanan server",
+      "Melindungi API dan database",
+      "Menjaga privasi dan integritas data"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Authentication",
+        "function": "Verifikasi identitas user"
+      },
+      {
+        "concept": "Authorization",
+        "function": "Mengatur hak akses user"
+      },
+      {
+        "concept": "Encryption",
+        "function": "Mengamankan data"
+      },
+      {
+        "concept": "Input Validation",
+        "function": "Mencegah input berbahaya"
+      },
+      {
+        "concept": "Security Headers",
+        "function": "Menambah perlindungan browser"
+      }
+    ],
+    "common_threats": [
+      "Cross Site Scripting (XSS)",
+      "SQL Injection",
+      "Cross Site Request Forgery (CSRF)",
+      "Broken Authentication",
+      "Data Leakage"
+    ],
+    "best_practices": [
+      "Gunakan HTTPS",
+      "Validasi semua input user",
+      "Gunakan password hashing",
+      "Batasi akses API",
+      "Gunakan security headers",
+      "Update dependencies secara rutin"
+    ],
+    "example": {
+      "title": "Basic Security Flow",
+      "code": "User Request -> Validation -> Authentication -> Authorization -> Response"
+    }
+  },
+
+  "CORS": {
+    "description": "CORS (Cross-Origin Resource Sharing) adalah mekanisme keamanan browser yang mengatur apakah suatu website dapat mengakses resource dari domain lain.",
+    "important_concepts": [
+      {
+        "concept": "Origin",
+        "function": "Gabungan protocol, domain, dan port"
+      },
+      {
+        "concept": "Same-Origin Policy",
+        "function": "Mencegah akses antar domain berbeda"
+      },
+      {
+        "concept": "Access-Control-Allow-Origin",
+        "function": "Header untuk mengizinkan domain tertentu"
+      }
+    ],
+    "common_headers": [
+      "Access-Control-Allow-Origin",
+      "Access-Control-Allow-Methods",
+      "Access-Control-Allow-Headers",
+      "Access-Control-Allow-Credentials"
+    ],
+    "advantages": [
+      "Melindungi browser dari request berbahaya",
+      "Mengontrol akses API",
+      "Meningkatkan keamanan web"
+    ],
+    "best_practices": [
+      "Jangan gunakan '*' di production",
+      "Batasi domain yang diizinkan",
+      "Batasi method API"
+    ],
+    "example": {
+      "title": "Express CORS Example",
+      "code": "app.use(cors({\n  origin: 'https://example.com'\n}));"
+    }
+  },
+
+  "HTTPS": {
+    "description": "HTTPS (HyperText Transfer Protocol Secure) adalah versi aman dari HTTP yang menggunakan enkripsi SSL/TLS.",
+    "important_concepts": [
+      {
+        "concept": "SSL/TLS",
+        "function": "Protokol enkripsi data"
+      },
+      {
+        "concept": "Certificate",
+        "function": "Sertifikat keamanan website"
+      },
+      {
+        "concept": "Encryption",
+        "function": "Mengamankan data selama transfer"
+      }
+    ],
+    "advantages": [
+      "Data terenkripsi",
+      "Mencegah data dicuri",
+      "Meningkatkan kepercayaan pengguna",
+      "SEO lebih baik"
+    ],
+    "best_practices": [
+      "Gunakan HTTPS di semua halaman",
+      "Redirect HTTP ke HTTPS",
+      "Gunakan sertifikat valid",
+      "Aktifkan HSTS"
+    ],
+    "example": {
+      "title": "HTTPS URL Example",
+      "code": "https://example.com"
+    }
+  },
+
+  "CSP": {
+    "description": "CSP (Content Security Policy) adalah security layer untuk mencegah serangan seperti XSS dengan mengontrol resource yang dapat dijalankan browser.",
+    "important_concepts": [
+      {
+        "concept": "Content Security Policy Header",
+        "function": "Header keamanan browser"
+      },
+      {
+        "concept": "Script Source",
+        "function": "Mengatur sumber JavaScript"
+      },
+      {
+        "concept": "Inline Script Restriction",
+        "function": "Mencegah script inline berbahaya"
+      }
+    ],
+    "advantages": [
+      "Mencegah XSS",
+      "Mengontrol resource website",
+      "Meningkatkan keamanan frontend"
+    ],
+    "best_practices": [
+      "Batasi source script",
+      "Hindari inline JavaScript",
+      "Gunakan nonce atau hash"
+    ],
+    "example": {
+      "title": "CSP Header Example",
+      "code": "Content-Security-Policy: default-src 'self'; script-src 'self';"
+    }
+  },
+
+  "OWASP_Risks": {
+    "description": "OWASP Top Risks adalah daftar ancaman keamanan web paling umum yang disusun oleh OWASP (Open Web Application Security Project).",
+    "top_risks": [
+      {
+        "risk": "Broken Access Control",
+        "description": "User dapat mengakses data tanpa izin"
+      },
+      {
+        "risk": "Cryptographic Failures",
+        "description": "Penggunaan enkripsi yang lemah"
+      },
+      {
+        "risk": "Injection",
+        "description": "SQL Injection atau command injection"
+      },
+      {
+        "risk": "Insecure Design",
+        "description": "Desain sistem tidak aman"
+      },
+      {
+        "risk": "Security Misconfiguration",
+        "description": "Konfigurasi server salah"
+      },
+      {
+        "risk": "Vulnerable Components",
+        "description": "Menggunakan dependency rentan"
+      },
+      {
+        "risk": "Authentication Failures",
+        "description": "Masalah login dan session"
+      },
+      {
+        "risk": "Software Integrity Failures",
+        "description": "File atau software tidak aman"
+      },
+      {
+        "risk": "Logging & Monitoring Failures",
+        "description": "Kurangnya monitoring keamanan"
+      },
+      {
+        "risk": "SSRF",
+        "description": "Server Side Request Forgery"
+      }
+    ],
+    "best_practices": [
+      "Gunakan prepared statements",
+      "Hash password dengan bcrypt",
+      "Update dependencies",
+      "Gunakan validation dan sanitization",
+      "Lakukan penetration testing"
+    ],
+    "example": {
+      "title": "SQL Injection Prevention",
+      "code": "SELECT * FROM users WHERE email = ?"
+    }
+  },
+
+  "Web_APIs": {
+    "description": "Web APIs adalah interface yang memungkinkan aplikasi web berkomunikasi dengan browser atau layanan eksternal.",
+    "common_web_apis": [
+      {
+        "api": "Fetch API",
+        "description": "Mengirim HTTP request"
+      },
+      {
+        "api": "Local Storage API",
+        "description": "Menyimpan data di browser"
+      },
+      {
+        "api": "Geolocation API",
+        "description": "Mengakses lokasi user"
+      },
+      {
+        "api": "WebSocket API",
+        "description": "Komunikasi realtime"
+      },
+      {
+        "api": "Notification API",
+        "description": "Menampilkan notifikasi browser"
+      }
+    ],
+    "security_risks": [
+      "Data leakage",
+      "API abuse",
+      "Unauthorized access",
+      "Sensitive data exposure"
+    ],
+    "best_practices": [
+      "Gunakan authentication",
+      "Batasi API requests",
+      "Gunakan HTTPS",
+      "Validasi semua data"
+    ],
+    "example": {
+      "title": "Fetch API Example",
+      "code": "fetch('/api/users')\n  .then(res => res.json())\n  .then(data => console.log(data));"
+    }
+  }
+}

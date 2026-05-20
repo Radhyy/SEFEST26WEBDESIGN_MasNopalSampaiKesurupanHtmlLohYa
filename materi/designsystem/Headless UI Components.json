@@ -1,0 +1,71 @@
+{
+  "Headless_UI_Concept": {
+    "description": "Headless UI adalah konsep komponen UI yang hanya menyediakan logic dan behavior tanpa styling bawaan, sehingga developer bebas menentukan tampilan sesuai design system yang digunakan.",
+
+    "main_goals": [
+      "Memisahkan logic dan UI styling",
+      "Memberikan fleksibilitas desain penuh",
+      "Mendukung design system custom",
+      "Membuat komponen lebih reusable"
+    ],
+
+    "concept_principles": [
+      "No styling default",
+      "Fully accessible behavior",
+      "Controlled UI structure",
+      "Custom design freedom"
+    ]
+  },
+
+  "Radix_UI": {
+    "description": "Radix UI adalah library headless components untuk React yang menyediakan primitive UI components dengan fokus pada accessibility, behavior, dan flexibility tanpa styling bawaan.",
+
+    "features": [
+      "Fully accessible components",
+      "Unstyled primitives",
+      "Composable architecture",
+      "High customization support"
+    ],
+
+    "use_cases": [
+      "Design system development",
+      "Custom UI implementation",
+      "Accessible component building"
+    ]
+  },
+
+  "React_Aria": {
+    "description": "React Aria adalah library dari Adobe yang menyediakan hooks dan primitives untuk membangun UI components yang accessible dan behavior-driven tanpa styling.",
+
+    "features": [
+      "Accessibility-first design",
+      "ARIA-compliant behavior",
+      "Hook-based API",
+      "Cross-platform support"
+    ],
+
+    "use_cases": [
+      "Accessible web applications",
+      "Custom component systems",
+      "Complex UI interactions"
+    ]
+  },
+
+  "Headless_UI_Components": {
+    "description": "Headless UI Components adalah kumpulan komponen tanpa styling yang menyediakan logic dan accessibility untuk membangun UI custom di framework modern seperti React.",
+
+    "characteristics": [
+      "No default styling",
+      "Fully accessible",
+      "Behavior-focused",
+      "Composable components"
+    ],
+
+    "examples": [
+      "Dropdown logic",
+      "Modal behavior",
+      "Tabs system",
+      "Menu interactions"
+    ]
+  }
+}

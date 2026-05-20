@@ -1,0 +1,54 @@
+{
+  "Terraform": {
+    "description": "Terraform adalah tool Infrastructure as Code (IaC) yang digunakan untuk membuat dan mengelola infrastruktur cloud menggunakan konfigurasi kode.",
+    "official_website": "https://www.terraform.io",
+    "important_features": [
+      {
+        "feature": "Infrastructure as Code",
+        "function": "Mengelola infrastruktur menggunakan kode"
+      },
+      {
+        "feature": "Multi Cloud Support",
+        "function": "Support AWS, Azure, GCP, dan lainnya"
+      },
+      {
+        "feature": "Execution Plan",
+        "function": "Melihat perubahan sebelum diterapkan"
+      },
+      {
+        "feature": "State Management",
+        "function": "Menyimpan status infrastruktur"
+      }
+    ],
+    "advantages": [
+      "Automasi deployment",
+      "Reusable infrastructure",
+      "Version controlled",
+      "Mengurangi human error"
+    ],
+    "important_commands": [
+      {
+        "command": "terraform init",
+        "function": "Inisialisasi project Terraform"
+      },
+      {
+        "command": "terraform plan",
+        "function": "Melihat perubahan"
+      },
+      {
+        "command": "terraform apply",
+        "function": "Menerapkan konfigurasi"
+      }
+    ],
+    "best_practices": [
+      "Gunakan remote state",
+      "Pisahkan environment",
+      "Gunakan variables",
+      "Jangan simpan secret di code"
+    ],
+    "example": {
+      "title": "Basic Terraform Example",
+      "code": "resource \"aws_instance\" \"server\" {\n  ami           = \"ami-123456\"\n  instance_type = \"t2.micro\"\n}"
+    }
+  }
+}

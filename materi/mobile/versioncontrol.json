@@ -1,0 +1,125 @@
+{
+  "Git": {
+    "description": "Git adalah distributed version control system yang digunakan untuk melacak perubahan kode dan mendukung kolaborasi development.",
+    "official_website": "https://git-scm.com",
+    "main_goals": [
+      "Melacak perubahan kode",
+      "Kolaborasi developer",
+      "Backup project",
+      "Mengelola branch development",
+      "Mempermudah rollback"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Repository",
+        "function": "Tempat penyimpanan project Git"
+      },
+      {
+        "concept": "Commit",
+        "function": "Menyimpan perubahan kode"
+      },
+      {
+        "concept": "Branch",
+        "function": "Cabang development"
+      },
+      {
+        "concept": "Merge",
+        "function": "Menggabungkan branch"
+      },
+      {
+        "concept": "Remote Repository",
+        "function": "Repository online seperti GitHub"
+      }
+    ],
+    "important_commands": [
+      {
+        "command": "git init",
+        "function": "Membuat repository baru"
+      },
+      {
+        "command": "git add .",
+        "function": "Menambahkan perubahan"
+      },
+      {
+        "command": "git commit -m \"message\"",
+        "function": "Menyimpan perubahan"
+      },
+      {
+        "command": "git push",
+        "function": "Mengirim perubahan ke remote"
+      },
+      {
+        "command": "git pull",
+        "function": "Mengambil perubahan terbaru"
+      },
+      {
+        "command": "git branch",
+        "function": "Melihat branch"
+      }
+    ],
+    "advantages": [
+      "Version history",
+      "Kolaborasi mudah",
+      "Rollback perubahan",
+      "Distributed system"
+    ],
+    "best_practices": [
+      "Gunakan commit message jelas",
+      "Gunakan branch terpisah",
+      "Push secara rutin",
+      "Gunakan .gitignore"
+    ],
+    "example": {
+      "title": "Basic Git Workflow",
+      "code": "git init\ngit add .\ngit commit -m \"Initial commit\"\ngit push"
+    }
+  },
+
+  "Version_Control": {
+    "description": "Version Control adalah sistem untuk melacak perubahan file dan kode dalam project development.",
+    "types": [
+      {
+        "type": "Centralized Version Control",
+        "description": "Semua data disimpan di satu server"
+      },
+      {
+        "type": "Distributed Version Control",
+        "description": "Setiap developer memiliki copy repository lengkap"
+      }
+    ],
+    "important_concepts": [
+      {
+        "concept": "History Tracking",
+        "function": "Melihat perubahan sebelumnya"
+      },
+      {
+        "concept": "Collaboration",
+        "function": "Bekerja bersama developer lain"
+      },
+      {
+        "concept": "Rollback",
+        "function": "Kembali ke versi sebelumnya"
+      }
+    ],
+    "popular_tools": [
+      "Git",
+      "Subversion",
+      "Mercurial"
+    ],
+    "advantages": [
+      "Keamanan project",
+      "Kolaborasi lebih mudah",
+      "Mencegah kehilangan kode",
+      "Mempermudah debugging"
+    ],
+    "best_practices": [
+      "Gunakan branching strategy",
+      "Backup repository",
+      "Gunakan remote repository"
+    ],
+    "example": {
+      "title": "Version Control Workflow",
+      "code": "Code Changes -> Commit -> Push -> Collaboration"
+    }
+  }
+}

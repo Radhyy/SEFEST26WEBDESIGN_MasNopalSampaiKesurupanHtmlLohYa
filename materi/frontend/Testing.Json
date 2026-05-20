@@ -1,0 +1,211 @@
+{
+  "Testing": {
+    "description": "Testing adalah proses memeriksa aplikasi untuk memastikan kode berjalan sesuai harapan dan bebas dari bug.",
+    "main_goals": [
+      "Menemukan bug lebih awal",
+      "Menjaga kualitas aplikasi",
+      "Mencegah error setelah update",
+      "Memastikan fitur berjalan benar",
+      "Meningkatkan maintainability"
+    ],
+    "testing_types": [
+      {
+        "type": "Unit Testing",
+        "description": "Menguji function atau component kecil"
+      },
+      {
+        "type": "Integration Testing",
+        "description": "Menguji interaksi antar module"
+      },
+      {
+        "type": "End-to-End Testing",
+        "description": "Menguji aplikasi secara keseluruhan"
+      },
+      {
+        "type": "UI Testing",
+        "description": "Menguji tampilan dan interaksi user"
+      }
+    ],
+    "important_concepts": [
+      {
+        "concept": "Test Case",
+        "function": "Skenario pengujian"
+      },
+      {
+        "concept": "Assertion",
+        "function": "Memastikan hasil sesuai harapan"
+      },
+      {
+        "concept": "Mocking",
+        "function": "Mensimulasikan data atau function"
+      },
+      {
+        "concept": "Coverage",
+        "function": "Persentase kode yang diuji"
+      }
+    ],
+    "best_practices": [
+      "Tulis test sederhana dan jelas",
+      "Gunakan testing automation",
+      "Test fitur penting terlebih dahulu",
+      "Pisahkan unit dan integration tests",
+      "Gunakan CI/CD untuk testing otomatis"
+    ],
+    "example": {
+      "title": "Basic Test Example",
+      "code": "function add(a, b) {\n  return a + b;\n}\n\ntest('adds numbers', () => {\n  expect(add(2, 3)).toBe(5);\n});"
+    }
+  },
+
+  "Vitest": {
+    "description": "Vitest adalah testing framework modern yang cepat dan dirancang untuk project berbasis Vite.",
+    "official_website": "https://vitest.dev",
+    "important_features": [
+      {
+        "feature": "Fast Testing",
+        "function": "Performa testing sangat cepat"
+      },
+      {
+        "feature": "Vite Integration",
+        "function": "Terintegrasi langsung dengan Vite"
+      },
+      {
+        "feature": "Hot Reload Testing",
+        "function": "Testing realtime saat development"
+      },
+      {
+        "feature": "Jest Compatible API",
+        "function": "Sintaks mirip Jest"
+      }
+    ],
+    "advantages": [
+      "Startup cepat",
+      "Support TypeScript",
+      "Modern developer experience",
+      "Ringan"
+    ],
+    "best_practices": [
+      "Gunakan describe untuk grouping",
+      "Gunakan mock untuk API",
+      "Pisahkan unit test dan integration test"
+    ],
+    "example": {
+      "title": "Vitest Example",
+      "code": "import { test, expect } from 'vitest';\n\nfunction sum(a, b) {\n  return a + b;\n}\n\ntest('sum works', () => {\n  expect(sum(1, 2)).toBe(3);\n});"
+    }
+  },
+
+  "Playwright": {
+    "description": "Playwright adalah framework End-to-End testing modern untuk menguji aplikasi web di browser.",
+    "official_website": "https://playwright.dev",
+    "important_features": [
+      {
+        "feature": "Cross Browser Testing",
+        "function": "Support Chromium, Firefox, dan WebKit"
+      },
+      {
+        "feature": "Auto Waiting",
+        "function": "Menunggu element otomatis"
+      },
+      {
+        "feature": "Screenshot & Video",
+        "function": "Capture hasil testing"
+      },
+      {
+        "feature": "Parallel Testing",
+        "function": "Menjalankan banyak test bersamaan"
+      }
+    ],
+    "advantages": [
+      "Stabil dan cepat",
+      "Support multi-browser",
+      "Testing modern web apps",
+      "Debugging tools lengkap"
+    ],
+    "best_practices": [
+      "Gunakan locator yang stabil",
+      "Pisahkan test berdasarkan fitur",
+      "Gunakan test environment khusus"
+    ],
+    "example": {
+      "title": "Playwright Example",
+      "code": "import { test, expect } from '@playwright/test';\n\ntest('homepage title', async ({ page }) => {\n  await page.goto('https://example.com');\n  await expect(page).toHaveTitle(/Example/);\n});"
+    }
+  },
+
+  "Cypress": {
+    "description": "Cypress adalah framework testing frontend untuk End-to-End dan component testing.",
+    "official_website": "https://www.cypress.io",
+    "important_features": [
+      {
+        "feature": "Real-time Reload",
+        "function": "Testing update otomatis"
+      },
+      {
+        "feature": "Easy Debugging",
+        "function": "Debugging langsung di browser"
+      },
+      {
+        "feature": "Network Stubbing",
+        "function": "Mock API requests"
+      },
+      {
+        "feature": "Time Travel",
+        "function": "Melihat langkah testing sebelumnya"
+      }
+    ],
+    "advantages": [
+      "Mudah dipelajari",
+      "Debugging sangat baik",
+      "UI testing mudah",
+      "Dokumentasi lengkap"
+    ],
+    "best_practices": [
+      "Gunakan data-test attribute",
+      "Hindari selector kompleks",
+      "Mock API bila diperlukan"
+    ],
+    "example": {
+      "title": "Cypress Example",
+      "code": "describe('Login Test', () => {\n  it('should login', () => {\n    cy.visit('/login');\n    cy.get('input[name=email]').type('test@mail.com');\n    cy.get('button').click();\n  });\n});"
+    }
+  },
+
+  "Jest": {
+    "description": "Jest adalah JavaScript testing framework populer yang dikembangkan Meta.",
+    "official_website": "https://jestjs.io",
+    "important_features": [
+      {
+        "feature": "Snapshot Testing",
+        "function": "Membandingkan tampilan component"
+      },
+      {
+        "feature": "Mocking",
+        "function": "Mock function dan modules"
+      },
+      {
+        "feature": "Code Coverage",
+        "function": "Mengukur coverage testing"
+      },
+      {
+        "feature": "Fast Execution",
+        "function": "Menjalankan test dengan cepat"
+      }
+    ],
+    "advantages": [
+      "Populer dan stabil",
+      "Support React testing",
+      "Banyak plugin",
+      "Mudah digunakan"
+    ],
+    "best_practices": [
+      "Gunakan mock seperlunya",
+      "Buat test independen",
+      "Gunakan snapshot dengan bijak"
+    ],
+    "example": {
+      "title": "Jest Example",
+      "code": "test('adds 1 + 2', () => {\n  expect(1 + 2).toBe(3);\n});"
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "Math_and_Statistics": {
+    "description": "Math dan Statistics digunakan untuk menganalisis data, membuat prediksi, memahami pola, dan membantu pengambilan keputusan.",
+    "main_goals": [
+      "Menganalisis data",
+      "Membuat prediksi",
+      "Memahami pola data",
+      "Mengukur kemungkinan",
+      "Membantu pengambilan keputusan"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Mean",
+        "function": "Rata-rata data"
+      },
+      {
+        "concept": "Median",
+        "function": "Nilai tengah data"
+      },
+      {
+        "concept": "Variance",
+        "function": "Mengukur penyebaran data"
+      },
+      {
+        "concept": "Probability",
+        "function": "Mengukur kemungkinan kejadian"
+      }
+    ],
+    "common_use_cases": [
+      "Data analysis",
+      "Machine learning",
+      "Business analytics",
+      "Research",
+      "Forecasting"
+    ],
+    "advantages": [
+      "Pengambilan keputusan lebih akurat",
+      "Memahami tren data",
+      "Membantu prediksi",
+      "Analisis data lebih terstruktur"
+    ],
+    "best_practices": [
+      "Gunakan data valid",
+      "Visualisasikan data",
+      "Gunakan metode statistik yang sesuai",
+      "Periksa outlier data"
+    ],
+    "example": {
+      "title": "Average Formula",
+      "code": "Mean = Total Data / Jumlah Data"
+    }
+  },
+
+  "Descriptive_Statistics": {
+    "description": "Descriptive Statistics digunakan untuk merangkum dan menjelaskan data.",
+    "important_concepts": [
+      {
+        "concept": "Mean",
+        "function": "Rata-rata data"
+      },
+      {
+        "concept": "Median",
+        "function": "Nilai tengah data"
+      },
+      {
+        "concept": "Mode",
+        "function": "Nilai yang paling sering muncul"
+      },
+      {
+        "concept": "Standard Deviation",
+        "function": "Mengukur sebaran data"
+      }
+    ],
+    "advantages": [
+      "Mudah memahami data",
+      "Meringkas data besar",
+      "Menampilkan pola data"
+    ],
+    "best_practices": [
+      "Gunakan visualisasi",
+      "Periksa distribusi data",
+      "Gunakan ukuran statistik yang tepat"
+    ],
+    "example": {
+      "title": "Mean Formula",
+      "code": "Mean = (x1 + x2 + x3) / n"
+    }
+  },
+
+  "Inferential_Statistics": {
+    "description": "Inferential Statistics digunakan untuk membuat kesimpulan atau prediksi berdasarkan sample data.",
+    "important_concepts": [
+      {
+        "concept": "Hypothesis Testing",
+        "function": "Menguji dugaan statistik"
+      },
+      {
+        "concept": "Confidence Interval",
+        "function": "Rentang estimasi data"
+      },
+      {
+        "concept": "Sampling",
+        "function": "Mengambil sebagian data"
+      },
+      {
+        "concept": "Regression",
+        "function": "Memprediksi hubungan data"
+      }
+    ],
+    "advantages": [
+      "Membantu prediksi",
+      "Mengambil keputusan berdasarkan data",
+      "Menganalisis populasi besar"
+    ],
+    "best_practices": [
+      "Gunakan sample representatif",
+      "Periksa asumsi statistik",
+      "Gunakan metode yang sesuai"
+    ],
+    "example": {
+      "title": "Hypothesis Example",
+      "code": "H0 = Tidak ada pengaruh\nH1 = Ada pengaruh"
+    }
+  },
+
+  "Probability_Theory": {
+    "description": "Probability Theory mempelajari kemungkinan suatu kejadian terjadi.",
+    "important_concepts": [
+      {
+        "concept": "Probability",
+        "function": "Kemungkinan kejadian"
+      },
+      {
+        "concept": "Independent Events",
+        "function": "Kejadian tidak saling mempengaruhi"
+      },
+      {
+        "concept": "Conditional Probability",
+        "function": "Probabilitas berdasarkan kondisi tertentu"
+      },
+      {
+        "concept": "Random Variables",
+        "function": "Variabel acak"
+      }
+    ],
+    "advantages": [
+      "Membantu prediksi",
+      "Digunakan dalam AI dan data science",
+      "Analisis risiko"
+    ],
+    "best_practices": [
+      "Gunakan sample cukup besar",
+      "Pahami distribusi probabilitas",
+      "Gunakan model yang tepat"
+    ],
+    "example": {
+      "title": "Probability Formula",
+      "code": "P(A) = Jumlah kejadian A / Total kemungkinan"
+    }
+  }
+}

@@ -1,327 +1,123 @@
 const roadmapData = [
   {
     main: {
-      id: "internet",
-      title: "Internet",
-      desc: "Dasar dari bagaimana web bekerja secara teknis.",
+      id: "math_stats",
+      title: "Math & Statistics",
+      desc: "Dasar probabilitas dan statistik yang sangat penting untuk analisis data.",
     },
     left: [],
     right: [
-      { id: "dns", title: "DNS and how it works?" },
-      { id: "http", title: "What is HTTP?" },
-      { id: "hosting", title: "What is Hosting?" },
-      { id: "browsers", title: "Browsers and how they work?" },
+      { id: "descriptive", title: "Descriptive Statistics" },
+      { id: "inferential", title: "Inferential Statistics" },
+      { id: "probability", title: "Probability Theory" },
     ],
   },
   {
     main: {
-      id: "html",
-      title: "HTML",
-      desc: "HyperText Markup Language. Fondasi utama dari setiap website.",
+      id: "spreadsheet",
+      title: "Spreadsheets",
+      desc: "Alat dasar namun sangat powerful untuk pengolahan data ringan.",
     },
     left: [
-      { id: "semantic", title: "Semantic HTML", badge: "green" },
-      { id: "forms", title: "Forms and Validations", badge: "green" },
-      { id: "a11y", title: "Accessibility", badge: "purple" },
+      { id: "excel", title: "Microsoft Excel", badge: "green" },
+      { id: "sheets", title: "Google Sheets", badge: "purple" },
     ],
     right: [],
   },
   {
     main: {
-      id: "css",
-      title: "CSS",
-      desc: "Bahasa stylesheet yang digunakan untuk mendesain presentasi dokumen.",
+      id: "sql",
+      title: "Databases & SQL",
+      desc: "Bahasa standar untuk mengambil dan memanipulasi data dari database relasional.",
     },
     left: [
       {
         id: "beginner_projects",
         title: "Beginner Project Ideas",
-        desc: "HTML, CSS and JavaScript are the backbone of web development. Make sure to practice by building lots of projects.",
+        desc: "Gunakan dataset publik untuk latihan query SQL dan pengolahan Excel dasar.",
         isProjectBox: true,
       },
     ],
     right: [
-      { id: "layouts", title: "Making Layouts (Flexbox/Grid)", badge: "green" },
-      { id: "responsive", title: "Responsive Design", badge: "green" },
-      { id: "animations", title: "Animations", badge: "purple" },
+      { id: "postgresql", title: "PostgreSQL", badge: "green" },
+      { id: "mysql", title: "MySQL", badge: "purple" },
+      { id: "sql_server", title: "SQL Server", badge: "purple" },
     ],
   },
   {
     main: {
-      id: "javascript",
-      title: "JavaScript",
-      desc: "Bahasa pemrograman inti untuk membuat web menjadi interaktif.",
+      id: "bi_tools",
+      title: "Business Intelligence Tools",
+      desc: "Software untuk membuat dashboard interaktif dan visualisasi data yang mudah dipahami.",
     },
-    left: [
-      { id: "dom", title: "DOM Manipulation", badge: "green" },
-      { id: "fetch", title: "Fetch API / Ajax", badge: "green" },
-    ],
-    right: [
-      { id: "es6", title: "ES6+ Syntax", badge: "green" },
-      { id: "hoisting", title: "Hoisting & Closures", badge: "purple" },
-    ],
-  },
-  {
-    main: {
-      id: "vcs",
-      title: "Version Control",
-      desc: "Sistem untuk melacak dan mengelola perubahan kode seiring waktu.",
-    },
-    left: [{ id: "git", title: "Git", badge: "green" }],
+    left: [{ id: "tableau", title: "Tableau", badge: "green" }, { id: "powerbi", title: "Power BI", badge: "purple" }],
     right: [],
-  },
-  {
-    main: {
-      id: "hosting",
-      title: "VCS Hosting",
-      desc: "Layanan cloud untuk menyimpan repository code dan berkolaborasi.",
-    },
-    left: [
-      {
-        id: "vcs_hosting_left",
-        title: "GitLab & GitHub",
-        isHorizontal: true,
-        children: [
-          { id: "gitlab", title: "GitLab", badge: "green" },
-          { id: "github", title: "GitHub", badge: "green" },
-        ],
-      },
-    ],
-    right: [
-      {
-        id: "pkg_mgr",
-        title: "Package Managers",
-        isGroup: true,
-        children: [
-          { id: "npm", title: "npm", badge: "green" },
-          { id: "yarn", title: "yarn", badge: "purple" },
-          { id: "pnpm", title: "pnpm", badge: "green" },
-          { id: "bun", title: "Bun", badge: "purple" },
-        ],
-      },
-    ],
   },
   {
     main: { id: "project_spacer", title: "", type: "spacer" },
     left: [
       {
-        id: "project_ideas",
+        id: "intermediate_projects",
         title: "Intermediate Project Ideas",
-        desc: "At this point, you should be able to build modern vanilla JS frontend applications.",
+        desc: "Buat dashboard lengkap dengan data nyata yang terhubung ke database.",
         isProjectBox: true,
       },
     ],
     right: [
       {
-        id: "css_fw",
-        title: "CSS Frameworks",
+        id: "bi_other",
+        title: "Other BI Tools",
         isGroupBottom: true,
-        children: [{ id: "tailwind", title: "Tailwind CSS", badge: "green" }],
-      },
-    ],
-  },
-  {
-    main: {
-      id: "frameworks",
-      title: "Learn a Framework",
-      desc: "Library canggih untuk membuat UI modern skala besar.",
-    },
-    left: [
-      { id: "react", title: "React", badge: "green" },
-      { id: "vue", title: "Vue.js", badge: "purple" },
-      { id: "angular", title: "Angular", badge: "purple" },
-      { id: "svelte", title: "Svelte", badge: "purple" },
-      { id: "solid", title: "Solid JS", badge: "purple" },
-    ],
-    right: [
-      { id: "ai_dev_text", title: "AI in Development", isTextNode: true },
-    ],
-  },
-  {
-    main: {
-      id: "ai_coding",
-      title: "AI Assisted Coding",
-      desc: "Tools dan platform AI untuk mempercepat penulisan kode.",
-    },
-    left: [
-      { id: "claude", title: "Claude Code", badge: "green" },
-      { id: "cursor", title: "Cursor", badge: "green" },
-      { id: "copilot", title: "Copilot", badge: "purple" },
-      { id: "antigravity", title: "Antigravity", badge: "purple" },
-    ],
-    right: [
-      { id: "learn_basics", title: "Learn the Basics", isRightHeading: true },
-    ],
-  },
-  {
-    main: {
-      id: "prompting",
-      title: "Prompting Techniques",
-      desc: "Teknik memberikan instruksi yang efektif ke AI.",
-    },
-    left: [
-      { id: "prompt_eng", title: "Prompt Engineering", isSolidBlue: true },
-    ],
-    right: [
-      {
-        id: "llm_group_1",
-        isVerticalGroup: true,
         children: [
-          { id: "how_llms", title: "How LLMs work", badge: "green" },
-          {
-            id: "ai_vs_trad",
-            title: "AI vs Traditional Coding",
-            badge: "green",
-          },
-          { id: "applications", title: "Applications", badge: "purple" },
+          { id: "looker", title: "Looker Studio", badge: "green" },
+          { id: "metabase", title: "Metabase", badge: "purple" },
         ],
       },
     ],
   },
   {
     main: {
-      id: "agents",
-      title: "Agents",
-      desc: "Sistem AI otonom yang dapat menjalankan serangkaian tugas.",
+      id: "programming",
+      title: "Programming Language",
+      desc: "Bahasa pemrograman untuk pengolahan data yang kompleks dan otomatisasi.",
     },
     left: [
-      { id: "ai_agents_rm", title: "AI Agents Roadmap", isSolidBlue: true },
+      { id: "python", title: "Python", badge: "green" },
+      { id: "r_lang", title: "R Language", badge: "purple" },
+    ],
+    right: [
+      { id: "data_wrangling", title: "Data Wrangling", isRightHeading: true },
+    ],
+  },
+  {
+    main: {
+      id: "python_libs",
+      title: "Python Data Libraries",
+      desc: "Library ekosistem Python yang standar digunakan di industri.",
+    },
+    left: [
+      { id: "pandas", title: "Pandas", badge: "green" },
+      { id: "numpy", title: "NumPy", badge: "green" },
     ],
     right: [
       {
-        id: "llm_group_2",
+        id: "viz_group",
         isVerticalGroup: true,
         children: [
-          { id: "code_reviews", title: "Code Reviews", badge: "green" },
-          { id: "refactoring", title: "Refactoring", badge: "green" },
-          { id: "docs_gen", title: "Docs Generation", badge: "purple" },
+          { id: "matplotlib", title: "Matplotlib", badge: "purple" },
+          { id: "seaborn", title: "Seaborn", badge: "green" },
         ],
       },
     ],
   },
   {
-    main: { id: "mcp", title: "MCP", desc: "Model Context Protocol." },
-    left: [],
+    main: {
+      id: "version_control",
+      title: "Version Control",
+      desc: "Melacak perubahan skrip analisis dan berkolaborasi dengan tim.",
+    },
+    left: [{ id: "git", title: "Git & GitHub", badge: "green" }],
     right: [],
-  },
-  {
-    main: {
-      id: "skills",
-      title: "Skills",
-      desc: "Kemampuan spesifik yang diberikan ke AI Agent.",
-    },
-    left: [],
-    right: [],
-  },
-  {
-    main: {
-      id: "implementing_ai",
-      title: "Implementing AI",
-      desc: "Menerapkan AI di real-world project.",
-    },
-    left: [
-      { id: "gemini", title: "Gemini", badge: "green" },
-      { id: "openai", title: "OpenAI", badge: "green" },
-      { id: "anthropic", title: "Anthropic", badge: "purple" },
-    ],
-    right: [
-      { id: "adv_frontend", title: "Advanced Frontend", isTextNode: true },
-    ],
-  },
-  {
-    main: {
-      id: "bundlers",
-      title: "Module Bundlers",
-      desc: "Alat untuk memaketkan banyak file menjadi satu file (bundle).",
-    },
-    left: [{ id: "auth_strat", title: "Auth Strategies", isLeftHeading: true }],
-    right: [
-      { id: "linters", title: "Linters & Formatters", isRightHeading: true },
-    ],
-  },
-  {
-    main: {
-      id: "bundlers_children",
-      type: "center-group",
-      children: [
-        {
-          id: "vite",
-          title: "Vite",
-          isFull: true,
-          badge: "purple",
-          align: "right",
-        },
-        { id: "swc", title: "SWC", badge: "green", align: "left" },
-        { id: "esbuild", title: "esbuild", badge: "purple", align: "right" },
-        { id: "rollup", title: "Rollup", badge: "green", align: "left" },
-        { id: "rolldown", title: "Rolldown" },
-        {
-          id: "parcel",
-          title: "Parcel",
-          isFull: true,
-          badge: "green",
-          align: "left",
-        },
-      ],
-    },
-    left: [{ id: "testing_row", isTestingRow: true }],
-    right: [
-      {
-        id: "linters_group",
-        isVerticalGroup: true,
-        style: "yellow",
-        children: [
-          { id: "biome", title: "Biome", badge: "green" },
-          { id: "prettier", title: "Prettier", badge: "purple" },
-          { id: "eslint", title: "ESLint", badge: "purple" },
-        ],
-      },
-    ],
-  },
-  {
-    main: {
-      id: "adv_projects",
-      type: "project-box",
-      title: "Advanced Project Ideas",
-      desc: "At this point you should have the expertise of an intermediate level frontend developer. Keep practicing and sharpening your skills.",
-    },
-    left: [
-      {
-        id: "testing_group",
-        isVerticalGroup: true,
-        style: "yellow",
-        children: [
-          { id: "vitest", title: "Vitest", badge: "purple" },
-          { id: "playwright", title: "Playwright", badge: "purple" },
-          { id: "cypress", title: "Cypress", badge: "green" },
-          { id: "jest", title: "Jest", badge: "green" },
-        ],
-      },
-    ],
-    right: [
-      {
-        id: "security_group",
-        isVerticalGroup: true,
-        style: "yellow",
-        children: [
-          { id: "cors", title: "CORS", badge: "purple" },
-          { id: "https", title: "HTTPS", badge: "purple" },
-          { id: "csp", title: "CSP", badge: "purple" },
-          { id: "owasp", title: "OWASP Risks", badge: "purple" },
-        ],
-      },
-    ],
-  },
-  {
-    main: {
-      id: "web_apis",
-      title: "Web APIs",
-      desc: "API bawaan browser untuk memanipulasi DOM dan fitur device.",
-    },
-    left: [],
-    right: [
-      { id: "web_security", title: "Web Security", isRightHeading: true },
-    ],
   },
   {
     main: {
@@ -340,26 +136,8 @@ const resourcesDB = {
     { type: "video", title: "Crash Course di YouTube", url: "#" },
     { type: "game", title: "Latihan Interaktif (Practice)", url: "#" },
   ],
-  internet: [
-    { type: "article", title: "Bagaimana Internet Bekerja?", url: "#" },
-    { type: "video", title: "Crash Course Networking", url: "#" },
-  ],
-  html: [
-    { type: "course", title: "HTML Full Course untuk Pemula", url: "#" },
-    { type: "article", title: "Panduan MDN Web Docs", url: "#" },
-  ],
-  css: [
-    { type: "game", title: "Flexbox Froggy", url: "#" },
-    { type: "game", title: "Grid Garden", url: "#" },
-    { type: "video", title: "CSS Masterclass", url: "#" },
-  ],
-  javascript: [
-    { type: "course", title: "JavaScript Fundamentals", url: "#" },
-    { type: "article", title: "JavaScript.info", url: "#" },
-  ],
-  react: [
-    { type: "course", title: "React 18 for Beginners", url: "#" },
-    { type: "article", title: "Dokumentasi Resmi React.dev", url: "#" },
+  math_stats: [
+    { type: "article", title: "Statistik untuk Data Science", url: "#" },
   ],
 };
 
@@ -961,7 +739,7 @@ let jsonDataCache = {};
 async function fetchMateri(filename) {
   if (jsonDataCache[filename]) return jsonDataCache[filename];
   try {
-    const res = await fetch(`../../../materi/frontend/${encodeURIComponent(filename)}`);
+    const res = await fetch(`../../../materi/data-analyst/${encodeURIComponent(filename)}`);
     if (res.ok) {
       const data = await res.json();
       jsonDataCache[filename] = data;
@@ -1012,91 +790,51 @@ function extractExample(obj) {
 }
 
 const nodeMapping = {
-  // HTML
-  "semantic": { file: "html.json", rootKey: "HTML", key: "Semantic_HTML" },
-  "forms": { file: "html.json", rootKey: "HTML", key: "Forms_and_Validations" },
-  "a11y": { file: "html.json", rootKey: "HTML", key: "Accessibility" },
-  // CSS
-  "layouts": { file: "css.json", rootKey: "CSS", key: "Making_Layouts_Flexbox_Grid" },
-  "responsive": { file: "css.json", rootKey: "CSS", key: "Responsive_Design" },
-  "animations": { file: "css.json", rootKey: "CSS", key: "Animations" },
-  // JavaScript
-  "dom": { file: "javascript.json", rootKey: "JavaScript", key: "DOM_Manipulation" },
-  "fetch": { file: "javascript.json", rootKey: "JavaScript", key: "Fetch_API_Ajax" },
-  "es6": { file: "javascript.json", rootKey: "JavaScript", key: "ES6_Plus_Syntax" },
-  "hoisting": { file: "javascript.json", rootKey: "JavaScript", key: "Hoisting_and_Closures" },
+  // Math & Statistics
+  "math_stats": { file: "math&statistic.json", key: "Math_and_Statistics" },
+  "descriptive": { file: "math&statistic.json", key: "Descriptive_Statistics" },
+  "inferential": { file: "math&statistic.json", key: "Inferential_Statistics" },
+  "probability": { file: "math&statistic.json", key: "Probability_Theory" },
+
+  // Spreadsheets
+  "spreadsheet": { file: "spreedsheet.json", key: "Spreadsheets" },
+  "excel": { file: "spreedsheet.json", key: "Microsoft_Excel" },
+  "sheets": { file: "spreedsheet.json", key: "Google_Sheets" },
+
+  // Databases & SQL
+  "sql": { file: "database&sql.json", key: "Databases_and_SQL" },
+  "postgresql": { file: "database&sql.json", key: "PostgreSQL" },
+  "mysql": { file: "database&sql.json", key: "MySQL" },
+  "sql_server": { file: "database&sql.json", key: "SQL_Server" },
+
+  // BI Tools
+  "bi_tools": { file: "Business Intelligence Tools.json", key: "Business_Intelligence_Tools" },
+  "bi_other": { file: "Other BI Tools.JSON", key: "Other_BI_Tools" },
+  "tableau": { file: "Business Intelligence Tools.json", rootKey: "Business_Intelligence_Tools", key: "tools", subKey: "Tableau" },
+  "powerbi": { file: "Business Intelligence Tools.json", rootKey: "Business_Intelligence_Tools", key: "tools", subKey: "Power_BI" },
+  "looker": { file: "Business Intelligence Tools.json", rootKey: "Business_Intelligence_Tools", key: "tools", subKey: "Looker_Studio" },
+  "metabase": { file: "Business Intelligence Tools.json", rootKey: "Business_Intelligence_Tools", key: "tools", subKey: "Metabase" },
+
+  // Programming Languages
+  "programming": { file: "programming & Languages.json", key: "Programming_Languages" },
+  "python": { file: "programming & Languages.json", rootKey: "Programming_Languages", key: "Python" },
+  "r_lang": { file: "programming & Languages.json", rootKey: "Programming_Languages", key: "R_Language" },
+
+  // Data Wrangling
+  "data_wrangling": { file: "Data Processing & Visualization.json", rootKey: "Data_Processing_and_Visualization", key: "Data_Wrangling" },
+
+  // Python Libraries
+  "python_libs": { file: "Python Data Libraries.json", key: "Python_Data_Libraries" },
+  "pandas": { file: "Python Data Libraries.json", rootKey: "Python_Data_Libraries", key: "Pandas" },
+  "numpy": { file: "Python Data Libraries.json", rootKey: "Python_Data_Libraries", key: "NumPy" },
+
+  // Visualization
+  "matplotlib": { file: "Data Processing & Visualization.json", rootKey: "Data_Processing_and_Visualization", key: "Matplotlib" },
+  "seaborn": { file: "Data Processing & Visualization.json", rootKey: "Data_Processing_and_Visualization", key: "Seaborn" },
+
   // Version Control
-  "vcs": { file: "version-control.json", rootKey: "Git_and_Version_Control", key: "Version_Control" },
-  "git": { file: "version-control.json", rootKey: "Git_and_Version_Control", key: "Git" },
-  // VCS Hosting
-  "github": { file: "vcs-hosting.json", key: "GitHub" },
-  "gitlab": { file: "vcs-hosting.json", key: "GitLab" },
-  // Package Managers
-  "npm": { file: "pakage-manager", key: "npm" },
-  "yarn": { file: "pakage-manager", key: "yarn" },
-  "pnpm": { file: "pakage-manager", key: "pnpm" },
-  "bun": { file: "pakage-manager", key: "Bun" },
-  // CSS Frameworks
-  "tailwind": { file: "cssframework.json", key: "Tailwind_CSS" },
-  // Learn a Framework
-  "react": { file: "learnaframewoek.json", key: "React" },
-  "vue": { file: "learnaframewoek.json", key: "Vue_js" },
-  "angular": { file: "learnaframewoek.json", key: "Angular" },
-  "svelte": { file: "learnaframewoek.json", key: "Svelte" },
-  "solid": { file: "learnaframewoek.json", key: "Solid_JS" },
-  // AI Assisted Coding
-  "claude": { file: "aiasistencoding.json", key: "Claude_Code" },
-  "cursor": { file: "aiasistencoding.json", key: "Cursor" },
-  "copilot": { file: "aiasistencoding.json", key: "Copilot" },
-  "antigravity": { file: "aiasistencoding.json", key: "Antigravity" },
-  // Prompting
-  "prompt_eng": { file: "prompt.json", key: "Prompt_Engineering" },
-  "prompting": { file: "prompt.json", key: "Prompting_Techniques" },
-  // Learn the Basics (AI)
-  "how_llms": { file: "learnthebasic.json", rootKey: "AI_Development_Basics", key: "How_LLMs_Work" },
-  "ai_vs_trad": { file: "learnthebasic.json", rootKey: "AI_Development_Basics", key: "AI_vs_Traditional_Coding" },
-  "applications": { file: "learnthebasic.json", rootKey: "AI_Development_Basics", key: "Applications" },
-  "code_reviews": { file: "learnthebasic.json", rootKey: "AI_Development_Basics", key: "Code_Reviews" },
-  "refactoring": { file: "learnthebasic.json", rootKey: "AI_Development_Basics", key: "Refactoring" },
-  "docs_gen": { file: "learnthebasic.json", rootKey: "AI_Development_Basics", key: "Docs_Generation" },
-  "learn_basics": { file: "learnthebasic.json", rootKey: "AI_Development_Basics", key: "Learn_the_Basics" },
-  // Agents
-  "agents": { file: "agent.json", key: "Agents" },
-  "ai_agents_rm": { file: "agent.json", key: "AI_Agents_Roadmap" },
-  // MCP & Skills
-  "mcp": { file: "mcp&skill.json", key: "MCP" },
-  "skills": { file: "mcp&skill.json", key: "Skills" },
-  // Implementing AI
-  "implementing_ai": { file: "impementingai.json", key: "Implementing_AI" },
-  "gemini": { file: "impementingai.json", key: "Gemini" },
-  "openai": { file: "impementingai.json", key: "OpenAI" },
-  "anthropic": { file: "impementingai.json", key: "Anthropic" },
-  // Module Bundlers
-  "bundlers": { file: "modulebundler.json", key: "Module_Bundlers" },
-  "vite": { file: "modulebundler.json", key: "Vite" },
-  "swc": { file: "modulebundler.json", key: "SWC" },
-  "esbuild": { file: "modulebundler.json", key: "esbuild" },
-  "rollup": { file: "modulebundler.json", key: "Rollup" },
-  "rolldown": { file: "modulebundler.json", key: "Rolldown" },
-  "parcel": { file: "modulebundler.json", key: "Parcel" },
-  // Linters & Formatters
-  "biome": { file: "linter&formater.json", key: "Biome" },
-  "prettier": { file: "linter&formater.json", key: "Prettier" },
-  "eslint": { file: "linter&formater.json", key: "ESLint" },
-  "linters": { file: "linter&formater.json", key: "Linters_and_Formatters" },
-  // Testing
-  "testing": { file: "Testing.Json", key: "Testing" },
-  "vitest": { file: "Testing.Json", key: "Vitest" },
-  "playwright": { file: "Testing.Json", key: "Playwright" },
-  "cypress": { file: "Testing.Json", key: "Cypress" },
-  "jest": { file: "Testing.Json", key: "Jest" },
-  // Web Security & APIs
-  "web_security": { file: "Web APIs Web Security.json", key: "Web_Security" },
-  "cors": { file: "Web APIs Web Security.json", key: "CORS" },
-  "https": { file: "Web APIs Web Security.json", key: "HTTPS" },
-  "csp": { file: "Web APIs Web Security.json", key: "CSP" },
-  "owasp": { file: "Web APIs Web Security.json", key: "OWASP_Risks" },
-  "web_apis": { file: "Web APIs Web Security.json", key: "Web_APIs" },
+  "version_control": { file: "Version Control.json", key: "Git_and_GitHub" },
+  "git": { file: "Version Control.json", rootKey: "Git_and_GitHub", key: "Git" }
 };
 
 async function openPanel(id, title, category, desc) {
@@ -1111,7 +849,12 @@ async function openPanel(id, title, category, desc) {
       if (mapping.rootKey && dataFile[mapping.rootKey]) {
         rootData = dataFile[mapping.rootKey];
       }
-      const dataObj = rootData[mapping.key];
+      
+      let dataObj = rootData[mapping.key];
+      if (mapping.subKey && dataObj) {
+        dataObj = dataObj[mapping.subKey];
+      }
+
       if (dataObj) {
         actualDesc = generateHtmlFromJson(dataObj);
         exampleObj = extractExample(dataObj);

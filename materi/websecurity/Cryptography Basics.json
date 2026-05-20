@@ -1,0 +1,113 @@
+{
+  "Cryptography_Basics": {
+    "description": "Cryptography adalah ilmu untuk mengamankan data dengan cara mengubah data asli (plaintext) menjadi bentuk yang tidak dapat dibaca (ciphertext).",
+
+    "core_concepts": {
+      "plaintext": "Data asli sebelum dienkripsi",
+      "ciphertext": "Data yang sudah dienkripsi",
+      "encryption": "Proses mengubah plaintext menjadi ciphertext",
+      "decryption": "Proses mengembalikan ciphertext ke plaintext",
+      "key": "Kunci untuk enkripsi dan dekripsi"
+    },
+
+    "use_cases": [
+      "Secure communication",
+      "Data protection",
+      "Password security",
+      "API security",
+      "Digital signatures"
+    ],
+
+    "example": {
+      "title": "Basic Concept",
+      "code": "Hello -> Encrypt -> X7@#kL -> Decrypt -> Hello"
+    }
+  },
+
+  "Hashing_and_Salting": {
+    "description": "Hashing adalah proses mengubah data menjadi string tetap (hash), sedangkan salting adalah menambahkan nilai acak sebelum hashing untuk meningkatkan keamanan.",
+
+    "Hashing": {
+      "properties": [
+        "One-way function (tidak bisa dibalik)",
+        "Output selalu sama untuk input yang sama",
+        "Digunakan untuk password storage"
+      ],
+
+      "algorithms": [
+        "SHA-256",
+        "SHA-512",
+        "bcrypt",
+        "argon2"
+      ],
+
+      "example": {
+        "title": "Hash Example",
+        "code": "password123 -> SHA256 -> a91b3c9f..."
+      }
+    },
+
+    "Salting": {
+      "description": "Salt adalah data acak yang ditambahkan ke password sebelum hashing agar hasil hash selalu unik.",
+
+      "benefits": [
+        "Mencegah rainbow table attack",
+        "Membuat hash unik",
+        "Meningkatkan keamanan password"
+      ],
+
+      "example": {
+        "title": "Salted Hash",
+        "code": "password123 + salt123 -> hash -> different output each time"
+      }
+    }
+  },
+
+  "Symmetric_and_Asymmetric_Cryptography": {
+    "description": "Symmetric dan Asymmetric encryption adalah dua metode utama dalam kriptografi untuk mengamankan data.",
+
+    "Symmetric_Encryption": {
+      "description": "Menggunakan satu key yang sama untuk enkripsi dan dekripsi.",
+
+      "examples": [
+        "AES",
+        "DES",
+        "3DES"
+      ],
+
+      "advantages": [
+        "Cepat",
+        "Efisien untuk data besar"
+      ],
+
+      "disadvantages": [
+        "Key distribution problem",
+        "Kurang aman jika key bocor"
+      ]
+    },
+
+    "Asymmetric_Encryption": {
+      "description": "Menggunakan dua key: public key dan private key.",
+
+      "examples": [
+        "RSA",
+        "ECC"
+      ],
+
+      "advantages": [
+        "Lebih aman untuk pertukaran key",
+        "Digunakan di HTTPS/SSL"
+      ],
+
+      "disadvantages": [
+        "Lebih lambat",
+        "Komputasi lebih berat"
+      ]
+    },
+
+    "example": {
+      "title": "Concept Flow",
+      "code": "Symmetric: same key encrypt/decrypt\nAsymmetric: public encrypt -> private decrypt"
+    }
+  }
+}

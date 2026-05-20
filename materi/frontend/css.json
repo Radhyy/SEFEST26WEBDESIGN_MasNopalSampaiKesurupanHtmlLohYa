@@ -1,0 +1,179 @@
+{
+  "CSS": {
+    "Making_Layouts_Flexbox_Grid": {
+      "description": "CSS Layout digunakan untuk mengatur posisi dan tata letak elemen pada halaman website agar terlihat rapi, modern, dan responsif.",
+      "Flexbox": {
+        "description": "Flexbox adalah metode layout satu dimensi yang digunakan untuk mengatur elemen secara horizontal atau vertikal dengan mudah.",
+        "important_properties": [
+          {
+            "property": "display: flex",
+            "function": "Mengaktifkan flexbox"
+          },
+          {
+            "property": "justify-content",
+            "function": "Mengatur posisi horizontal"
+          },
+          {
+            "property": "align-items",
+            "function": "Mengatur posisi vertikal"
+          },
+          {
+            "property": "flex-direction",
+            "function": "Menentukan arah elemen"
+          },
+          {
+            "property": "gap",
+            "function": "Memberi jarak antar item"
+          },
+          {
+            "property": "flex-wrap",
+            "function": "Membuat item turun ke baris baru"
+          }
+        ],
+        "best_practices": [
+          "Gunakan flexbox untuk navbar dan card layout",
+          "Gunakan gap dibanding margin antar item",
+          "Gunakan align-items center untuk centering"
+        ],
+        "example": {
+          "title": "Flexbox Layout",
+          "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 20px;\n}\n\n.box {\n  width: 100px;\n  height: 100px;\n  background: blue;\n}\n</style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"box\"></div>\n    <div class=\"box\"></div>\n    <div class=\"box\"></div>\n  </div>\n</body>\n</html>"
+        }
+      },
+      "Grid": {
+        "description": "CSS Grid adalah sistem layout dua dimensi yang digunakan untuk mengatur baris dan kolom.",
+        "important_properties": [
+          {
+            "property": "display: grid",
+            "function": "Mengaktifkan grid layout"
+          },
+          {
+            "property": "grid-template-columns",
+            "function": "Menentukan jumlah kolom"
+          },
+          {
+            "property": "grid-template-rows",
+            "function": "Menentukan jumlah baris"
+          },
+          {
+            "property": "gap",
+            "function": "Memberi jarak antar grid"
+          },
+          {
+            "property": "place-items",
+            "function": "Mengatur posisi item"
+          }
+        ],
+        "best_practices": [
+          "Gunakan grid untuk dashboard atau gallery",
+          "Gunakan repeat() agar kode lebih singkat",
+          "Gabungkan grid dan flexbox bila perlu"
+        ],
+        "example": {
+          "title": "Grid Layout",
+          "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.container {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 20px;\n}\n\n.box {\n  height: 100px;\n  background: purple;\n}\n</style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"box\"></div>\n    <div class=\"box\"></div>\n    <div class=\"box\"></div>\n  </div>\n</body>\n</html>"
+        }
+      }
+    },
+
+    "Responsive_Design": {
+      "description": "Responsive Design adalah teknik membuat website agar tampil baik di berbagai ukuran layar seperti HP, tablet, dan desktop.",
+      "important_concepts": [
+        {
+          "concept": "Media Queries",
+          "function": "Mengatur style berdasarkan ukuran layar"
+        },
+        {
+          "concept": "Flexible Layout",
+          "function": "Menggunakan ukuran fleksibel seperti % dan fr"
+        },
+        {
+          "concept": "Viewport",
+          "function": "Mengatur tampilan di perangkat mobile"
+        },
+        {
+          "concept": "Responsive Images",
+          "function": "Membuat gambar menyesuaikan ukuran layar"
+        }
+      ],
+      "breakpoints": [
+        {
+          "device": "Mobile",
+          "size": "max-width: 600px"
+        },
+        {
+          "device": "Tablet",
+          "size": "max-width: 768px"
+        },
+        {
+          "device": "Laptop/Desktop",
+          "size": "min-width: 1024px"
+        }
+      ],
+      "best_practices": [
+        "Gunakan media queries",
+        "Hindari ukuran tetap seperti px berlebihan",
+        "Gunakan max-width untuk gambar",
+        "Uji tampilan di berbagai device"
+      ],
+      "example": {
+        "title": "Responsive Design Example",
+        "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.container {\n  display: flex;\n  gap: 20px;\n}\n\n.box {\n  flex: 1;\n  height: 100px;\n  background: orange;\n}\n\n@media (max-width: 600px) {\n  .container {\n    flex-direction: column;\n  }\n}\n</style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"box\"></div>\n    <div class=\"box\"></div>\n  </div>\n</body>\n</html>"
+      }
+    },
+
+    "Animations": {
+      "description": "CSS Animation digunakan untuk memberikan efek gerakan pada elemen website agar lebih interaktif dan menarik.",
+      "types": {
+        "Transition": {
+          "description": "Transition digunakan untuk perubahan style secara halus.",
+          "important_properties": [
+            {
+              "property": "transition",
+              "function": "Mengatur durasi animasi"
+            },
+            {
+              "property": "transition-duration",
+              "function": "Menentukan lama animasi"
+            },
+            {
+              "property": "transition-delay",
+              "function": "Memberi jeda animasi"
+            }
+          ]
+        },
+        "Keyframes": {
+          "description": "Keyframes digunakan untuk membuat animasi kompleks dengan beberapa tahapan.",
+          "important_properties": [
+            {
+              "property": "@keyframes",
+              "function": "Mendefinisikan animasi"
+            },
+            {
+              "property": "animation-name",
+              "function": "Nama animasi"
+            },
+            {
+              "property": "animation-duration",
+              "function": "Durasi animasi"
+            },
+            {
+              "property": "animation-iteration-count",
+              "function": "Jumlah pengulangan animasi"
+            }
+          ]
+        }
+      },
+      "best_practices": [
+        "Gunakan animasi seperlunya",
+        "Hindari animasi terlalu cepat",
+        "Gunakan transform untuk performa lebih baik",
+        "Jangan terlalu banyak animasi dalam satu halaman"
+      ],
+      "example": {
+        "title": "CSS Animation Example",
+        "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.box {\n  width: 100px;\n  height: 100px;\n  background: red;\n  animation: slide 2s infinite;\n}\n\n@keyframes slide {\n  0% {\n    transform: translateX(0);\n  }\n\n  50% {\n    transform: translateX(200px);\n  }\n\n  100% {\n    transform: translateX(0);\n  }\n}\n</style>\n</head>\n<body>\n  <div class=\"box\"></div>\n</body>\n</html>"
+      }
+    }
+  }
+}

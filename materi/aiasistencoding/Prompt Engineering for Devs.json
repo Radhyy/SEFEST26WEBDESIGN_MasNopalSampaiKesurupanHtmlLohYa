@@ -1,0 +1,58 @@
+{
+  "Prompt_Engineering": {
+    "description": "Prompt Engineering adalah teknik merancang input (prompt) untuk mengarahkan AI agar menghasilkan output yang lebih akurat, relevan, dan sesuai kebutuhan developer dalam pengembangan software.",
+
+    "main_goals": [
+      "Meningkatkan kualitas output AI",
+      "Mengontrol perilaku model",
+      "Mengurangi hallucination",
+      "Mengoptimalkan hasil coding AI",
+      "Membuat AI lebih predictable"
+    ],
+
+    "Zero_shot_and_Few_shot": {
+      "description": "Zero-shot dan Few-shot prompting adalah teknik memberikan instruksi kepada AI tanpa atau dengan sedikit contoh untuk mengarahkan output.",
+      "zero_shot": {
+        "description": "Zero-shot adalah prompt tanpa contoh.",
+        "example": "Translate 'hello' to French"
+      },
+      "few_shot": {
+        "description": "Few-shot adalah prompt dengan beberapa contoh untuk membantu model memahami pola.",
+        "example": "English: cat → French: chat | English: dog → French: chien"
+      }
+    },
+
+    "Chain_of_Thought": {
+      "description": "Chain of Thought (CoT) adalah teknik prompting yang mendorong AI untuk menjelaskan langkah demi langkah proses berpikirnya sebelum memberikan jawaban akhir.",
+      "benefits": [
+        "Meningkatkan akurasi reasoning",
+        "Membantu problem solving kompleks",
+        "Mengurangi error logika"
+      ]
+    },
+
+    "Role_Prompting": {
+      "description": "Role prompting adalah teknik memberikan peran tertentu kepada AI agar responsnya sesuai dengan konteks yang diinginkan.",
+      "examples": [
+        "You are a senior software engineer",
+        "You are a UX expert",
+        "You are a database architect"
+      ]
+    },
+
+    "System_Prompts": {
+      "description": "System prompts adalah instruksi tingkat tinggi yang mengatur perilaku dasar AI sebelum user memberikan input utama.",
+
+      "importance": [
+        "Mengontrol behavior AI",
+        "Menentukan style jawaban",
+        "Menjaga konsistensi output"
+      ],
+
+      "example": {
+        "title": "System Prompt Example",
+        "code": "You are a helpful coding assistant that explains concepts clearly and concisely."
+      }
+    }
+  }
+}

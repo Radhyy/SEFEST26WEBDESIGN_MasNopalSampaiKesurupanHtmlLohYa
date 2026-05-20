@@ -1,0 +1,83 @@
+{
+  "Python_Data_Libraries": {
+    "description": "Python Data Libraries adalah kumpulan library yang digunakan untuk manipulasi data, komputasi numerik, analisis data, dan machine learning di Python.",
+
+    "core_concepts": {
+      "array": "Struktur data berbentuk grid untuk menyimpan angka (NumPy)",
+      "dataframe": "Struktur tabel seperti spreadsheet (Pandas)",
+      "vectorization": "Proses komputasi tanpa loop manual agar lebih cepat",
+      "indexing": "Mengakses data berdasarkan posisi atau label",
+      "data_manipulation": "Proses mengubah, membersihkan, dan mengolah data"
+    },
+
+    "Pandas": {
+      "description": "Pandas adalah library Python untuk analisis dan manipulasi data berbentuk tabel (DataFrame).",
+
+      "official_website": "https://pandas.pydata.org",
+
+      "main_goals": [
+        "Data cleaning",
+        "Data transformation",
+        "Data analysis",
+        "Handling missing data",
+        "Working with tabular data"
+      ],
+
+      "features": [
+        "DataFrame structure",
+        "CSV/Excel support",
+        "Filtering & sorting data",
+        "Grouping & aggregation",
+        "Handling missing values"
+      ],
+
+      "common_functions": [
+        "read_csv()",
+        "head()",
+        "info()",
+        "groupby()",
+        "merge()"
+      ],
+
+      "example": {
+        "title": "Pandas Example",
+        "code": "import pandas as pd\ndf = pd.read_csv('data.csv')\nprint(df.head())"
+      }
+    },
+
+    "NumPy": {
+      "description": "NumPy adalah library Python untuk komputasi numerik yang sangat cepat menggunakan array multidimensi.",
+
+      "official_website": "https://numpy.org",
+
+      "main_goals": [
+        "Scientific computing",
+        "Mathematical operations",
+        "Array processing",
+        "Linear algebra",
+        "Performance optimization"
+      ],
+
+      "features": [
+        "N-dimensional arrays",
+        "Fast mathematical operations",
+        "Broadcasting",
+        "Linear algebra functions",
+        "Random number generation"
+      ],
+
+      "common_functions": [
+        "array()",
+        "reshape()",
+        "mean()",
+        "sum()",
+        "dot()"
+      ],
+
+      "example": {
+        "title": "NumPy Example",
+        "code": "import numpy as np\narr = np.array([1,2,3])\nprint(arr.mean())"
+      }
+    }
+  }
+}

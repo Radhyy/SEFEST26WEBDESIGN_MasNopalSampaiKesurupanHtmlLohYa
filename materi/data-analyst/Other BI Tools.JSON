@@ -1,0 +1,37 @@
+{
+  "Other_BI_Tools": {
+    "description": "Tools BI tambahan selain yang utama, digunakan sesuai kebutuhan enterprise atau startup.",
+
+    "tools": [
+      {
+        "name": "Qlik Sense",
+        "description": "BI tool dengan associative data engine untuk eksplorasi data cepat"
+      },
+      {
+        "name": "Apache Superset",
+        "description": "Open-source BI tool dari Airbnb untuk dashboard modern"
+      },
+      {
+        "name": "Domo",
+        "description": "Cloud BI platform untuk enterprise analytics"
+      },
+      {
+        "name": "Sisense",
+        "description": "Embedded analytics untuk aplikasi bisnis"
+      },
+      {
+        "name": "IBM Cognos",
+        "description": "Enterprise BI tool dari IBM untuk reporting besar"
+      }
+    ],
+
+    "benefits": [
+      "Pilihan sesuai skala bisnis",
+      "Ada open-source & enterprise",
+      "Support big data",
+      "Advanced analytics"
+    ],
+
+    "example": "Data Warehouse -> BI Tool -> Dashboard -> Business Decision"
+  }
+}

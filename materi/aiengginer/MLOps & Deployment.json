@@ -1,0 +1,118 @@
+{
+  "MLOps_and_Deployment": {
+    "description": "MLOps (Machine Learning Operations) adalah praktik yang menggabungkan machine learning, DevOps, dan data engineering untuk mengelola lifecycle model AI dari training hingga deployment secara otomatis, scalable, dan reproducible.",
+
+    "main_goals": [
+      "Mengotomatiskan lifecycle model AI",
+      "Meningkatkan reproducibility eksperimen",
+      "Mempercepat deployment model ke production",
+      "Menjaga performa model di environment nyata",
+      "Mendukung monitoring dan maintenance model"
+    ],
+
+    "core_stages": [
+      "Data collection & preprocessing",
+      "Model training",
+      "Experiment tracking",
+      "Model validation",
+      "Deployment",
+      "Monitoring & retraining"
+    ]
+  },
+
+  "Model_Serving": {
+    "description": "Model Serving adalah proses menyediakan model machine learning agar bisa digunakan oleh aplikasi lain melalui API atau inference service secara real-time atau batch.",
+
+    "FastAPI": {
+      "description": "FastAPI adalah framework Python modern untuk membangun API cepat yang sering digunakan untuk serving model AI karena ringan dan mudah diintegrasikan.",
+      "features": [
+        "High performance async API",
+        "Auto documentation (Swagger)",
+        "Easy integration dengan ML models",
+        "Python native support"
+      ]
+    },
+
+    "Triton_Inference_Server": {
+      "description": "NVIDIA Triton Inference Server adalah platform high-performance untuk serving model AI dalam skala besar, mendukung berbagai framework seperti TensorFlow, PyTorch, dan ONNX.",
+      "features": [
+        "High throughput inference",
+        "Multi-framework support",
+        "GPU optimization",
+        "Batching otomatis"
+      ]
+    }
+  },
+
+  "MLflow_and_Weights_and_Biases": {
+    "description": "MLflow dan Weights & Biases adalah tools untuk experiment tracking, model management, dan observability dalam machine learning lifecycle.",
+
+    "MLflow": {
+      "description": "MLflow adalah platform open-source untuk mengelola eksperimen ML, tracking parameter, dan deployment model.",
+      "features": [
+        "Experiment tracking",
+        "Model registry",
+        "Reproducibility",
+        "Deployment support"
+      ]
+    },
+
+    "Weights_and_Biases": {
+      "description": "Weights & Biases (W&B) adalah platform untuk tracking eksperimen machine learning, visualisasi metrics, dan kolaborasi tim AI.",
+      "features": [
+        "Real-time experiment tracking",
+        "Visualization dashboard",
+        "Hyperparameter tuning",
+        "Team collaboration"
+      ]
+    }
+  },
+
+  "Docker_and_Kubernetes": {
+    "description": "Docker dan Kubernetes adalah teknologi containerization dan orchestration yang digunakan untuk menjalankan, mengelola, dan menskalakan aplikasi termasuk model AI di environment production.",
+
+    "Docker": {
+      "description": "Docker adalah platform untuk membuat dan menjalankan aplikasi dalam container agar konsisten di berbagai environment.",
+      "features": [
+        "Containerization",
+        "Environment consistency",
+        "Lightweight deployment",
+        "Easy portability"
+      ]
+    },
+
+    "Kubernetes": {
+      "description": "Kubernetes adalah sistem orchestration untuk mengelola container dalam skala besar secara otomatis.",
+      "features": [
+        "Auto scaling",
+        "Load balancing",
+        "Self-healing system",
+        "Cluster management"
+      ]
+    }
+  },
+
+  "Cloud_AI_Platforms": {
+    "description": "Cloud AI Platforms adalah layanan cloud yang menyediakan infrastruktur untuk training, deployment, dan scaling machine learning models tanpa harus mengelola server sendiri.",
+
+    "AWS_SageMaker": {
+      "description": "AWS SageMaker adalah layanan dari Amazon Web Services untuk membangun, melatih, dan mendistribusikan model machine learning secara end-to-end.",
+      "features": [
+        "Managed ML training",
+        "Model deployment",
+        "Auto scaling",
+        "Built-in algorithms"
+      ]
+    },
+
+    "GCP_Vertex_AI": {
+      "description": "Google Vertex AI adalah platform AI dari Google Cloud untuk mengelola machine learning lifecycle dari data preparation hingga deployment.",
+      "features": [
+        "Unified ML platform",
+        "AutoML support",
+        "Model monitoring",
+        "Pipeline orchestration"
+      ]
+    }
+  }
+}

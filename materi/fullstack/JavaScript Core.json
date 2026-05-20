@@ -1,0 +1,174 @@
+{
+  "JavaScript_Core": {
+    "description": "JavaScript Core adalah dasar utama bahasa pemrograman JavaScript yang digunakan untuk membuat website menjadi interaktif dan dinamis. JavaScript berjalan di browser maupun server (Node.js) dan menjadi fondasi utama frontend modern.",
+
+    "main_topics": [
+      "Variables & data types",
+      "Functions",
+      "Objects & arrays",
+      "Conditional statements",
+      "Loops",
+      "Events"
+    ],
+
+    "main_goals": [
+      "Membuat website interaktif",
+      "Mengontrol behavior halaman web",
+      "Memanipulasi data di browser",
+      "Berinteraksi dengan API"
+    ],
+
+    "important_concepts": [
+      "Dynamic typing",
+      "Prototype-based language",
+      "Event-driven programming",
+      "Single-threaded runtime"
+    ],
+
+    "examples": [
+      "Interactive buttons",
+      "Form validation",
+      "Dynamic content updates",
+      "Web-based calculators"
+    ],
+
+    "code_example": {
+      "title": "Basic JavaScript Example",
+      "code": "let name = 'John';\nconsole.log('Hello ' + name);"
+    },
+
+    "real_world_use_cases": [
+      "Interactive landing pages",
+      "Browser games",
+      "Dynamic dashboards",
+      "Frontend web applications"
+    ]
+  },
+
+  "DOM_Manipulation": {
+    "description": "DOM Manipulation adalah proses mengakses dan mengubah elemen HTML menggunakan JavaScript melalui Document Object Model (DOM).",
+
+    "main_goals": [
+      "Mengubah konten halaman secara dinamis",
+      "Menambahkan atau menghapus elemen",
+      "Mengontrol interaksi user",
+      "Membuat UI lebih interaktif"
+    ],
+
+    "common_methods": [
+      "document.querySelector()",
+      "document.getElementById()",
+      "element.innerHTML",
+      "element.classList",
+      "addEventListener()"
+    ],
+
+    "examples": [
+      "Dark mode toggle",
+      "Dynamic navbar",
+      "Interactive forms",
+      "Popup modal"
+    ],
+
+    "example": {
+      "title": "DOM Manipulation Example",
+      "code": "document.querySelector('button').addEventListener('click', () => {\n  document.body.style.background = 'black';\n});"
+    },
+
+    "real_world_use_cases": [
+      "Interactive portfolio websites",
+      "Real-time UI updates",
+      "Animated web components",
+      "Dynamic product pages"
+    ]
+  },
+
+  "Async_Await_and_Fetch": {
+    "description": "Async/Await dan Fetch digunakan untuk menangani asynchronous programming di JavaScript, terutama saat mengambil data dari API atau server.",
+
+    "Async_Await": {
+      "description": "Async/Await membuat asynchronous code terlihat seperti synchronous sehingga lebih mudah dibaca dan dikelola.",
+
+      "benefits": [
+        "Code lebih clean",
+        "Error handling lebih mudah",
+        "Readable asynchronous flow"
+      ],
+
+      "examples": [
+        "Fetching API data",
+        "Login authentication",
+        "Loading user profile"
+      ]
+    },
+
+    "Fetch_API": {
+      "description": "Fetch API digunakan untuk melakukan HTTP request ke server atau API.",
+
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+
+      "examples": [
+        "Mengambil data dari REST API",
+        "Mengirim form data",
+        "Update database melalui API"
+      ]
+    },
+
+    "example": {
+      "title": "Fetch Example",
+      "code": "async function getData() {\n  const response = await fetch('/api/data');\n  const data = await response.json();\n  console.log(data);\n}"
+    },
+
+    "real_world_use_cases": [
+      "Weather applications",
+      "Social media feeds",
+      "Realtime dashboards",
+      "Modern SPA applications"
+    ]
+  },
+
+  "ES6_Plus_Features": {
+    "description": "ES6+ adalah versi modern JavaScript yang memperkenalkan banyak fitur baru untuk meningkatkan readability, productivity, dan maintainability code.",
+
+    "features": [
+      "Arrow functions",
+      "Template literals",
+      "Destructuring",
+      "Spread operator",
+      "Modules (import/export)",
+      "Classes",
+      "Promises"
+    ],
+
+    "benefits": [
+      "Kode lebih singkat",
+      "Syntax lebih modern",
+      "Modular programming",
+      "Developer productivity meningkat"
+    ],
+
+    "examples": [
+      "Reusable modules",
+      "Modern async programming",
+      "Cleaner object handling",
+      "Component-based architecture"
+    ],
+
+    "code_example": {
+      "title": "Arrow Function Example",
+      "code": "const greet = (name) => `Hello ${name}`;"
+    },
+
+    "real_world_use_cases": [
+      "React applications",
+      "Node.js backend",
+      "Modern frontend frameworks",
+      "Scalable JavaScript projects"
+    ]
+  }
+}

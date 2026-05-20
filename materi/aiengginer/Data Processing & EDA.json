@@ -1,0 +1,86 @@
+{
+  "Pandas_and_NumPy": {
+    "description": "Pandas dan NumPy adalah library inti dalam Python untuk data manipulation dan numerical computing. NumPy digunakan untuk operasi numerik berbasis array, sedangkan Pandas digunakan untuk struktur data seperti DataFrame.",
+
+    "NumPy": {
+      "description": "NumPy adalah library untuk komputasi numerik yang efisien menggunakan array multidimensi.",
+      "features": [
+        "Array multidimensi",
+        "Fast numerical computation",
+        "Linear algebra operations",
+        "Broadcasting"
+      ]
+    },
+
+    "Pandas": {
+      "description": "Pandas adalah library untuk manipulasi dan analisis data berbasis tabel (DataFrame).",
+      "features": [
+        "DataFrame structure",
+        "Data cleaning",
+        "Filtering & grouping",
+        "Missing data handling"
+      ]
+    }
+  },
+
+  "Data_Processing_and_EDA": {
+    "description": "Data Processing & Exploratory Data Analysis (EDA) adalah tahap awal dalam data science untuk membersihkan, memahami, dan mengeksplorasi data sebelum digunakan dalam model AI.",
+
+    "steps": [
+      "Data collection",
+      "Data cleaning",
+      "Handling missing values",
+      "Data transformation",
+      "Exploratory analysis"
+    ],
+
+    "goals": [
+      "Memahami struktur data",
+      "Menemukan pola dalam data",
+      "Mendeteksi anomali",
+      "Menyiapkan data untuk modeling"
+    ]
+  },
+
+  "EDA_and_Visualization": {
+    "description": "EDA & Visualization adalah proses analisis data menggunakan grafik dan visual untuk memahami distribusi, hubungan, dan pola dalam dataset.",
+
+    "tools": [
+      "Matplotlib",
+      "Seaborn"
+    ],
+
+    "visualization_types": [
+      "Bar chart",
+      "Histogram",
+      "Scatter plot",
+      "Heatmap",
+      "Box plot"
+    ],
+
+    "goals": [
+      "Mempermudah analisis data",
+      "Menemukan insight tersembunyi",
+      "Membantu decision making"
+    ]
+  },
+
+  "Feature_Engineering": {
+    "description": "Feature Engineering adalah proses mengubah data mentah menjadi fitur yang lebih relevan dan informatif agar model machine learning dapat bekerja lebih baik.",
+
+    "techniques": [
+      "Feature selection",
+      "Feature extraction",
+      "Encoding categorical data",
+      "Scaling & normalization",
+      "Handling missing values"
+    ],
+
+    "importance": [
+      "Meningkatkan akurasi model",
+      "Mengurangi noise dalam data",
+      "Mempercepat training model",
+      "Membuat model lebih robust"
+    ]
+  }
+}

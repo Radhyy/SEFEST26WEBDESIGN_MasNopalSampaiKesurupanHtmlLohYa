@@ -1,0 +1,44 @@
+{
+  "Integration_Testing": {
+    "description": "Integration Testing adalah proses pengujian software yang berfokus pada memastikan bahwa beberapa unit atau modul dalam aplikasi dapat bekerja bersama secara benar ketika digabungkan. Berbeda dengan unit testing yang hanya menguji fungsi kecil secara terpisah, integration testing menguji interaksi antar sistem seperti frontend, backend, database, dan external API.",
+
+    "main_goals": [
+      "Memastikan komunikasi antar modul berjalan dengan benar",
+      "Mendeteksi error saat beberapa sistem digabungkan",
+      "Memastikan data flow antar service konsisten",
+      "Mengurangi bug sebelum production",
+      "Menguji integrasi sistem secara nyata"
+    ],
+
+    "important_aspects": [
+      {
+        "aspect": "API Integration",
+        "description": "Memastikan komunikasi antara frontend dan backend melalui API berjalan dengan benar, termasuk request, response, dan error handling."
+      },
+      {
+        "aspect": "Database Integration",
+        "description": "Memastikan data dapat disimpan, diambil, dan dimodifikasi dengan benar di database tanpa kehilangan atau kerusakan data."
+      },
+      {
+        "aspect": "Service Communication",
+        "description": "Menguji bagaimana beberapa service atau microservices saling berinteraksi dalam satu sistem."
+      },
+      {
+        "aspect": "Data Consistency",
+        "description": "Memastikan data tetap konsisten saat berpindah antar modul atau layer aplikasi."
+      }
+    ],
+
+    "testing_scope": [
+      "Frontend to Backend communication",
+      "Backend to Database interaction",
+      "External API integration",
+      "Microservices communication"
+    ],
+
+    "example": {
+      "title": "Integration Flow Example",
+      "code": "User Interface -> API Request -> Backend Processing -> Database Query -> Response -> UI Update"
+    }
+  }
+}

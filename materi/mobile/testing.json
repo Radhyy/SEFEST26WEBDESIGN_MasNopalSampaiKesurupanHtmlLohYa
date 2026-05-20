@@ -1,0 +1,153 @@
+{
+  "Testing": {
+    "description": "Testing adalah proses memastikan aplikasi berjalan dengan benar dan bebas bug.",
+    "main_goals": [
+      "Mendeteksi bug",
+      "Menjamin kualitas aplikasi",
+      "Mencegah error production",
+      "Mempermudah maintenance",
+      "Meningkatkan reliability"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Assertions",
+        "function": "Memastikan hasil sesuai harapan"
+      },
+      {
+        "concept": "Test Cases",
+        "function": "Skenario pengujian"
+      },
+      {
+        "concept": "Automation Testing",
+        "function": "Testing otomatis menggunakan code"
+      },
+      {
+        "concept": "Mocking",
+        "function": "Simulasi object atau API"
+      }
+    ],
+    "testing_types": [
+      "Unit Testing",
+      "UI Testing",
+      "Integration Testing",
+      "End-to-End Testing"
+    ],
+    "advantages": [
+      "Mengurangi bug",
+      "Meningkatkan kualitas aplikasi",
+      "Mudah refactoring",
+      "Development lebih aman"
+    ],
+    "best_practices": [
+      "Tulis test untuk fitur penting",
+      "Gunakan automation testing",
+      "Pisahkan test berdasarkan fitur",
+      "Gunakan mocking"
+    ],
+    "example": {
+      "title": "Testing Workflow",
+      "code": "Write Code -> Run Tests -> Fix Errors -> Deploy"
+    }
+  },
+
+  "Unit_Testing": {
+    "description": "Unit Testing adalah pengujian bagian kecil aplikasi seperti function atau class secara terpisah.",
+    "important_features": [
+      {
+        "feature": "Isolated Testing",
+        "function": "Testing satu unit code"
+      },
+      {
+        "feature": "Fast Execution",
+        "function": "Testing berjalan cepat"
+      },
+      {
+        "feature": "Automation Friendly",
+        "function": "Mudah diotomatisasi"
+      }
+    ],
+    "common_use_cases": [
+      "Testing function",
+      "Testing calculations",
+      "Testing business logic"
+    ],
+    "advantages": [
+      "Cepat dijalankan",
+      "Bug mudah ditemukan",
+      "Mempermudah refactoring"
+    ],
+    "best_practices": [
+      "Gunakan mocking",
+      "Testing logic penting",
+      "Gunakan nama test jelas"
+    ],
+    "example": {
+      "title": "Unit Test Example",
+      "code": "expect(add(1, 2), 3);"
+    }
+  },
+
+  "Widget_UI_Testing": {
+    "description": "Widget/UI Testing digunakan untuk menguji tampilan dan interaksi UI aplikasi.",
+    "important_features": [
+      {
+        "feature": "UI Validation",
+        "function": "Memastikan UI tampil benar"
+      },
+      {
+        "feature": "Interaction Testing",
+        "function": "Menguji klik dan input"
+      },
+      {
+        "feature": "Component Testing",
+        "function": "Menguji widget atau komponen UI"
+      }
+    ],
+    "advantages": [
+      "Memastikan UI stabil",
+      "Menguji interaksi user",
+      "Mencegah UI bugs"
+    ],
+    "best_practices": [
+      "Test komponen penting",
+      "Gunakan reusable test setup",
+      "Testing user interaction"
+    ],
+    "example": {
+      "title": "Widget Test Example",
+      "code": "await tester.tap(find.text('Login'));"
+    }
+  },
+
+  "Integration_Testing": {
+    "description": "Integration Testing digunakan untuk menguji interaksi antar module atau fitur aplikasi.",
+    "important_features": [
+      {
+        "feature": "Feature Testing",
+        "function": "Menguji alur fitur lengkap"
+      },
+      {
+        "feature": "API Integration",
+        "function": "Menguji koneksi API dan database"
+      },
+      {
+        "feature": "Workflow Validation",
+        "function": "Menguji flow aplikasi"
+      }
+    ],
+    "advantages": [
+      "Menguji flow nyata aplikasi",
+      "Mendeteksi masalah integrasi",
+      "Meningkatkan reliability"
+    ],
+    "best_practices": [
+      "Testing fitur utama",
+      "Gunakan environment testing",
+      "Mock API jika perlu"
+    ],
+    "example": {
+      "title": "Integration Test Flow",
+      "code": "Login -> Fetch API -> Display Dashboard"
+    }
+  }
+}

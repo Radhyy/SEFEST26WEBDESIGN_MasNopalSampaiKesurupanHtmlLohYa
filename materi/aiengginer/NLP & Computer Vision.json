@@ -1,0 +1,69 @@
+{
+  "NLP_and_Computer_Vision": {
+    "description": "NLP (Natural Language Processing) dan Computer Vision adalah dua cabang utama Artificial Intelligence. NLP berfokus pada pemahaman bahasa manusia, sedangkan Computer Vision berfokus pada pemahaman dan interpretasi gambar atau video.",
+
+    "NLP": {
+      "description": "NLP adalah bidang AI yang memungkinkan komputer memahami, memproses, dan menghasilkan bahasa manusia.",
+      "core_tasks": [
+        "Text classification",
+        "Named Entity Recognition (NER)",
+        "Sentiment analysis",
+        "Machine translation",
+        "Text summarization"
+      ]
+    },
+
+    "Computer_Vision": {
+      "description": "Computer Vision adalah bidang AI yang memungkinkan komputer memahami dan menafsirkan informasi visual dari gambar atau video.",
+      "core_tasks": [
+        "Image classification",
+        "Object detection",
+        "Image segmentation",
+        "Face recognition",
+        "Pose estimation"
+      ]
+    }
+  },
+
+  "Hugging_Face_Transformers": {
+    "description": "Hugging Face Transformers adalah library open-source yang menyediakan model pre-trained untuk NLP, Computer Vision, dan multimodal AI berbasis transformer architecture.",
+
+    "main_goals": [
+      "Menyediakan model AI siap pakai",
+      "Mempermudah penggunaan transformer models",
+      "Mendukung NLP dan vision tasks",
+      "Mempercepat pengembangan AI aplikasi"
+    ],
+
+    "features": [
+      "Pretrained transformer models",
+      "Pipeline API sederhana",
+      "Support PyTorch & TensorFlow",
+      "Large model hub ecosystem"
+    ]
+  },
+
+  "OpenCV_and_YOLO": {
+    "description": "OpenCV adalah library computer vision untuk image processing, sedangkan YOLO (You Only Look Once) adalah model object detection real-time yang sangat cepat dan akurat.",
+
+    "OpenCV": {
+      "description": "OpenCV digunakan untuk pemrosesan gambar dan video secara klasik maupun modern.",
+      "features": [
+        "Image filtering",
+        "Edge detection",
+        "Video processing",
+        "Face detection"
+      ]
+    },
+
+    "YOLO": {
+      "description": "YOLO adalah algoritma object detection berbasis deep learning yang mendeteksi objek secara real-time dalam satu kali proses.",
+      "features": [
+        "Real-time object detection",
+        "High accuracy",
+        "Fast inference",
+        "Multi-object detection"
+      ]
+    }
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "Containers": {
+    "description": "Containers adalah teknologi virtualisasi ringan untuk menjalankan aplikasi beserta dependencies dalam environment terisolasi.",
+    "main_goals": [
+      "Memastikan environment konsisten",
+      "Mempermudah deployment",
+      "Mengisolasi aplikasi",
+      "Meningkatkan scalability",
+      "Menyederhanakan development"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Container Image",
+        "function": "Blueprint aplikasi container"
+      },
+      {
+        "concept": "Container Runtime",
+        "function": "Menjalankan container"
+      },
+      {
+        "concept": "Volumes",
+        "function": "Penyimpanan data persistent"
+      },
+      {
+        "concept": "Networking",
+        "function": "Komunikasi antar container"
+      },
+      {
+        "concept": "Dockerfile",
+        "function": "Instruksi membuat image"
+      }
+    ],
+    "advantages": [
+      "Ringan dibanding VM",
+      "Portable",
+      "Cepat deployment",
+      "Environment konsisten",
+      "Cocok untuk microservices"
+    ],
+    "best_practices": [
+      "Gunakan image kecil",
+      "Pisahkan services",
+      "Gunakan .dockerignore",
+      "Jangan simpan secrets di image",
+      "Gunakan health checks"
+    ],
+    "example": {
+      "title": "Basic Container Workflow",
+      "code": "Code -> Build Image -> Run Container -> Deploy"
+    }
+  },
+
+  "Docker": {
+    "description": "Docker adalah platform containerization populer untuk membangun, menjalankan, dan mendistribusikan aplikasi menggunakan containers.",
+    "official_website": "https://www.docker.com",
+    "important_features": [
+      {
+        "feature": "Containerization",
+        "function": "Menjalankan aplikasi dalam container"
+      },
+      {
+        "feature": "Docker Hub",
+        "function": "Registry image container"
+      },
+      {
+        "feature": "Docker Compose",
+        "function": "Menjalankan multi-container"
+      },
+      {
+        "feature": "Portable Environment",
+        "function": "Environment konsisten di semua device"
+      }
+    ],
+    "important_commands": [
+      {
+        "command": "docker build",
+        "function": "Membuat image"
+      },
+      {
+        "command": "docker run",
+        "function": "Menjalankan container"
+      },
+      {
+        "command": "docker ps",
+        "function": "Melihat container aktif"
+      },
+      {
+        "command": "docker stop",
+        "function": "Menghentikan container"
+      }
+    ],
+    "advantages": [
+      "Populer dan stabil",
+      "Ekosistem besar",
+      "Deployment mudah",
+      "Support multi-platform"
+    ],
+    "best_practices": [
+      "Gunakan multi-stage build",
+      "Gunakan official images",
+      "Hapus unused containers"
+    ],
+    "example": {
+      "title": "Basic Dockerfile",
+      "code": "FROM node:20\nWORKDIR /app\nCOPY . .\nRUN npm install\nCMD [\"npm\", \"start\"]"
+    }
+  },
+
+  "Podman": {
+    "description": "Podman adalah container engine modern yang kompatibel dengan Docker namun tanpa daemon.",
+    "official_website": "https://podman.io",
+    "important_features": [
+      {
+        "feature": "Daemonless",
+        "function": "Tidak memerlukan background daemon"
+      },
+      {
+        "feature": "Docker Compatible",
+        "function": "Command mirip Docker"
+      },
+      {
+        "feature": "Rootless Containers",
+        "function": "Menjalankan container tanpa root"
+      },
+      {
+        "feature": "Pod Support",
+        "function": "Mengelompokkan container"
+      }
+    ],
+    "advantages": [
+      "Lebih aman",
+      "Rootless support",
+      "Ringan",
+      "Compatible dengan Docker"
+    ],
+    "best_practices": [
+      "Gunakan rootless container",
+      "Pisahkan pod berdasarkan service",
+      "Gunakan image minimal"
+    ],
+    "example": {
+      "title": "Podman Example",
+      "code": "podman run -d -p 3000:3000 node-app"
+    }
+  }
+}

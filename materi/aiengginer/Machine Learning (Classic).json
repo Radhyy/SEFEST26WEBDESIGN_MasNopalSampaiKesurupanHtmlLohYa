@@ -1,0 +1,108 @@
+{
+  "Machine_Learning_Classic": {
+    "description": "Machine Learning (Classic) adalah cabang dari artificial intelligence yang berfokus pada algoritma yang dapat belajar dari data untuk membuat prediksi atau keputusan tanpa diprogram secara eksplisit. Model klasik ini biasanya bekerja dengan feature engineering manual dan algoritma statistik yang lebih ringan dibanding deep learning.",
+
+    "main_goals": [
+      "Membangun model prediksi berbasis data",
+      "Menganalisis pola dalam dataset",
+      "Mengotomatisasi keputusan berbasis data",
+      "Meningkatkan akurasi prediksi dengan algoritma statistik",
+      "Menyelesaikan problem klasifikasi dan regresi"
+    ],
+
+    "core_concepts": [
+      "Feature engineering manual",
+      "Training vs testing data",
+      "Model evaluation",
+      "Overfitting & underfitting",
+      "Bias-variance tradeoff"
+    ],
+
+    "workflow": [
+      "Data collection",
+      "Data preprocessing",
+      "Feature engineering",
+      "Model training",
+      "Evaluation",
+      "Prediction"
+    ]
+  },
+
+  "Scikit_Learn": {
+    "description": "Scikit-Learn adalah library Python utama untuk machine learning klasik yang menyediakan berbagai algoritma siap pakai untuk klasifikasi, regresi, clustering, dan preprocessing data.",
+
+    "main_goals": [
+      "Menyediakan algoritma ML siap pakai",
+      "Mempermudah training model",
+      "Standarisasi workflow machine learning",
+      "Mendukung preprocessing data"
+    ],
+
+    "features": [
+      "Klasifikasi & regresi",
+      "Clustering algorithms",
+      "Data preprocessing tools",
+      "Model evaluation metrics",
+      "Pipeline system"
+    ]
+  },
+
+  "Supervised_Learning": {
+    "description": "Supervised Learning adalah metode machine learning di mana model dilatih menggunakan data berlabel (input dan output sudah diketahui) untuk memprediksi hasil dari data baru.",
+
+    "types": [
+      "Classification (kategori)",
+      "Regression (nilai numerik)"
+    ],
+
+    "examples": [
+      "Spam email detection",
+      "Harga rumah prediction",
+      "Image classification"
+    ],
+
+    "key_idea": "Model belajar dari input-output pair untuk membuat prediksi"
+  },
+
+  "Unsupervised_Learning": {
+    "description": "Unsupervised Learning adalah metode machine learning di mana model belajar dari data tanpa label untuk menemukan pola tersembunyi atau struktur dalam data.",
+
+    "types": [
+      "Clustering",
+      "Dimensionality reduction",
+      "Association rules"
+    ],
+
+    "examples": [
+      "Customer segmentation",
+      "Anomaly detection",
+      "Market basket analysis"
+    ],
+
+    "key_idea": "Model mencari pola tanpa bantuan label"
+  },
+
+  "Ensemble_Methods_XGBoost": {
+    "description": "Ensemble Methods adalah teknik machine learning yang menggabungkan beberapa model untuk menghasilkan prediksi yang lebih akurat. XGBoost adalah salah satu algoritma ensemble paling powerful yang menggunakan gradient boosting.",
+
+    "main_goals": [
+      "Meningkatkan akurasi model",
+      "Mengurangi overfitting",
+      "Menggabungkan kekuatan banyak model",
+      "Optimasi performa prediksi"
+    ],
+
+    "types": [
+      "Bagging (Random Forest)",
+      "Boosting (XGBoost, LightGBM)",
+      "Stacking"
+    ],
+
+    "XGBoost_features": [
+      "Gradient boosting optimization",
+      "Regularization",
+      "High performance",
+      "Handling missing data"
+    ]
+  }
+}

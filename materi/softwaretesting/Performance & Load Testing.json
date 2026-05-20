@@ -1,0 +1,85 @@
+{
+  "Performance_and_Load_Testing": {
+    "description": "Performance & Load Testing adalah jenis pengujian yang berfokus pada bagaimana sistem bekerja di bawah berbagai kondisi beban, mulai dari penggunaan normal hingga ekstrem. Tujuannya adalah memastikan aplikasi tetap stabil, cepat, dan responsif ketika diakses banyak pengguna secara bersamaan.",
+
+    "Load_Testing": {
+      "description": "Load testing adalah pengujian untuk melihat bagaimana sistem menangani jumlah pengguna atau request dalam batas normal hingga tinggi tanpa mengalami penurunan performa yang signifikan.",
+
+      "main_goals": [
+        "Mengukur performa sistem pada beban normal",
+        "Mengetahui batas kemampuan server",
+        "Memastikan response time tetap stabil",
+        "Mendeteksi bottleneck sistem"
+      ],
+
+      "example": {
+        "title": "Load Testing Concept",
+        "code": "100 users -> 200 users -> 500 users -> observe response time"
+      }
+    },
+
+    "Stress_Testing": {
+      "description": "Stress testing adalah pengujian untuk mengetahui batas maksimum sistem dengan memberikan beban ekstrem hingga sistem mulai gagal atau tidak stabil.",
+
+      "main_goals": [
+        "Menemukan breaking point sistem",
+        "Menguji ketahanan server",
+        "Melihat bagaimana sistem recovery",
+        "Mengidentifikasi failure behavior"
+      ],
+
+      "example": {
+        "title": "Stress Test Concept",
+        "code": "Normal load -> Extreme spike -> System failure point analysis"
+      }
+    },
+
+    "K6": {
+      "description": "k6 adalah tools modern untuk performance testing berbasis JavaScript yang digunakan untuk melakukan load testing, stress testing, dan performance monitoring API serta aplikasi web.",
+
+      "main_goals": [
+        "API performance testing",
+        "Load testing modern",
+        "CI/CD integration testing",
+        "Monitoring performa sistem"
+      ],
+
+      "features": [
+        "Script berbasis JavaScript",
+        "CLI-based tool",
+        "Cloud testing support",
+        "Real-time metrics",
+        "CI/CD friendly"
+      ],
+
+      "example": {
+        "title": "k6 Example",
+        "code": "import http from 'k6/http';\n\nexport default function () {\n  http.get('https://example.com');\n}"
+      }
+    },
+
+    "JMeter": {
+      "description": "Apache JMeter adalah tools open-source untuk performance testing yang digunakan untuk menguji aplikasi web, API, dan database dengan simulasi banyak user secara bersamaan.",
+
+      "main_goals": [
+        "Load testing aplikasi web",
+        "Performance testing API",
+        "Stress testing sistem",
+        "Database performance testing"
+      ],
+
+      "features": [
+        "GUI-based testing",
+        "Support HTTP, FTP, JDBC",
+        "Distributed testing",
+        "Detailed reporting",
+        "Plugin extensibility"
+      ],
+
+      "example": {
+        "title": "JMeter Use Case",
+        "code": "Simulate 1000 users accessing login endpoint simultaneously"
+      }
+    }
+  }
+}

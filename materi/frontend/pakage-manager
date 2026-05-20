@@ -1,0 +1,215 @@
+{
+  "Package_Managers": {
+    "description": "Package Manager adalah tools yang digunakan untuk menginstall, mengupdate, menghapus, dan mengelola dependencies/library pada project JavaScript.",
+    "functions": [
+      "Menginstall package",
+      "Mengelola dependencies",
+      "Mengatur versi package",
+      "Menjalankan scripts project",
+      "Mempermudah setup project"
+    ],
+    "important_terms": [
+      {
+        "term": "dependency",
+        "meaning": "Library yang dibutuhkan project"
+      },
+      {
+        "term": "package.json",
+        "meaning": "File konfigurasi project dan dependencies"
+      },
+      {
+        "term": "node_modules",
+        "meaning": "Folder tempat package tersimpan"
+      },
+      {
+        "term": "lock file",
+        "meaning": "File pengunci versi package"
+      }
+    ],
+    "popular_package_managers": [
+      "npm",
+      "yarn",
+      "pnpm",
+      "Bun"
+    ],
+    "best_practices": [
+      "Gunakan lock file",
+      "Hindari install package tidak perlu",
+      "Update dependencies secara berkala",
+      "Gunakan package terpercaya",
+      "Pisahkan dependencies dan devDependencies"
+    ],
+    "example": {
+      "title": "Initialize Project",
+      "code": "npm init -y"
+    }
+  },
+
+  "npm": {
+    "description": "npm (Node Package Manager) adalah package manager bawaan Node.js dan yang paling populer digunakan.",
+    "official_website": "https://www.npmjs.com",
+    "important_commands": [
+      {
+        "command": "npm init",
+        "function": "Membuat package.json"
+      },
+      {
+        "command": "npm install <package>",
+        "function": "Menginstall package"
+      },
+      {
+        "command": "npm install",
+        "function": "Menginstall semua dependencies"
+      },
+      {
+        "command": "npm uninstall <package>",
+        "function": "Menghapus package"
+      },
+      {
+        "command": "npm run <script>",
+        "function": "Menjalankan script"
+      }
+    ],
+    "advantages": [
+      "Bawaan Node.js",
+      "Ekosistem package terbesar",
+      "Mudah digunakan",
+      "Kompatibilitas tinggi"
+    ],
+    "best_practices": [
+      "Gunakan npm ci untuk production",
+      "Gunakan package-lock.json",
+      "Jangan edit node_modules manual"
+    ],
+    "example": {
+      "title": "Install Express",
+      "code": "npm install express"
+    }
+  },
+
+  "yarn": {
+    "description": "Yarn adalah package manager yang dikembangkan Facebook untuk performa dan dependency management yang lebih cepat.",
+    "official_website": "https://yarnpkg.com",
+    "important_commands": [
+      {
+        "command": "yarn init",
+        "function": "Membuat package.json"
+      },
+      {
+        "command": "yarn add <package>",
+        "function": "Menginstall package"
+      },
+      {
+        "command": "yarn remove <package>",
+        "function": "Menghapus package"
+      },
+      {
+        "command": "yarn install",
+        "function": "Install dependencies"
+      },
+      {
+        "command": "yarn run <script>",
+        "function": "Menjalankan script"
+      }
+    ],
+    "advantages": [
+      "Install lebih cepat",
+      "Caching lebih baik",
+      "Lock file stabil",
+      "Dependency management lebih aman"
+    ],
+    "best_practices": [
+      "Gunakan yarn.lock",
+      "Hindari campur npm dan yarn",
+      "Gunakan workspace untuk monorepo"
+    ],
+    "example": {
+      "title": "Install React",
+      "code": "yarn add react"
+    }
+  },
+
+  "pnpm": {
+    "description": "pnpm adalah package manager yang fokus pada efisiensi storage dan performa install dependencies.",
+    "official_website": "https://pnpm.io",
+    "important_commands": [
+      {
+        "command": "pnpm init",
+        "function": "Membuat package.json"
+      },
+      {
+        "command": "pnpm add <package>",
+        "function": "Menginstall package"
+      },
+      {
+        "command": "pnpm remove <package>",
+        "function": "Menghapus package"
+      },
+      {
+        "command": "pnpm install",
+        "function": "Install dependencies"
+      },
+      {
+        "command": "pnpm run <script>",
+        "function": "Menjalankan script"
+      }
+    ],
+    "advantages": [
+      "Lebih hemat storage",
+      "Install sangat cepat",
+      "Dependency management efisien",
+      "Cocok untuk project besar"
+    ],
+    "best_practices": [
+      "Gunakan pnpm-lock.yaml",
+      "Gunakan workspace untuk monorepo",
+      "Pastikan compatibility package"
+    ],
+    "example": {
+      "title": "Install TailwindCSS",
+      "code": "pnpm add tailwindcss"
+    }
+  },
+
+  "Bun": {
+    "description": "Bun adalah JavaScript runtime dan package manager modern dengan performa sangat cepat.",
+    "official_website": "https://bun.sh",
+    "important_commands": [
+      {
+        "command": "bun init",
+        "function": "Membuat project baru"
+      },
+      {
+        "command": "bun add <package>",
+        "function": "Menginstall package"
+      },
+      {
+        "command": "bun remove <package>",
+        "function": "Menghapus package"
+      },
+      {
+        "command": "bun install",
+        "function": "Install dependencies"
+      },
+      {
+        "command": "bun run <script>",
+        "function": "Menjalankan script"
+      }
+    ],
+    "advantages": [
+      "Performa sangat cepat",
+      "Runtime dan package manager dalam satu tools",
+      "Startup lebih cepat",
+      "Modern tooling"
+    ],
+    "best_practices": [
+      "Gunakan Bun untuk project modern",
+      "Cek compatibility package",
+      "Gunakan lock file bawaan Bun"
+    ],
+    "example": {
+      "title": "Install Next.js",
+      "code": "bun add next"
+    }
+  }
+}

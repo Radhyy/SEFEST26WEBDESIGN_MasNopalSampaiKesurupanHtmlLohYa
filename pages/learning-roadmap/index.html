@@ -44,13 +44,13 @@
         Roadmap interaktif yang selalu diperbarui, dirancang untuk membantumu menguasai skill yang dibutuhkan industri
         teknologi.
       </p>
-      <div class="flex flex-wrap items-center justify-center gap-3">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full px-2 sm:px-0 mt-8 sm:mt-0">
         <a href="../ai-career-advisor/"
-          class="inline-flex items-center gap-2 rounded-xl bg-brand-500 text-white font-bold px-6 py-3 shadow-lg hover:-translate-y-0.5 hover:bg-brand-600 transition-all text-sm">
-          <i class="fa-solid fa-wand-magic-sparkles"></i> Temukan Roadmap dengan AI
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 text-white font-bold px-6 py-3.5 sm:py-3 shadow-lg hover:-translate-y-0.5 hover:bg-brand-600 transition-all text-[0.95rem] sm:text-sm">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Temukan dengan AI
         </a>
         <a href="#all-roadmaps"
-          class="inline-flex items-center gap-2 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-bold px-6 py-3 hover:-translate-y-0.5 transition-all text-sm">
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-bold px-6 py-3.5 sm:py-3 hover:-translate-y-0.5 transition-all text-[0.95rem] sm:text-sm">
           <i class="fa-solid fa-compass"></i> Jelajahi Semua
         </a>
       </div>
@@ -94,15 +94,15 @@
           <p class="text-xs text-slate-500 dark:text-slate-400">HTML · CSS · JS · React · Vite</p>
         </a>
         <!-- card 2 -->
-        <div
-          class="group relative rounded-xl border-2 border-dashed border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-5 flex flex-col items-center justify-center text-center opacity-60 cursor-not-allowed">
+        <a href="roadmap-backend/"
+          class="group relative rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 card-hover">
           <div
-            class="w-10 h-10 rounded-xl bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-400 mb-4">
+            class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-500 mb-4">
             <i class="fa-solid fa-server"></i>
           </div>
-          <h3 class="font-bold text-slate-500 dark:text-slate-400 mb-1">Backend Developer</h3>
-          <p class="text-xs text-slate-400">Segera hadir</p>
-        </div>
+          <h3 class="font-bold text-slate-900 dark:text-white mb-1">Backend Developer</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Node.js · Express · DB · API</p>
+        </a>
         <!-- card 3 -->
         <div
           class="group relative rounded-xl border-2 border-dashed border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-5 flex flex-col items-center justify-center text-center opacity-60 cursor-not-allowed">
@@ -175,80 +175,115 @@
               </div>
             </a>
 
-            <!-- Backend (coming soon) -->
-            <div
-              class="rounded-xl border-2 border-dashed border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 opacity-70">
+            <!-- Backend (available) -->
+            <a href="roadmap-backend/"
+              class="group rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 card-hover">
               <div class="flex items-start justify-between mb-4">
                 <div
-                  class="w-11 h-11 rounded-xl bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-400 text-lg">
+                  class="w-11 h-11 rounded-xl bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center text-blue-600 dark:text-blue-400 text-lg">
                   <i class="fa-solid fa-server"></i>
                 </div>
-                <span class="tag bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-400">Segera</span>
+                <span class="tag bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300"><i
+                    class="fa-solid fa-circle-check"></i> Tersedia</span>
               </div>
-              <h3 class="font-bold text-slate-600 dark:text-slate-400 mb-1.5">Backend Developer</h3>
-              <p class="text-xs text-slate-400 dark:text-slate-500 leading-relaxed">Node.js, databases, REST APIs, auth,
+              <h3 class="font-bold text-slate-900 dark:text-white mb-1.5">Backend Developer</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Node.js, databases, REST APIs, auth,
                 dan deployment.</p>
-            </div>
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Node.js</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Database</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">API</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">+4</span>
+              </div>
+            </a>
 
-            <!-- Full Stack -->
-            <div
-              class="rounded-xl border-2 border-dashed border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 opacity-70">
+            <!-- Full Stack (available) -->
+            <a href="roadmap-fullstack/"
+              class="group rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 card-hover">
               <div class="flex items-start justify-between mb-4">
                 <div
-                  class="w-11 h-11 rounded-xl bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-400 text-lg">
+                  class="w-11 h-11 rounded-xl bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-lg">
                   <i class="fa-solid fa-layer-group"></i>
                 </div>
-                <span class="tag bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-400">Segera</span>
+                <span class="tag bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300"><i
+                    class="fa-solid fa-circle-check"></i> Tersedia</span>
               </div>
-              <h3 class="font-bold text-slate-600 dark:text-slate-400 mb-1.5">Full Stack Developer</h3>
-              <p class="text-xs text-slate-400 dark:text-slate-500 leading-relaxed">Frontend + Backend + DevOps dalam
-                satu jalur komprehensif.</p>
-            </div>
+              <h3 class="font-bold text-slate-900 dark:text-white mb-1.5">Fullstack Developer</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">HTML, CSS, JS, React, Node.js,
+                Database, Auth, dan Deployment.</p>
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">React</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Node.js</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Database</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">+5</span>
+              </div>
+            </a>
 
-            <!-- DevOps -->
-            <div
-              class="rounded-xl border-2 border-dashed border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 opacity-70">
+            <!-- DevOps (available) -->
+            <a href="roadmap-devops/"
+              class="group rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 card-hover">
               <div class="flex items-start justify-between mb-4">
                 <div
-                  class="w-11 h-11 rounded-xl bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-400 text-lg">
+                  class="w-11 h-11 rounded-xl bg-orange-100 dark:bg-orange-900/40 flex items-center justify-center text-orange-600 dark:text-orange-400 text-lg">
                   <i class="fa-brands fa-docker"></i>
                 </div>
-                <span class="tag bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-400">Segera</span>
+                <span class="tag bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300"><i
+                    class="fa-solid fa-circle-check"></i> Tersedia</span>
               </div>
-              <h3 class="font-bold text-slate-600 dark:text-slate-400 mb-1.5">DevOps Engineer</h3>
-              <p class="text-xs text-slate-400 dark:text-slate-500 leading-relaxed">CI/CD, Docker, Kubernetes,
+              <h3 class="font-bold text-slate-900 dark:text-white mb-1.5">DevOps Engineer</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">CI/CD, Docker, Kubernetes,
                 monitoring, dan cloud infrastructure.</p>
-            </div>
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Docker</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">K8s</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">CI/CD</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">+6</span>
+              </div>
+            </a>
 
             <!-- Mobile -->
-            <div
-              class="rounded-xl border-2 border-dashed border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 opacity-70">
+            <a href="roadmap-mobile/"
+              class="group rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 card-hover">
               <div class="flex items-start justify-between mb-4">
                 <div
-                  class="w-11 h-11 rounded-xl bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-400 text-lg">
+                  class="w-11 h-11 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center text-purple-600 dark:text-purple-400 text-lg">
                   <i class="fa-solid fa-mobile-screen"></i>
                 </div>
-                <span class="tag bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-400">Segera</span>
+                <span class="tag bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300"><i
+                    class="fa-solid fa-circle-check"></i> Tersedia</span>
               </div>
-              <h3 class="font-bold text-slate-600 dark:text-slate-400 mb-1.5">Mobile Developer</h3>
-              <p class="text-xs text-slate-400 dark:text-slate-500 leading-relaxed">React Native, Flutter, iOS, dan
+              <h3 class="font-bold text-slate-900 dark:text-white mb-1.5">Mobile Developer</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">React Native, Flutter, iOS, dan
                 Android development.</p>
-            </div>
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Flutter</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">React Native</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Android</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">+4</span>
+              </div>
+            </a>
 
             <!-- Data Analyst -->
-            <div
-              class="rounded-xl border-2 border-dashed border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 opacity-70">
+            <a href="roadmap-data-analyst/"
+              class="group rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 card-hover">
               <div class="flex items-start justify-between mb-4">
                 <div
-                  class="w-11 h-11 rounded-xl bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-400 text-lg">
+                  class="w-11 h-11 rounded-xl bg-teal-100 dark:bg-teal-900/40 flex items-center justify-center text-teal-600 dark:text-teal-400 text-lg">
                   <i class="fa-solid fa-chart-bar"></i>
                 </div>
-                <span class="tag bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-400">Segera</span>
+                <span class="tag bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300"><i
+                    class="fa-solid fa-circle-check"></i> Tersedia</span>
               </div>
-              <h3 class="font-bold text-slate-600 dark:text-slate-400 mb-1.5">Data Analyst</h3>
-              <p class="text-xs text-slate-400 dark:text-slate-500 leading-relaxed">SQL, Python, visualisasi data, dan
+              <h3 class="font-bold text-slate-900 dark:text-white mb-1.5">Data Analyst</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">SQL, Python, visualisasi data, dan
                 business intelligence.</p>
-            </div>
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">SQL</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Python</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">BI Tools</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">+5</span>
+              </div>
+            </a>
 
           </div>
         </div>
@@ -262,47 +297,67 @@
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
 
-            <div
-              class="rounded-xl border-2 border-dashed border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 opacity-70">
+            <a href="roadmap-web-security/"
+              class="group rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 card-hover">
               <div class="flex items-start justify-between mb-4">
                 <div
-                  class="w-11 h-11 rounded-xl bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-400 text-lg">
+                  class="w-11 h-11 rounded-xl bg-teal-100 dark:bg-teal-900/40 flex items-center justify-center text-teal-600 dark:text-teal-400 text-lg">
                   <i class="fa-solid fa-shield-halved"></i>
                 </div>
-                <span class="tag bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-400">Segera</span>
+                <span class="tag bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300"><i
+                    class="fa-solid fa-circle-check"></i> Tersedia</span>
               </div>
-              <h3 class="font-bold text-slate-600 dark:text-slate-400 mb-1.5">Web Security</h3>
-              <p class="text-xs text-slate-400 dark:text-slate-500 leading-relaxed">OWASP, CORS, CSP, Auth, dan best
+              <h3 class="font-bold text-slate-900 dark:text-white mb-1.5">Web Security</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">OWASP, CORS, CSP, Auth, dan best
                 practices keamanan web.</p>
-            </div>
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">OWASP</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Auth</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Crypto</span>
+              </div>
+            </a>
 
-            <div
-              class="rounded-xl border-2 border-dashed border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 opacity-70">
+            <!-- Software Testing -->
+            <a href="roadmap-software-testing/"
+              class="group rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 card-hover">
               <div class="flex items-start justify-between mb-4">
                 <div
-                  class="w-11 h-11 rounded-xl bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-400 text-lg">
+                  class="w-11 h-11 rounded-xl bg-teal-100 dark:bg-teal-900/40 flex items-center justify-center text-teal-600 dark:text-teal-400 text-lg">
                   <i class="fa-solid fa-vial"></i>
                 </div>
-                <span class="tag bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-400">Segera</span>
+                <span class="tag bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300"><i
+                    class="fa-solid fa-circle-check"></i> Tersedia</span>
               </div>
-              <h3 class="font-bold text-slate-600 dark:text-slate-400 mb-1.5">Software Testing</h3>
-              <p class="text-xs text-slate-400 dark:text-slate-500 leading-relaxed">Unit testing, integration, E2E
+              <h3 class="font-bold text-slate-900 dark:text-white mb-1.5">Software Testing</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Unit testing, integration, E2E
                 testing dengan Vitest & Playwright.</p>
-            </div>
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Vitest</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Playwright</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Cypress</span>
+              </div>
+            </a>
 
-            <div
-              class="rounded-xl border-2 border-dashed border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 opacity-70">
+            <!-- Design System -->
+            <a href="roadmap-design-system/"
+              class="group rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 card-hover">
               <div class="flex items-start justify-between mb-4">
                 <div
-                  class="w-11 h-11 rounded-xl bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-400 text-lg">
+                  class="w-11 h-11 rounded-xl bg-teal-100 dark:bg-teal-900/40 flex items-center justify-center text-teal-600 dark:text-teal-400 text-lg">
                   <i class="fa-solid fa-paintbrush"></i>
                 </div>
-                <span class="tag bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-400">Segera</span>
+                <span class="tag bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300"><i
+                    class="fa-solid fa-circle-check"></i> Tersedia</span>
               </div>
-              <h3 class="font-bold text-slate-600 dark:text-slate-400 mb-1.5">Design System</h3>
-              <p class="text-xs text-slate-400 dark:text-slate-500 leading-relaxed">Figma, komponen UI, tokens desain,
+              <h3 class="font-bold text-slate-900 dark:text-white mb-1.5">Design System</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Figma, komponen UI, tokens desain,
                 dan aksesibilitas.</p>
-            </div>
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Tokens</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Storybook</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Figma</span>
+              </div>
+            </a>
 
           </div>
         </div>
@@ -316,33 +371,47 @@
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
 
-            <div
-              class="rounded-xl border-2 border-dashed border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 opacity-70">
+            <!-- AI Engineer -->
+            <a href="roadmap-ai-engineer/"
+              class="group rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 card-hover">
               <div class="flex items-start justify-between mb-4">
                 <div
-                  class="w-11 h-11 rounded-xl bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-400 text-lg">
+                  class="w-11 h-11 rounded-xl bg-teal-100 dark:bg-teal-900/40 flex items-center justify-center text-teal-600 dark:text-teal-400 text-lg">
                   <i class="fa-solid fa-brain"></i>
                 </div>
-                <span class="tag bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-400">Segera</span>
+                <span class="tag bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300"><i
+                    class="fa-solid fa-circle-check"></i> Tersedia</span>
               </div>
-              <h3 class="font-bold text-slate-600 dark:text-slate-400 mb-1.5">AI Engineer</h3>
-              <p class="text-xs text-slate-400 dark:text-slate-500 leading-relaxed">LLM, prompting, AI agents, MCP, dan
+              <h3 class="font-bold text-slate-900 dark:text-white mb-1.5">AI Engineer</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">LLM, prompting, AI agents, RAG, dan
                 implementasi AI di produk.</p>
-            </div>
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">LLM</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">RAG</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">PyTorch</span>
+              </div>
+            </a>
 
-            <div
-              class="rounded-xl border-2 border-dashed border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 opacity-70">
+            <!-- AI Assisted Coding -->
+            <a href="roadmap-ai-assisted-coding/"
+              class="group rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 card-hover">
               <div class="flex items-start justify-between mb-4">
                 <div
-                  class="w-11 h-11 rounded-xl bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-400 text-lg">
+                  class="w-11 h-11 rounded-xl bg-teal-100 dark:bg-teal-900/40 flex items-center justify-center text-teal-600 dark:text-teal-400 text-lg">
                   <i class="fa-solid fa-terminal"></i>
                 </div>
-                <span class="tag bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-400">Segera</span>
+                <span class="tag bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300"><i
+                    class="fa-solid fa-circle-check"></i> Tersedia</span>
               </div>
-              <h3 class="font-bold text-slate-600 dark:text-slate-400 mb-1.5">AI Assisted Coding</h3>
-              <p class="text-xs text-slate-400 dark:text-slate-500 leading-relaxed">Cursor, Claude Code, Copilot,
-                Antigravity, dan vibe coding.</p>
-            </div>
+              <h3 class="font-bold text-slate-900 dark:text-white mb-1.5">AI Assisted Coding</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Cursor, AI Agents, Copilot,
+                MCP, dan vibe coding.</p>
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Cursor</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Copilot</span>
+                <span class="tag bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">MCP</span>
+              </div>
+            </a>
 
           </div>
         </div>

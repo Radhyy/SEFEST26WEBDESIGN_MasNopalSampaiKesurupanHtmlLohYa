@@ -1,0 +1,183 @@
+{
+  "Authentication_and_Security": {
+    "description": "Authentication & Security adalah bagian penting dalam backend development untuk memastikan hanya user yang valid dapat mengakses sistem dan data aplikasi tetap aman dari serangan.",
+
+    "main_goals": [
+      "Memverifikasi identitas user",
+      "Melindungi data sensitif",
+      "Mencegah akses tidak sah",
+      "Mengamankan komunikasi aplikasi",
+      "Mengurangi risiko serangan cyber"
+    ],
+
+    "core_concepts": [
+      "Authentication",
+      "Authorization",
+      "Session Management",
+      "Token-based Security",
+      "Password Protection",
+      "HTTP Security"
+    ],
+
+    "examples": [
+      "Login system",
+      "Protected dashboard",
+      "Secure REST API",
+      "Role-based access control",
+      "Admin-only routes",
+      "Multi-user authentication"
+    ],
+
+    "real_world_use_cases": [
+      "E-commerce authentication",
+      "Banking application login",
+      "JWT API protection",
+      "Google OAuth login system"
+    ]
+  },
+
+  "JWT_and_Sessions": {
+    "description": "JWT dan Sessions digunakan untuk authentication dan mempertahankan status login user.",
+
+    "JWT": {
+      "description": "JWT menyimpan data authentication dalam token stateless.",
+
+      "advantages": [
+        "Cocok untuk REST API",
+        "Tidak perlu session storage",
+        "Mudah digunakan di frontend dan mobile app",
+        "Scalable untuk microservices"
+      ],
+
+      "disadvantages": [
+        "Sulit revoke token",
+        "Token bisa bocor jika tidak aman",
+        "Ukuran token lebih besar"
+      ],
+
+      "example": {
+        "title": "JWT Authentication Flow",
+        "code": "User Login → Server Generate JWT → Client Save Token → Token Dikirim di Authorization Header"
+      },
+
+      "code_example": {
+        "title": "JWT Sign Example",
+        "code": "const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET)"
+      }
+    },
+
+    "Sessions": {
+      "description": "Session authentication menyimpan informasi login di server.",
+
+      "advantages": [
+        "Mudah revoke session",
+        "Lebih aman untuk traditional apps",
+        "Session dapat dikontrol server"
+      ],
+
+      "disadvantages": [
+        "Butuh server storage",
+        "Kurang scalable tanpa Redis/session store"
+      ],
+
+      "example": {
+        "title": "Express Session Example",
+        "code": "req.session.user = { id: 1, name: 'Raa' }"
+      },
+
+      "workflow_example": {
+        "title": "Session Login Flow",
+        "code": "User Login → Server Create Session → Browser Save Cookie → Cookie Dikirim Setiap Request"
+      }
+    }
+  },
+
+  "OAuth_2_0": {
+    "description": "OAuth 2.0 memungkinkan login menggunakan layanan pihak ketiga seperti Google atau GitHub.",
+
+    "examples": [
+      "Login with Google",
+      "Login with GitHub",
+      "Discord OAuth Login",
+      "Spotify OAuth",
+      "Facebook Login"
+    ],
+
+    "flow_example": {
+      "title": "OAuth Flow",
+      "code": "User → Google Login Page → Consent → Access Token → App Login Success"
+    },
+
+    "important_terms": [
+      "Access Token",
+      "Refresh Token",
+      "Authorization Server",
+      "Scopes",
+      "Client ID",
+      "Client Secret"
+    ],
+
+    "real_world_use_cases": [
+      "Single Sign-On (SSO)",
+      "Social login systems",
+      "Third-party API authorization"
+    ]
+  },
+
+  "Hashing_bcrypt": {
+    "description": "bcrypt digunakan untuk hashing password agar tidak disimpan dalam bentuk plain text.",
+
+    "example": {
+      "title": "bcrypt Example",
+      "code": "const hash = await bcrypt.hash(password, 10)"
+    },
+
+    "compare_example": {
+      "title": "Password Verification",
+      "code": "const valid = await bcrypt.compare(password, user.password)"
+    },
+
+    "best_practices": [
+      "Gunakan salt rounds",
+      "Jangan simpan password asli",
+      "Gunakan compare() untuk verifikasi",
+      "Gunakan environment variables",
+      "Batasi login attempts"
+    ],
+
+    "security_benefits": [
+      "Melindungi password user",
+      "Mencegah rainbow table attacks",
+      "Memperkuat keamanan database"
+    ]
+  },
+
+  "CORS_and_Security_Headers": {
+    "description": "CORS dan Security Headers membantu melindungi aplikasi web dari serangan browser-based.",
+
+    "CORS_example": {
+      "title": "Express CORS Example",
+      "code": "app.use(cors({ origin: 'https://example.com' }))"
+    },
+
+    "Security_Header_example": {
+      "title": "Helmet Example",
+      "code": "app.use(helmet())"
+    },
+
+    "common_security_headers": [
+      "Content-Security-Policy",
+      "Strict-Transport-Security",
+      "X-Frame-Options",
+      "X-Content-Type-Options",
+      "Referrer-Policy"
+    ],
+
+    "real_world_use_cases": [
+      "Mencegah cross-origin abuse",
+      "Melindungi dari clickjacking",
+      "Mengurangi XSS attack risk",
+      "Mengamankan browser communication"
+    ]
+  }
+}

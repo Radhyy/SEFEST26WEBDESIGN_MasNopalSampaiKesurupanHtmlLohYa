@@ -1,0 +1,213 @@
+{
+  "State_Management": {
+    "description": "State Management adalah teknik untuk mengelola data dan perubahan state dalam aplikasi agar UI tetap sinkron dengan data.",
+    "main_goals": [
+      "Mengelola data aplikasi",
+      "Menyinkronkan UI dengan state",
+      "Mengurangi complexity aplikasi",
+      "Mempermudah maintenance",
+      "Meningkatkan scalability"
+    ],
+    "important_concepts": [
+      {
+        "concept": "State",
+        "function": "Data yang digunakan aplikasi"
+      },
+      {
+        "concept": "Reactive UI",
+        "function": "UI berubah otomatis saat state berubah"
+      },
+      {
+        "concept": "Global State",
+        "function": "State yang digunakan banyak halaman"
+      },
+      {
+        "concept": "Local State",
+        "function": "State khusus satu komponen"
+      }
+    ],
+    "common_use_cases": [
+      "Authentication",
+      "Shopping cart",
+      "Theme switching",
+      "Realtime data",
+      "Form management"
+    ],
+    "advantages": [
+      "UI lebih konsisten",
+      "Mudah maintenance",
+      "Scalable application",
+      "Logic lebih terstruktur"
+    ],
+    "best_practices": [
+      "Pisahkan business logic",
+      "Gunakan state seperlunya",
+      "Hindari global state berlebihan",
+      "Gunakan immutable state"
+    ],
+    "example": {
+      "title": "State Management Flow",
+      "code": "User Action -> Update State -> UI Rebuild"
+    }
+  },
+
+  "Provider_Riverpod": {
+    "description": "Provider dan Riverpod adalah state management populer di Flutter untuk mengelola state secara sederhana dan reactive.",
+    "official_website": "https://riverpod.dev",
+    "important_features": [
+      {
+        "feature": "Reactive State",
+        "function": "UI update otomatis saat state berubah"
+      },
+      {
+        "feature": "Dependency Injection",
+        "function": "Menyediakan data ke widget"
+      },
+      {
+        "feature": "Global State Management",
+        "function": "Mengelola state aplikasi"
+      },
+      {
+        "feature": "Scoped Providers",
+        "function": "State dapat dibatasi area tertentu"
+      }
+    ],
+    "difference": [
+      {
+        "tool": "Provider",
+        "description": "Lebih sederhana dan populer untuk Flutter dasar"
+      },
+      {
+        "tool": "Riverpod",
+        "description": "Versi modern Provider dengan fitur lebih aman dan fleksibel"
+      }
+    ],
+    "advantages": [
+      "Mudah dipelajari",
+      "Cocok untuk Flutter",
+      "Reactive",
+      "Boilerplate sedikit"
+    ],
+    "best_practices": [
+      "Pisahkan provider berdasarkan fitur",
+      "Gunakan immutable state",
+      "Hindari provider terlalu besar"
+    ],
+    "example": {
+      "title": "Riverpod Example",
+      "code": "final counterProvider = StateProvider<int>((ref) => 0);"
+    }
+  },
+
+  "BLoC": {
+    "description": "BLoC (Business Logic Component) adalah pattern state management Flutter yang memisahkan UI dan business logic menggunakan streams.",
+    "official_website": "https://bloclibrary.dev",
+    "important_features": [
+      {
+        "feature": "Event Driven",
+        "function": "State berubah berdasarkan event"
+      },
+      {
+        "feature": "Reactive Streams",
+        "function": "Menggunakan stream untuk state"
+      },
+      {
+        "feature": "Separation of Concerns",
+        "function": "Memisahkan UI dan logic"
+      },
+      {
+        "feature": "Predictable State",
+        "function": "Alur state lebih jelas"
+      }
+    ],
+    "important_concepts": [
+      {
+        "concept": "Event",
+        "function": "Trigger perubahan state"
+      },
+      {
+        "concept": "State",
+        "function": "Data aplikasi"
+      },
+      {
+        "concept": "Bloc",
+        "function": "Mengelola event dan state"
+      }
+    ],
+    "advantages": [
+      "Scalable",
+      "Mudah testing",
+      "Flow state jelas",
+      "Cocok aplikasi besar"
+    ],
+    "disadvantages": [
+      "Boilerplate lebih banyak",
+      "Lebih kompleks"
+    ],
+    "best_practices": [
+      "Pisahkan bloc berdasarkan fitur",
+      "Gunakan immutable state",
+      "Gunakan repository pattern"
+    ],
+    "example": {
+      "title": "BLoC Flow",
+      "code": "User Action -> Event -> Bloc -> State -> UI"
+    }
+  },
+
+  "Redux": {
+    "description": "Redux adalah state management pattern berbasis single store yang populer di React dan frontend applications.",
+    "official_website": "https://redux.js.org",
+    "important_features": [
+      {
+        "feature": "Single Source of Truth",
+        "function": "Semua state disimpan di satu store"
+      },
+      {
+        "feature": "Predictable State",
+        "function": "Perubahan state terkontrol"
+      },
+      {
+        "feature": "Immutable State",
+        "function": "State tidak diubah langsung"
+      },
+      {
+        "feature": "Middleware Support",
+        "function": "Menambahkan logic tambahan"
+      }
+    ],
+    "important_concepts": [
+      {
+        "concept": "Store",
+        "function": "Tempat penyimpanan state"
+      },
+      {
+        "concept": "Action",
+        "function": "Instruksi perubahan state"
+      },
+      {
+        "concept": "Reducer",
+        "function": "Mengubah state berdasarkan action"
+      }
+    ],
+    "advantages": [
+      "State terstruktur",
+      "Debugging mudah",
+      "Predictable",
+      "Cocok aplikasi besar"
+    ],
+    "disadvantages": [
+      "Boilerplate banyak",
+      "Kompleks untuk project kecil"
+    ],
+    "best_practices": [
+      "Gunakan slice/state modular",
+      "Hindari nested state berlebihan",
+      "Gunakan middleware seperlunya"
+    ],
+    "example": {
+      "title": "Redux Flow",
+      "code": "Action -> Reducer -> Store -> UI Update"
+    }
+  }
+}

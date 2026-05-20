@@ -1,0 +1,124 @@
+{
+  "Web_Security": {
+    "description": "Web Security adalah bidang keamanan yang berfokus pada melindungi aplikasi web dari serangan, kebocoran data, dan eksploitasi sistem.",
+
+    "core_concepts": {
+      "confidentiality": "Menjaga data agar tidak diakses pihak tidak berwenang",
+      "integrity": "Menjaga data agar tidak diubah sembarangan",
+      "availability": "Menjaga sistem tetap bisa diakses",
+      "attack_surface": "Bagian sistem yang bisa diserang",
+      "threat_modeling": "Analisis potensi serangan pada sistem"
+    },
+
+    "OWASP_Top_10": {
+      "description": "OWASP Top 10 adalah daftar risiko keamanan web paling kritis yang sering terjadi pada aplikasi modern.",
+
+      "risks": [
+        {
+          "name": "Injection",
+          "description": "Serangan dengan menyisipkan kode berbahaya ke input aplikasi"
+        },
+        {
+          "name": "Broken Authentication",
+          "description": "Sistem login yang lemah dan mudah dibobol"
+        },
+        {
+          "name": "Sensitive Data Exposure",
+          "description": "Data sensitif bocor karena enkripsi lemah"
+        },
+        {
+          "name": "Security Misconfiguration",
+          "description": "Konfigurasi server atau aplikasi yang salah"
+        },
+        {
+          "name": "Cross-Site Scripting (XSS)",
+          "description": "Menyisipkan script berbahaya ke halaman web"
+        },
+        {
+          "name": "Cross-Site Request Forgery (CSRF)",
+          "description": "Memaksa user melakukan aksi tanpa sadar"
+        },
+        {
+          "name": "SSRF",
+          "description": "Memaksa server melakukan request ke sistem internal"
+        }
+      ]
+    },
+
+    "SQL_and_Command_Injection": {
+      "description": "SQL Injection adalah serangan dengan menyisipkan query SQL berbahaya ke input aplikasi.",
+
+      "danger": [
+        "Membaca database tanpa izin",
+        "Menghapus data",
+        "Mengubah data sensitif"
+      ],
+
+      "prevention": [
+        "Gunakan prepared statements",
+        "Gunakan ORM",
+        "Validasi input",
+        "Hindari query langsung dari user input"
+      ],
+
+      "example": {
+        "bad": "SELECT * FROM users WHERE id = '1 OR 1=1'",
+        "good": "SELECT * FROM users WHERE id = ?"
+      }
+    },
+
+    "XSS": {
+      "description": "Cross-Site Scripting (XSS) adalah serangan dengan menyisipkan script berbahaya ke halaman web.",
+
+      "types": [
+        "Stored XSS",
+        "Reflected XSS",
+        "DOM-based XSS"
+      ],
+
+      "impact": [
+        "Steal cookies",
+        "Hijack session",
+        "Inject malicious scripts"
+      ],
+
+      "prevention": [
+        "Escape output",
+        "Sanitize input",
+        "Use Content Security Policy (CSP)"
+      ]
+    },
+
+    "CSRF": {
+      "description": "Cross-Site Request Forgery adalah serangan yang memaksa user melakukan aksi tanpa sadar.",
+
+      "impact": [
+        "Transfer uang tanpa izin",
+        "Change account settings",
+        "Unauthorized actions"
+      ],
+
+      "prevention": [
+        "CSRF token",
+        "SameSite cookies",
+        "Re-authentication"
+      ]
+    },
+
+    "SSRF": {
+      "description": "Server-Side Request Forgery adalah serangan yang memaksa server mengakses resource internal atau eksternal berbahaya.",
+
+      "impact": [
+        "Access internal network",
+        "Expose cloud metadata",
+        "Data leakage"
+      ],
+
+      "prevention": [
+        "Whitelist URLs",
+        "Block internal IP ranges",
+        "Validate input URLs"
+      ]
+    }
+  }
+}

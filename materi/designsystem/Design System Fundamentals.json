@@ -1,0 +1,97 @@
+{
+  "Design_System_Fundamentals": {
+    "description": "Design System Fundamentals adalah dasar dalam membangun sistem desain yang konsisten, scalable, dan dapat digunakan ulang di seluruh produk digital. Design system berfungsi sebagai aturan utama agar UI, komponen, dan visual memiliki standar yang sama di seluruh aplikasi.",
+
+    "main_goals": [
+      "Menciptakan konsistensi visual di seluruh produk",
+      "Mempercepat proses desain dan development",
+      "Mengurangi duplikasi komponen UI",
+      "Membuat sistem yang scalable untuk aplikasi besar",
+      "Menyatukan bahasa antara designer dan developer"
+    ],
+
+    "core_principles": [
+      "Consistency (semua elemen harus seragam)",
+      "Reusability (komponen bisa dipakai ulang)",
+      "Scalability (mudah berkembang)",
+      "Single Source of Truth (satu sumber aturan)"
+    ]
+  },
+
+  "Design_Tokens": {
+    "description": "Design Tokens adalah representasi nilai desain dalam bentuk variabel yang digunakan untuk menyimpan warna, spacing, typography, shadow, dan elemen visual lainnya agar konsisten di seluruh sistem desain dan kode.",
+
+    "types": [
+      "Color Tokens",
+      "Typography Tokens",
+      "Spacing Tokens",
+      "Shadow Tokens"
+    ],
+
+    "main_goals": [
+      "Menyatukan design dan code",
+      "Mempermudah perubahan global desain",
+      "Menjaga konsistensi UI",
+      "Mendukung multi-platform system"
+    ]
+  },
+
+  "Color_and_Typography": {
+    "description": "Color dan Typography adalah elemen utama dalam UI design yang menentukan identitas visual, keterbacaan teks, dan hierarki informasi dalam sebuah aplikasi.",
+
+    "Color": {
+      "concepts": [
+        "Primary Color",
+        "Secondary Color",
+        "Accent Color",
+        "Semantic Colors (success, error, warning)"
+      ],
+      "functions": [
+        "Brand identity",
+        "Visual hierarchy",
+        "User guidance"
+      ]
+    },
+
+    "Typography": {
+      "concepts": [
+        "Font family",
+        "Font size scale",
+        "Line height",
+        "Font weight"
+      ],
+      "functions": [
+        "Readability",
+        "Information structure",
+        "UI clarity"
+      ]
+    }
+  },
+
+  "Spacing_and_Grids": {
+    "description": "Spacing dan Grids adalah sistem layout untuk mengatur jarak dan struktur elemen UI agar terlihat rapi, konsisten, dan responsif di berbagai ukuran layar.",
+
+    "Spacing": {
+      "rules": [
+        "Gunakan scale tetap (4px, 8px, 16px, dst)",
+        "Hindari spacing acak",
+        "Gunakan design tokens"
+      ]
+    },
+
+    "Grids": {
+      "types": [
+        "Column Grid",
+        "Row Grid",
+        "Baseline Grid",
+        "Responsive Grid"
+      ],
+
+      "benefits": [
+        "Layout lebih terstruktur",
+        "Mendukung responsive design",
+        "Memudahkan alignment"
+      ]
+    }
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "MCP": {
+    "description": "MCP (Model Context Protocol) adalah standar komunikasi yang memungkinkan AI model berinteraksi dengan tools, data sources, aplikasi, dan services eksternal secara terstruktur.",
+    "main_goals": [
+      "Menghubungkan AI dengan tools eksternal",
+      "Memberikan context tambahan ke AI",
+      "Membantu automation workflow",
+      "Standarisasi komunikasi AI dan tools",
+      "Meningkatkan kemampuan AI agents"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Client",
+        "function": "Aplikasi yang menggunakan AI"
+      },
+      {
+        "concept": "Server",
+        "function": "Penyedia tools atau resources"
+      },
+      {
+        "concept": "Tool Calling",
+        "function": "AI menjalankan tools eksternal"
+      },
+      {
+        "concept": "Resources",
+        "function": "Data atau informasi tambahan"
+      },
+      {
+        "concept": "Prompts",
+        "function": "Instruksi yang digunakan AI"
+      }
+    ],
+    "architecture": [
+      {
+        "step": 1,
+        "description": "User memberikan request"
+      },
+      {
+        "step": 2,
+        "description": "AI memproses request"
+      },
+      {
+        "step": 3,
+        "description": "AI meminta tool melalui MCP"
+      },
+      {
+        "step": 4,
+        "description": "Server menjalankan tool"
+      },
+      {
+        "step": 5,
+        "description": "Hasil dikirim kembali ke AI"
+      },
+      {
+        "step": 6,
+        "description": "AI menghasilkan response"
+      }
+    ],
+    "common_use_cases": [
+      {
+        "use_case": "Database Access",
+        "description": "AI mengambil data database"
+      },
+      {
+        "use_case": "File Management",
+        "description": "AI membaca atau membuat file"
+      },
+      {
+        "use_case": "Web Search",
+        "description": "AI mencari informasi internet"
+      },
+      {
+        "use_case": "Code Execution",
+        "description": "AI menjalankan kode"
+      },
+      {
+        "use_case": "Automation",
+        "description": "Workflow otomatis menggunakan AI"
+      }
+    ],
+    "popular_tools": [
+      "Claude Desktop MCP",
+      "Cursor MCP",
+      "OpenAI Tools",
+      "LangChain",
+      "LangGraph"
+    ],
+    "best_practices": [
+      "Batasi akses tools sensitif",
+      "Validasi output tools",
+      "Gunakan logging untuk monitoring",
+      "Pisahkan tools berdasarkan fungsi",
+      "Gunakan authentication pada server"
+    ],
+    "example": {
+      "title": "Simple MCP Flow",
+      "code": "User -> AI -> MCP Tool Request -> External Tool -> AI Response"
+    }
+  },
+
+  "Skills": {
+    "description": "Skills adalah kemampuan tambahan yang dimiliki AI agent atau developer untuk menjalankan task tertentu dengan lebih efektif.",
+    "skill_categories": {
+      "Programming_Skills": {
+        "description": "Kemampuan coding dan software development.",
+        "skills": [
+          "JavaScript",
+          "Python",
+          "TypeScript",
+          "API Integration",
+          "Database Management",
+          "Debugging"
+        ],
+        "example": {
+          "title": "Programming Skill Example",
+          "code": "Membuat REST API menggunakan Express.js"
+        }
+      },
+
+      "AI_Skills": {
+        "description": "Kemampuan terkait AI dan machine learning.",
+        "skills": [
+          "Prompt Engineering",
+          "LLM Integration",
+          "RAG",
+          "Fine Tuning",
+          "AI Agents",
+          "Tool Calling"
+        ],
+        "example": {
+          "title": "AI Skill Example",
+          "code": "Membuat chatbot AI menggunakan OpenAI API"
+        }
+      },
+
+      "Automation_Skills": {
+        "description": "Kemampuan membuat workflow otomatis.",
+        "skills": [
+          "Task Automation",
+          "CI/CD",
+          "Workflow Design",
+          "Scheduling",
+          "Web Scraping"
+        ],
+        "example": {
+          "title": "Automation Example",
+          "code": "Mengirim email otomatis setiap hari"
+        }
+      },
+
+      "Problem_Solving_Skills": {
+        "description": "Kemampuan menganalisis dan menyelesaikan masalah.",
+        "skills": [
+          "Debugging",
+          "Code Review",
+          "Optimization",
+          "System Design",
+          "Critical Thinking"
+        ],
+        "example": {
+          "title": "Problem Solving Example",
+          "code": "Mencari penyebab API lambat"
+        }
+      },
+
+      "Communication_Skills": {
+        "description": "Kemampuan menjelaskan dan mendokumentasikan solusi.",
+        "skills": [
+          "Technical Writing",
+          "Documentation",
+          "Presentation",
+          "Team Collaboration"
+        ],
+        "example": {
+          "title": "Communication Example",
+          "code": "Menulis README.md project"
+        }
+      }
+    },
+
+    "important_soft_skills": [
+      {
+        "skill": "Adaptability",
+        "description": "Cepat belajar teknologi baru"
+      },
+      {
+        "skill": "Teamwork",
+        "description": "Bekerja sama dalam tim"
+      },
+      {
+        "skill": "Time Management",
+        "description": "Mengatur waktu pengerjaan"
+      },
+      {
+        "skill": "Creativity",
+        "description": "Membuat solusi inovatif"
+      }
+    ],
+
+    "learning_path": [
+      "Programming Basics",
+      "Version Control",
+      "Frontend & Backend",
+      "APIs",
+      "Databases",
+      "AI Fundamentals",
+      "Automation",
+      "AI Agents",
+      "System Design"
+    ],
+
+    "best_practices": [
+      "Belajar secara konsisten",
+      "Bangun project nyata",
+      "Latihan debugging",
+      "Pelajari dokumentasi resmi",
+      "Bangun portfolio"
+    ],
+
+    "example_skill_stack": {
+      "title": "Modern AI Developer Stack",
+      "code": "JavaScript + React + Node.js + OpenAI API + LangChain + Docker"
+    }
+  }
+}

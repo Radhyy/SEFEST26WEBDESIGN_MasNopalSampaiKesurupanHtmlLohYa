@@ -1,0 +1,91 @@
+{
+  "Selenium": {
+    "description": "Selenium adalah framework open-source untuk otomatisasi browser yang digunakan untuk testing aplikasi web secara end-to-end. Selenium memungkinkan developer dan QA engineer untuk mengontrol browser secara otomatis seperti klik, input form, navigasi halaman, dan validasi UI di berbagai browser seperti Chrome, Firefox, Edge, dan Safari.",
+
+    "main_goals": [
+      "Mengotomatisasi pengujian aplikasi web",
+      "Melakukan end-to-end testing lintas browser",
+      "Mensimulasikan interaksi user di browser",
+      "Menguji UI secara real-world scenario",
+      "Mendukung testing aplikasi skala besar"
+    ],
+
+    "core_components": [
+      "Selenium WebDriver (kontrol browser langsung)",
+      "Selenium IDE (record & playback testing)",
+      "Selenium Grid (parallel testing di banyak mesin)"
+    ],
+
+    "features": [
+      "Cross-browser automation",
+      "Multi-language support (Java, Python, JS, C#)",
+      "Integration with CI/CD",
+      "Support distributed testing",
+      "Flexible automation scripting"
+    ],
+
+    "example": {
+      "title": "Selenium Example (Python)",
+      "code": "from selenium import webdriver\n\ndriver = webdriver.Chrome()\ndriver.get('https://example.com')\nprint(driver.title)\ndriver.quit()"
+    }
+  },
+
+  "Puppeteer": {
+    "description": "Puppeteer adalah library Node.js yang digunakan untuk mengontrol browser Chrome atau Chromium secara otomatis melalui DevTools Protocol. Puppeteer sering digunakan untuk scraping, automation testing, dan generating screenshots atau PDF.",
+
+    "main_goals": [
+      "Automasi browser Chrome/Chromium",
+      "End-to-end testing web aplikasi",
+      "Web scraping otomatis",
+      "Generate screenshot dan PDF",
+      "Simulasi user interaction"
+    ],
+
+    "core_features": [
+      "Headless browser automation",
+      "Full control Chrome DevTools",
+      "Fast execution",
+      "Network interception",
+      "Page rendering automation"
+    ],
+
+    "use_cases": [
+      "UI testing",
+      "Web scraping data",
+      "Automation workflow",
+      "Performance testing",
+      "PDF/report generation"
+    ],
+
+    "example": {
+      "title": "Puppeteer Example",
+      "code": "const puppeteer = require('puppeteer');\n\n(async () => {\n  const browser = await puppeteer.launch();\n  const page = await browser.newPage();\n  await page.goto('https://example.com');\n  await browser.close();\n})();"
+    }
+  },
+
+  "Other_E2E_Tools": {
+    "description": "Other E2E Tools adalah berbagai tools tambahan untuk end-to-end testing selain Selenium dan Puppeteer, yang digunakan untuk meningkatkan kualitas testing aplikasi modern.",
+
+    "tools": [
+      {
+        "name": "TestCafe",
+        "description": "Framework E2E testing tanpa perlu WebDriver, langsung berjalan di browser"
+      },
+      {
+        "name": "Cypress",
+        "description": "Framework E2E modern dengan real-time browser testing dan debugging"
+      },
+      {
+        "name": "Playwright",
+        "description": "Framework Microsoft untuk cross-browser automation testing"
+      }
+    ],
+
+    "comparison": [
+      "Selenium: paling fleksibel dan lama digunakan",
+      "Puppeteer: cepat dan fokus Chrome",
+      "Cypress: mudah dan developer-friendly",
+      "Playwright: modern dan cross-browser terbaik"
+    ]
+  }
+}

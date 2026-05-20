@@ -1,0 +1,89 @@
+{
+  "Nextra": {
+    "description": "Nextra adalah framework documentation site berbasis Next.js yang digunakan untuk membuat dokumentasi modern dengan cepat, sederhana, dan performa tinggi.",
+
+    "main_goals": [
+      "Membuat documentation site dengan cepat",
+      "Mendukung MDX (Markdown + React)",
+      "Integrasi dengan Next.js",
+      "Membuat docs yang modern dan interaktif"
+    ],
+
+    "features": [
+      "MDX support",
+      "Auto sidebar generation",
+      "Fast static site generation",
+      "SEO optimized",
+      "Theme customization"
+    ],
+
+    "use_cases": [
+      "API documentation",
+      "Open-source docs",
+      "Design system docs",
+      "Developer documentation"
+    ]
+  },
+
+  "Docusaurus": {
+    "description": "Docusaurus adalah framework open-source dari Meta untuk membuat documentation website dengan fokus pada kemudahan setup, versioning, dan scalability.",
+
+    "main_goals": [
+      "Membuat dokumentasi project dengan mudah",
+      "Mendukung versioned documentation",
+      "Menyediakan UI docs yang rapi",
+      "Mempercepat setup documentation site"
+    ],
+
+    "features": [
+      "Markdown-based docs",
+      "Versioning system",
+      "Plugin ecosystem",
+      "Built-in search",
+      "Theming support"
+    ],
+
+    "use_cases": [
+      "Open-source documentation",
+      "Product documentation",
+      "Developer guides",
+      "API references"
+    ]
+  },
+
+  "Accessibility_Auditing_Tools": {
+    "description": "Accessibility Auditing Tools adalah tools yang digunakan untuk memeriksa dan menganalisis tingkat aksesibilitas sebuah website agar sesuai dengan standar seperti WCAG dan WAI-ARIA.",
+
+    "main_goals": [
+      "Mendeteksi masalah accessibility",
+      "Memastikan compliance WCAG",
+      "Meningkatkan usability untuk semua user",
+      "Mengidentifikasi error pada screen reader support"
+    ],
+
+    "tools": [
+      {
+        "name": "Lighthouse",
+        "description": "Tool dari Google untuk audit performance, SEO, dan accessibility website"
+      },
+      {
+        "name": "axe DevTools",
+        "description": "Browser extension untuk audit accessibility secara detail"
+      },
+      {
+        "name": "WAVE",
+        "description": "Tool visual untuk mengecek accessibility issues pada website"
+      },
+      {
+        "name": "Pa11y",
+        "description": "Command-line tool untuk automated accessibility testing"
+      }
+    ],
+
+    "importance": [
+      "Meningkatkan inklusivitas aplikasi",
+      "Memastikan compliance standar global",
+      "Mengurangi UX issues untuk pengguna disabilitas"
+    ]
+  }
+}

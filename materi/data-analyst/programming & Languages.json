@@ -1,0 +1,88 @@
+{
+  "Programming_Languages": {
+    "description": "Programming language adalah bahasa formal yang digunakan untuk memberi instruksi kepada komputer agar dapat menjalankan perintah tertentu seperti perhitungan, pengolahan data, dan pembuatan aplikasi.",
+
+    "core_concepts": {
+      "syntax": "Aturan penulisan kode dalam bahasa pemrograman",
+      "variables": "Tempat menyimpan data seperti angka, teks, atau boolean",
+      "data_types": "Jenis data seperti integer, string, float, boolean",
+      "control_flow": "Pengaturan alur program seperti if, else, loop",
+      "functions": "Blok kode yang dapat digunakan ulang",
+      "data_structures": "Struktur penyimpanan data seperti list, array, dictionary"
+    },
+
+    "Programming_Language_Basics": {
+      "why_use_programming_language": [
+        "Mengotomatisasi pekerjaan",
+        "Membangun aplikasi",
+        "Mengolah data besar",
+        "Membuat sistem AI"
+      ]
+    },
+
+    "Python": {
+      "description": "Python adalah bahasa pemrograman tingkat tinggi yang sangat populer karena sederhana, mudah dibaca, dan digunakan di banyak bidang seperti AI, data science, web development, dan automation.",
+
+      "official_website": "https://www.python.org",
+
+      "features": [
+        "Syntax sederhana dan mudah dipahami",
+        "Banyak library",
+        "Cross-platform",
+        "Digunakan oleh industri besar"
+      ],
+
+      "main_applications": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Data Science",
+        "Web Development (Django, Flask)",
+        "Automation scripting"
+      ],
+
+      "common_libraries": [
+        "NumPy (komputasi numerik)",
+        "Pandas (data analysis)",
+        "Matplotlib (visualisasi data)",
+        "Scikit-learn (machine learning)"
+      ],
+
+      "example": {
+        "title": "Python Basic Code",
+        "code": "print('Hello World')\nx = 10\nif x > 5:\n    print('Besar')"
+      }
+    },
+
+    "R_Language": {
+      "description": "R adalah bahasa pemrograman yang fokus pada statistik, analisis data, dan visualisasi data yang banyak digunakan di akademik dan data science.",
+
+      "official_website": "https://www.r-project.org",
+
+      "features": [
+        "Kuat di statistik",
+        "Visualisasi data sangat baik",
+        "Banyak digunakan di penelitian",
+        "Support analisis kompleks"
+      ],
+
+      "main_applications": [
+        "Statistical analysis",
+        "Data visualization",
+        "Research data science",
+        "Predictive modeling"
+      ],
+
+      "common_packages": [
+        "ggplot2 (visualisasi)",
+        "dplyr (data manipulation)",
+        "tidyr (data cleaning)",
+        "caret (machine learning)"
+      ],
+
+      "example": {
+        "title": "R Basic Code",
+        "code": "x <- c(1,2,3,4)\nmean(x)"
+      }
+    }
+  }
+}

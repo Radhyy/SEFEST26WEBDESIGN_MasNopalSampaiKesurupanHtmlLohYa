@@ -1,0 +1,215 @@
+{
+  "Frontend_Framework": {
+    "description": "Frontend Framework adalah tools atau library yang membantu developer membangun user interface modern dengan struktur component-based dan reactive rendering.",
+
+    "main_goals": [
+      "Mempercepat development frontend",
+      "Membuat UI reusable",
+      "Mengelola state aplikasi",
+      "Meningkatkan maintainability project",
+      "Membuat aplikasi lebih scalable"
+    ],
+
+    "concepts": [
+      "Component-based architecture",
+      "Reactive UI",
+      "State-driven rendering",
+      "Virtual DOM",
+      "Client-side rendering",
+      "Server-side rendering"
+    ],
+
+    "examples": [
+      "Dashboard admin",
+      "Social media frontend",
+      "E-commerce UI",
+      "Realtime web application"
+    ],
+
+    "real_world_use_cases": [
+      "Netflix frontend",
+      "E-commerce product page",
+      "Interactive SaaS dashboard",
+      "Realtime chat interface"
+    ]
+  },
+
+  "React_js": {
+    "description": "React.js adalah library JavaScript untuk membangun user interface berbasis component yang dikembangkan oleh Meta.",
+
+    "features": [
+      "Component-based UI",
+      "Virtual DOM",
+      "Reusable components",
+      "Reactive rendering",
+      "Large ecosystem",
+      "Hooks API"
+    ],
+
+    "main_concepts": [
+      "JSX",
+      "Props",
+      "State",
+      "Hooks",
+      "Component lifecycle",
+      "Conditional rendering"
+    ],
+
+    "advantages": [
+      "Reusable component system",
+      "Ekosistem besar",
+      "Performa rendering cepat",
+      "Cocok untuk SPA"
+    ],
+
+    "examples": [
+      "Interactive dashboard",
+      "Single Page Application",
+      "Social media UI",
+      "Task management app"
+    ],
+
+    "code_example": {
+      "title": "React Component Example",
+      "code": "function App() {\n  return <h1>Hello React</h1>\n}"
+    },
+
+    "hooks_example": {
+      "title": "useState Example",
+      "code": "const [count, setCount] = useState(0)"
+    }
+  },
+
+  "Next_js": {
+    "description": "Next.js adalah framework React yang menyediakan fitur fullstack seperti server-side rendering, routing otomatis, API routes, dan optimasi performa.",
+
+    "features": [
+      "Server-side rendering (SSR)",
+      "Static site generation (SSG)",
+      "File-based routing",
+      "API routes",
+      "SEO optimization",
+      "Image optimization"
+    ],
+
+    "benefits": [
+      "Performa lebih baik",
+      "SEO friendly",
+      "Fullstack capabilities",
+      "Optimized production build",
+      "Fast deployment"
+    ],
+
+    "examples": [
+      "Company landing page",
+      "Blog platform",
+      "SEO website",
+      "E-commerce frontend"
+    ],
+
+    "routing_example": {
+      "title": "Next.js Route Example",
+      "code": "app/dashboard/page.js"
+    },
+
+    "api_route_example": {
+      "title": "API Route Example",
+      "code": "export async function GET() {\n  return Response.json({ success: true })\n}"
+    },
+
+    "real_world_use_cases": [
+      "SaaS platforms",
+      "Portfolio websites",
+      "Online stores",
+      "Content-heavy websites"
+    ]
+  },
+
+  "State_Management": {
+    "description": "State Management adalah cara mengelola data dan perubahan state dalam aplikasi frontend agar UI tetap sinkron dengan data aplikasi.",
+
+    "types": [
+      "Local component state",
+      "Global state",
+      "Server state",
+      "Shared state"
+    ],
+
+    "popular_tools": [
+      "React Context",
+      "Redux",
+      "Zustand",
+      "Recoil",
+      "Jotai"
+    ],
+
+    "importance": [
+      "Mengelola data aplikasi",
+      "Sinkronisasi UI",
+      "Mencegah prop drilling",
+      "Membantu scalability aplikasi"
+    ],
+
+    "examples": [
+      "Shopping cart state",
+      "Authentication state",
+      "Theme toggling",
+      "Realtime notifications"
+    ],
+
+    "redux_example": {
+      "title": "Redux State Example",
+      "code": "const store = configureStore({ reducer: counterReducer })"
+    },
+
+    "context_example": {
+      "title": "React Context Example",
+      "code": "const ThemeContext = createContext()"
+    }
+  },
+
+  "Tailwind_CSS": {
+    "description": "Tailwind CSS adalah utility-first CSS framework yang digunakan untuk membangun UI modern langsung dari class utility tanpa menulis CSS tradisional panjang.",
+
+    "features": [
+      "Utility-first styling",
+      "Responsive utilities",
+      "Dark mode support",
+      "Custom design system",
+      "Fast UI development",
+      "Highly customizable"
+    ],
+
+    "benefits": [
+      "Development lebih cepat",
+      "Desain konsisten",
+      "Mengurangi custom CSS",
+      "Mudah responsive",
+      "Class utility reusable"
+    ],
+
+    "examples": [
+      "Modern dashboard",
+      "Responsive landing page",
+      "Dark mode website",
+      "Admin panel UI"
+    ],
+
+    "code_example": {
+      "title": "Tailwind Styling Example",
+      "code": "<button class='bg-blue-500 text-white px-4 py-2 rounded-lg'>Click</button>"
+    },
+
+    "responsive_example": {
+      "title": "Responsive Tailwind Example",
+      "code": "<div class='grid md:grid-cols-2 lg:grid-cols-4 gap-4'></div>"
+    },
+
+    "real_world_use_cases": [
+      "Startup landing pages",
+      "Portfolio websites",
+      "Modern SaaS UI",
+      "Dashboard systems"
+    ]
+  }
+}

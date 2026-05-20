@@ -1,0 +1,88 @@
+{
+  "Agentic_Coding_and_MCP": {
+    "description": "Agentic Coding adalah paradigma AI di mana model tidak hanya menjawab pertanyaan, tetapi juga dapat melakukan tugas kompleks secara mandiri dengan serangkaian langkah (planning, execution, tool usage). MCP (Model Context Protocol) adalah standar untuk menghubungkan AI dengan tools, data, dan environment secara terstruktur.",
+
+    "main_goals": [
+      "Membuat AI bisa menjalankan tugas end-to-end",
+      "Menghubungkan AI dengan tools eksternal",
+      "Meningkatkan automation dalam coding",
+      "Membuat AI lebih seperti 'software engineer agent'"
+    ],
+
+    "core_concepts": [
+      "Planning (perencanaan langkah)",
+      "Tool usage (API, filesystem, browser)",
+      "Memory/context management",
+      "Autonomous execution loop"
+    ]
+  },
+
+  "Cline_Claude_Dev": {
+    "description": "Cline (formerly Claude Dev) adalah AI coding agent yang berjalan di VS Code dan menggunakan LLM untuk membantu menulis, mengedit, dan menjalankan kode secara interaktif dalam workflow development.",
+
+    "features": [
+      "VS Code integration",
+      "AI-powered coding agent",
+      "File-level editing automation",
+      "Command execution support"
+    ],
+
+    "use_cases": [
+      "Automated coding tasks",
+      "Refactoring project besar",
+      "Debugging assisted workflow"
+    ]
+  },
+
+  "Devin_OpenDevin": {
+    "description": "Devin dan OpenDevin adalah AI software engineering agents yang dirancang untuk menjalankan tugas software development secara semi-otonom atau otonom, termasuk coding, testing, dan deployment.",
+
+    "features": [
+      "Autonomous software engineering",
+      "Task planning & execution",
+      "Code generation end-to-end",
+      "Environment interaction"
+    ],
+
+    "use_cases": [
+      "Full project development",
+      "Automated bug fixing",
+      "Feature implementation tanpa human step-by-step"
+    ]
+  },
+
+  "AutoGPT_BabyAGI": {
+    "description": "AutoGPT dan BabyAGI adalah eksperimen awal AI agents yang mampu menjalankan tugas secara berulang dan otonom berdasarkan goal yang diberikan, dengan kemampuan planning dan self-loop execution.",
+
+    "features": [
+      "Goal-based task execution",
+      "Autonomous task chaining",
+      "Memory-based iteration",
+      "Self-improving workflow loop"
+    ],
+
+    "limitations": [
+      "Kurang stabil dibanding agent modern",
+      "Butuh kontrol manusia",
+      "Biaya compute tinggi"
+    ]
+  },
+
+  "Model_Context_Protocol_MCP": {
+    "description": "Model Context Protocol (MCP) adalah standar komunikasi yang memungkinkan AI model terhubung dengan berbagai tools, API, database, dan sistem eksternal secara konsisten dan terstruktur.",
+
+    "main_goals": [
+      "Standarisasi koneksi AI ke tools",
+      "Meningkatkan interoperability",
+      "Memudahkan agent access ke data eksternal",
+      "Mendukung AI ecosystem yang modular"
+    ],
+
+    "components": [
+      "Context provider",
+      "Tool interface",
+      "Memory layer",
+      "Execution bridge"
+    ]
+  }
+}

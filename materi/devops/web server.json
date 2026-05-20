@@ -1,0 +1,153 @@
+{
+  "Web_Servers": {
+    "description": "Web Server adalah software yang menerima request dari browser dan mengirimkan response berupa website, file, atau data.",
+    "main_goals": [
+      "Menjalankan website",
+      "Mengelola HTTP requests",
+      "Mengirim file ke browser",
+      "Reverse proxy",
+      "Load balancing"
+    ],
+    "important_concepts": [
+      {
+        "concept": "HTTP Request",
+        "function": "Permintaan dari browser ke server"
+      },
+      {
+        "concept": "Reverse Proxy",
+        "function": "Meneruskan request ke aplikasi backend"
+      },
+      {
+        "concept": "Virtual Hosts",
+        "function": "Menjalankan banyak domain"
+      },
+      {
+        "concept": "SSL/TLS",
+        "function": "Mengamankan koneksi HTTPS"
+      }
+    ],
+    "common_use_cases": [
+      "Hosting website",
+      "API gateway",
+      "Load balancing",
+      "Static file serving"
+    ],
+    "best_practices": [
+      "Gunakan HTTPS",
+      "Aktifkan compression",
+      "Gunakan caching",
+      "Monitoring server",
+      "Batasi akses sensitif"
+    ],
+    "example": {
+      "title": "Basic Web Server Flow",
+      "code": "Browser -> Web Server -> Application -> Response"
+    }
+  },
+
+  "Nginx": {
+    "description": "Nginx adalah web server modern yang ringan, cepat, dan sering digunakan sebagai reverse proxy dan load balancer.",
+    "official_website": "https://nginx.org",
+    "important_features": [
+      {
+        "feature": "Reverse Proxy",
+        "function": "Meneruskan request ke backend"
+      },
+      {
+        "feature": "Load Balancing",
+        "function": "Membagi traffic ke beberapa server"
+      },
+      {
+        "feature": "Static File Serving",
+        "function": "Melayani file statis dengan cepat"
+      },
+      {
+        "feature": "SSL Support",
+        "function": "Mendukung HTTPS"
+      }
+    ],
+    "advantages": [
+      "Performa tinggi",
+      "Resource ringan",
+      "Cocok untuk high traffic",
+      "Konfigurasi fleksibel"
+    ],
+    "important_commands": [
+      {
+        "command": "sudo systemctl start nginx",
+        "function": "Menjalankan Nginx"
+      },
+      {
+        "command": "sudo nginx -t",
+        "function": "Cek konfigurasi"
+      },
+      {
+        "command": "sudo systemctl restart nginx",
+        "function": "Restart Nginx"
+      }
+    ],
+    "best_practices": [
+      "Gunakan HTTPS",
+      "Aktifkan gzip compression",
+      "Gunakan reverse proxy",
+      "Pisahkan config berdasarkan domain"
+    ],
+    "example": {
+      "title": "Basic Nginx Config",
+      "code": "server {\n  listen 80;\n  server_name example.com;\n\n  location / {\n    proxy_pass http://localhost:3000;\n  }\n}"
+    }
+  },
+
+  "Apache": {
+    "description": "Apache HTTP Server adalah web server populer yang fleksibel dan banyak digunakan untuk hosting website.",
+    "official_website": "https://httpd.apache.org",
+    "important_features": [
+      {
+        "feature": "Virtual Hosts",
+        "function": "Menjalankan banyak website"
+      },
+      {
+        "feature": "Module System",
+        "function": "Menambahkan fitur tambahan"
+      },
+      {
+        "feature": "SSL Support",
+        "function": "Mendukung HTTPS"
+      },
+      {
+        "feature": "Rewrite Rules",
+        "function": "Mengatur URL rewriting"
+      }
+    ],
+    "advantages": [
+      "Stabil dan populer",
+      "Banyak module",
+      "Dokumentasi lengkap",
+      "Kompatibel dengan banyak aplikasi"
+    ],
+    "important_commands": [
+      {
+        "command": "sudo systemctl start apache2",
+        "function": "Menjalankan Apache"
+      },
+      {
+        "command": "sudo apachectl configtest",
+        "function": "Cek konfigurasi"
+      },
+      {
+        "command": "sudo systemctl restart apache2",
+        "function": "Restart Apache"
+      }
+    ],
+    "best_practices": [
+      "Gunakan HTTPS",
+      "Nonaktifkan module tidak perlu",
+      "Gunakan virtual hosts",
+      "Update server secara rutin"
+    ],
+    "example": {
+      "title": "Basic Apache Virtual Host",
+      "code": "<VirtualHost *:80>\n  ServerName example.com\n  DocumentRoot /var/www/html\n</VirtualHost>"
+    }
+  }
+}

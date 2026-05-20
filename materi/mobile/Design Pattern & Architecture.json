@@ -1,0 +1,226 @@
+{
+  "Design_Pattern_and_Architecture": {
+    "description": "Design Pattern dan Software Architecture adalah cara menyusun kode dan struktur aplikasi agar lebih rapi, scalable, mudah dirawat, dan reusable.",
+    "main_goals": [
+      "Mempermudah maintenance aplikasi",
+      "Meningkatkan scalability",
+      "Memisahkan tanggung jawab kode",
+      "Mengurangi duplicated code",
+      "Membuat project lebih terstruktur"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Separation of Concerns",
+        "function": "Memisahkan tanggung jawab tiap bagian aplikasi"
+      },
+      {
+        "concept": "Reusable Components",
+        "function": "Komponen dapat digunakan ulang"
+      },
+      {
+        "concept": "Loose Coupling",
+        "function": "Mengurangi ketergantungan antar module"
+      },
+      {
+        "concept": "Maintainability",
+        "function": "Mempermudah perawatan aplikasi"
+      }
+    ],
+    "popular_patterns": [
+      "MVC",
+      "MVP",
+      "MVVM",
+      "Clean Architecture",
+      "Repository Pattern",
+      "Singleton Pattern"
+    ],
+    "advantages": [
+      "Kode lebih rapi",
+      "Mudah dikembangkan",
+      "Mudah testing",
+      "Mempermudah kolaborasi tim"
+    ],
+    "best_practices": [
+      "Pisahkan business logic",
+      "Gunakan naming konsisten",
+      "Jangan campur UI dan logic",
+      "Gunakan dependency injection"
+    ],
+    "example": {
+      "title": "Architecture Flow",
+      "code": "UI -> Business Logic -> Data Layer"
+    }
+  },
+
+  "MVC": {
+    "description": "MVC (Model View Controller) adalah arsitektur yang memisahkan data, tampilan, dan logic aplikasi.",
+    "important_components": [
+      {
+        "component": "Model",
+        "function": "Mengelola data dan database"
+      },
+      {
+        "component": "View",
+        "function": "Menampilkan UI"
+      },
+      {
+        "component": "Controller",
+        "function": "Menghubungkan Model dan View"
+      }
+    ],
+    "workflow": [
+      "User berinteraksi dengan View",
+      "Controller menerima request",
+      "Controller memproses data dari Model",
+      "View menampilkan hasil"
+    ],
+    "advantages": [
+      "Struktur sederhana",
+      "Mudah dipahami",
+      "Cocok untuk web development"
+    ],
+    "disadvantages": [
+      "Controller bisa terlalu besar",
+      "Kurang scalable untuk aplikasi kompleks"
+    ],
+    "best_practices": [
+      "Pisahkan controller berdasarkan fitur",
+      "Jangan letakkan business logic di view"
+    ],
+    "example": {
+      "title": "MVC Example",
+      "code": "User -> Controller -> Model -> View"
+    }
+  },
+
+  "MVP": {
+    "description": "MVP (Model View Presenter) adalah arsitektur yang memisahkan UI dan business logic menggunakan Presenter.",
+    "important_components": [
+      {
+        "component": "Model",
+        "function": "Mengelola data"
+      },
+      {
+        "component": "View",
+        "function": "Menampilkan UI"
+      },
+      {
+        "component": "Presenter",
+        "function": "Mengatur logic dan komunikasi"
+      }
+    ],
+    "workflow": [
+      "View menerima input user",
+      "Presenter memproses logic",
+      "Model menyediakan data",
+      "Presenter mengupdate View"
+    ],
+    "advantages": [
+      "UI dan logic lebih terpisah",
+      "Lebih mudah testing"
+    ],
+    "disadvantages": [
+      "Presenter bisa menjadi besar"
+    ],
+    "best_practices": [
+      "Gunakan interface antara View dan Presenter",
+      "Pisahkan logic berdasarkan fitur"
+    ],
+    "example": {
+      "title": "MVP Example",
+      "code": "View <-> Presenter <-> Model"
+    }
+  },
+
+  "MVVM": {
+    "description": "MVVM (Model View ViewModel) adalah arsitektur modern yang banyak digunakan di Android, iOS, Flutter, dan frontend frameworks.",
+    "important_components": [
+      {
+        "component": "Model",
+        "function": "Mengelola data"
+      },
+      {
+        "component": "View",
+        "function": "UI aplikasi"
+      },
+      {
+        "component": "ViewModel",
+        "function": "Mengelola state dan business logic"
+      }
+    ],
+    "workflow": [
+      "View menampilkan data dari ViewModel",
+      "ViewModel mengambil data dari Model",
+      "Perubahan data otomatis mengupdate View"
+    ],
+    "advantages": [
+      "Reactive UI",
+      "Mudah testing",
+      "Cocok untuk aplikasi modern",
+      "Memisahkan UI dan logic"
+    ],
+    "disadvantages": [
+      "Lebih kompleks untuk pemula"
+    ],
+    "best_practices": [
+      "Gunakan state management",
+      "Pisahkan ViewModel berdasarkan fitur",
+      "Gunakan dependency injection"
+    ],
+    "example": {
+      "title": "MVVM Example",
+      "code": "View <-> ViewModel <-> Model"
+    }
+  },
+
+  "Clean_Architecture": {
+    "description": "Clean Architecture adalah arsitektur software yang memisahkan aplikasi menjadi beberapa layer agar scalable dan mudah dirawat.",
+    "important_layers": [
+      {
+        "layer": "Presentation Layer",
+        "function": "UI dan state management"
+      },
+      {
+        "layer": "Domain Layer",
+        "function": "Business logic utama"
+      },
+      {
+        "layer": "Data Layer",
+        "function": "API, database, dan repository"
+      }
+    ],
+    "important_concepts": [
+      {
+        "concept": "Dependency Rule",
+        "function": "Layer luar bergantung ke layer dalam"
+      },
+      {
+        "concept": "Use Cases",
+        "function": "Logic bisnis aplikasi"
+      },
+      {
+        "concept": "Repository Pattern",
+        "function": "Abstraksi data source"
+      }
+    ],
+    "advantages": [
+      "Highly scalable",
+      "Mudah testing",
+      "Maintainable",
+      "Flexible"
+    ],
+    "disadvantages": [
+      "Struktur lebih kompleks",
+      "Butuh banyak boilerplate"
+    ],
+    "best_practices": [
+      "Pisahkan layer dengan jelas",
+      "Gunakan dependency injection",
+      "Gunakan repository abstraction"
+    ],
+    "example": {
+      "title": "Clean Architecture Flow",
+      "code": "UI -> Use Cases -> Repository -> Data Source"
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "Spreadsheets": {
+    "description": "Spreadsheet adalah aplikasi untuk mengelola, menghitung, dan menganalisis data berbentuk tabel.",
+    "main_goals": [
+      "Mengolah data",
+      "Membuat laporan",
+      "Perhitungan otomatis",
+      "Analisis data",
+      "Visualisasi data"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Cells",
+        "function": "Tempat penyimpanan data"
+      },
+      {
+        "concept": "Formula",
+        "function": "Perhitungan otomatis"
+      },
+      {
+        "concept": "Functions",
+        "function": "Operasi data siap pakai"
+      },
+      {
+        "concept": "Charts",
+        "function": "Visualisasi data"
+      }
+    ],
+    "advantages": [
+      "Perhitungan cepat",
+      "Visualisasi data",
+      "Mudah digunakan",
+      "Kolaborasi data"
+    ],
+    "best_practices": [
+      "Gunakan formula otomatis",
+      "Gunakan format tabel",
+      "Backup data penting",
+      "Gunakan validasi data"
+    ],
+    "example": {
+      "title": "Spreadsheet Formula",
+      "code": "=SUM(A1:A10)"
+    }
+  },
+
+  "Microsoft_Excel": {
+    "description": "Microsoft Excel adalah software spreadsheet populer untuk analisis data, laporan, dan perhitungan.",
+    "official_website": "https://www.microsoft.com/excel",
+    "important_features": [
+      {
+        "feature": "Formulas",
+        "function": "Perhitungan otomatis"
+      },
+      {
+        "feature": "Pivot Tables",
+        "function": "Analisis data cepat"
+      },
+      {
+        "feature": "Charts",
+        "function": "Visualisasi data"
+      },
+      {
+        "feature": "Macros",
+        "function": "Automasi pekerjaan"
+      }
+    ],
+    "common_use_cases": [
+      "Finance",
+      "Data analysis",
+      "Reports",
+      "Inventory"
+    ],
+    "advantages": [
+      "Powerful analysis tools",
+      "Banyak formula",
+      "Visualisasi lengkap"
+    ],
+    "best_practices": [
+      "Gunakan named ranges",
+      "Gunakan pivot table",
+      "Pisahkan raw data dan report"
+    ],
+    "example": {
+      "title": "Excel Formula Example",
+      "code": "=AVERAGE(B1:B10)"
+    }
+  },
+
+  "Google_Sheets": {
+    "description": "Google Sheets adalah spreadsheet berbasis cloud dari Google untuk kolaborasi realtime.",
+    "official_website": "https://sheets.google.com",
+    "important_features": [
+      {
+        "feature": "Realtime Collaboration",
+        "function": "Edit bersama secara realtime"
+      },
+      {
+        "feature": "Cloud Storage",
+        "function": "Data tersimpan online"
+      },
+      {
+        "feature": "Functions",
+        "function": "Perhitungan otomatis"
+      },
+      {
+        "feature": "Google Integration",
+        "function": "Integrasi dengan Google services"
+      }
+    ],
+    "advantages": [
+      "Gratis",
+      "Realtime collaboration",
+      "Cloud based",
+      "Auto save"
+    ],
+    "best_practices": [
+      "Gunakan sharing permissions",
+      "Gunakan protected ranges",
+      "Gunakan conditional formatting"
+    ],
+    "example": {
+      "title": "Google Sheets Formula",
+      "code": "=COUNTIF(A1:A10,\">50\")"
+    }
+  }
+}

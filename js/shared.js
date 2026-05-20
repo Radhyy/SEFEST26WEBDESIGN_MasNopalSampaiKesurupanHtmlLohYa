@@ -419,7 +419,7 @@ const NAVBAR_HTML = `
       </div>
     </div>
     <div class="w-full lg:hidden">
-      <div class="flex w-full items-center justify-between rounded-full border border-[#dbe3f8]/80 bg-white/85 px-3 py-2 shadow-[0_10px_26px_rgba(47,91,211,0.10)] backdrop-blur dark:border-slate-700/80 dark:bg-slate-900/85">
+      <div id="navbar-pill-mobile" class="flex w-full items-center justify-between rounded-full border border-[#dbe3f8]/80 bg-white/85 px-3 py-2 shadow-[0_10px_26px_rgba(47,91,211,0.10)] backdrop-blur dark:border-slate-700/80 dark:bg-slate-900/85" style="transition: border-radius 0.75s cubic-bezier(0.25,0.46,0.45,0.94), padding 0.75s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.75s cubic-bezier(0.25,0.46,0.45,0.94), border-color 0.75s cubic-bezier(0.25,0.46,0.45,0.94), background 0.75s cubic-bezier(0.25,0.46,0.45,0.94);">
         <a href="/" class="inline-flex min-h-10 items-center font-display text-[1.3rem] font-bold tracking-[-0.02em]">Work<span class="text-brand-500">Sim</span></a>
         <div class="flex items-center gap-2">
           <button id="themeToggleMobile" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#b8cdfa] bg-[#e3edff] text-brand-500 dark:border-slate-500 dark:bg-slate-900 dark:text-[#ffd166]" aria-label="Ganti tema tampilan WorkSim antara mode terang dan gelap" aria-pressed="false">
@@ -625,6 +625,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function applyScrollState(scrolled) {
     if (!siteHeader || !navbarPill) return;
+    const navbarPillMobile = document.getElementById('navbar-pill-mobile');
+    const navbarOuter = document.getElementById('navbar-outer');
     const isDark = html.classList.contains('dark');
 
     if (scrolled) {
@@ -639,6 +641,15 @@ document.addEventListener("DOMContentLoaded", () => {
       navbarPill.style.boxShadow    = 'none';
       navbarPill.style.padding      = '0.5rem 1.5rem';
       navbarPill.style.background   = 'transparent';
+
+      if (navbarOuter) navbarOuter.style.minHeight = '3.25rem';
+      if (navbarPillMobile) {
+        navbarPillMobile.style.borderRadius = '0';
+        navbarPillMobile.style.borderColor  = 'transparent';
+        navbarPillMobile.style.boxShadow    = 'none';
+        navbarPillMobile.style.padding      = '0.35rem 1rem';
+        navbarPillMobile.style.background   = 'transparent';
+      }
     } else {
       // ── Top: capsule pill ──
       siteHeader.style.padding         = '0 1vw';
@@ -650,7 +661,16 @@ document.addEventListener("DOMContentLoaded", () => {
       navbarPill.style.borderColor  = isDark ? 'rgb(71,85,105)' : '#dbe3f8';
       navbarPill.style.boxShadow    = '0 10px 26px rgba(47,91,211,0.14)';
       navbarPill.style.padding      = '0.5rem';
-      navbarPill.style.background   = isDark ? '#111c2f' : '#f7faff';
+      navbarPill.style.background   = isDark ? 'rgba(15,23,42,0.85)' : '#f7faff';
+
+      if (navbarOuter) navbarOuter.style.minHeight = '';
+      if (navbarPillMobile) {
+        navbarPillMobile.style.borderRadius = '9999px';
+        navbarPillMobile.style.borderColor  = isDark ? 'rgba(51,65,85,0.8)' : 'rgba(219,227,248,0.8)';
+        navbarPillMobile.style.boxShadow    = '0 10px 26px rgba(47,91,211,0.10)';
+        navbarPillMobile.style.padding      = '0.5rem 0.75rem';
+        navbarPillMobile.style.background   = isDark ? 'rgba(15,23,42,0.85)' : 'rgba(255,255,255,0.85)';
+      }
     }
   }
 

@@ -1,0 +1,181 @@
+{
+  "Cloud_Providers": {
+    "description": "Cloud Providers adalah perusahaan yang menyediakan layanan cloud computing seperti server, database, storage, networking, dan AI services melalui internet.",
+    "main_goals": [
+      "Hosting aplikasi",
+      "Scalable infrastructure",
+      "Cloud storage",
+      "Managed services",
+      "Global deployment"
+    ],
+    "cloud_service_models": [
+      {
+        "model": "IaaS",
+        "description": "Infrastructure as a Service"
+      },
+      {
+        "model": "PaaS",
+        "description": "Platform as a Service"
+      },
+      {
+        "model": "SaaS",
+        "description": "Software as a Service"
+      }
+    ],
+    "important_concepts": [
+      {
+        "concept": "Virtual Machine",
+        "function": "Server virtual di cloud"
+      },
+      {
+        "concept": "Object Storage",
+        "function": "Penyimpanan file cloud"
+      },
+      {
+        "concept": "Auto Scaling",
+        "function": "Menambah resource otomatis"
+      },
+      {
+        "concept": "Regions",
+        "function": "Lokasi data center cloud"
+      }
+    ],
+    "best_practices": [
+      "Gunakan least privilege access",
+      "Monitoring resource usage",
+      "Gunakan backup",
+      "Pisahkan production dan staging",
+      "Gunakan infrastructure as code"
+    ],
+    "example": {
+      "title": "Cloud Deployment Flow",
+      "code": "Application -> Cloud Server -> Database -> Users"
+    }
+  },
+
+  "AWS": {
+    "description": "AWS (Amazon Web Services) adalah cloud provider terbesar yang menyediakan layanan cloud computing lengkap.",
+    "official_website": "https://aws.amazon.com",
+    "important_services": [
+      {
+        "service": "EC2",
+        "function": "Virtual server cloud"
+      },
+      {
+        "service": "S3",
+        "function": "Object storage"
+      },
+      {
+        "service": "RDS",
+        "function": "Managed database"
+      },
+      {
+        "service": "Lambda",
+        "function": "Serverless functions"
+      },
+      {
+        "service": "EKS",
+        "function": "Managed Kubernetes"
+      }
+    ],
+    "advantages": [
+      "Ekosistem terbesar",
+      "Global infrastructure",
+      "Banyak managed services",
+      "Scalable"
+    ],
+    "best_practices": [
+      "Gunakan IAM roles",
+      "Aktifkan monitoring",
+      "Gunakan multi-region backup"
+    ],
+    "example": {
+      "title": "AWS CLI Example",
+      "code": "aws s3 ls"
+    }
+  },
+
+  "Google_Cloud": {
+    "description": "Google Cloud adalah cloud computing platform dari Google yang fokus pada scalability, AI, dan data services.",
+    "official_website": "https://cloud.google.com",
+    "important_services": [
+      {
+        "service": "Compute Engine",
+        "function": "Virtual machine"
+      },
+      {
+        "service": "Cloud Storage",
+        "function": "Cloud file storage"
+      },
+      {
+        "service": "Cloud Run",
+        "function": "Serverless containers"
+      },
+      {
+        "service": "BigQuery",
+        "function": "Data analytics"
+      },
+      {
+        "service": "GKE",
+        "function": "Managed Kubernetes"
+      }
+    ],
+    "advantages": [
+      "Kuat di AI dan data",
+      "Integrasi Google ecosystem",
+      "Kubernetes support bagus",
+      "Global network cepat"
+    ],
+    "best_practices": [
+      "Gunakan IAM permissions",
+      "Gunakan billing alerts",
+      "Gunakan managed services"
+    ],
+    "example": {
+      "title": "Google Cloud CLI Example",
+      "code": "gcloud compute instances list"
+    }
+  },
+
+  "Azure": {
+    "description": "Azure adalah cloud computing platform dari Microsoft yang menyediakan layanan cloud enterprise dan hybrid cloud.",
+    "official_website": "https://azure.microsoft.com",
+    "important_services": [
+      {
+        "service": "Virtual Machines",
+        "function": "Cloud virtual server"
+      },
+      {
+        "service": "Blob Storage",
+        "function": "Object storage"
+      },
+      {
+        "service": "Azure Functions",
+        "function": "Serverless computing"
+      },
+      {
+        "service": "AKS",
+        "function": "Managed Kubernetes"
+      },
+      {
+        "service": "Azure SQL",
+        "function": "Managed SQL database"
+      }
+    ],
+    "advantages": [
+      "Enterprise integration",
+      "Hybrid cloud support",
+      "Microsoft ecosystem",
+      "Strong security features"
+    ],
+    "best_practices": [
+      "Gunakan resource groups",
+      "Gunakan Azure Monitor",
+      "Gunakan managed identity"
+    ],
+    "example": {
+      "title": "Azure CLI Example",
+      "code": "az vm list"
+    }
+  }
+}

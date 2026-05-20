@@ -1,0 +1,58 @@
+{
+  "Unit_Testing": {
+    "description": "Unit testing adalah pengujian bagian terkecil dari aplikasi seperti function atau method secara terpisah.",
+
+    "main_goals": [
+      "Menguji fungsi kecil",
+      "Memastikan logic benar",
+      "Deteksi bug awal",
+      "Mempermudah refactoring"
+    ],
+
+    "example": {
+      "code": "function sum(a, b) {\n  return a + b;\n}\n\nexpect(sum(2, 3)).toBe(5);"
+    }
+  },
+
+  "Jest": {
+    "description": "Jest adalah testing framework JavaScript untuk unit testing dan mocking.",
+
+    "features": [
+      "Zero config",
+      "Mocking built-in",
+      "Snapshot testing",
+      "Fast execution"
+    ],
+
+    "use_cases": [
+      "Unit testing",
+      "React testing",
+      "API testing"
+    ],
+
+    "example": {
+      "code": "test('add', () => {\n  expect(1 + 2).toBe(3);\n});"
+    }
+  },
+
+  "Vitest": {
+    "description": "Vitest adalah testing framework modern yang cepat dan berbasis Vite ecosystem.",
+
+    "features": [
+      "Sangat cepat",
+      "Vite integration",
+      "Jest-like API",
+      "ESM support"
+    ],
+
+    "use_cases": [
+      "Frontend testing",
+      "Vite projects",
+      "Component testing"
+    ],
+
+    "example": {
+      "code": "import { test, expect } from 'vitest';\n\ntest('math', () => {\n  expect(2 + 2).toBe(4);\n});"
+    }
+  }
+}

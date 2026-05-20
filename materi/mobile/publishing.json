@@ -1,0 +1,257 @@
+{
+  "CI_CD_and_Publishing": {
+    "description": "CI/CD dan Publishing dalam mobile development adalah proses automasi build, testing, signing, dan distribusi aplikasi ke platform seperti Google Play Store dan Apple App Store.",
+    "main_goals": [
+      "Automasi build aplikasi",
+      "Automasi testing",
+      "Mempermudah deployment",
+      "Mempercepat release aplikasi",
+      "Mengurangi human error"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Continuous Integration",
+        "function": "Automasi build dan testing setiap perubahan code"
+      },
+      {
+        "concept": "Continuous Deployment",
+        "function": "Automasi deployment aplikasi"
+      },
+      {
+        "concept": "Code Signing",
+        "function": "Menandatangani aplikasi sebelum publish"
+      },
+      {
+        "concept": "Release Pipeline",
+        "function": "Alur automation build hingga publishing"
+      }
+    ],
+    "common_pipeline_steps": [
+      "Install Dependencies",
+      "Run Linter",
+      "Run Tests",
+      "Build APK/AAB/IPA",
+      "Code Signing",
+      "Upload to Store"
+    ],
+    "advantages": [
+      "Release lebih cepat",
+      "Build lebih konsisten",
+      "Mengurangi kesalahan manual",
+      "Testing otomatis",
+      "Deployment lebih aman"
+    ],
+    "best_practices": [
+      "Gunakan automated testing",
+      "Simpan secrets dengan aman",
+      "Gunakan semantic versioning",
+      "Pisahkan staging dan production",
+      "Gunakan rollback strategy"
+    ],
+    "example": {
+      "title": "CI/CD Workflow",
+      "code": "Push Code -> Run Tests -> Build App -> Publish to Store"
+    }
+  },
+
+  "Google_Play_Store": {
+    "description": "Google Play Store adalah platform distribusi aplikasi Android resmi dari Google.",
+    "official_website": "https://play.google.com/console",
+    "important_requirements": [
+      {
+        "requirement": "Android App Bundle (AAB)",
+        "function": "Format release Android modern"
+      },
+      {
+        "requirement": "Signing Key",
+        "function": "Menandatangani aplikasi"
+      },
+      {
+        "requirement": "Store Listing",
+        "function": "Deskripsi, screenshot, dan informasi aplikasi"
+      }
+    ],
+    "publishing_steps": [
+      "Build release app",
+      "Generate signed AAB",
+      "Upload ke Play Console",
+      "Isi store listing",
+      "Submit review"
+    ],
+    "advantages": [
+      "Distribusi global Android",
+      "Analytics dan crash reports",
+      "Internal testing support"
+    ],
+    "best_practices": [
+      "Gunakan AAB",
+      "Gunakan internal testing",
+      "Optimalkan metadata aplikasi"
+    ],
+    "example": {
+      "title": "Flutter Android Release",
+      "code": "flutter build appbundle"
+    }
+  },
+
+  "Apple_App_Store": {
+    "description": "Apple App Store adalah platform distribusi aplikasi iOS resmi dari Apple.",
+    "official_website": "https://developer.apple.com/app-store",
+    "important_requirements": [
+      {
+        "requirement": "IPA File",
+        "function": "Format release aplikasi iOS"
+      },
+      {
+        "requirement": "Apple Developer Account",
+        "function": "Akun developer Apple"
+      },
+      {
+        "requirement": "Certificates & Provisioning",
+        "function": "Code signing aplikasi"
+      }
+    ],
+    "publishing_steps": [
+      "Build iOS release",
+      "Code signing",
+      "Upload via Xcode atau Fastlane",
+      "Isi App Store listing",
+      "Submit review"
+    ],
+    "advantages": [
+      "Distribusi global iOS",
+      "Keamanan tinggi",
+      "Ekosistem Apple"
+    ],
+    "best_practices": [
+      "Gunakan TestFlight",
+      "Ikuti App Store Guidelines",
+      "Gunakan automatic signing"
+    ],
+    "example": {
+      "title": "Flutter iOS Release",
+      "code": "flutter build ios"
+    }
+  },
+
+  "Fastlane": {
+    "description": "Fastlane adalah automation tool untuk mobile CI/CD yang digunakan untuk build, signing, testing, dan publishing aplikasi Android maupun iOS.",
+    "official_website": "https://fastlane.tools",
+    "important_features": [
+      {
+        "feature": "Automated Builds",
+        "function": "Build aplikasi otomatis"
+      },
+      {
+        "feature": "Code Signing",
+        "function": "Mengelola certificate dan signing"
+      },
+      {
+        "feature": "Store Upload",
+        "function": "Upload otomatis ke Play Store dan App Store"
+      },
+      {
+        "feature": "Beta Distribution",
+        "function": "Distribusi beta testing"
+      }
+    ],
+    "advantages": [
+      "Mengurangi proses manual",
+      "Publishing lebih cepat",
+      "Automasi mobile workflow"
+    ],
+    "best_practices": [
+      "Gunakan environment variables",
+      "Pisahkan lane release dan beta",
+      "Simpan credentials dengan aman"
+    ],
+    "important_commands": [
+      {
+        "command": "fastlane beta",
+        "function": "Build dan upload beta app"
+      },
+      {
+        "command": "fastlane release",
+        "function": "Publish release app"
+      }
+    ],
+    "example": {
+      "title": "Fastlane Lane Example",
+      "code": "lane :release do\n  build_app\n  upload_to_app_store\nend"
+    }
+  },
+
+  "GitHub_Actions": {
+    "description": "GitHub Actions adalah platform CI/CD dari GitHub untuk automasi testing, build, dan deployment aplikasi.",
+    "official_website": "https://github.com/features/actions",
+    "important_features": [
+      {
+        "feature": "Workflow Automation",
+        "function": "Automasi pipeline development"
+      },
+      {
+        "feature": "Mobile CI/CD",
+        "function": "Build Android dan iOS otomatis"
+      },
+      {
+        "feature": "Secrets Management",
+        "function": "Menyimpan credentials dengan aman"
+      },
+      {
+        "feature": "Integration with GitHub",
+        "function": "Terintegrasi langsung dengan repository"
+      }
+    ],
+    "advantages": [
+      "Gratis untuk project tertentu",
+      "Terintegrasi GitHub",
+      "Support automation mobile apps"
+    ],
+    "best_practices": [
+      "Gunakan reusable workflows",
+      "Gunakan GitHub Secrets",
+      "Pisahkan workflow release"
+    ],
+    "example": {
+      "title": "GitHub Actions Workflow",
+      "code": "name: Build Flutter\non: [push]\njobs:\n  build:\n    runs-on: ubuntu-latest"
+    }
+  },
+
+  "Codemagic": {
+    "description": "Codemagic adalah platform CI/CD khusus mobile apps yang populer untuk Flutter, Android, dan iOS.",
+    "official_website": "https://codemagic.io",
+    "important_features": [
+      {
+        "feature": "Flutter Optimized",
+        "function": "CI/CD khusus Flutter"
+      },
+      {
+        "feature": "Automated Publishing",
+        "function": "Publish otomatis ke store"
+      },
+      {
+        "feature": "Code Signing Support",
+        "function": "Mengelola signing Android dan iOS"
+      },
+      {
+        "feature": "Cloud Builds",
+        "function": "Build aplikasi di cloud"
+      }
+    ],
+    "advantages": [
+      "Setup mudah",
+      "Cocok Flutter",
+      "Support Android dan iOS"
+    ],
+    "best_practices": [
+      "Gunakan environment variables",
+      "Gunakan automated testing",
+      "Pisahkan workflow release"
+    ],
+    "example": {
+      "title": "Codemagic Workflow Example",
+      "code": "workflows:\n  flutter-app:\n    scripts:\n      - flutter build apk"
+    }
+  }
+}

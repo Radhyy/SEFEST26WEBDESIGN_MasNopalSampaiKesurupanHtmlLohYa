@@ -1,0 +1,98 @@
+{
+  "Data_Processing_and_Visualization": {
+    "description": "Proses mengubah data mentah menjadi data bersih, terstruktur, dan siap dianalisis serta menampilkannya dalam bentuk visual seperti grafik dan chart.",
+
+    "core_concepts": {
+      "data_collection": "Mengambil data dari sumber seperti database, API, atau file",
+      "data_cleaning": "Menghapus data kosong, error, atau duplikat",
+      "data_transformation": "Mengubah format data agar siap digunakan",
+      "data_analysis": "Proses mencari pola dari data",
+      "data_visualization": "Menampilkan data dalam bentuk grafik"
+    },
+
+    "Data_Wrangling": {
+      "description": "Data wrangling adalah proses penting dalam data science untuk membersihkan dan menyiapkan data mentah agar bisa dianalisis.",
+
+      "steps": [
+        "Collect data from source",
+        "Remove missing values",
+        "Fix inconsistent data",
+        "Transform format data",
+        "Validate cleaned data"
+      ],
+
+      "tools": [
+        "Pandas (Python)",
+        "dplyr (R)",
+        "Excel"
+      ],
+
+      "importance": [
+        "Data tidak pernah langsung bersih",
+        "Analisis akan salah jika data kotor",
+        "Menentukan kualitas hasil analisis"
+      ],
+
+      "example": {
+        "title": "Data Wrangling Flow",
+        "code": "Raw Data -> Cleaning -> Transformation -> Analysis Ready"
+      }
+    },
+
+    "Matplotlib": {
+      "description": "Matplotlib adalah library Python untuk membuat visualisasi data seperti grafik garis, batang, scatter plot, dan lainnya.",
+
+      "official_website": "https://matplotlib.org",
+
+      "features": [
+        "Line plot",
+        "Bar chart",
+        "Scatter plot",
+        "Histogram",
+        "Custom visualization"
+      ],
+
+      "use_cases": [
+        "Data analysis",
+        "Scientific research",
+        "Machine learning visualization",
+        "Reporting"
+      ],
+
+      "example": {
+        "title": "Matplotlib Code",
+        "code": "import matplotlib.pyplot as plt\nplt.plot([1,2,3],[4,5,6])\nplt.show()"
+      }
+    },
+
+    "Seaborn": {
+      "description": "Seaborn adalah library visualisasi data berbasis Matplotlib yang lebih fokus pada statistik dan tampilan yang lebih estetis.",
+
+      "official_website": "https://seaborn.pydata.org",
+
+      "features": [
+        "Statistical visualization",
+        "Heatmap",
+        "Distribution plot",
+        "Correlation visualization"
+      ],
+
+      "use_cases": [
+        "Exploratory Data Analysis (EDA)",
+        "Statistical analysis",
+        "Data insights"
+      ],
+
+      "advantages_over_matplotlib": [
+        "Lebih mudah digunakan",
+        "Tampilan lebih bagus",
+        "Built-in statistical plots"
+      ],
+
+      "example": {
+        "title": "Seaborn Code",
+        "code": "import seaborn as sns\nsns.histplot([1,2,2,3,4,5])"
+      }
+    }
+  }
+}

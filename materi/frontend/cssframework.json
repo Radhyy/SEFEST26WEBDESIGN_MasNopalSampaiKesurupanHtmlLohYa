@@ -1,0 +1,174 @@
+{
+  "CSS_Frameworks": {
+    "description": "CSS Framework adalah kumpulan file CSS siap pakai yang membantu developer membuat tampilan website lebih cepat, konsisten, dan responsif.",
+    "functions": [
+      "Mempercepat pembuatan UI",
+      "Menyediakan komponen siap pakai",
+      "Membantu responsive design",
+      "Mengurangi penulisan CSS manual",
+      "Membuat desain lebih konsisten"
+    ],
+    "popular_frameworks": [
+      "Tailwind CSS",
+      "Bootstrap",
+      "Bulma",
+      "Foundation",
+      "Materialize CSS"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Utility Classes",
+        "function": "Class kecil untuk styling langsung"
+      },
+      {
+        "concept": "Responsive Utilities",
+        "function": "Class responsive berdasarkan ukuran layar"
+      },
+      {
+        "concept": "Components",
+        "function": "Elemen UI siap pakai"
+      },
+      {
+        "concept": "Customization",
+        "function": "Mengubah tema dan konfigurasi framework"
+      }
+    ],
+    "advantages": [
+      "Development lebih cepat",
+      "Desain lebih konsisten",
+      "Responsive bawaan",
+      "Mengurangi CSS manual"
+    ],
+    "disadvantages": [
+      "Ukuran file bisa besar",
+      "Tampilan kadang mirip website lain",
+      "Perlu belajar class framework"
+    ],
+    "best_practices": [
+      "Gunakan class seperlunya",
+      "Pisahkan custom CSS jika diperlukan",
+      "Gunakan responsive utilities",
+      "Gunakan component reusable"
+    ],
+    "example": {
+      "title": "Basic CSS Framework Usage",
+      "code": "<button class=\"btn btn-primary\">Click Me</button>"
+    }
+  },
+
+  "Tailwind_CSS": {
+    "description": "Tailwind CSS adalah utility-first CSS framework yang menyediakan class kecil untuk membuat desain langsung di HTML.",
+    "official_website": "https://tailwindcss.com",
+    "important_features": [
+      {
+        "feature": "Utility First",
+        "function": "Styling menggunakan utility classes"
+      },
+      {
+        "feature": "Responsive Design",
+        "function": "Responsive class bawaan"
+      },
+      {
+        "feature": "Dark Mode",
+        "function": "Support mode gelap"
+      },
+      {
+        "feature": "Customization",
+        "function": "Konfigurasi tema melalui tailwind.config.js"
+      },
+      {
+        "feature": "Reusable Components",
+        "function": "Membuat komponen UI lebih cepat"
+      }
+    ],
+    "important_classes": [
+      {
+        "class": "flex",
+        "function": "Mengaktifkan flexbox"
+      },
+      {
+        "class": "grid",
+        "function": "Mengaktifkan grid layout"
+      },
+      {
+        "class": "p-4",
+        "function": "Padding"
+      },
+      {
+        "class": "m-4",
+        "function": "Margin"
+      },
+      {
+        "class": "bg-blue-500",
+        "function": "Background warna biru"
+      },
+      {
+        "class": "text-white",
+        "function": "Warna teks putih"
+      },
+      {
+        "class": "rounded-lg",
+        "function": "Border radius"
+      },
+      {
+        "class": "shadow-lg",
+        "function": "Shadow besar"
+      }
+    ],
+    "responsive_breakpoints": [
+      {
+        "prefix": "sm:",
+        "size": "640px"
+      },
+      {
+        "prefix": "md:",
+        "size": "768px"
+      },
+      {
+        "prefix": "lg:",
+        "size": "1024px"
+      },
+      {
+        "prefix": "xl:",
+        "size": "1280px"
+      }
+    ],
+    "advantages": [
+      "Sangat fleksibel",
+      "Development cepat",
+      "Ukuran CSS lebih kecil dengan purge",
+      "Mudah membuat custom design",
+      "Responsive utilities lengkap"
+    ],
+    "disadvantages": [
+      "Class HTML bisa panjang",
+      "Awal belajar cukup membingungkan",
+      "Perlu konfigurasi build tools"
+    ],
+    "installation_methods": [
+      {
+        "method": "CDN",
+        "description": "Cara cepat menggunakan Tailwind"
+      },
+      {
+        "method": "npm",
+        "description": "Instalasi untuk project modern"
+      },
+      {
+        "method": "Framework Integration",
+        "description": "Digunakan bersama React, Vue, Next.js, dll"
+      }
+    ],
+    "best_practices": [
+      "Gunakan component reusable",
+      "Gunakan responsive class",
+      "Gunakan tailwind.config.js untuk custom theme",
+      "Hindari class terlalu panjang",
+      "Gabungkan dengan framework frontend jika perlu"
+    ],
+    "example": {
+      "title": "Tailwind CSS Card Example",
+      "code": "<!DOCTYPE html>\n<html>\n<head>\n  <script src=\"https://cdn.tailwindcss.com\"></script>\n</head>\n<body class=\"bg-gray-100 flex justify-center items-center h-screen\">\n\n  <div class=\"bg-white p-6 rounded-xl shadow-lg w-80\">\n    <h1 class=\"text-2xl font-bold mb-4\">Tailwind Card</h1>\n    <p class=\"text-gray-600 mb-4\">\n      Ini contoh card menggunakan Tailwind CSS.\n    </p>\n    <button class=\"bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600\">\n      Klik Saya\n    </button>\n  </div>\n\n</body>\n</html>"
+    }
+  }
+}

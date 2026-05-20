@@ -1,0 +1,51 @@
+{
+  "Testing_Methodologies": {
+    "description": "Testing methodologies adalah pendekatan atau strategi dalam melakukan pengujian software untuk memastikan kualitas, keandalan, dan kesesuaian aplikasi dengan kebutuhan bisnis.",
+
+    "TDD": {
+      "full_name": "Test-Driven Development",
+
+      "description": "TDD adalah metode pengembangan software di mana test ditulis terlebih dahulu sebelum kode utama dibuat. Developer menulis test yang gagal, kemudian membuat kode agar test tersebut berhasil, lalu melakukan refactoring.",
+
+      "cycle": [
+        "Red: Tulis test yang gagal",
+        "Green: Buat kode agar test lolos",
+        "Refactor: Perbaiki struktur kode tanpa mengubah hasil"
+      ],
+
+      "main_goals": [
+        "Menghasilkan kode yang lebih bersih",
+        "Meningkatkan test coverage",
+        "Mengurangi bug sejak awal",
+        "Memperjelas requirement"
+      ],
+
+      "example": {
+        "title": "TDD Flow",
+        "code": "Write Test -> Fail -> Write Code -> Pass -> Refactor"
+      }
+    },
+
+    "BDD": {
+      "full_name": "Behavior-Driven Development",
+
+      "description": "BDD adalah metode pengembangan software yang berfokus pada perilaku sistem dari sudut pandang user. BDD menggunakan bahasa natural (seperti Gherkin) agar developer, QA, dan non-teknis bisa memahami requirement dengan mudah.",
+
+      "syntax_example": {
+        "given_when_then": "Given user login page\nWhen user enters valid credentials\nThen user should be redirected to dashboard"
+      },
+
+      "main_goals": [
+        "Menyamakan pemahaman antara developer dan bisnis",
+        "Menjelaskan behavior aplikasi secara jelas",
+        "Meningkatkan kolaborasi tim",
+        "Mengurangi miskomunikasi requirement"
+      ],
+
+      "example": {
+        "title": "BDD Scenario",
+        "code": "Scenario: User login\nGiven user is on login page\nWhen user enters valid email and password\nThen user is redirected to dashboard"
+      }
+    }
+  }
+}

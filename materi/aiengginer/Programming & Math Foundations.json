@@ -1,0 +1,104 @@
+{
+  "Python_for_AI": {
+    "description": "Python for AI adalah penggunaan bahasa pemrograman Python sebagai fondasi utama dalam pengembangan Artificial Intelligence, Machine Learning, dan Data Science. Python dipilih karena sintaks yang sederhana, ekosistem library yang sangat besar, serta dukungan kuat untuk komputasi numerik dan scientific computing.",
+
+    "main_goals": [
+      "Membangun model AI dan machine learning",
+      "Mengolah data dalam skala besar",
+      "Membuat pipeline data science end-to-end",
+      "Mendukung eksperimen AI dengan cepat",
+      "Mengintegrasikan algoritma matematika ke dalam kode"
+    ],
+
+    "core_libraries_ecosystem": [
+      "NumPy (komputasi numerik)",
+      "Pandas (data manipulation)",
+      "Matplotlib (visualisasi data)",
+      "Seaborn (statistical visualization)",
+      "Scikit-learn (machine learning)",
+      "TensorFlow / PyTorch (deep learning)"
+    ]
+  },
+
+  "Programming_and_Math_Foundations": {
+    "description": "Programming & Math Foundations adalah dasar penting dalam AI yang menggabungkan pemahaman logika pemrograman dengan konsep matematika untuk membangun algoritma yang efisien dan akurat.",
+
+    "programming_fundamentals": [
+      "Variables & data types",
+      "Control flow (if, loops)",
+      "Functions & modular programming",
+      "Data structures (list, dict, array)",
+      "Algorithmic thinking"
+    ],
+
+    "math_fundamentals": [
+      "Algebra dasar",
+      "Logika matematika",
+      "Fungsi dan relasi",
+      "Notasi matematis untuk algoritma"
+    ],
+
+    "importance": [
+      "Membangun dasar logika AI",
+      "Memahami cara kerja algoritma",
+      "Meningkatkan kemampuan problem solving"
+    ]
+  },
+
+  "Linear_Algebra": {
+    "description": "Linear Algebra adalah cabang matematika yang mempelajari vektor, matriks, dan transformasi linear. Ini adalah fondasi utama dalam machine learning dan deep learning karena hampir semua model AI bekerja dengan operasi matriks.",
+
+    "core_concepts": [
+      "Vectors (vektor)",
+      "Matrices (matriks)",
+      "Matrix multiplication",
+      "Dot product",
+      "Eigenvalues & eigenvectors"
+    ],
+
+    "applications_in_AI": [
+      "Neural networks computation",
+      "Image processing",
+      "Dimensionality reduction (PCA)",
+      "Data transformation"
+    ]
+  },
+
+  "Calculus": {
+    "description": "Calculus adalah cabang matematika yang mempelajari perubahan (derivative) dan akumulasi (integral). Dalam AI, calculus digunakan untuk mengoptimasi model dan memahami bagaimana error berubah selama training.",
+
+    "core_concepts": [
+      "Derivatives (turunan)",
+      "Gradients",
+      "Partial derivatives",
+      "Integrals",
+      "Optimization"
+    ],
+
+    "applications_in_AI": [
+      "Gradient descent optimization",
+      "Loss function minimization",
+      "Training neural networks",
+      "Backpropagation"
+    ]
+  },
+
+  "Probability_and_Statistics": {
+    "description": "Probability & Statistics adalah dasar untuk memahami ketidakpastian, distribusi data, dan pengambilan keputusan dalam machine learning.",
+
+    "core_concepts": [
+      "Probability theory",
+      "Distributions (normal, binomial, etc)",
+      "Mean, median, variance",
+      "Bayesian thinking",
+      "Hypothesis testing"
+    ],
+
+    "applications_in_AI": [
+      "Predictive modeling",
+      "Classification problems",
+      "Risk analysis",
+      "Data inference"
+    ]
+  }
+}

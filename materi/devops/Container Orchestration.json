@@ -1,0 +1,166 @@
+{
+  "Container_Orchestration": {
+    "description": "Container Orchestration adalah proses mengelola banyak container secara otomatis, termasuk deployment, scaling, networking, monitoring, dan recovery.",
+    "main_goals": [
+      "Mengelola banyak container",
+      "Automasi deployment",
+      "Scaling aplikasi",
+      "Self-healing system",
+      "Load balancing"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Cluster",
+        "function": "Kumpulan server untuk menjalankan containers"
+      },
+      {
+        "concept": "Node",
+        "function": "Machine dalam cluster"
+      },
+      {
+        "concept": "Pod",
+        "function": "Unit terkecil container deployment"
+      },
+      {
+        "concept": "Scaling",
+        "function": "Menambah atau mengurangi instance"
+      },
+      {
+        "concept": "Load Balancing",
+        "function": "Membagi traffic aplikasi"
+      }
+    ],
+    "advantages": [
+      "High availability",
+      "Automated scaling",
+      "Easier deployments",
+      "Fault tolerance",
+      "Efficient resource usage"
+    ],
+    "best_practices": [
+      "Gunakan monitoring",
+      "Pisahkan environment",
+      "Gunakan secrets management",
+      "Batasi resource container",
+      "Gunakan health checks"
+    ],
+    "example": {
+      "title": "Container Orchestration Flow",
+      "code": "Containers -> Cluster -> Load Balancer -> Users"
+    }
+  },
+
+  "Kubernetes": {
+    "description": "Kubernetes adalah platform open-source untuk container orchestration yang digunakan untuk deployment dan management container skala besar.",
+    "official_website": "https://kubernetes.io",
+    "important_features": [
+      {
+        "feature": "Automatic Scaling",
+        "function": "Scaling container otomatis"
+      },
+      {
+        "feature": "Self Healing",
+        "function": "Restart container yang gagal"
+      },
+      {
+        "feature": "Service Discovery",
+        "function": "Komunikasi antar services"
+      },
+      {
+        "feature": "Rolling Updates",
+        "function": "Update aplikasi tanpa downtime"
+      }
+    ],
+    "important_components": [
+      {
+        "component": "Pod",
+        "function": "Unit deployment container"
+      },
+      {
+        "component": "Deployment",
+        "function": "Mengatur replica aplikasi"
+      },
+      {
+        "component": "Service",
+        "function": "Expose aplikasi"
+      },
+      {
+        "component": "Ingress",
+        "function": "Mengatur HTTP routing"
+      },
+      {
+        "component": "ConfigMap",
+        "function": "Menyimpan konfigurasi"
+      }
+    ],
+    "advantages": [
+      "Scalable",
+      "Highly available",
+      "Cloud native",
+      "Cocok untuk microservices",
+      "Ekosistem besar"
+    ],
+    "best_practices": [
+      "Gunakan namespace",
+      "Batasi CPU dan memory",
+      "Gunakan probes",
+      "Pisahkan secrets dari config"
+    ],
+    "example": {
+      "title": "Basic Kubernetes Deployment",
+      "code": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: app\nspec:\n  replicas: 2"
+    }
+  },
+
+  "Helm": {
+    "description": "Helm adalah package manager untuk Kubernetes yang digunakan untuk mengelola aplikasi Kubernetes menggunakan templates.",
+    "official_website": "https://helm.sh",
+    "important_features": [
+      {
+        "feature": "Charts",
+        "function": "Template aplikasi Kubernetes"
+      },
+      {
+        "feature": "Version Management",
+        "function": "Mengelola versi deployment"
+      },
+      {
+        "feature": "Reusable Templates",
+        "function": "Menggunakan konfigurasi berulang"
+      },
+      {
+        "feature": "Easy Deployment",
+        "function": "Deploy aplikasi lebih mudah"
+      }
+    ],
+    "advantages": [
+      "Deployment cepat",
+      "Konfigurasi reusable",
+      "Mudah rollback",
+      "Menyederhanakan Kubernetes"
+    ],
+    "best_practices": [
+      "Gunakan values.yaml",
+      "Pisahkan chart berdasarkan aplikasi",
+      "Gunakan versioning chart"
+    ],
+    "important_commands": [
+      {
+        "command": "helm install",
+        "function": "Install chart"
+      },
+      {
+        "command": "helm upgrade",
+        "function": "Update deployment"
+      },
+      {
+        "command": "helm uninstall",
+        "function": "Hapus deployment"
+      }
+    ],
+    "example": {
+      "title": "Helm Install Example",
+      "code": "helm install myapp ./chart"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "AI_Native_IDEs": {
+    "description": "AI-Native IDEs adalah editor kode modern yang dirancang dengan AI sebagai inti sistem, bukan hanya fitur tambahan. IDE ini mengintegrasikan AI secara mendalam untuk membantu coding, refactoring, debugging, dan memahami codebase.",
+
+    "main_goals": [
+      "Mengintegrasikan AI langsung ke workflow coding",
+      "Mempercepat development end-to-end",
+      "Membantu memahami codebase kompleks",
+      "Mengurangi context switching developer",
+      "Meningkatkan produktivitas engineering"
+    ],
+
+    "core_features": [
+      "AI chat dalam editor",
+      "Code generation & refactoring",
+      "Context-aware suggestions",
+      "Project-wide understanding",
+      "Natural language to code"
+    ]
+  },
+
+  "Cursor": {
+    "description": "Cursor adalah AI-native code editor berbasis VS Code yang mengintegrasikan AI untuk editing, refactoring, dan chat langsung dengan codebase.",
+
+    "features": [
+      "AI chat with codebase",
+      "Inline code editing",
+      "Smart refactoring",
+      "Context-aware AI assistance"
+    ],
+
+    "use_cases": [
+      "Full-stack development",
+      "Refactoring besar project",
+      "Debugging kompleks",
+      "Code understanding cepat"
+    ]
+  },
+
+  "Windsurf": {
+    "description": "Windsurf (oleh Codeium) adalah AI-native IDE yang fokus pada agentic AI workflow untuk membantu developer menulis dan mengelola kode secara lebih otomatis.",
+
+    "features": [
+      "Agent-based coding workflow",
+      "AI-assisted editing",
+      "Project-aware context",
+      "Fast AI suggestions"
+    ]
+  },
+
+  "Zed_AI": {
+    "description": "Zed AI adalah code editor modern berbasis performa tinggi yang mengintegrasikan AI untuk kolaborasi real-time dan coding assistance.",
+
+    "features": [
+      "Ultra-fast editor performance",
+      "Real-time collaboration",
+      "AI-assisted coding",
+      "Minimal latency design"
+    ]
+  },
+
+  "PearAI": {
+    "description": "PearAI adalah AI-native development environment yang menggabungkan editor dan AI assistant untuk membantu developer membangun aplikasi lebih cepat dengan bantuan AI.",
+
+    "features": [
+      "AI-first development workflow",
+      "Code generation assistant",
+      "Project understanding AI",
+      "Integrated development environment"
+    ]
+  }
+}

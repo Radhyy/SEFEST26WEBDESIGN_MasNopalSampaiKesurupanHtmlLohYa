@@ -1,0 +1,209 @@
+{
+  "Linters_and_Formatters": {
+    "description": "Linters dan Formatters adalah tools yang digunakan untuk menjaga kualitas, konsistensi, dan kerapihan kode program.",
+    "differences": {
+      "Linter": {
+        "description": "Mendeteksi error, bug, dan masalah coding style.",
+        "examples": [
+          "ESLint",
+          "TSLint"
+        ]
+      },
+      "Formatter": {
+        "description": "Mengatur format kode secara otomatis agar konsisten.",
+        "examples": [
+          "Prettier",
+          "Biome"
+        ]
+      }
+    },
+    "main_goals": [
+      "Menjaga konsistensi kode",
+      "Mengurangi bug",
+      "Mempermudah code review",
+      "Meningkatkan readability",
+      "Mengotomatisasi formatting"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Code Style",
+        "function": "Standar penulisan kode"
+      },
+      {
+        "concept": "Static Analysis",
+        "function": "Analisis kode tanpa menjalankan program"
+      },
+      {
+        "concept": "Auto Formatting",
+        "function": "Memformat kode otomatis"
+      },
+      {
+        "concept": "Rules Configuration",
+        "function": "Mengatur aturan coding"
+      }
+    ],
+    "best_practices": [
+      "Gunakan formatter otomatis",
+      "Gunakan linting sebelum commit",
+      "Gunakan config yang konsisten dalam tim",
+      "Integrasikan dengan editor",
+      "Gabungkan dengan Git hooks"
+    ],
+    "example": {
+      "title": "Bad vs Good Formatting",
+      "code": "// Bad\nconst name='Raka'\n\n// Good\nconst name = 'Raka';"
+    }
+  },
+
+  "ESLint": {
+    "description": "ESLint adalah JavaScript linter populer yang digunakan untuk mendeteksi error dan menjaga kualitas kode.",
+    "official_website": "https://eslint.org",
+    "important_features": [
+      {
+        "feature": "Static Code Analysis",
+        "function": "Mendeteksi masalah kode"
+      },
+      {
+        "feature": "Custom Rules",
+        "function": "Membuat aturan coding sendiri"
+      },
+      {
+        "feature": "Auto Fix",
+        "function": "Memperbaiki masalah tertentu otomatis"
+      },
+      {
+        "feature": "Framework Support",
+        "function": "Support React, Vue, TypeScript, dll"
+      }
+    ],
+    "common_rules": [
+      {
+        "rule": "no-unused-vars",
+        "function": "Mendeteksi variabel tidak digunakan"
+      },
+      {
+        "rule": "semi",
+        "function": "Mengatur penggunaan titik koma"
+      },
+      {
+        "rule": "quotes",
+        "function": "Mengatur penggunaan tanda kutip"
+      },
+      {
+        "rule": "eqeqeq",
+        "function": "Menggunakan === dibanding =="
+      }
+    ],
+    "advantages": [
+      "Sangat fleksibel",
+      "Banyak plugin",
+      "Mendukung banyak framework",
+      "Membantu menemukan bug"
+    ],
+    "best_practices": [
+      "Gunakan recommended config",
+      "Integrasikan dengan Prettier",
+      "Gunakan auto-fix bila memungkinkan"
+    ],
+    "example": {
+      "title": "Install ESLint",
+      "code": "npm install eslint --save-dev"
+    }
+  },
+
+  "Prettier": {
+    "description": "Prettier adalah code formatter otomatis yang membuat format kode tetap konsisten.",
+    "official_website": "https://prettier.io",
+    "important_features": [
+      {
+        "feature": "Automatic Formatting",
+        "function": "Memformat kode otomatis"
+      },
+      {
+        "feature": "Multi-language Support",
+        "function": "Support JS, CSS, HTML, JSON, dll"
+      },
+      {
+        "feature": "Editor Integration",
+        "function": "Terintegrasi dengan VS Code dan editor lain"
+      }
+    ],
+    "advantages": [
+      "Mudah digunakan",
+      "Mengurangi perdebatan style kode",
+      "Formatting konsisten",
+      "Cepat dan otomatis"
+    ],
+    "best_practices": [
+      "Gunakan format on save",
+      "Gabungkan dengan ESLint",
+      "Gunakan file .prettierrc"
+    ],
+    "important_configs": [
+      {
+        "config": "semi",
+        "function": "Mengatur penggunaan titik koma"
+      },
+      {
+        "config": "singleQuote",
+        "function": "Menggunakan single quote"
+      },
+      {
+        "config": "tabWidth",
+        "function": "Mengatur ukuran tab"
+      }
+    ],
+    "example": {
+      "title": "Install Prettier",
+      "code": "npm install prettier --save-dev"
+    }
+  },
+
+  "Biome": {
+    "description": "Biome adalah tools modern untuk linting dan formatting JavaScript/TypeScript yang fokus pada performa dan kemudahan penggunaan.",
+    "official_website": "https://biomejs.dev",
+    "important_features": [
+      {
+        "feature": "Formatter + Linter",
+        "function": "Gabungan formatter dan linter"
+      },
+      {
+        "feature": "High Performance",
+        "function": "Proses sangat cepat"
+      },
+      {
+        "feature": "Zero Config",
+        "function": "Dapat digunakan tanpa konfigurasi rumit"
+      },
+      {
+        "feature": "TypeScript Support",
+        "function": "Support TypeScript bawaan"
+      }
+    ],
+    "advantages": [
+      "Sangat cepat",
+      "Konfigurasi sederhana",
+      "All-in-one tool",
+      "Modern developer experience"
+    ],
+    "best_practices": [
+      "Gunakan biome.json untuk konfigurasi",
+      "Integrasikan dengan editor",
+      "Gunakan format otomatis"
+    ],
+    "important_commands": [
+      {
+        "command": "biome check .",
+        "function": "Melakukan linting project"
+      },
+      {
+        "command": "biome format .",
+        "function": "Memformat project"
+      }
+    ],
+    "example": {
+      "title": "Install Biome",
+      "code": "npm install --save-dev @biomejs/biome"
+    }
+  }
+}

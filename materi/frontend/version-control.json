@@ -1,0 +1,144 @@
+{
+  "Git_and_Version_Control": {
+    "Version_Control": {
+      "description": "Version Control adalah sistem yang digunakan untuk melacak perubahan kode, mengelola versi project, dan mempermudah kolaborasi antar developer.",
+      "types": [
+        {
+          "type": "Local Version Control",
+          "description": "Version control hanya tersimpan di komputer lokal."
+        },
+        {
+          "type": "Centralized Version Control",
+          "description": "Semua file tersimpan di satu server pusat."
+        },
+        {
+          "type": "Distributed Version Control",
+          "description": "Setiap developer memiliki salinan repository lengkap."
+        }
+      ],
+      "benefits": [
+        "Melacak perubahan file",
+        "Mempermudah kerja tim",
+        "Mengembalikan kode ke versi sebelumnya",
+        "Mengurangi konflik pengembangan",
+        "Membantu backup project"
+      ],
+      "important_terms": [
+        {
+          "term": "Repository",
+          "meaning": "Tempat penyimpanan project"
+        },
+        {
+          "term": "Commit",
+          "meaning": "Menyimpan snapshot perubahan"
+        },
+        {
+          "term": "Branch",
+          "meaning": "Cabang pengembangan fitur"
+        },
+        {
+          "term": "Merge",
+          "meaning": "Menggabungkan branch"
+        },
+        {
+          "term": "Clone",
+          "meaning": "Menyalin repository"
+        },
+        {
+          "term": "Pull",
+          "meaning": "Mengambil update terbaru"
+        },
+        {
+          "term": "Push",
+          "meaning": "Mengirim perubahan ke repository"
+        }
+      ],
+      "best_practices": [
+        "Commit secara rutin",
+        "Gunakan pesan commit yang jelas",
+        "Gunakan branch untuk fitur baru",
+        "Selalu pull sebelum push",
+        "Jangan upload file sensitif seperti password"
+      ],
+      "example": {
+        "title": "Basic Version Control Workflow",
+        "code": "1. Membuat perubahan kode\n2. Menyimpan perubahan dengan commit\n3. Push ke repository online\n4. Developer lain pull perubahan terbaru"
+      }
+    },
+
+    "Git": {
+      "description": "Git adalah Distributed Version Control System yang digunakan untuk mengelola perubahan source code.",
+      "important_commands": [
+        {
+          "command": "git init",
+          "function": "Membuat repository Git baru"
+        },
+        {
+          "command": "git clone <url>",
+          "function": "Menyalin repository dari internet"
+        },
+        {
+          "command": "git status",
+          "function": "Melihat status file"
+        },
+        {
+          "command": "git add .",
+          "function": "Menambahkan semua file ke staging area"
+        },
+        {
+          "command": "git commit -m \"message\"",
+          "function": "Menyimpan perubahan"
+        },
+        {
+          "command": "git push",
+          "function": "Mengirim perubahan ke remote repository"
+        },
+        {
+          "command": "git pull",
+          "function": "Mengambil update terbaru"
+        },
+        {
+          "command": "git branch",
+          "function": "Melihat branch"
+        },
+        {
+          "command": "git checkout",
+          "function": "Berpindah branch"
+        },
+        {
+          "command": "git merge",
+          "function": "Menggabungkan branch"
+        }
+      ],
+      "git_workflow": [
+        {
+          "step": 1,
+          "description": "Membuat atau mengubah file project"
+        },
+        {
+          "step": 2,
+          "description": "Menambahkan file ke staging area dengan git add"
+        },
+        {
+          "step": 3,
+          "description": "Melakukan commit perubahan"
+        },
+        {
+          "step": 4,
+          "description": "Push ke repository online"
+        }
+      ],
+      "best_practices": [
+        "Gunakan .gitignore",
+        "Commit dengan pesan singkat dan jelas",
+        "Pisahkan fitur menggunakan branch",
+        "Jangan push langsung ke branch utama jika project besar",
+        "Gunakan README.md untuk dokumentasi"
+      ],
+      "example": {
+        "title": "Basic Git Commands",
+        "code": "# Membuat repository baru\ngit init\n\n# Menambahkan semua file\ngit add .\n\n# Commit perubahan\ngit commit -m \"Initial commit\"\n\n# Menghubungkan ke GitHub\ngit remote add origin https://github.com/username/project.git\n\n# Push ke branch main\ngit push -u origin main"
+      }
+    }
+  }
+}

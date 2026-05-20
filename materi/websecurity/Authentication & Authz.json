@@ -1,0 +1,96 @@
+{
+  "Authentication_and_Authorization": {
+    "description": "Authentication adalah proses verifikasi identitas user, sedangkan Authorization adalah proses menentukan akses user terhadap sistem.",
+
+    "core_concepts": {
+      "authentication": "Siapa kamu?",
+      "authorization": "Apa yang boleh kamu lakukan?",
+      "credentials": "Data login seperti username dan password",
+      "roles": "Hak akses user (admin, user, guest)",
+      "permissions": "Izin spesifik dalam sistem"
+    }
+  },
+
+  "JWT_Security": {
+    "description": "JWT (JSON Web Token) adalah token berbasis JSON yang digunakan untuk authentication dan authorization.",
+
+    "structure": [
+      "Header",
+      "Payload",
+      "Signature"
+    ],
+
+    "risks": [
+      "Token theft",
+      "Weak signing key",
+      "No expiration handling"
+    ],
+
+    "best_practices": [
+      "Use strong secret key",
+      "Set expiration time",
+      "Store in secure storage",
+      "Use HTTPS only"
+    ],
+
+    "example": {
+      "title": "JWT Flow",
+      "code": "Login -> Server generate JWT -> Client stores token -> API request with token"
+    }
+  },
+
+  "OAuth_2_and_OIDC": {
+    "description": "OAuth 2.0 adalah framework authorization, sedangkan OpenID Connect (OIDC) adalah layer authentication di atas OAuth.",
+
+    "roles": [
+      "Resource Owner (User)",
+      "Client (App)",
+      "Authorization Server",
+      "Resource Server"
+    ],
+
+    "flows": [
+      "Authorization Code Flow",
+      "Implicit Flow",
+      "Client Credentials Flow"
+    ],
+
+    "use_cases": [
+      "Login with Google",
+      "Login with Facebook",
+      "Third-party API access"
+    ],
+
+    "example": {
+      "title": "OAuth Flow",
+      "code": "User -> Google Login -> Authorization Code -> Access Token"
+    }
+  },
+
+  "Session_Management": {
+    "description": "Session Management adalah cara server menyimpan status login user selama user aktif di aplikasi.",
+
+    "types": [
+      "Server-side session",
+      "Cookie-based session"
+    ],
+
+    "risks": [
+      "Session hijacking",
+      "Session fixation",
+      "Expired session handling issues"
+    ],
+
+    "best_practices": [
+      "Use secure cookies",
+      "Set session timeout",
+      "Regenerate session ID after login",
+      "Use HTTPS"
+    ],
+
+    "example": {
+      "title": "Session Flow",
+      "code": "Login -> Server creates session -> Cookie stored -> Request validated"
+    }
+  }
+}

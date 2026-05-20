@@ -1,0 +1,206 @@
+{
+  "Pilih_Framework": {
+    "description": "Framework mobile development digunakan untuk membangun aplikasi mobile dengan lebih cepat dan efisien.",
+    "main_goals": [
+      "Membangun aplikasi mobile",
+      "Mempermudah development",
+      "Mengurangi waktu pembuatan aplikasi",
+      "Meningkatkan maintainability",
+      "Mendukung fitur mobile modern"
+    ],
+    "comparison": [
+      {
+        "framework": "Flutter",
+        "type": "Cross Platform",
+        "language": "Dart",
+        "advantages": [
+          "Satu codebase Android dan iOS",
+          "UI modern",
+          "Hot reload cepat"
+        ]
+      },
+      {
+        "framework": "React Native",
+        "type": "Cross Platform",
+        "language": "JavaScript/TypeScript",
+        "advantages": [
+          "Ekosistem React besar",
+          "Reusable logic",
+          "Banyak library"
+        ]
+      },
+      {
+        "framework": "Android Native",
+        "type": "Native",
+        "language": "Kotlin",
+        "advantages": [
+          "Performa Android terbaik",
+          "Akses fitur Android penuh",
+          "Integrasi native"
+        ]
+      },
+      {
+        "framework": "iOS Native",
+        "type": "Native",
+        "language": "Swift",
+        "advantages": [
+          "Performa iOS terbaik",
+          "Integrasi Apple ecosystem",
+          "UI native"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Pilih framework sesuai target platform",
+      "Gunakan architecture pattern",
+      "Pisahkan UI dan business logic",
+      "Optimalkan performa aplikasi"
+    ],
+    "example": {
+      "title": "Framework Selection Example",
+      "code": "Android + iOS cepat = Flutter / React Native\nAndroid only = Android Native\niOS only = iOS Native"
+    }
+  },
+
+  "Flutter": {
+    "description": "Flutter adalah framework UI dari Google untuk membuat aplikasi cross-platform menggunakan Dart.",
+    "official_website": "https://flutter.dev",
+    "important_features": [
+      {
+        "feature": "Hot Reload",
+        "function": "Melihat perubahan kode secara realtime"
+      },
+      {
+        "feature": "Widget Based UI",
+        "function": "Semua UI berbasis widget"
+      },
+      {
+        "feature": "Cross Platform",
+        "function": "Satu codebase untuk banyak platform"
+      },
+      {
+        "feature": "Custom Rendering",
+        "function": "Menggunakan rendering engine sendiri"
+      }
+    ],
+    "advantages": [
+      "UI modern",
+      "Cross-platform",
+      "Performa tinggi",
+      "Developer experience bagus"
+    ],
+    "best_practices": [
+      "Gunakan reusable widgets",
+      "Gunakan state management",
+      "Pisahkan folder project dengan rapi"
+    ],
+    "example": {
+      "title": "Flutter Example",
+      "code": "Text('Hello Flutter')"
+    }
+  },
+
+  "React_Native": {
+    "description": "React Native adalah framework mobile dari Meta untuk membangun aplikasi Android dan iOS menggunakan React.",
+    "official_website": "https://reactnative.dev",
+    "important_features": [
+      {
+        "feature": "Reusable Components",
+        "function": "Menggunakan komponen React"
+      },
+      {
+        "feature": "Cross Platform",
+        "function": "Android dan iOS dalam satu codebase"
+      },
+      {
+        "feature": "Hot Reload",
+        "function": "Realtime development"
+      },
+      {
+        "feature": "Native Modules",
+        "function": "Akses fitur native device"
+      }
+    ],
+    "advantages": [
+      "JavaScript ecosystem besar",
+      "Reusable code",
+      "Community besar",
+      "Cepat development"
+    ],
+    "best_practices": [
+      "Gunakan TypeScript",
+      "Gunakan reusable components",
+      "Optimalkan rendering"
+    ],
+    "example": {
+      "title": "React Native Example",
+      "code": "import { Text } from 'react-native';\n\n<Text>Hello React Native</Text>"
+    }
+  },
+
+  "Android_Native": {
+    "description": "Android Native adalah pengembangan aplikasi Android menggunakan teknologi resmi Android seperti Kotlin dan Jetpack.",
+    "official_website": "https://developer.android.com",
+    "important_features": [
+      {
+        "feature": "Native Performance",
+        "function": "Performa terbaik Android"
+      },
+      {
+        "feature": "Jetpack Libraries",
+        "function": "Library resmi Android"
+      },
+      {
+        "feature": "Full Device Access",
+        "function": "Akses penuh fitur Android"
+      }
+    ],
+    "advantages": [
+      "Performa maksimal",
+      "Fitur Android lengkap",
+      "Integrasi native"
+    ],
+    "best_practices": [
+      "Gunakan MVVM",
+      "Gunakan coroutines",
+      "Gunakan Jetpack Compose"
+    ],
+    "example": {
+      "title": "Android Native Example",
+      "code": "Text(text = \"Hello Android\")"
+    }
+  },
+
+  "iOS_Native": {
+    "description": "iOS Native adalah pengembangan aplikasi iPhone menggunakan Swift dan framework resmi Apple.",
+    "official_website": "https://developer.apple.com",
+    "important_features": [
+      {
+        "feature": "SwiftUI",
+        "function": "Framework UI modern Apple"
+      },
+      {
+        "feature": "Native APIs",
+        "function": "Akses fitur iPhone penuh"
+      },
+      {
+        "feature": "Apple Ecosystem",
+        "function": "Integrasi dengan perangkat Apple"
+      }
+    ],
+    "advantages": [
+      "Performa tinggi",
+      "UI native",
+      "Integrasi Apple ecosystem"
+    ],
+    "best_practices": [
+      "Gunakan SwiftUI",
+      "Gunakan async/await",
+      "Pisahkan business logic"
+    ],
+    "example": {
+      "title": "iOS Native Example",
+      "code": "Text(\"Hello iOS\")"
+    }
+  }
+}

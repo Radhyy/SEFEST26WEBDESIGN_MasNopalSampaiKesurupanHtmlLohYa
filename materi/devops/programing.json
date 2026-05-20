@@ -1,0 +1,201 @@
+{
+  "Programming": {
+    "description": "Programming adalah proses menulis instruksi menggunakan bahasa pemrograman untuk membuat software, website, aplikasi, automation, dan sistem komputer.",
+    "main_goals": [
+      "Menyelesaikan masalah menggunakan kode",
+      "Membuat aplikasi",
+      "Mengotomatisasi pekerjaan",
+      "Mengelola data",
+      "Membangun sistem digital"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Variables",
+        "function": "Menyimpan data"
+      },
+      {
+        "concept": "Functions",
+        "function": "Blok kode yang dapat digunakan ulang"
+      },
+      {
+        "concept": "Conditions",
+        "function": "Pengambilan keputusan"
+      },
+      {
+        "concept": "Loops",
+        "function": "Perulangan"
+      },
+      {
+        "concept": "Data Structures",
+        "function": "Mengelola kumpulan data"
+      },
+      {
+        "concept": "Object Oriented Programming",
+        "function": "Membangun program berbasis object"
+      }
+    ],
+    "programming_paradigms": [
+      {
+        "paradigm": "Procedural Programming",
+        "description": "Program berjalan berdasarkan urutan function"
+      },
+      {
+        "paradigm": "Object Oriented Programming",
+        "description": "Program menggunakan object dan class"
+      },
+      {
+        "paradigm": "Functional Programming",
+        "description": "Program berbasis function murni"
+      }
+    ],
+    "best_practices": [
+      "Gunakan naming yang jelas",
+      "Pisahkan kode berdasarkan fungsi",
+      "Gunakan komentar seperlunya",
+      "Pelajari debugging",
+      "Gunakan version control"
+    ],
+    "example": {
+      "title": "Basic Programming Example",
+      "code": "function greet(name) {\n  return `Hello ${name}`;\n}"
+    }
+  },
+
+  "Python": {
+    "description": "Python adalah bahasa pemrograman populer yang sederhana, fleksibel, dan banyak digunakan untuk AI, automation, web development, dan data science.",
+    "official_website": "https://www.python.org",
+    "important_features": [
+      {
+        "feature": "Simple Syntax",
+        "function": "Sintaks mudah dipelajari"
+      },
+      {
+        "feature": "Cross Platform",
+        "function": "Berjalan di berbagai sistem operasi"
+      },
+      {
+        "feature": "Large Ecosystem",
+        "function": "Memiliki banyak library"
+      },
+      {
+        "feature": "Interpreted Language",
+        "function": "Kode dijalankan tanpa compile manual"
+      }
+    ],
+    "common_use_cases": [
+      "Artificial Intelligence",
+      "Automation",
+      "Web Development",
+      "Data Science",
+      "Machine Learning",
+      "Cyber Security"
+    ],
+    "popular_frameworks": [
+      "Django",
+      "Flask",
+      "FastAPI",
+      "TensorFlow",
+      "PyTorch"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Indentation",
+        "function": "Menentukan blok kode"
+      },
+      {
+        "concept": "Lists",
+        "function": "Menyimpan banyak data"
+      },
+      {
+        "concept": "Dictionaries",
+        "function": "Menyimpan data key-value"
+      },
+      {
+        "concept": "Modules",
+        "function": "Menggunakan kode dari file lain"
+      }
+    ],
+    "advantages": [
+      "Mudah dipelajari",
+      "Cocok untuk pemula",
+      "Banyak library",
+      "Komunitas besar",
+      "Sangat populer di AI"
+    ],
+    "best_practices": [
+      "Gunakan virtual environment",
+      "Ikuti PEP8 style guide",
+      "Gunakan meaningful variable names",
+      "Pisahkan project structure dengan rapi"
+    ],
+    "example": {
+      "title": "Python Example",
+      "code": "def greet(name):\n    return f'Hello {name}'\n\nprint(greet('Python'))"
+    }
+  },
+
+  "Go": {
+    "description": "Go atau Golang adalah bahasa pemrograman modern yang dikembangkan Google dengan fokus pada performa, concurrency, dan backend systems.",
+    "official_website": "https://go.dev",
+    "important_features": [
+      {
+        "feature": "Compiled Language",
+        "function": "Kode dikompilasi menjadi binary"
+      },
+      {
+        "feature": "Concurrency",
+        "function": "Menjalankan banyak task bersamaan"
+      },
+      {
+        "feature": "Fast Performance",
+        "function": "Eksekusi cepat dan efisien"
+      },
+      {
+        "feature": "Simple Syntax",
+        "function": "Sintaks sederhana"
+      }
+    ],
+    "common_use_cases": [
+      "Backend Development",
+      "Microservices",
+      "Cloud Computing",
+      "DevOps Tools",
+      "Networking Services"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Goroutines",
+        "function": "Menjalankan process secara concurrent"
+      },
+      {
+        "concept": "Channels",
+        "function": "Komunikasi antar goroutine"
+      },
+      {
+        "concept": "Structs",
+        "function": "Membuat custom data type"
+      },
+      {
+        "concept": "Packages",
+        "function": "Mengorganisasi kode"
+      }
+    ],
+    "advantages": [
+      "Performa tinggi",
+      "Cocok untuk backend",
+      "Concurrency sangat baik",
+      "Binary deployment mudah",
+      "Memory efficient"
+    ],
+    "best_practices": [
+      "Gunakan package structure rapi",
+      "Tangani error dengan benar",
+      "Gunakan goroutine seperlunya",
+      "Gunakan gofmt untuk formatting"
+    ],
+    "example": {
+      "title": "Go Example",
+      "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello Go\")\n}"
+    }
+  }
+}

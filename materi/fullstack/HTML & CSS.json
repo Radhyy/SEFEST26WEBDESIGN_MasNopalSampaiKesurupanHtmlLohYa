@@ -1,0 +1,233 @@
+{
+  "Semantic_HTML": {
+    "description": "Semantic HTML adalah penggunaan elemen HTML berdasarkan makna dan struktur kontennya agar lebih mudah dipahami oleh browser, search engine, dan assistive technology.",
+
+    "semantic_elements": [
+      "<header>",
+      "<nav>",
+      "<main>",
+      "<section>",
+      "<article>",
+      "<footer>",
+      "<aside>"
+    ],
+
+    "benefits": [
+      "SEO lebih baik",
+      "Accessibility meningkat",
+      "Kode lebih mudah dipahami",
+      "Struktur dokumen lebih jelas",
+      "Membantu screen readers"
+    ],
+
+    "examples": [
+      "Blog layout",
+      "News article structure",
+      "Accessible navigation",
+      "Semantic landing page"
+    ],
+
+    "code_example": {
+      "title": "Semantic Layout Example",
+      "code": "<main><section><article><h1>Title</h1></article></section></main>"
+    },
+
+    "real_world_use_cases": [
+      "SEO-friendly websites",
+      "Accessible government websites",
+      "Content-heavy platforms"
+    ]
+  },
+
+  "Flexbox_and_Grid": {
+    "description": "Flexbox dan CSS Grid adalah sistem layout modern dalam CSS yang digunakan untuk mengatur posisi dan ukuran elemen dengan lebih fleksibel dan responsif.",
+
+    "Flexbox": {
+      "description": "Flexbox digunakan untuk layout satu dimensi (horizontal atau vertical).",
+
+      "features": [
+        "Flexible alignment",
+        "Space distribution",
+        "Responsive arrangement",
+        "Easy centering"
+      ],
+
+      "examples": [
+        "Navbar layout",
+        "Centering elements",
+        "Horizontal card layout"
+      ],
+
+      "code_example": {
+        "title": "Flexbox Example",
+        "code": ".container { display:flex; justify-content:center; align-items:center; }"
+      }
+    },
+
+    "CSS_Grid": {
+      "description": "CSS Grid digunakan untuk layout dua dimensi (baris dan kolom).",
+
+      "features": [
+        "Grid template system",
+        "Complex layouts",
+        "Row & column control",
+        "Responsive grid design"
+      ],
+
+      "examples": [
+        "Dashboard layout",
+        "Gallery grid",
+        "Responsive product cards"
+      ],
+
+      "code_example": {
+        "title": "Grid Example",
+        "code": ".grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:20px; }"
+      }
+    },
+
+    "real_world_use_cases": [
+      "Admin dashboard UI",
+      "Responsive website layouts",
+      "Modern SaaS interface"
+    ]
+  },
+
+  "HTML_and_CSS": {
+    "description": "HTML digunakan untuk struktur halaman web, sedangkan CSS digunakan untuk styling dan tampilan visual website.",
+
+    "HTML": {
+      "description": "HTML membentuk struktur dasar website menggunakan elemen dan tag.",
+
+      "examples": [
+        "Page structure",
+        "Forms",
+        "Tables",
+        "Navigation menus"
+      ],
+
+      "code_example": {
+        "title": "Basic HTML Example",
+        "code": "<h1>Hello World</h1><p>Welcome to my website</p>"
+      }
+    },
+
+    "CSS": {
+      "description": "CSS digunakan untuk mengatur warna, layout, spacing, typography, dan animasi.",
+
+      "examples": [
+        "Dark mode styling",
+        "Responsive layouts",
+        "Hover effects",
+        "Custom typography"
+      ],
+
+      "code_example": {
+        "title": "CSS Styling Example",
+        "code": "body { background:black; color:white; font-family:sans-serif; }"
+      }
+    },
+
+    "relationship": [
+      "HTML = structure",
+      "CSS = presentation"
+    ],
+
+    "real_world_use_cases": [
+      "Landing pages",
+      "Portfolio websites",
+      "Company profile websites",
+      "Modern dashboards"
+    ]
+  },
+
+  "Responsive_Design": {
+    "description": "Responsive Design adalah pendekatan desain web agar tampilan website dapat menyesuaikan berbagai ukuran layar seperti desktop, tablet, dan smartphone.",
+
+    "techniques": [
+      "Media queries",
+      "Flexible layouts",
+      "Fluid typography",
+      "Responsive images",
+      "Mobile-first design"
+    ],
+
+    "benefits": [
+      "Mobile-friendly UI",
+      "Better user experience",
+      "Cross-device compatibility",
+      "Improved accessibility"
+    ],
+
+    "examples": [
+      "Mobile navigation menu",
+      "Responsive dashboard",
+      "Adaptive product grid",
+      "Tablet-friendly layouts"
+    ],
+
+    "code_example": {
+      "title": "Media Query Example",
+      "code": "@media (max-width: 768px) { .container { flex-direction: column; } }"
+    },
+
+    "real_world_use_cases": [
+      "E-commerce mobile UI",
+      "Responsive SaaS apps",
+      "Cross-device company websites"
+    ]
+  },
+
+  "CSS_Variables_and_Animations": {
+    "description": "CSS Variables memungkinkan penyimpanan nilai CSS yang reusable, sedangkan CSS Animations digunakan untuk membuat efek visual interaktif pada elemen web.",
+
+    "CSS_Variables": {
+      "description": "Variabel CSS digunakan untuk menyimpan nilai seperti warna atau spacing agar mudah digunakan ulang.",
+
+      "example": ":root { --primary-color: blue; }",
+
+      "benefits": [
+        "Reusable styling",
+        "Mudah membuat dark mode",
+        "Design consistency",
+        "Maintenance lebih mudah"
+      ],
+
+      "examples": [
+        "Theme system",
+        "Dark mode toggle",
+        "Reusable spacing values"
+      ]
+    },
+
+    "CSS_Animations": {
+      "description": "CSS Animations digunakan untuk membuat transisi dan efek gerakan tanpa JavaScript.",
+
+      "features": [
+        "Keyframes",
+        "Transitions",
+        "Hover animations",
+        "Transform effects",
+        "Smooth UI interaction"
+      ],
+
+      "examples": [
+        "Button hover effect",
+        "Loading spinner",
+        "Fade-in animation",
+        "Animated cards"
+      ],
+
+      "code_example": {
+        "title": "Animation Example",
+        "code": "@keyframes fade { from { opacity:0; } to { opacity:1; } }"
+      }
+    },
+
+    "real_world_use_cases": [
+      "Interactive landing pages",
+      "Modern UI transitions",
+      "Animated dashboard components"
+    ]
+  }
+}

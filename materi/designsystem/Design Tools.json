@@ -1,0 +1,55 @@
+{
+  "Figma": {
+    "description": "Figma adalah design tool berbasis cloud yang digunakan untuk UI/UX design, prototyping, dan kolaborasi real-time antara designer dan developer dalam satu workspace.",
+
+    "features": [
+      "Real-time collaboration",
+      "Auto layout system",
+      "Component system",
+      "Interactive prototyping",
+      "Design system support"
+    ],
+
+    "use_cases": [
+      "UI/UX design",
+      "Prototyping aplikasi",
+      "Design system development",
+      "Team collaboration"
+    ]
+  },
+
+  "Figma_Variables_Tokens": {
+    "description": "Figma Variables (Design Tokens di Figma) adalah sistem untuk menyimpan nilai desain seperti warna, spacing, typography, dan style agar bisa digunakan ulang dan disinkronkan dengan code.",
+
+    "features": [
+      "Reusable design values",
+      "Theme switching (dark/light mode)",
+      "Sync dengan developer",
+      "Centralized design system"
+    ],
+
+    "importance": [
+      "Mengurangi inkonsistensi desain",
+      "Mempercepat workflow design-to-code",
+      "Mendukung design system modern"
+    ]
+  },
+
+  "Design_Tools": {
+    "description": "Design tools adalah berbagai software yang digunakan untuk membuat UI/UX design, prototyping, dan kolaborasi desain dalam proses pengembangan produk digital.",
+
+    "tools": [
+      "Figma",
+      "Adobe XD",
+      "Sketch",
+      "Framer",
+      "Penpot"
+    ],
+
+    "importance": [
+      "Mempercepat proses desain",
+      "Meningkatkan kualitas UI",
+      "Memudahkan kolaborasi tim"
+    ]
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "AI_Pull_Request_Reviewers": {
+    "description": "AI Pull Request Reviewers adalah sistem berbasis AI yang membantu melakukan review otomatis terhadap kode di pull request, memberikan saran perbaikan, mendeteksi bug, serta meningkatkan kualitas kode sebelum di-merge ke branch utama.",
+
+    "main_goals": [
+      "Mengotomatisasi code review",
+      "Mendeteksi bug lebih awal",
+      "Meningkatkan kualitas kode",
+      "Mengurangi beban reviewer manusia",
+      "Menstandarisasi best practices"
+    ],
+
+    "core_capabilities": [
+      "Static code analysis berbasis AI",
+      "Deteksi code smells",
+      "Security vulnerability detection",
+      "Style and formatting suggestions",
+      "Logic error detection"
+    ],
+
+    "examples": [
+      "GitHub Copilot PR review",
+      "AI review bots in CI pipelines",
+      "CodeRabbit AI review tools"
+    ]
+  },
+
+  "Automated_Test_Generation": {
+    "description": "Automated Test Generation adalah proses menggunakan AI untuk membuat unit test, integration test, atau end-to-end test secara otomatis berdasarkan source code yang ada.",
+
+    "main_goals": [
+      "Mengurangi waktu penulisan test manual",
+      "Meningkatkan test coverage",
+      "Mendeteksi edge cases secara otomatis",
+      "Mendukung test-driven development",
+      "Meningkatkan reliability aplikasi"
+    ],
+
+    "types_of_generated_tests": [
+      "Unit tests",
+      "Integration tests",
+      "Edge case tests",
+      "Regression tests"
+    ],
+
+    "example_tools": [
+      "GitHub Copilot Test Generation",
+      "Diffblue Cover",
+      "CodiumAI"
+    ]
+  },
+
+  "AI_in_Testing_and_CI_CD": {
+    "description": "AI in Testing & CI/CD adalah penggunaan kecerdasan buatan untuk mengoptimalkan pipeline testing dan deployment, termasuk otomatisasi test, analisis build failure, dan prediksi risiko deployment.",
+
+    "main_goals": [
+      "Mengoptimalkan CI/CD pipeline",
+      "Mendeteksi failure lebih cepat",
+      "Mengurangi false positive/negative dalam testing",
+      "Meningkatkan efisiensi deployment",
+      "Prediksi risiko release"
+    ],
+
+    "use_cases": [
+      "Smart test selection",
+      "Failure prediction in CI builds",
+      "Automated rollback decisions",
+      "Pipeline optimization"
+    ]
+  },
+
+  "Snyk_DeepCode_AI": {
+    "description": "Snyk DeepCode AI adalah tool security berbasis AI yang digunakan untuk menganalisis source code dan mendeteksi vulnerability, bug, serta security issues secara otomatis.",
+
+    "main_goals": [
+      "Mendeteksi security vulnerability",
+      "Meningkatkan secure coding practices",
+      "Mengurangi risiko exploit di production",
+      "Menyediakan real-time code analysis"
+    ],
+
+    "features": [
+      "AI-powered static analysis",
+      "Security vulnerability detection",
+      "Code quality improvement suggestions",
+      "Real-time scanning in CI/CD"
+    ]
+  },
+
+  "GitHub_Advanced_Security_AI": {
+    "description": "GitHub Advanced Security (GHAS) adalah fitur keamanan dari GitHub yang menggunakan AI dan static analysis untuk mendeteksi vulnerability, secret leaks, dan masalah keamanan dalam repository.",
+
+    "main_goals": [
+      "Mendeteksi vulnerability otomatis",
+      "Melindungi secret dan credential",
+      "Meningkatkan secure development lifecycle",
+      "Integrasi langsung dengan GitHub workflow"
+    ],
+
+    "features": [
+      "Code scanning (CodeQL)",
+      "Secret scanning",
+      "Dependency analysis",
+      "Security alerts otomatis"
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "Web_Security_and_Headers": {
+    "description": "Web security headers adalah mekanisme keamanan pada HTTP response untuk melindungi aplikasi web dari berbagai serangan.",
+
+    "CORS": {
+      "description": "Cross-Origin Resource Sharing (CORS) adalah mekanisme yang mengatur akses resource antar domain berbeda.",
+
+      "problems": [
+        "Blocked request dari domain berbeda",
+        "Security risk jika terlalu open"
+      ],
+
+      "solution": [
+        "Set allowed origin",
+        "Restrict methods",
+        "Control headers"
+      ],
+
+      "example": {
+        "title": "CORS Header",
+        "code": "Access-Control-Allow-Origin: https://example.com"
+      }
+    },
+
+    "Content_Security_Policy": {
+      "description": "CSP adalah security layer untuk mencegah XSS dengan membatasi sumber script yang boleh dijalankan.",
+
+      "benefits": [
+        "Mencegah XSS",
+        "Kontrol resource loading",
+        "Meningkatkan keamanan web"
+      ],
+
+      "example": {
+        "title": "CSP Header",
+        "code": "Content-Security-Policy: default-src 'self'"
+      }
+    },
+
+    "HSTS": {
+      "description": "HTTP Strict Transport Security (HSTS) memaksa browser hanya menggunakan HTTPS.",
+
+      "benefits": [
+        "Mencegah downgrade attack",
+        "Memaksa HTTPS",
+        "Meningkatkan keamanan koneksi"
+      ],
+
+      "example": {
+        "title": "HSTS Header",
+        "code": "Strict-Transport-Security: max-age=31536000"
+      }
+    },
+
+    "Security_Headers": {
+      "description": "Security headers lain yang penting untuk melindungi aplikasi web.",
+
+      "headers": [
+        {
+          "name": "X-Content-Type-Options",
+          "value": "nosniff",
+          "function": "Mencegah MIME sniffing"
+        },
+        {
+          "name": "X-Frame-Options",
+          "value": "DENY",
+          "function": "Mencegah clickjacking"
+        },
+        {
+          "name": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin",
+          "function": "Mengontrol referrer info"
+        }
+      ]
+    }
+  }
+}

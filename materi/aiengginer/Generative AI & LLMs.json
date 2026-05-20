@@ -1,0 +1,103 @@
+{
+  "Generative_AI_and_LLMs": {
+    "description": "Generative AI adalah cabang AI yang fokus pada pembuatan konten baru seperti teks, gambar, audio, atau kode. LLM (Large Language Models) adalah model AI besar yang dilatih pada data teks masif untuk memahami dan menghasilkan bahasa manusia.",
+
+    "main_goals": [
+      "Menghasilkan konten otomatis",
+      "Memahami bahasa manusia secara kompleks",
+      "Membantu berbagai tugas AI",
+      "Meningkatkan produktivitas manusia"
+    ],
+
+    "examples": [
+      "ChatGPT",
+      "Claude",
+      "Gemini",
+      "Text-to-image models"
+    ]
+  },
+
+  "Prompt_Engineering": {
+    "description": "Prompt Engineering adalah teknik merancang input (prompt) untuk mengarahkan model AI agar menghasilkan output yang lebih akurat, relevan, dan sesuai kebutuhan.",
+
+    "techniques": [
+      "Zero-shot prompting",
+      "Few-shot prompting",
+      "Chain-of-thought prompting",
+      "Role prompting"
+    ],
+
+    "importance": [
+      "Meningkatkan kualitas output AI",
+      "Mengontrol hasil model",
+      "Mengurangi hallucination"
+    ]
+  },
+
+  "RAG_Architecture": {
+    "description": "Retrieval-Augmented Generation (RAG) adalah arsitektur AI yang menggabungkan retrieval (pengambilan data dari database) dengan generative model untuk menghasilkan jawaban yang lebih akurat dan berbasis data aktual.",
+
+    "pipeline": [
+      "User query",
+      "Document retrieval",
+      "Context injection",
+      "LLM generation",
+      "Final response"
+    ],
+
+    "benefits": [
+      "Mengurangi hallucination",
+      "Menggunakan data real-time",
+      "Lebih akurat dan relevan"
+    ]
+  },
+
+  "Vector_Databases": {
+    "description": "Vector Database adalah database yang menyimpan data dalam bentuk vector embeddings untuk memungkinkan pencarian semantik berbasis kemiripan.",
+
+    "examples": [
+      "Pinecone",
+      "Milvus"
+    ],
+
+    "use_cases": [
+      "Semantic search",
+      "RAG systems",
+      "Recommendation systems",
+      "AI memory storage"
+    ]
+  },
+
+  "LLM_Frameworks": {
+    "description": "LLM Frameworks adalah tools yang digunakan untuk membangun aplikasi berbasis Large Language Models dengan lebih mudah dan terstruktur.",
+
+    "tools": [
+      "LangChain",
+      "LlamaIndex"
+    ],
+
+    "use_cases": [
+      "Chatbot development",
+      "RAG pipelines",
+      "AI agents",
+      "Document QA systems"
+    ]
+  },
+
+  "Fine_Tuning_PEFT_LoRA": {
+    "description": "Fine-tuning adalah proses melatih ulang model AI pada dataset spesifik. PEFT (Parameter Efficient Fine Tuning) dan LoRA adalah teknik untuk melakukan fine-tuning dengan efisien tanpa melatih seluruh parameter model.",
+
+    "techniques": [
+      "Full fine-tuning",
+      "PEFT (Parameter Efficient Fine Tuning)",
+      "LoRA (Low-Rank Adaptation)"
+    ],
+
+    "benefits": [
+      "Lebih hemat GPU memory",
+      "Lebih cepat training",
+      "Biaya lebih rendah",
+      "Cocok untuk large models"
+    ]
+  }
+}

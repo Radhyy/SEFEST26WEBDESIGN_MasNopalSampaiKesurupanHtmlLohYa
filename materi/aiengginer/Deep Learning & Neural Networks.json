@@ -1,0 +1,95 @@
+{
+  "Deep_Learning_Neural_Networks": {
+    "description": "Deep Learning adalah cabang dari machine learning yang menggunakan neural networks berlapis (multi-layer) untuk mempelajari representasi data yang kompleks secara otomatis, terutama pada data tidak terstruktur seperti gambar, teks, dan audio.",
+
+    "main_goals": [
+      "Mempelajari representasi data kompleks",
+      "Mengolah data tidak terstruktur",
+      "Meningkatkan performa AI pada tugas sulit",
+      "Mengotomatisasi feature extraction"
+    ],
+
+    "core_concepts": [
+      "Neural networks",
+      "Backpropagation",
+      "Activation functions",
+      "Loss functions",
+      "Gradient descent"
+    ]
+  },
+
+  "Artificial_Neural_Networks_ANN": {
+    "description": "Artificial Neural Networks (ANN) adalah model komputasi yang terinspirasi dari cara kerja otak manusia, terdiri dari neuron yang saling terhubung untuk memproses informasi.",
+
+    "structure": [
+      "Input layer",
+      "Hidden layers",
+      "Output layer"
+    ],
+
+    "features": [
+      "Non-linear learning",
+      "Layered architecture",
+      "Weight optimization",
+      "Pattern recognition"
+    ]
+  },
+
+  "CNNs_for_Vision": {
+    "description": "Convolutional Neural Networks (CNN) adalah jenis neural network yang dirancang khusus untuk data visual seperti gambar dan video dengan menggunakan operasi convolution untuk menangkap fitur spasial.",
+
+    "core_components": [
+      "Convolution layers",
+      "Pooling layers",
+      "Feature maps",
+      "Fully connected layers"
+    ],
+
+    "use_cases": [
+      "Image classification",
+      "Object detection",
+      "Face recognition",
+      "Medical image analysis"
+    ]
+  },
+
+  "RNNs_and_LSTMs_for_Sequences": {
+    "description": "Recurrent Neural Networks (RNN) dan LSTM adalah jenis neural network yang dirancang untuk memproses data berurutan (sequential data) seperti teks, audio, dan time series.",
+
+    "core_concepts": [
+      "Sequential memory",
+      "Hidden state",
+      "Time dependency",
+      "Long-term dependency (LSTM)"
+    ],
+
+    "use_cases": [
+      "Text processing",
+      "Speech recognition",
+      "Time series forecasting",
+      "Language modeling"
+    ]
+  },
+
+  "PyTorch": {
+    "description": "PyTorch adalah deep learning framework berbasis Python yang fleksibel dan banyak digunakan dalam penelitian AI karena dynamic computation graph dan kemudahan debugging.",
+
+    "features": [
+      "Dynamic computation graph",
+      "GPU acceleration",
+      "Easy debugging",
+      "Strong research ecosystem"
+    ]
+  },
+
+  "TensorFlow": {
+    "description": "TensorFlow adalah deep learning framework dari Google yang digunakan untuk membangun dan men-deploy model AI dalam skala besar, termasuk production-ready systems.",
+
+    "features": [
+      "Static & dynamic graph support",
+      "Production deployment tools",
+      "TensorFlow Lite for mobile",
+      "TensorFlow Serving"
+    ]
+  }
+}

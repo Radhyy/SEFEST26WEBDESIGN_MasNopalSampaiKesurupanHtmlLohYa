@@ -1,0 +1,90 @@
+{
+  "Monorepo_Tooling": {
+    "description": "Monorepo tooling adalah pendekatan untuk mengelola banyak project dalam satu repository, sehingga dependency, build process, dan workflow bisa diatur lebih efisien.",
+
+    "Turborepo": {
+      "description": "Turborepo adalah build system untuk JavaScript/TypeScript monorepo yang fokus pada performance, caching, dan parallel execution.",
+
+      "features": [
+        "Incremental build caching",
+        "Parallel task execution",
+        "Optimized monorepo structure",
+        "Fast CI/CD builds"
+      ],
+
+      "use_cases": [
+        "Monorepo frontend/backend",
+        "Design system packages",
+        "Large-scale applications"
+      ]
+    },
+
+    "Nx": {
+      "description": "Nx adalah smart monorepo tool yang menyediakan tooling lengkap untuk managing workspace, dependency graph, dan automation.",
+
+      "features": [
+        "Dependency graph visualization",
+        "Smart rebuild system",
+        "Plugin ecosystem",
+        "CI optimization"
+      ],
+
+      "use_cases": [
+        "Enterprise monorepo",
+        "Fullstack applications",
+        "Microfrontend architecture"
+      ]
+    }
+  },
+
+  "NPM_Publishing": {
+    "description": "NPM Publishing adalah proses untuk mendistribusikan package JavaScript ke NPM registry agar bisa digunakan oleh developer lain di seluruh dunia.",
+
+    "main_goals": [
+      "Mendistribusikan library ke publik",
+      "Membuat reusable package",
+      "Sharing code antar project",
+      "Mendukung open-source ecosystem"
+    ],
+
+    "steps": [
+      "Menulis package.json",
+      "Membuat module/library",
+      "Login ke npm",
+      "Publish ke registry",
+      "Versioning package"
+    ],
+
+    "important_concepts": [
+      "Semantic versioning (semver)",
+      "Public vs private package",
+      "Dependencies management"
+    ]
+  },
+
+  "Docs_and_Distribution": {
+    "description": "Docs & Distribution adalah proses mendokumentasikan library atau project serta mendistribusikannya agar mudah digunakan oleh developer lain.",
+
+    "documentation": {
+      "description": "Documentation adalah panduan penggunaan software atau library agar mudah dipahami oleh user atau developer lain.",
+
+      "types": [
+        "API documentation",
+        "Usage guide",
+        "Code examples",
+        "Architecture docs"
+      ]
+    },
+
+    "distribution": {
+      "description": "Distribution adalah proses penyebaran software atau library ke platform seperti npm, CDN, atau package manager lainnya.",
+
+      "methods": [
+        "NPM registry",
+        "CDN distribution",
+        "GitHub releases",
+        "Private registry"
+      ]
+    }
+  }
+}

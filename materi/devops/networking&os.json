@@ -1,0 +1,323 @@
+{
+  "Linux_Basics": {
+    "description": "Linux Basics adalah dasar-dasar penggunaan sistem operasi Linux untuk development, server management, networking, dan automation.",
+    "important_concepts": [
+      {
+        "concept": "Terminal",
+        "function": "Interface command line Linux"
+      },
+      {
+        "concept": "File System",
+        "function": "Struktur penyimpanan file Linux"
+      },
+      {
+        "concept": "Permissions",
+        "function": "Hak akses file dan folder"
+      },
+      {
+        "concept": "Processes",
+        "function": "Program yang berjalan di sistem"
+      },
+      {
+        "concept": "Package Manager",
+        "function": "Menginstall dan mengelola software"
+      }
+    ],
+    "common_directories": [
+      {
+        "directory": "/home",
+        "description": "Folder user"
+      },
+      {
+        "directory": "/etc",
+        "description": "Konfigurasi sistem"
+      },
+      {
+        "directory": "/var",
+        "description": "Log dan data aplikasi"
+      },
+      {
+        "directory": "/usr",
+        "description": "Program dan libraries"
+      },
+      {
+        "directory": "/bin",
+        "description": "Binary command Linux"
+      }
+    ],
+    "important_commands": [
+      {
+        "command": "ls",
+        "function": "Menampilkan isi folder"
+      },
+      {
+        "command": "cd",
+        "function": "Berpindah directory"
+      },
+      {
+        "command": "mkdir",
+        "function": "Membuat folder"
+      },
+      {
+        "command": "rm",
+        "function": "Menghapus file"
+      },
+      {
+        "command": "cp",
+        "function": "Menyalin file"
+      },
+      {
+        "command": "mv",
+        "function": "Memindahkan file"
+      },
+      {
+        "command": "cat",
+        "function": "Melihat isi file"
+      },
+      {
+        "command": "nano",
+        "function": "Edit file terminal"
+      }
+    ],
+    "best_practices": [
+      "Gunakan sudo dengan hati-hati",
+      "Backup file penting",
+      "Pahami permission Linux",
+      "Gunakan package manager resmi"
+    ],
+    "example": {
+      "title": "Basic Linux Commands",
+      "code": "mkdir project\ncd project\nnano app.js"
+    }
+  },
+
+  "Bash_Scripting": {
+    "description": "Bash Scripting adalah proses membuat script otomatis menggunakan Bash shell di Linux.",
+    "main_goals": [
+      "Automasi task",
+      "Menghemat waktu",
+      "Mengelola server",
+      "Menjalankan command berulang"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Variables",
+        "function": "Menyimpan data dalam script"
+      },
+      {
+        "concept": "Loops",
+        "function": "Menjalankan perulangan"
+      },
+      {
+        "concept": "Conditions",
+        "function": "Logika if dan else"
+      },
+      {
+        "concept": "Functions",
+        "function": "Membuat reusable script"
+      }
+    ],
+    "common_usage": [
+      "Backup otomatis",
+      "Deployment script",
+      "Monitoring server",
+      "Automasi development"
+    ],
+    "best_practices": [
+      "Gunakan komentar",
+      "Pisahkan function",
+      "Gunakan permission execution",
+      "Validasi input script"
+    ],
+    "example": {
+      "title": "Basic Bash Script",
+      "code": "#!/bin/bash\necho \"Hello Linux\"\nmkdir backup"
+    }
+  },
+
+  "Networking_and_OS": {
+    "description": "Networking dan Operating System adalah dasar komunikasi komputer dan cara sistem operasi mengelola hardware serta software.",
+    "important_concepts": [
+      {
+        "concept": "IP Address",
+        "function": "Alamat perangkat di jaringan"
+      },
+      {
+        "concept": "Port",
+        "function": "Jalur komunikasi aplikasi"
+      },
+      {
+        "concept": "Process",
+        "function": "Program yang berjalan"
+      },
+      {
+        "concept": "Kernel",
+        "function": "Inti sistem operasi"
+      },
+      {
+        "concept": "Services",
+        "function": "Background program pada server"
+      }
+    ],
+    "common_commands": [
+      {
+        "command": "top",
+        "function": "Melihat process berjalan"
+      },
+      {
+        "command": "ps",
+        "function": "Melihat daftar process"
+      },
+      {
+        "command": "kill",
+        "function": "Menghentikan process"
+      },
+      {
+        "command": "systemctl",
+        "function": "Mengelola services"
+      },
+      {
+        "command": "ping",
+        "function": "Tes koneksi jaringan"
+      }
+    ],
+    "best_practices": [
+      "Monitoring penggunaan resource",
+      "Gunakan firewall",
+      "Matikan service tidak perlu",
+      "Pahami network troubleshooting"
+    ],
+    "example": {
+      "title": "Check Running Processes",
+      "code": "ps aux\nsystemctl status nginx"
+    }
+  },
+
+  "TCP_IP_and_DNS": {
+    "description": "TCP/IP dan DNS adalah dasar komunikasi internet dan jaringan komputer.",
+    "important_concepts": [
+      {
+        "concept": "TCP",
+        "function": "Protocol komunikasi reliable"
+      },
+      {
+        "concept": "IP Address",
+        "function": "Alamat unik perangkat"
+      },
+      {
+        "concept": "DNS",
+        "function": "Mengubah domain menjadi IP"
+      },
+      {
+        "concept": "Packets",
+        "function": "Unit data dalam jaringan"
+      },
+      {
+        "concept": "Ports",
+        "function": "Identitas layanan jaringan"
+      }
+    ],
+    "common_ports": [
+      {
+        "port": "80",
+        "service": "HTTP"
+      },
+      {
+        "port": "443",
+        "service": "HTTPS"
+      },
+      {
+        "port": "22",
+        "service": "SSH"
+      },
+      {
+        "port": "3306",
+        "service": "MySQL"
+      }
+    ],
+    "common_commands": [
+      {
+        "command": "ping",
+        "function": "Tes koneksi"
+      },
+      {
+        "command": "nslookup",
+        "function": "Cek DNS"
+      },
+      {
+        "command": "dig",
+        "function": "Query DNS"
+      },
+      {
+        "command": "traceroute",
+        "function": "Melihat jalur jaringan"
+      }
+    ],
+    "best_practices": [
+      "Gunakan DNS terpercaya",
+      "Gunakan HTTPS",
+      "Pahami port yang terbuka",
+      "Monitoring traffic jaringan"
+    ],
+    "example": {
+      "title": "DNS Lookup Example",
+      "code": "nslookup google.com"
+    }
+  },
+
+  "SSH_and_Networking": {
+    "description": "SSH adalah protocol aman untuk remote server management dan komunikasi jaringan terenkripsi.",
+    "important_concepts": [
+      {
+        "concept": "SSH Key",
+        "function": "Authentication tanpa password"
+      },
+      {
+        "concept": "Public Key",
+        "function": "Key yang dibagikan ke server"
+      },
+      {
+        "concept": "Private Key",
+        "function": "Key rahasia user"
+      },
+      {
+        "concept": "Remote Access",
+        "function": "Mengakses server dari jarak jauh"
+      }
+    ],
+    "common_commands": [
+      {
+        "command": "ssh",
+        "function": "Connect ke server"
+      },
+      {
+        "command": "scp",
+        "function": "Transfer file"
+      },
+      {
+        "command": "ssh-keygen",
+        "function": "Membuat SSH key"
+      },
+      {
+        "command": "netstat",
+        "function": "Melihat koneksi jaringan"
+      }
+    ],
+    "advantages": [
+      "Remote management aman",
+      "Transfer data terenkripsi",
+      "Authentication lebih aman"
+    ],
+    "best_practices": [
+      "Gunakan SSH key",
+      "Nonaktifkan root login",
+      "Gunakan firewall",
+      "Ganti port default SSH",
+      "Batasi akses server"
+    ],
+    "example": {
+      "title": "SSH Connection Example",
+      "code": "ssh user@192.168.1.10"
+    }
+  }
+}

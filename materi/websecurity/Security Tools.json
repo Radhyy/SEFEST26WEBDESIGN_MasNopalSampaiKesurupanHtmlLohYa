@@ -1,0 +1,53 @@
+{
+  "Security_Tools": {
+    "description": "Security tools adalah tools untuk menguji dan menganalisis keamanan aplikasi web dari berbagai jenis serangan.",
+
+    "Burp_Suite": {
+      "description": "Burp Suite adalah tools penetration testing untuk intercept dan menganalisis HTTP/HTTPS request.",
+
+      "features": [
+        "Intercept request/response",
+        "Request manipulation",
+        "Repeater testing",
+        "Intruder brute force",
+        "Vulnerability scanning (Pro)"
+      ],
+
+      "use_cases": [
+        "SQL Injection testing",
+        "XSS testing",
+        "API security testing",
+        "Manual pentesting"
+      ],
+
+      "advantages": [
+        "Sangat powerful",
+        "Dipakai profesional",
+        "Support manual testing lengkap"
+      ]
+    },
+
+    "OWASP_ZAP": {
+      "description": "OWASP ZAP adalah tools open-source untuk security testing aplikasi web.",
+
+      "features": [
+        "Automated scanning",
+        "Passive scanning",
+        "Active scanning",
+        "Intercept proxy"
+      ],
+
+      "use_cases": [
+        "Automated vulnerability scan",
+        "Learning ethical hacking",
+        "CI/CD security testing"
+      ],
+
+      "advantages": [
+        "Gratis",
+        "Open-source",
+        "Cocok pemula"
+      ]
+    }
+  }
+}

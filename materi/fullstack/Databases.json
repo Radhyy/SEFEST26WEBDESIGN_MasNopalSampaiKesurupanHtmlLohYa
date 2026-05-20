@@ -1,0 +1,261 @@
+{
+  "Databases": {
+    "description": "Database adalah sistem penyimpanan data yang digunakan aplikasi untuk menyimpan, mengelola, dan mengambil data secara terstruktur atau tidak terstruktur.",
+
+    "types": [
+      "Relational database (SQL)",
+      "Non-relational database (NoSQL)"
+    ],
+
+    "main_goals": [
+      "Menyimpan data aplikasi",
+      "Mengelola relasi data",
+      "Mendukung query data",
+      "Menjamin konsistensi data",
+      "Mendukung scalability aplikasi"
+    ],
+
+    "core_concepts": [
+      "Tables",
+      "Documents",
+      "Indexes",
+      "Relationships",
+      "Queries",
+      "Transactions"
+    ],
+
+    "examples": [
+      "User database",
+      "E-commerce products",
+      "School management system",
+      "Social media storage"
+    ],
+
+    "real_world_use_cases": [
+      "Online banking systems",
+      "Inventory management",
+      "Realtime messaging apps",
+      "Analytics dashboards"
+    ]
+  },
+
+  "PostgreSQL": {
+    "description": "PostgreSQL adalah relational database open-source yang powerful dan terkenal karena stabilitas, extensibility, dan fitur SQL yang lengkap.",
+
+    "features": [
+      "Advanced SQL support",
+      "ACID compliance",
+      "JSON support",
+      "Complex queries",
+      "Scalable architecture",
+      "Strong data integrity"
+    ],
+
+    "use_cases": [
+      "Enterprise applications",
+      "Financial systems",
+      "Analytics platforms",
+      "Modern web applications",
+      "Large-scale SaaS applications"
+    ],
+
+    "advantages": [
+      "Stabil dan reliable",
+      "Open-source",
+      "Powerful query support",
+      "Mendukung complex relationships"
+    ],
+
+    "examples": [
+      "Banking database",
+      "ERP systems",
+      "Large analytics systems"
+    ],
+
+    "query_example": {
+      "title": "PostgreSQL Query Example",
+      "code": "SELECT * FROM users WHERE email = 'raa@example.com';"
+    },
+
+    "table_example": {
+      "title": "Create Table Example",
+      "code": "CREATE TABLE users (id SERIAL PRIMARY KEY, name TEXT, email TEXT);"
+    }
+  },
+
+  "MongoDB": {
+    "description": "MongoDB adalah NoSQL document database yang menyimpan data dalam format BSON/JSON-like documents sehingga lebih fleksibel dibanding relational database.",
+
+    "features": [
+      "Document-based storage",
+      "Flexible schema",
+      "Horizontal scalability",
+      "Fast development workflow",
+      "JSON-like documents"
+    ],
+
+    "use_cases": [
+      "Realtime applications",
+      "Content management systems",
+      "Big data storage",
+      "Flexible data structures",
+      "Chat applications"
+    ],
+
+    "advantages": [
+      "Schema fleksibel",
+      "Cocok untuk rapid development",
+      "Mudah scaling horizontal",
+      "Bagus untuk data semi-structured"
+    ],
+
+    "examples": [
+      "Realtime chat app",
+      "Social media backend",
+      "Content platform"
+    ],
+
+    "document_example": {
+      "title": "MongoDB Document Example",
+      "code": "{ name: 'Raa', email: 'raa@example.com', role: 'admin' }"
+    },
+
+    "query_example": {
+      "title": "MongoDB Find Example",
+      "code": "db.users.find({ role: 'admin' })"
+    }
+  },
+
+  "ORM_Prisma_and_Mongoose": {
+    "description": "ORM (Object Relational Mapping) adalah tools yang memungkinkan developer berinteraksi dengan database menggunakan object atau model dalam bahasa pemrograman.",
+
+    "main_goals": [
+      "Mempermudah query database",
+      "Mengurangi raw SQL complexity",
+      "Meningkatkan developer productivity",
+      "Membuat database interaction lebih aman"
+    ],
+
+    "Prisma": {
+      "description": "Prisma adalah modern ORM untuk SQL database dengan type-safe query dan developer experience yang kuat.",
+
+      "features": [
+        "Type-safe queries",
+        "Schema migration",
+        "Auto-generated client",
+        "Developer-friendly syntax",
+        "Strong TypeScript support"
+      ],
+
+      "advantages": [
+        "Autocompletion kuat",
+        "Type-safe database queries",
+        "Migration system modern"
+      ],
+
+      "examples": [
+        "Next.js + PostgreSQL",
+        "TypeScript backend",
+        "Modern SaaS apps"
+      ],
+
+      "schema_example": {
+        "title": "Prisma Schema Example",
+        "code": "model User { id Int @id @default(autoincrement()) name String }"
+      },
+
+      "query_example": {
+        "title": "Prisma Query Example",
+        "code": "const users = await prisma.user.findMany()"
+      }
+    },
+
+    "Mongoose": {
+      "description": "Mongoose adalah ODM (Object Document Mapper) untuk MongoDB yang digunakan untuk membuat schema dan model data.",
+
+      "features": [
+        "Schema validation",
+        "MongoDB modeling",
+        "Middleware hooks",
+        "Relationship handling",
+        "Document validation"
+      ],
+
+      "advantages": [
+        "Mudah membuat model MongoDB",
+        "Validation built-in",
+        "Middleware support"
+      ],
+
+      "examples": [
+        "Express + MongoDB backend",
+        "Realtime applications",
+        "Node.js API server"
+      ],
+
+      "schema_example": {
+        "title": "Mongoose Schema Example",
+        "code": "const User = mongoose.model('User', new Schema({ name: String }))"
+      },
+
+      "query_example": {
+        "title": "Mongoose Query Example",
+        "code": "const users = await User.find()"
+      }
+    }
+  },
+
+  "SQL_Fundamentals": {
+    "description": "SQL Fundamentals adalah dasar penggunaan Structured Query Language (SQL) untuk mengelola dan mengambil data dari relational database.",
+
+    "main_topics": [
+      "SELECT",
+      "INSERT",
+      "UPDATE",
+      "DELETE",
+      "JOIN",
+      "WHERE",
+      "GROUP BY",
+      "ORDER BY",
+      "LIMIT"
+    ],
+
+    "important_concepts": [
+      "Primary key",
+      "Foreign key",
+      "Relationships",
+      "Normalization",
+      "Indexes",
+      "Constraints"
+    ],
+
+    "goals": [
+      "Mengelola data database",
+      "Mengambil data dengan query",
+      "Membangun relational structure",
+      "Mengoptimalkan query data"
+    ],
+
+    "examples": [
+      "User lookup",
+      "Product filtering",
+      "Sales analytics",
+      "Join multi-table data"
+    ],
+
+    "query_examples": [
+      {
+        "title": "SELECT Example",
+        "code": "SELECT * FROM users;"
+      },
+      {
+        "title": "INSERT Example",
+        "code": "INSERT INTO users(name,email) VALUES('Raa','raa@example.com');"
+      },
+      {
+        "title": "JOIN Example",
+        "code": "SELECT users.name, orders.total FROM users JOIN orders ON users.id = orders.user_id;"
+      }
+    ]
+  }
+}

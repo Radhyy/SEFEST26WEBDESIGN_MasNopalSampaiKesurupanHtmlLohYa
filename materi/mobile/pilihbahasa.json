@@ -1,0 +1,230 @@
+{
+  "Pilih_Bahasa": {
+    "description": "Memilih bahasa pemrograman tergantung pada platform, tujuan aplikasi, performa, dan ecosystem yang ingin digunakan.",
+    "main_goals": [
+      "Membangun aplikasi mobile",
+      "Membuat UI interaktif",
+      "Mengakses fitur device",
+      "Membangun cross-platform apps",
+      "Mengoptimalkan performa aplikasi"
+    ],
+    "comparison": [
+      {
+        "language": "Dart",
+        "platform": "Flutter",
+        "type": "Cross Platform",
+        "advantages": [
+          "Satu codebase untuk Android dan iOS",
+          "UI modern",
+          "Hot reload cepat"
+        ]
+      },
+      {
+        "language": "Kotlin",
+        "platform": "Android",
+        "type": "Native Development",
+        "advantages": [
+          "Performa native Android",
+          "Support resmi Google",
+          "Integrasi Android terbaik"
+        ]
+      },
+      {
+        "language": "Swift",
+        "platform": "iOS",
+        "type": "Native Development",
+        "advantages": [
+          "Performa native iOS",
+          "Modern syntax",
+          "Integrasi Apple ecosystem"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Pilih sesuai target platform",
+      "Pelajari UI fundamentals",
+      "Gunakan architecture pattern",
+      "Optimalkan performa aplikasi"
+    ],
+    "example": {
+      "title": "Choosing Mobile Technology",
+      "code": "Android + iOS = Flutter\nAndroid Only = Kotlin\niOS Only = Swift"
+    }
+  },
+
+  "Dart_Flutter": {
+    "description": "Dart adalah bahasa pemrograman yang digunakan oleh Flutter untuk membangun aplikasi mobile cross-platform.",
+    "official_website": "https://dart.dev",
+    "flutter_website": "https://flutter.dev",
+    "important_features": [
+      {
+        "feature": "Hot Reload",
+        "function": "Melihat perubahan kode realtime"
+      },
+      {
+        "feature": "Widget System",
+        "function": "Semua UI berbasis widget"
+      },
+      {
+        "feature": "Cross Platform",
+        "function": "Satu codebase untuk banyak platform"
+      },
+      {
+        "feature": "Fast Performance",
+        "function": "Menggunakan rendering engine sendiri"
+      }
+    ],
+    "common_use_cases": [
+      "Mobile apps",
+      "Desktop apps",
+      "Web apps",
+      "Cross-platform applications"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Widgets",
+        "function": "Komponen UI Flutter"
+      },
+      {
+        "concept": "State Management",
+        "function": "Mengelola data aplikasi"
+      },
+      {
+        "concept": "Build Method",
+        "function": "Membuat tampilan UI"
+      }
+    ],
+    "advantages": [
+      "Cross-platform",
+      "UI modern",
+      "Developer experience bagus",
+      "Hot reload cepat"
+    ],
+    "best_practices": [
+      "Gunakan widget reusable",
+      "Pisahkan business logic",
+      "Gunakan state management"
+    ],
+    "example": {
+      "title": "Flutter Widget Example",
+      "code": "import 'package:flutter/material.dart';\n\nvoid main() {\n  runApp(MaterialApp(\n    home: Scaffold(\n      body: Center(\n        child: Text('Hello Flutter'),\n      ),\n    ),\n  ));\n}"
+    }
+  },
+
+  "Kotlin_Android": {
+    "description": "Kotlin adalah bahasa resmi Android development yang dikembangkan JetBrains dan didukung Google.",
+    "official_website": "https://kotlinlang.org",
+    "android_website": "https://developer.android.com",
+    "important_features": [
+      {
+        "feature": "Null Safety",
+        "function": "Mengurangi null pointer error"
+      },
+      {
+        "feature": "Coroutines",
+        "function": "Asynchronous programming"
+      },
+      {
+        "feature": "Interoperability",
+        "function": "Bisa digunakan dengan Java"
+      },
+      {
+        "feature": "Modern Syntax",
+        "function": "Sintaks lebih ringkas"
+      }
+    ],
+    "common_use_cases": [
+      "Android apps",
+      "Backend development",
+      "Desktop applications"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Activities",
+        "function": "Halaman aplikasi Android"
+      },
+      {
+        "concept": "Fragments",
+        "function": "Bagian UI reusable"
+      },
+      {
+        "concept": "Coroutines",
+        "function": "Menjalankan task asynchronous"
+      }
+    ],
+    "advantages": [
+      "Performa native Android",
+      "Support resmi Google",
+      "Syntax modern",
+      "Tooling Android kuat"
+    ],
+    "best_practices": [
+      "Gunakan MVVM architecture",
+      "Gunakan coroutines",
+      "Pisahkan UI dan logic"
+    ],
+    "example": {
+      "title": "Kotlin Android Example",
+      "code": "fun main() {\n    println(\"Hello Kotlin\")\n}"
+    }
+  },
+
+  "Swift_iOS": {
+    "description": "Swift adalah bahasa pemrograman modern dari Apple untuk membangun aplikasi iOS, macOS, watchOS, dan tvOS.",
+    "official_website": "https://swift.org",
+    "apple_developer_website": "https://developer.apple.com",
+    "important_features": [
+      {
+        "feature": "Fast Performance",
+        "function": "Performa tinggi untuk aplikasi Apple"
+      },
+      {
+        "feature": "Safe Programming",
+        "function": "Mengurangi error runtime"
+      },
+      {
+        "feature": "Modern Syntax",
+        "function": "Sintaks mudah dibaca"
+      },
+      {
+        "feature": "SwiftUI",
+        "function": "Framework UI modern Apple"
+      }
+    ],
+    "common_use_cases": [
+      "iOS apps",
+      "macOS apps",
+      "watchOS apps",
+      "Apple ecosystem apps"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Views",
+        "function": "Komponen tampilan aplikasi"
+      },
+      {
+        "concept": "State",
+        "function": "Data aplikasi"
+      },
+      {
+        "concept": "SwiftUI",
+        "function": "Framework declarative UI"
+      }
+    ],
+    "advantages": [
+      "Performa native iOS",
+      "Integrasi Apple ecosystem",
+      "Modern development",
+      "Aman dan cepat"
+    ],
+    "best_practices": [
+      "Gunakan SwiftUI",
+      "Pisahkan business logic",
+      "Gunakan async/await"
+    ],
+    "example": {
+      "title": "Swift Example",
+      "code": "import Swift\n\nprint(\"Hello Swift\")"
+    }
+  }
+}

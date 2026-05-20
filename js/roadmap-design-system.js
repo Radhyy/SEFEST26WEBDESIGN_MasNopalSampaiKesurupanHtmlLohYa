@@ -1,326 +1,109 @@
 const roadmapData = [
   {
     main: {
-      id: "internet",
-      title: "Internet",
-      desc: "Dasar dari bagaimana web bekerja secara teknis.",
+      id: "ds_fundamentals",
+      title: "Design System Fundamentals",
+      desc: "Konsep dasar, tujuan, dan elemen-elemen fundamental dari Design System.",
     },
     left: [],
     right: [
-      { id: "dns", title: "DNS and how it works?" },
-      { id: "http", title: "What is HTTP?" },
-      { id: "hosting", title: "What is Hosting?" },
-      { id: "browsers", title: "Browsers and how they work?" },
+      { id: "design_tokens", title: "Design Tokens" },
+      { id: "color_palette", title: "Color & Typography" },
+      { id: "spacing", title: "Spacing & Grids" },
     ],
   },
   {
     main: {
-      id: "html",
-      title: "HTML",
-      desc: "HyperText Markup Language. Fondasi utama dari setiap website.",
+      id: "design_tools",
+      title: "Design Tools",
+      desc: "Tools yang digunakan oleh desainer UI/UX untuk membuat komponen UI.",
     },
     left: [
-      { id: "semantic", title: "Semantic HTML", badge: "green" },
-      { id: "forms", title: "Forms and Validations", badge: "green" },
-      { id: "a11y", title: "Accessibility", badge: "purple" },
+      { id: "figma", title: "Figma", badge: "purple" },
+      { id: "variables", title: "Figma Variables/Tokens", badge: "green" },
     ],
     right: [],
   },
   {
     main: {
-      id: "css",
-      title: "CSS",
-      desc: "Bahasa stylesheet yang digunakan untuk mendesain presentasi dokumen.",
+      id: "styling",
+      title: "Styling Methodologies",
+      desc: "Pendekatan untuk mengelola CSS secara scalable dalam ekosistem komponen.",
     },
     left: [
       {
-        id: "beginner_projects",
+        id: "ds_projects",
         title: "Beginner Project Ideas",
-        desc: "HTML, CSS and JavaScript are the backbone of web development. Make sure to practice by building lots of projects.",
+        desc: "Buat library sederhana berisi Button, Input, dan Modal dengan Tailwind.",
         isProjectBox: true,
       },
     ],
     right: [
-      { id: "layouts", title: "Making Layouts (Flexbox/Grid)", badge: "green" },
-      { id: "responsive", title: "Responsive Design", badge: "green" },
-      { id: "animations", title: "Animations", badge: "purple" },
+      { id: "tailwind", title: "Tailwind CSS", badge: "green" },
+      { id: "css_in_js", title: "CSS-in-JS (Styled Components)", badge: "purple" },
+      { id: "css_modules", title: "CSS Modules", badge: "green" },
     ],
   },
   {
     main: {
-      id: "javascript",
-      title: "JavaScript",
-      desc: "Bahasa pemrograman inti untuk membuat web menjadi interaktif.",
+      id: "headless_ui",
+      title: "Headless UI Components",
+      desc: "Komponen UI tanpa style bawaan yang menangani aksesibilitas dan fungsionalitas.",
     },
-    left: [
-      { id: "dom", title: "DOM Manipulation", badge: "green" },
-      { id: "fetch", title: "Fetch API / Ajax", badge: "green" },
-    ],
-    right: [
-      { id: "es6", title: "ES6+ Syntax", badge: "green" },
-      { id: "hoisting", title: "Hoisting & Closures", badge: "purple" },
-    ],
-  },
-  {
-    main: {
-      id: "vcs",
-      title: "Version Control",
-      desc: "Sistem untuk melacak dan mengelola perubahan kode seiring waktu.",
-    },
-    left: [{ id: "git", title: "Git", badge: "green" }],
+    left: [{ id: "radix", title: "Radix UI", badge: "green" }, { id: "react_aria", title: "React Aria", badge: "purple" }],
     right: [],
   },
   {
     main: {
-      id: "hosting",
-      title: "VCS Hosting",
-      desc: "Layanan cloud untuk menyimpan repository code dan berkolaborasi.",
+      id: "cdd",
+      title: "Component Driven Dev",
+      desc: "Membangun UI dari komponen kecil yang terisolasi, dapat diuji, dan mudah dipakai ulang.",
     },
-    left: [
-      {
-        id: "vcs_hosting_left",
-        title: "GitLab & GitHub",
-        isHorizontal: true,
-        children: [
-          { id: "gitlab", title: "GitLab", badge: "green" },
-          { id: "github", title: "GitHub", badge: "green" },
-        ],
-      },
-    ],
+    left: [],
     right: [
-      {
-        id: "pkg_mgr",
-        title: "Package Managers",
-        isGroup: true,
-        children: [
-          { id: "npm", title: "npm", badge: "green" },
-          { id: "yarn", title: "yarn", badge: "purple" },
-          { id: "pnpm", title: "pnpm", badge: "green" },
-          { id: "bun", title: "Bun", badge: "purple" },
-        ],
-      },
+      { id: "storybook", title: "Storybook", badge: "green" },
+      { id: "loki", title: "Visual Testing", badge: "purple" },
     ],
   },
   {
     main: { id: "project_spacer", title: "", type: "spacer" },
     left: [
       {
-        id: "project_ideas",
+        id: "intermediate_projects",
         title: "Intermediate Project Ideas",
-        desc: "At this point, you should be able to build modern vanilla JS frontend applications.",
+        desc: "Buat workspace monorepo dengan dokumentasi Storybook interaktif.",
         isProjectBox: true,
       },
     ],
-    right: [
-      {
-        id: "css_fw",
-        title: "CSS Frameworks",
-        isGroupBottom: true,
-        children: [{ id: "tailwind", title: "Tailwind CSS", badge: "green" }],
-      },
-    ],
-  },
-  {
-    main: {
-      id: "frameworks",
-      title: "Learn a Framework",
-      desc: "Library canggih untuk membuat UI modern skala besar.",
-    },
-    left: [
-      { id: "react", title: "React", badge: "green" },
-      { id: "vue", title: "Vue.js", badge: "purple" },
-      { id: "angular", title: "Angular", badge: "purple" },
-      { id: "svelte", title: "Svelte", badge: "purple" },
-      { id: "solid", title: "Solid JS", badge: "purple" },
-    ],
-    right: [
-      { id: "ai_dev_text", title: "AI in Development", isTextNode: true },
-    ],
-  },
-  {
-    main: {
-      id: "ai_coding",
-      title: "AI Assisted Coding",
-      desc: "Tools dan platform AI untuk mempercepat penulisan kode.",
-    },
-    left: [
-      { id: "claude", title: "Claude Code", badge: "green" },
-      { id: "cursor", title: "Cursor", badge: "green" },
-      { id: "copilot", title: "Copilot", badge: "purple" },
-      { id: "antigravity", title: "Antigravity", badge: "purple" },
-    ],
-    right: [
-      { id: "learn_basics", title: "Learn the Basics", isRightHeading: true },
-    ],
-  },
-  {
-    main: {
-      id: "prompting",
-      title: "Prompting Techniques",
-      desc: "Teknik memberikan instruksi yang efektif ke AI.",
-    },
-    left: [
-      { id: "prompt_eng", title: "Prompt Engineering", isSolidBlue: true },
-    ],
-    right: [
-      {
-        id: "llm_group_1",
-        isVerticalGroup: true,
-        children: [
-          { id: "how_llms", title: "How LLMs work", badge: "green" },
-          {
-            id: "ai_vs_trad",
-            title: "AI vs Traditional Coding",
-            badge: "green",
-          },
-          { id: "applications", title: "Applications", badge: "purple" },
-        ],
-      },
-    ],
-  },
-  {
-    main: {
-      id: "agents",
-      title: "Agents",
-      desc: "Sistem AI otonom yang dapat menjalankan serangkaian tugas.",
-    },
-    left: [
-      { id: "ai_agents_rm", title: "AI Agents Roadmap", isSolidBlue: true },
-    ],
-    right: [
-      {
-        id: "llm_group_2",
-        isVerticalGroup: true,
-        children: [
-          { id: "code_reviews", title: "Code Reviews", badge: "green" },
-          { id: "refactoring", title: "Refactoring", badge: "green" },
-          { id: "docs_gen", title: "Docs Generation", badge: "purple" },
-        ],
-      },
-    ],
-  },
-  {
-    main: { id: "mcp", title: "MCP", desc: "Model Context Protocol." },
-    left: [],
     right: [],
   },
   {
     main: {
-      id: "skills",
-      title: "Skills",
-      desc: "Kemampuan spesifik yang diberikan ke AI Agent.",
-    },
-    left: [],
-    right: [],
-  },
-  {
-    main: {
-      id: "implementing_ai",
-      title: "Implementing AI",
-      desc: "Menerapkan AI di real-world project.",
+      id: "a11y",
+      title: "Accessibility (a11y)",
+      desc: "Memastikan komponen dapat diakses oleh semua pengguna termasuk penyandang disabilitas.",
     },
     left: [
-      { id: "gemini", title: "Gemini", badge: "green" },
-      { id: "openai", title: "OpenAI", badge: "green" },
-      { id: "anthropic", title: "Anthropic", badge: "purple" },
+      { id: "wcag", title: "WCAG Guidelines", badge: "green" },
+      { id: "wai_aria", title: "WAI-ARIA", badge: "purple" },
     ],
     right: [
-      { id: "adv_frontend", title: "Advanced Frontend", isTextNode: true },
+      { id: "a11y_tools", title: "a11y Auditing Tools", isRightHeading: true },
     ],
   },
   {
     main: {
-      id: "bundlers",
-      title: "Module Bundlers",
-      desc: "Alat untuk memaketkan banyak file menjadi satu file (bundle).",
-    },
-    left: [{ id: "auth_strat", title: "Auth Strategies", isLeftHeading: true }],
-    right: [
-      { id: "linters", title: "Linters & Formatters", isRightHeading: true },
-    ],
-  },
-  {
-    main: {
-      id: "bundlers_children",
-      type: "center-group",
-      children: [
-        {
-          id: "vite",
-          title: "Vite",
-          isFull: true,
-          badge: "purple",
-          align: "right",
-        },
-        { id: "swc", title: "SWC", badge: "green", align: "left" },
-        { id: "esbuild", title: "esbuild", badge: "purple", align: "right" },
-        { id: "rollup", title: "Rollup", badge: "green", align: "left" },
-        { id: "rolldown", title: "Rolldown" },
-        {
-          id: "parcel",
-          title: "Parcel",
-          isFull: true,
-          badge: "green",
-          align: "left",
-        },
-      ],
-    },
-    left: [{ id: "testing_row", isTestingRow: true }],
-    right: [
-      {
-        id: "linters_group",
-        isVerticalGroup: true,
-        style: "yellow",
-        children: [
-          { id: "biome", title: "Biome", badge: "green" },
-          { id: "prettier", title: "Prettier", badge: "purple" },
-          { id: "eslint", title: "ESLint", badge: "purple" },
-        ],
-      },
-    ],
-  },
-  {
-    main: {
-      id: "adv_projects",
-      type: "project-box",
-      title: "Advanced Project Ideas",
-      desc: "At this point you should have the expertise of an intermediate level frontend developer. Keep practicing and sharpening your skills.",
+      id: "docs_distribution",
+      title: "Docs & Distribution",
+      desc: "Mendokumentasikan dan mendistribusikan sistem desain agar bisa dipakai oleh tim lain.",
     },
     left: [
-      {
-        id: "testing_group",
-        isVerticalGroup: true,
-        style: "yellow",
-        children: [
-          { id: "vitest", title: "Vitest", badge: "purple" },
-          { id: "playwright", title: "Playwright", badge: "purple" },
-          { id: "cypress", title: "Cypress", badge: "green" },
-          { id: "jest", title: "Jest", badge: "green" },
-        ],
-      },
+      { id: "monorepo", title: "Turborepo / Nx", badge: "purple" },
+      { id: "npm_publish", title: "NPM Publishing", badge: "green" },
     ],
     right: [
-      {
-        id: "security_group",
-        isVerticalGroup: true,
-        style: "yellow",
-        children: [
-          { id: "cors", title: "CORS", badge: "purple" },
-          { id: "https", title: "HTTPS", badge: "purple" },
-          { id: "csp", title: "CSP", badge: "purple" },
-          { id: "owasp", title: "OWASP Risks", badge: "purple" },
-        ],
-      },
-    ],
-  },
-  {
-    main: {
-      id: "web_apis",
-      title: "Web APIs",
-      desc: "API bawaan browser untuk memanipulasi DOM dan fitur device.",
-    },
-    left: [],
-    right: [
-      { id: "web_security", title: "Web Security", isRightHeading: true },
+      { id: "nextra", title: "Nextra", badge: "green" },
+      { id: "docusaurus", title: "Docusaurus", badge: "purple" },
     ],
   },
   {
@@ -340,26 +123,8 @@ const resourcesDB = {
     { type: "video", title: "Crash Course di YouTube", url: "#" },
     { type: "game", title: "Latihan Interaktif (Practice)", url: "#" },
   ],
-  internet: [
-    { type: "article", title: "Bagaimana Internet Bekerja?", url: "#" },
-    { type: "video", title: "Crash Course Networking", url: "#" },
-  ],
-  html: [
-    { type: "course", title: "HTML Full Course untuk Pemula", url: "#" },
-    { type: "article", title: "Panduan MDN Web Docs", url: "#" },
-  ],
-  css: [
-    { type: "game", title: "Flexbox Froggy", url: "#" },
-    { type: "game", title: "Grid Garden", url: "#" },
-    { type: "video", title: "CSS Masterclass", url: "#" },
-  ],
-  javascript: [
-    { type: "course", title: "JavaScript Fundamentals", url: "#" },
-    { type: "article", title: "JavaScript.info", url: "#" },
-  ],
-  react: [
-    { type: "course", title: "React 18 for Beginners", url: "#" },
-    { type: "article", title: "Dokumentasi Resmi React.dev", url: "#" },
+  math_stats: [
+    { type: "article", title: "Statistik untuk Data Science", url: "#" },
   ],
 };
 
@@ -961,7 +726,7 @@ let jsonDataCache = {};
 async function fetchMateri(filename) {
   if (jsonDataCache[filename]) return jsonDataCache[filename];
   try {
-    const res = await fetch(`../../../materi/frontend/${encodeURIComponent(filename)}`);
+    const res = await fetch(`../../../materi/designsystem/${encodeURIComponent(filename)}`);
     if (res.ok) {
       const data = await res.json();
       jsonDataCache[filename] = data;
@@ -1012,91 +777,47 @@ function extractExample(obj) {
 }
 
 const nodeMapping = {
-  // HTML
-  "semantic": { file: "html.json", rootKey: "HTML", key: "Semantic_HTML" },
-  "forms": { file: "html.json", rootKey: "HTML", key: "Forms_and_Validations" },
-  "a11y": { file: "html.json", rootKey: "HTML", key: "Accessibility" },
-  // CSS
-  "layouts": { file: "css.json", rootKey: "CSS", key: "Making_Layouts_Flexbox_Grid" },
-  "responsive": { file: "css.json", rootKey: "CSS", key: "Responsive_Design" },
-  "animations": { file: "css.json", rootKey: "CSS", key: "Animations" },
-  // JavaScript
-  "dom": { file: "javascript.json", rootKey: "JavaScript", key: "DOM_Manipulation" },
-  "fetch": { file: "javascript.json", rootKey: "JavaScript", key: "Fetch_API_Ajax" },
-  "es6": { file: "javascript.json", rootKey: "JavaScript", key: "ES6_Plus_Syntax" },
-  "hoisting": { file: "javascript.json", rootKey: "JavaScript", key: "Hoisting_and_Closures" },
-  // Version Control
-  "vcs": { file: "version-control.json", rootKey: "Git_and_Version_Control", key: "Version_Control" },
-  "git": { file: "version-control.json", rootKey: "Git_and_Version_Control", key: "Git" },
-  // VCS Hosting
-  "github": { file: "vcs-hosting.json", key: "GitHub" },
-  "gitlab": { file: "vcs-hosting.json", key: "GitLab" },
-  // Package Managers
-  "npm": { file: "pakage-manager", key: "npm" },
-  "yarn": { file: "pakage-manager", key: "yarn" },
-  "pnpm": { file: "pakage-manager", key: "pnpm" },
-  "bun": { file: "pakage-manager", key: "Bun" },
-  // CSS Frameworks
-  "tailwind": { file: "cssframework.json", key: "Tailwind_CSS" },
-  // Learn a Framework
-  "react": { file: "learnaframewoek.json", key: "React" },
-  "vue": { file: "learnaframewoek.json", key: "Vue_js" },
-  "angular": { file: "learnaframewoek.json", key: "Angular" },
-  "svelte": { file: "learnaframewoek.json", key: "Svelte" },
-  "solid": { file: "learnaframewoek.json", key: "Solid_JS" },
-  // AI Assisted Coding
-  "claude": { file: "aiasistencoding.json", key: "Claude_Code" },
-  "cursor": { file: "aiasistencoding.json", key: "Cursor" },
-  "copilot": { file: "aiasistencoding.json", key: "Copilot" },
-  "antigravity": { file: "aiasistencoding.json", key: "Antigravity" },
-  // Prompting
-  "prompt_eng": { file: "prompt.json", key: "Prompt_Engineering" },
-  "prompting": { file: "prompt.json", key: "Prompting_Techniques" },
-  // Learn the Basics (AI)
-  "how_llms": { file: "learnthebasic.json", rootKey: "AI_Development_Basics", key: "How_LLMs_Work" },
-  "ai_vs_trad": { file: "learnthebasic.json", rootKey: "AI_Development_Basics", key: "AI_vs_Traditional_Coding" },
-  "applications": { file: "learnthebasic.json", rootKey: "AI_Development_Basics", key: "Applications" },
-  "code_reviews": { file: "learnthebasic.json", rootKey: "AI_Development_Basics", key: "Code_Reviews" },
-  "refactoring": { file: "learnthebasic.json", rootKey: "AI_Development_Basics", key: "Refactoring" },
-  "docs_gen": { file: "learnthebasic.json", rootKey: "AI_Development_Basics", key: "Docs_Generation" },
-  "learn_basics": { file: "learnthebasic.json", rootKey: "AI_Development_Basics", key: "Learn_the_Basics" },
-  // Agents
-  "agents": { file: "agent.json", key: "Agents" },
-  "ai_agents_rm": { file: "agent.json", key: "AI_Agents_Roadmap" },
-  // MCP & Skills
-  "mcp": { file: "mcp&skill.json", key: "MCP" },
-  "skills": { file: "mcp&skill.json", key: "Skills" },
-  // Implementing AI
-  "implementing_ai": { file: "impementingai.json", key: "Implementing_AI" },
-  "gemini": { file: "impementingai.json", key: "Gemini" },
-  "openai": { file: "impementingai.json", key: "OpenAI" },
-  "anthropic": { file: "impementingai.json", key: "Anthropic" },
-  // Module Bundlers
-  "bundlers": { file: "modulebundler.json", key: "Module_Bundlers" },
-  "vite": { file: "modulebundler.json", key: "Vite" },
-  "swc": { file: "modulebundler.json", key: "SWC" },
-  "esbuild": { file: "modulebundler.json", key: "esbuild" },
-  "rollup": { file: "modulebundler.json", key: "Rollup" },
-  "rolldown": { file: "modulebundler.json", key: "Rolldown" },
-  "parcel": { file: "modulebundler.json", key: "Parcel" },
-  // Linters & Formatters
-  "biome": { file: "linter&formater.json", key: "Biome" },
-  "prettier": { file: "linter&formater.json", key: "Prettier" },
-  "eslint": { file: "linter&formater.json", key: "ESLint" },
-  "linters": { file: "linter&formater.json", key: "Linters_and_Formatters" },
-  // Testing
-  "testing": { file: "Testing.Json", key: "Testing" },
-  "vitest": { file: "Testing.Json", key: "Vitest" },
-  "playwright": { file: "Testing.Json", key: "Playwright" },
-  "cypress": { file: "Testing.Json", key: "Cypress" },
-  "jest": { file: "Testing.Json", key: "Jest" },
-  // Web Security & APIs
-  "web_security": { file: "Web APIs Web Security.json", key: "Web_Security" },
-  "cors": { file: "Web APIs Web Security.json", key: "CORS" },
-  "https": { file: "Web APIs Web Security.json", key: "HTTPS" },
-  "csp": { file: "Web APIs Web Security.json", key: "CSP" },
-  "owasp": { file: "Web APIs Web Security.json", key: "OWASP_Risks" },
-  "web_apis": { file: "Web APIs Web Security.json", key: "Web_APIs" },
+  // Design System Fundamentals — file: "Design System Fundamentals.json"
+  "ds_fundamentals": { file: "Design System Fundamentals.json", key: "Design_System_Fundamentals" },
+  "design_tokens": { file: "Design System Fundamentals.json", key: "Design_Tokens" },
+  "color_palette": { file: "Design System Fundamentals.json", key: "Color_and_Typography" },
+  "spacing": { file: "Design System Fundamentals.json", key: "Spacing_and_Grids" },
+
+  // Design Tools — file: "Design Tools.json"
+  "design_tools": { file: "Design Tools.json", key: "Design_Tools" },
+  "figma": { file: "Design Tools.json", key: "Figma" },
+  "variables": { file: "Design Tools.json", key: "Figma_Variables_Tokens" },
+
+  // Styling Methodologies — file: "Styling Methodologies.json"
+  "styling": { file: "Styling Methodologies.json", key: "Styling_Methodologies" },
+  "tailwind": { file: "Styling Methodologies.json", key: "Tailwind_CSS" },
+  "css_in_js": { file: "Styling Methodologies.json", key: "CSS_in_JS" },
+  "css_modules": { file: "Styling Methodologies.json", key: "CSS_Modules" },
+
+  // Headless UI Components — file: "Headless UI Components.json"
+  "headless_ui": { file: "Headless UI Components.json", key: "Headless_UI_Components" },
+  "radix": { file: "Headless UI Components.json", key: "Radix_UI" },
+  "react_aria": { file: "Headless UI Components.json", key: "React_Aria" },
+
+  // Component Driven Dev — file: "Component Driven Dev.json"
+  "cdd": { file: "Component Driven Dev.json", key: "Component_Driven_Development_CDD" },
+  "storybook": { file: "Component Driven Dev.json", key: "Storybook" },
+  "loki": { file: "Component Driven Dev.json", key: "Visual_Testing" },
+
+  // Accessibility — file: "Accessibility (a11y).json"
+  "a11y": { file: "Accessibility (a11y).json", key: "Accessibility_a11y" },
+  "wcag": { file: "Accessibility (a11y).json", key: "WCAG_Guidelines" },
+  "wai_aria": { file: "Accessibility (a11y).json", key: "WAI_ARIA" },
+  // a11y Auditing Tools ada di file terpisah
+  "a11y_tools": { file: "a11y Auditing Tools.json", key: "Accessibility_Auditing_Tools" },
+
+  // Docs & Distribution — file: "Docs & Distribution.json"
+  "docs_distribution": { file: "Docs & Distribution.json", key: "Docs_and_Distribution" },
+  "monorepo": { file: "Docs & Distribution.json", key: "Monorepo_Tooling" },
+  "npm_publish": { file: "Docs & Distribution.json", key: "NPM_Publishing" },
+  // Nextra & Docusaurus ada di a11y Auditing Tools.json
+  "nextra": { file: "a11y Auditing Tools.json", key: "Nextra" },
+  "docusaurus": { file: "a11y Auditing Tools.json", key: "Docusaurus" }
 };
 
 async function openPanel(id, title, category, desc) {
@@ -1111,7 +832,12 @@ async function openPanel(id, title, category, desc) {
       if (mapping.rootKey && dataFile[mapping.rootKey]) {
         rootData = dataFile[mapping.rootKey];
       }
-      const dataObj = rootData[mapping.key];
+      
+      let dataObj = rootData[mapping.key];
+      if (mapping.subKey && dataObj) {
+        dataObj = dataObj[mapping.subKey];
+      }
+
       if (dataObj) {
         actualDesc = generateHtmlFromJson(dataObj);
         exampleObj = extractExample(dataObj);

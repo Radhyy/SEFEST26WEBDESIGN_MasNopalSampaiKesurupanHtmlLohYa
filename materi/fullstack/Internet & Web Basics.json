@@ -1,0 +1,208 @@
+{
+  "How_the_Internet_Works": {
+    "description": "Internet adalah jaringan global yang menghubungkan jutaan perangkat di seluruh dunia menggunakan protokol komunikasi standar seperti TCP/IP. Ketika pengguna membuka website, data dikirim dan diterima melalui jaringan dalam bentuk packet data.",
+
+    "main_concepts": [
+      "Client dan server communication",
+      "IP Address",
+      "TCP/IP protocol",
+      "Packet routing",
+      "Network infrastructure"
+    ],
+
+    "workflow": [
+      "User mengetik URL",
+      "Browser mencari alamat IP melalui DNS",
+      "Request dikirim ke server",
+      "Server mengirim response",
+      "Browser menampilkan halaman web"
+    ],
+
+    "examples": [
+      "Mengakses website melalui browser",
+      "Streaming video online",
+      "Mengirim email",
+      "Video conference"
+    ],
+
+    "code_example": {
+      "title": "Simple HTTP Request Example",
+      "code": "fetch('https://example.com').then(res => res.json())"
+    },
+
+    "real_world_use_cases": [
+      "Social media platforms",
+      "Cloud applications",
+      "Online gaming",
+      "E-commerce websites"
+    ]
+  },
+
+  "HTTP_and_HTTPS": {
+    "description": "HTTP (HyperText Transfer Protocol) adalah protokol komunikasi antara browser dan server. HTTPS adalah versi aman HTTP yang menggunakan SSL/TLS encryption.",
+
+    "HTTP": {
+      "description": "HTTP digunakan untuk transfer data web tanpa enkripsi.",
+
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+
+      "examples": [
+        "Mengambil data website",
+        "Mengirim form login",
+        "Menghapus data API"
+      ],
+
+      "code_example": {
+        "title": "HTTP GET Request",
+        "code": "GET /api/users HTTP/1.1"
+      }
+    },
+
+    "HTTPS": {
+      "description": "HTTPS mengenkripsi komunikasi agar data lebih aman.",
+
+      "benefits": [
+        "Data encryption",
+        "Protection against MITM attacks",
+        "Authentication",
+        "Better SEO ranking"
+      ],
+
+      "examples": [
+        "Secure online banking",
+        "Login authentication",
+        "Payment gateway"
+      ],
+
+      "code_example": {
+        "title": "HTTPS URL Example",
+        "code": "https://example.com"
+      }
+    },
+
+    "real_world_use_cases": [
+      "Internet banking",
+      "Secure login systems",
+      "Online transactions",
+      "Modern web applications"
+    ]
+  },
+
+  "Internet_and_Web_Basics": {
+    "description": "Internet & Web Basics adalah dasar pemahaman tentang bagaimana website, browser, server, dan jaringan internet bekerja bersama untuk menyediakan layanan web.",
+
+    "core_topics": [
+      "Web server",
+      "Browser",
+      "Client-server architecture",
+      "URLs",
+      "Hosting"
+    ],
+
+    "importance": [
+      "Dasar web development",
+      "Memahami request-response flow",
+      "Mempermudah debugging networking"
+    ],
+
+    "examples": [
+      "Mengakses website menggunakan browser",
+      "Hosting website di server",
+      "Menggunakan domain custom"
+    ],
+
+    "code_example": {
+      "title": "Basic URL Example",
+      "code": "https://mywebsite.com/about"
+    },
+
+    "real_world_use_cases": [
+      "Website company profile",
+      "Blog platforms",
+      "Online learning websites",
+      "Portfolio websites"
+    ]
+  },
+
+  "How_Browsers_Work": {
+    "description": "Browser bekerja dengan mengambil file website dari server, memproses HTML, CSS, dan JavaScript, lalu merender halaman menjadi tampilan visual yang bisa digunakan user.",
+
+    "browser_pipeline": [
+      "Request halaman web",
+      "Parse HTML",
+      "Build DOM tree",
+      "Parse CSS",
+      "Build render tree",
+      "Layout & painting"
+    ],
+
+    "browser_engines": [
+      "Blink (Chrome, Edge)",
+      "WebKit (Safari)",
+      "Gecko (Firefox)"
+    ],
+
+    "examples": [
+      "Rendering halaman HTML",
+      "Memproses CSS animations",
+      "Menjalankan JavaScript"
+    ],
+
+    "code_example": {
+      "title": "DOM Example",
+      "code": "document.querySelector('h1').innerText = 'Hello Browser';"
+    },
+
+    "real_world_use_cases": [
+      "Interactive web apps",
+      "Single Page Applications",
+      "Browser-based games",
+      "Modern dashboards"
+    ]
+  },
+
+  "DNS_and_Domain": {
+    "description": "DNS (Domain Name System) adalah sistem yang menerjemahkan nama domain menjadi alamat IP agar browser dapat menemukan server tujuan.",
+
+    "domain": {
+      "description": "Domain adalah alamat website yang mudah dibaca manusia seperti example.com."
+    },
+
+    "DNS_workflow": [
+      "User mengetik domain",
+      "DNS lookup dilakukan",
+      "Domain diterjemahkan ke IP",
+      "Browser terhubung ke server"
+    ],
+
+    "record_types": [
+      "A Record",
+      "CNAME",
+      "MX Record",
+      "TXT Record"
+    ],
+
+    "examples": [
+      "Menghubungkan domain ke hosting",
+      "Custom email domain",
+      "Subdomain configuration"
+    ],
+
+    "code_example": {
+      "title": "DNS Record Example",
+      "code": "A Record -> 192.168.1.1"
+    },
+
+    "real_world_use_cases": [
+      "Website hosting setup",
+      "Cloudflare DNS management",
+      "Business email configuration",
+      "CDN integration"
+    ]
+  }
+}

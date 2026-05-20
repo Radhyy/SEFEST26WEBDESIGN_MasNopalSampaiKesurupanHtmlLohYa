@@ -1,0 +1,74 @@
+{
+  "CI_CD_and_Automation": {
+    "description": "CI/CD (Continuous Integration / Continuous Deployment) adalah pendekatan modern dalam pengembangan software yang mengotomatiskan proses dari penulisan kode, testing, build, hingga deployment. Tujuannya adalah membuat proses development lebih cepat, stabil, dan minim human error.",
+
+    "main_goals": [
+      "Mengotomatisasi proses development",
+      "Mempercepat delivery aplikasi",
+      "Mengurangi human error",
+      "Menjaga kualitas kode secara konsisten",
+      "Mendukung deployment berkelanjutan"
+    ],
+
+    "stages": [
+      "Code push ke repository",
+      "Automated testing dijalankan",
+      "Build aplikasi",
+      "Deploy ke staging",
+      "Deploy ke production"
+    ],
+
+    "example": {
+      "title": "CI/CD Flow",
+      "code": "Developer Push -> CI Pipeline -> Test -> Build -> Deploy"
+    }
+  },
+
+  "GitHub_Actions": {
+    "description": "GitHub Actions adalah platform CI/CD bawaan GitHub yang digunakan untuk mengotomatisasi workflow seperti testing, build, deployment, dan automation langsung dari repository.",
+
+    "main_goals": [
+      "Automasi workflow development",
+      "Menjalankan testing otomatis",
+      "Build dan deployment otomatis",
+      "Integrasi langsung dengan GitHub repo"
+    ],
+
+    "features": [
+      "YAML-based workflow configuration",
+      "Event-driven (push, pull request, schedule)",
+      "Support Docker & containers",
+      "Parallel jobs execution",
+      "Matrix build testing"
+    ],
+
+    "example": {
+      "title": "GitHub Actions Workflow",
+      "code": "name: CI\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n      - run: npm install\n      - run: npm test"
+    }
+  },
+
+  "Lighthouse_CI": {
+    "description": "Lighthouse CI adalah tools untuk mengukur kualitas website secara otomatis dalam pipeline CI/CD berdasarkan performance, accessibility, SEO, dan best practices.",
+
+    "main_goals": [
+      "Mengukur performa website otomatis",
+      "Mendeteksi masalah SEO",
+      "Meningkatkan accessibility",
+      "Memastikan best practices web"
+    ],
+
+    "metrics": [
+      "Performance score",
+      "Accessibility score",
+      "SEO score",
+      "Best practices score",
+      "PWA readiness"
+    ],
+
+    "example": {
+      "title": "Lighthouse CI Flow",
+      "code": "CI Pipeline -> Run Lighthouse -> Generate Report -> Fail if score below threshold"
+    }
+  }
+}

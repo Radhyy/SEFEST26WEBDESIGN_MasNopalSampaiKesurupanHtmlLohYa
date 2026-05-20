@@ -1,0 +1,166 @@
+{
+  "CI_CD": {
+    "description": "CI/CD (Continuous Integration & Continuous Deployment) adalah proses automasi untuk build, testing, dan deployment aplikasi.",
+    "main_goals": [
+      "Automasi testing",
+      "Mempercepat deployment",
+      "Mengurangi human error",
+      "Meningkatkan kualitas software",
+      "Mempermudah collaboration team"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Continuous Integration",
+        "function": "Menggabungkan perubahan kode secara otomatis"
+      },
+      {
+        "concept": "Continuous Deployment",
+        "function": "Deploy aplikasi otomatis"
+      },
+      {
+        "concept": "Pipeline",
+        "function": "Urutan proses automation"
+      },
+      {
+        "concept": "Build",
+        "function": "Proses compile atau prepare aplikasi"
+      },
+      {
+        "concept": "Runner",
+        "function": "Server yang menjalankan pipeline"
+      }
+    ],
+    "common_pipeline_steps": [
+      "Install Dependencies",
+      "Run Linter",
+      "Run Tests",
+      "Build Application",
+      "Deploy Application"
+    ],
+    "best_practices": [
+      "Gunakan automated testing",
+      "Pisahkan staging dan production",
+      "Gunakan secrets management",
+      "Gunakan rollback strategy",
+      "Monitoring deployment"
+    ],
+    "example": {
+      "title": "Basic CI/CD Workflow",
+      "code": "Push Code -> Run Tests -> Build -> Deploy"
+    }
+  },
+
+  "GitHub_Actions": {
+    "description": "GitHub Actions adalah CI/CD platform bawaan GitHub untuk automation workflow.",
+    "official_website": "https://github.com/features/actions",
+    "important_features": [
+      {
+        "feature": "Workflow Automation",
+        "function": "Automasi build dan deployment"
+      },
+      {
+        "feature": "GitHub Integration",
+        "function": "Terintegrasi langsung dengan repository"
+      },
+      {
+        "feature": "Marketplace Actions",
+        "function": "Menggunakan action siap pakai"
+      },
+      {
+        "feature": "Matrix Builds",
+        "function": "Testing di banyak environment"
+      }
+    ],
+    "advantages": [
+      "Terintegrasi dengan GitHub",
+      "Mudah digunakan",
+      "Banyak template workflow",
+      "Support multi-platform"
+    ],
+    "best_practices": [
+      "Gunakan reusable workflows",
+      "Simpan secrets di GitHub Secrets",
+      "Pisahkan workflow berdasarkan fungsi"
+    ],
+    "example": {
+      "title": "GitHub Actions Example",
+      "code": "name: Node.js CI\n\non: [push]\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - run: npm install"
+    }
+  },
+
+  "GitLab_CI": {
+    "description": "GitLab CI adalah sistem CI/CD bawaan GitLab untuk automasi testing dan deployment.",
+    "official_website": "https://about.gitlab.com",
+    "important_features": [
+      {
+        "feature": "Pipeline Automation",
+        "function": "Automasi workflow development"
+      },
+      {
+        "feature": "GitLab Integration",
+        "function": "Terintegrasi dengan GitLab repository"
+      },
+      {
+        "feature": "Self Hosted Runner",
+        "function": "Menjalankan pipeline di server sendiri"
+      },
+      {
+        "feature": "Docker Integration",
+        "function": "Support container workflow"
+      }
+    ],
+    "advantages": [
+      "CI/CD built-in",
+      "Pipeline fleksibel",
+      "Support self-hosted",
+      "Monitoring pipeline lengkap"
+    ],
+    "best_practices": [
+      "Gunakan caching dependencies",
+      "Pisahkan environment deploy",
+      "Gunakan variables untuk secrets"
+    ],
+    "example": {
+      "title": "GitLab CI Example",
+      "code": "stages:\n  - build\n\nbuild-job:\n  stage: build\n  script:\n    - npm install\n    - npm run build"
+    }
+  },
+
+  "Jenkins": {
+    "description": "Jenkins adalah automation server open-source yang digunakan untuk CI/CD dan automation workflows.",
+    "official_website": "https://www.jenkins.io",
+    "important_features": [
+      {
+        "feature": "Pipeline Automation",
+        "function": "Membuat workflow CI/CD"
+      },
+      {
+        "feature": "Plugin Ecosystem",
+        "function": "Banyak plugin tambahan"
+      },
+      {
+        "feature": "Distributed Builds",
+        "function": "Menjalankan build di banyak machine"
+      },
+      {
+        "feature": "Self Hosted",
+        "function": "Dapat dijalankan di server sendiri"
+      }
+    ],
+    "advantages": [
+      "Sangat fleksibel",
+      "Plugin sangat banyak",
+      "Cocok untuk enterprise",
+      "Open-source"
+    ],
+    "best_practices": [
+      "Gunakan Jenkinsfile",
+      "Pisahkan pipeline berdasarkan project",
+      "Update plugin secara rutin"
+    ],
+    "example": {
+      "title": "Jenkins Pipeline Example",
+      "code": "pipeline {\n  agent any\n  stages {\n    stage('Build') {\n      steps {\n        sh 'npm install'\n      }\n    }\n  }\n}"
+    }
+  }
+}

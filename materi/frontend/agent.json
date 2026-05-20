@@ -1,0 +1,240 @@
+{
+  "Agents": {
+    "description": "AI Agents adalah sistem AI yang dapat berpikir, mengambil keputusan, menggunakan tools, dan menjalankan tugas secara otomatis untuk mencapai tujuan tertentu.",
+    "main_goals": [
+      "Automasi task",
+      "Pengambilan keputusan otomatis",
+      "Interaksi dengan tools dan API",
+      "Membantu workflow manusia",
+      "Menjalankan proses kompleks"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Autonomous Behavior",
+        "function": "AI dapat bekerja sendiri"
+      },
+      {
+        "concept": "Memory",
+        "function": "Menyimpan context dan informasi"
+      },
+      {
+        "concept": "Reasoning",
+        "function": "Berpikir dan mengambil keputusan"
+      },
+      {
+        "concept": "Tool Usage",
+        "function": "Menggunakan API, database, atau tools lain"
+      },
+      {
+        "concept": "Planning",
+        "function": "Membuat langkah-langkah penyelesaian tugas"
+      }
+    ],
+    "agent_types": [
+      {
+        "type": "Chat Agent",
+        "description": "Agent untuk percakapan seperti chatbot AI"
+      },
+      {
+        "type": "Task Automation Agent",
+        "description": "Agent untuk menjalankan task otomatis"
+      },
+      {
+        "type": "Coding Agent",
+        "description": "Agent untuk membantu coding dan debugging"
+      },
+      {
+        "type": "Research Agent",
+        "description": "Agent untuk mencari dan menganalisis informasi"
+      },
+      {
+        "type": "Multi-Agent System",
+        "description": "Beberapa agent bekerja bersama"
+      }
+    ],
+    "best_practices": [
+      "Gunakan prompt yang jelas",
+      "Batasi akses tools bila perlu",
+      "Gunakan memory management",
+      "Lakukan logging pada setiap task",
+      "Validasi output AI"
+    ],
+    "example": {
+      "title": "Simple AI Agent Flow",
+      "code": "User Request -> AI Reasoning -> Tool Usage -> Generate Response"
+    }
+  },
+
+  "AI_Agents_Roadmap": {
+    "Beginner_Level": {
+      "description": "Tahap dasar untuk memahami konsep AI dan automation.",
+      "topics": [
+        {
+          "topic": "Basic Python",
+          "description": "Belajar syntax Python dan automation sederhana"
+        },
+        {
+          "topic": "JavaScript Basics",
+          "description": "Belajar JavaScript untuk web automation"
+        },
+        {
+          "topic": "API Fundamentals",
+          "description": "Memahami REST API dan JSON"
+        },
+        {
+          "topic": "Prompt Engineering",
+          "description": "Belajar membuat prompt efektif"
+        },
+        {
+          "topic": "LLM Basics",
+          "description": "Memahami cara kerja Large Language Models"
+        }
+      ],
+      "recommended_tools": [
+        "Python",
+        "Postman",
+        "OpenAI API",
+        "Node.js"
+      ],
+      "example_project": {
+        "title": "Simple Chatbot",
+        "description": "Membuat chatbot sederhana menggunakan API AI"
+      }
+    },
+
+    "Intermediate_Level": {
+      "description": "Tahap membangun AI agent yang lebih interaktif dan dapat menggunakan tools.",
+      "topics": [
+        {
+          "topic": "LangChain",
+          "description": "Framework untuk AI workflows"
+        },
+        {
+          "topic": "Memory Systems",
+          "description": "Menyimpan context percakapan"
+        },
+        {
+          "topic": "Tool Calling",
+          "description": "Menghubungkan AI dengan tools"
+        },
+        {
+          "topic": "Vector Databases",
+          "description": "Penyimpanan embedding AI"
+        },
+        {
+          "topic": "RAG",
+          "description": "Retrieval Augmented Generation"
+        }
+      ],
+      "recommended_tools": [
+        "LangChain",
+        "Pinecone",
+        "ChromaDB",
+        "Supabase"
+      ],
+      "example_project": {
+        "title": "AI Research Assistant",
+        "description": "Agent yang dapat mencari dan merangkum informasi"
+      }
+    },
+
+    "Advanced_Level": {
+      "description": "Tahap membangun autonomous agents dan multi-agent systems.",
+      "topics": [
+        {
+          "topic": "Multi-Agent Systems",
+          "description": "Beberapa AI agent bekerja bersama"
+        },
+        {
+          "topic": "Agent Planning",
+          "description": "AI membuat strategi penyelesaian task"
+        },
+        {
+          "topic": "Autonomous Workflows",
+          "description": "Workflow otomatis berbasis AI"
+        },
+        {
+          "topic": "Fine-Tuning",
+          "description": "Melatih model AI khusus"
+        },
+        {
+          "topic": "AI Security",
+          "description": "Keamanan dan validasi AI"
+        }
+      ],
+      "recommended_tools": [
+        "CrewAI",
+        "AutoGen",
+        "LangGraph",
+        "OpenAI Assistants API"
+      ],
+      "example_project": {
+        "title": "Autonomous Coding Agent",
+        "description": "Agent yang dapat membuat, memperbaiki, dan deploy aplikasi"
+      }
+    },
+
+    "Production_Level": {
+      "description": "Tahap deployment dan scaling AI agents untuk production.",
+      "topics": [
+        {
+          "topic": "Cloud Deployment",
+          "description": "Deploy AI agents ke cloud"
+        },
+        {
+          "topic": "Monitoring",
+          "description": "Monitoring performa agent"
+        },
+        {
+          "topic": "Caching",
+          "description": "Optimasi response AI"
+        },
+        {
+          "topic": "Scalability",
+          "description": "Meningkatkan performa sistem"
+        },
+        {
+          "topic": "Security & Rate Limiting",
+          "description": "Keamanan API dan pembatasan request"
+        }
+      ],
+      "recommended_tools": [
+        "Docker",
+        "Kubernetes",
+        "Redis",
+        "AWS",
+        "Vercel"
+      ],
+      "example_project": {
+        "title": "Production AI SaaS",
+        "description": "Platform AI agent berbasis cloud"
+      }
+    },
+
+    "Learning_Order": [
+      "Programming Basics",
+      "APIs and JSON",
+      "Prompt Engineering",
+      "LLM Fundamentals",
+      "LangChain / Frameworks",
+      "Memory & RAG",
+      "Tool Calling",
+      "AI Agents",
+      "Multi-Agent Systems",
+      "Deployment & Scaling"
+    ],
+
+    "Best_Practices": [
+      "Mulai dari project kecil",
+      "Pelajari API integration",
+      "Fokus pada automation sederhana dulu",
+      "Pelajari security AI",
+      "Bangun portfolio project AI"
+    ],
+
+    "Example_AI_Agent_Architecture": {
+      "title": "Basic AI Agent Architecture",
+      "code": "User Input -> LLM Processing -> Memory Check -> Tool Calling -> Response Generation"
+    }
+  }
+}

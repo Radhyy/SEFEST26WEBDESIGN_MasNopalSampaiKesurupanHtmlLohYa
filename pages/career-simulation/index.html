@@ -89,19 +89,19 @@
       </p>
 
       <!-- Unlock progress -->
-      <div
+      <div id="unlock-progress-container"
         class="inline-flex w-full max-w-xl flex-col items-center gap-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl px-4 py-5 mb-6 shadow-sm sm:px-8">
         <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest">Progress Unlocking</p>
         <div class="grid w-full grid-cols-[auto_1fr_auto] items-center gap-3 sm:gap-4">
           <div class="text-right">
-            <p class="text-slate-900 dark:text-white font-display font-bold text-2xl leading-none">240</p>
+            <p id="current-xp-text" class="text-slate-900 dark:text-white font-display font-bold text-2xl leading-none">0</p>
             <p class="text-slate-400 text-xs">XP Kamu</p>
           </div>
           <div class="min-w-20 h-3 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
-            <div class="h-full rounded-full bg-linear-to-r from-brand-500 to-amber-500" style="width:16%"></div>
+            <div id="xp-progress-bar" class="h-full rounded-full bg-linear-to-r from-brand-500 to-amber-500 transition-all duration-1000" style="width:0%"></div>
           </div>
           <div class="text-left">
-            <p class="text-slate-900 dark:text-white font-display font-bold text-2xl leading-none">1500</p>
+            <p class="text-slate-900 dark:text-white font-display font-bold text-2xl leading-none">1000</p>
             <p class="text-slate-400 text-xs">XP Dibutuhkan</p>
           </div>
         </div>
@@ -158,30 +158,26 @@
     <!-- Project cards grid (blurred = locked) -->
     <div class="relative">
       <!-- Lock overlay -->
-      <div
+      <div id="projects-lock-overlay"
         class="absolute inset-0 z-20 flex flex-col items-center justify-center rounded-2xl bg-linear-to-b from-transparent via-white/60 dark:via-slate-900/60 to-white dark:to-slate-900 backdrop-blur-[2px]">
         <div class="text-center p-8">
           <div class="w-16 h-16 rounded-2xl bg-brand-500 pulse mx-auto mb-4 flex items-center justify-center shadow-xl">
             <i class="fa-solid fa-lock text-white text-xl"></i>
           </div>
           <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-2">Fitur Terkunci</h3>
-          <p class="text-slate-500 dark:text-slate-400 text-sm max-w-xs mx-auto mb-4">Capai Level Freelance untuk
+          <p class="text-slate-500 dark:text-slate-400 text-sm max-w-xs mx-auto mb-4">Capai Level Freelance (1000 XP) untuk
             mengakses semua project simulasi</p>
           <div class="flex flex-col gap-3 sm:flex-row sm:justify-center">
           <a href="../learning-roadmap/roadmap-frontend/"
             class="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-brand-500 text-white font-bold px-6 py-3 hover:-translate-y-0.5 hover:bg-brand-600 transition-all text-sm shadow-lg">
             <i class="fa-solid fa-bolt"></i> Mulai Belajar
           </a>
-          <a href="/pages/career-simulation/unlock/"
-            class="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-amber-400 text-white font-bold px-6 py-3 hover:-translate-y-0.5 hover:bg-amber-500 transition-all text-sm shadow-lg">
-            <i class="fa-solid fa-unlock"></i> Unlock (Demo)
-          </a>
           </div>
         </div>
       </div>
 
       <!-- Preview cards (behind lock) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pointer-events-none select-none">
+      <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pointer-events-none select-none">
 
         <!-- Card 1 -->
         <a href="unlock/project-detail.html" data-career-card data-category="ui-slicing"
@@ -408,9 +404,59 @@
   </section>
 
   <div id="footer-placeholder"></div>
+  
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const filterButtons = document.querySelectorAll("[data-career-filter]");
+    document.addEventListener("DOMContentLoaded", function () {
+      const targetXP = 1000;
+      let userXP = 0;
+      
+      const progressStr = sessionStorage.getItem("worksim_xp_progress");
+      if (progressStr) {
+        try {
+          const xpProgress = JSON.parse(progressStr);
+          userXP = xpProgress.xp || 0;
+        } catch (e) {}
+      }
+
+      const xpText = document.getElementById("current-xp-text");
+      const progressBar = document.getElementById("xp-progress-bar");
+      const lockOverlay = document.getElementById("projects-lock-overlay");
+      const projectsGrid = document.getElementById("projects-grid");
+      const unlockContainer = document.getElementById("unlock-progress-container");
+
+      if (xpText) xpText.textContent = userXP;
+      
+      const percent = Math.min((userXP / targetXP) * 100, 100);
+      if (progressBar) {
+        // Animate on load
+        setTimeout(() => {
+          progressBar.style.width = percent + "%";
+        }, 100);
+      }
+
+      if (userXP >= targetXP) {
+        // Unlocked state
+        if (lockOverlay) lockOverlay.remove();
+        if (projectsGrid) {
+          projectsGrid.classList.remove("pointer-events-none", "select-none");
+        }
+        if (unlockContainer) {
+          unlockContainer.innerHTML = `
+            <div class="flex items-center gap-3 p-2">
+              <div class="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600">
+                <i class="fa-solid fa-check text-2xl"></i>
+              </div>
+              <div class="text-left">
+                <p class="text-slate-900 dark:text-white font-bold text-lg leading-none mb-1">Status: Unlocked!</p>
+                <p class="text-slate-500 dark:text-slate-400 text-sm">Kamu telah mencapai Level Freelance dan membuka mode ini.</p>
+              </div>
+            </div>
+          `;
+        }
+      }
+    });
+
+    const filterButtons = document.querySelectorAll("[data-career-filter]");
       const cards = document.querySelectorAll("[data-career-card]");
 
       function setActiveFilter(activeButton) {
@@ -436,7 +482,6 @@
           });
         });
       });
-    });
   </script>
 </body>
 

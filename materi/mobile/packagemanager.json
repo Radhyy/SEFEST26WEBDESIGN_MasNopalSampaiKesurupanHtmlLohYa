@@ -1,0 +1,179 @@
+{
+  "Package_Managers": {
+    "description": "Package Managers adalah tools untuk menginstall, mengupdate, dan mengelola dependencies atau libraries dalam project development.",
+    "main_goals": [
+      "Mengelola dependencies",
+      "Menginstall libraries",
+      "Mempermudah update package",
+      "Menjaga konsistensi project",
+      "Automasi dependency management"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Dependencies",
+        "function": "Library yang dibutuhkan project"
+      },
+      {
+        "concept": "Versioning",
+        "function": "Mengatur versi package"
+      },
+      {
+        "concept": "Lock File",
+        "function": "Menjaga versi dependency tetap konsisten"
+      },
+      {
+        "concept": "Registry",
+        "function": "Tempat penyimpanan packages"
+      }
+    ],
+    "advantages": [
+      "Install package lebih mudah",
+      "Dependency management otomatis",
+      "Version consistency",
+      "Mempercepat development"
+    ],
+    "best_practices": [
+      "Gunakan lock files",
+      "Update dependencies secara rutin",
+      "Hapus unused packages",
+      "Gunakan official packages"
+    ],
+    "example": {
+      "title": "Package Manager Workflow",
+      "code": "Install Package -> Update Dependencies -> Build Project"
+    }
+  },
+
+  "Pub_Dart": {
+    "description": "Pub adalah package manager resmi untuk Dart dan Flutter.",
+    "official_website": "https://pub.dev",
+    "important_features": [
+      {
+        "feature": "Dependency Management",
+        "function": "Mengelola package Flutter dan Dart"
+      },
+      {
+        "feature": "pubspec.yaml",
+        "function": "Konfigurasi dependencies"
+      },
+      {
+        "feature": "Version Resolution",
+        "function": "Mengatur kompatibilitas package"
+      }
+    ],
+    "advantages": [
+      "Terintegrasi dengan Flutter",
+      "Mudah digunakan",
+      "Banyak package tersedia"
+    ],
+    "best_practices": [
+      "Gunakan versi package stabil",
+      "Update dependencies berkala",
+      "Gunakan package terpercaya"
+    ],
+    "important_commands": [
+      {
+        "command": "flutter pub get",
+        "function": "Menginstall dependencies"
+      },
+      {
+        "command": "flutter pub upgrade",
+        "function": "Update package"
+      }
+    ],
+    "example": {
+      "title": "pubspec.yaml Example",
+      "code": "dependencies:\n  flutter:\n    sdk: flutter\n  http: ^1.0.0"
+    }
+  },
+
+  "Gradle_Android": {
+    "description": "Gradle adalah build automation dan dependency management tool yang digunakan dalam Android development.",
+    "official_website": "https://gradle.org",
+    "important_features": [
+      {
+        "feature": "Build Automation",
+        "function": "Automasi build aplikasi Android"
+      },
+      {
+        "feature": "Dependency Management",
+        "function": "Mengelola library Android"
+      },
+      {
+        "feature": "Build Variants",
+        "function": "Membuat banyak versi aplikasi"
+      },
+      {
+        "feature": "Plugin System",
+        "function": "Menambahkan fitur tambahan"
+      }
+    ],
+    "advantages": [
+      "Terintegrasi Android Studio",
+      "Build automation kuat",
+      "Flexible configuration"
+    ],
+    "best_practices": [
+      "Gunakan dependency terbaru",
+      "Pisahkan build types",
+      "Gunakan caching build"
+    ],
+    "important_commands": [
+      {
+        "command": "./gradlew build",
+        "function": "Build project Android"
+      },
+      {
+        "command": "./gradlew clean",
+        "function": "Membersihkan build"
+      }
+    ],
+    "example": {
+      "title": "Gradle Dependency Example",
+      "code": "dependencies {\n    implementation 'com.squareup.retrofit2:retrofit:2.9.0'\n}"
+    }
+  },
+
+  "CocoaPods_iOS": {
+    "description": "CocoaPods adalah dependency manager untuk project iOS dan Swift.",
+    "official_website": "https://cocoapods.org",
+    "important_features": [
+      {
+        "feature": "Dependency Management",
+        "function": "Mengelola library iOS"
+      },
+      {
+        "feature": "Podfile",
+        "function": "Konfigurasi dependencies"
+      },
+      {
+        "feature": "Automatic Integration",
+        "function": "Integrasi package otomatis"
+      }
+    ],
+    "advantages": [
+      "Populer di iOS ecosystem",
+      "Mudah digunakan",
+      "Banyak library tersedia"
+    ],
+    "best_practices": [
+      "Commit Podfile.lock",
+      "Gunakan versi package stabil",
+      "Update pods berkala"
+    ],
+    "important_commands": [
+      {
+        "command": "pod install",
+        "function": "Menginstall dependencies"
+      },
+      {
+        "command": "pod update",
+        "function": "Update dependencies"
+      }
+    ],
+    "example": {
+      "title": "Podfile Example",
+      "code": "platform :ios, '14.0'\n\ntarget 'MyApp' do\n  pod 'Alamofire'\nend"
+    }
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "Databases_and_SQL": {
+    "description": "Database adalah sistem untuk menyimpan, mengelola, dan mengambil data secara terstruktur. SQL digunakan untuk berinteraksi dengan database relasional.",
+    "main_goals": [
+      "Menyimpan data secara terstruktur",
+      "Mengelola data dalam jumlah besar",
+      "Mengambil data dengan cepat",
+      "Menjaga integritas data",
+      "Mendukung aplikasi backend"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Table",
+        "function": "Tempat menyimpan data dalam bentuk baris dan kolom"
+      },
+      {
+        "concept": "Row",
+        "function": "Satu record data"
+      },
+      {
+        "concept": "Column",
+        "function": "Atribut data"
+      },
+      {
+        "concept": "Primary Key",
+        "function": "ID unik setiap data"
+      },
+      {
+        "concept": "Foreign Key",
+        "function": "Relasi antar tabel"
+      },
+      {
+        "concept": "Query",
+        "function": "Perintah untuk mengambil atau mengubah data"
+      }
+    ],
+    "common_sql_commands": [
+      "SELECT",
+      "INSERT",
+      "UPDATE",
+      "DELETE",
+      "CREATE TABLE",
+      "DROP TABLE"
+    ],
+    "advantages": [
+      "Data terstruktur",
+      "Query cepat",
+      "Mudah relasi data",
+      "Scalable"
+    ],
+    "best_practices": [
+      "Gunakan indexing",
+      "Normalisasi database",
+      "Gunakan primary key",
+      "Hindari duplikasi data"
+    ],
+    "example": {
+      "title": "Basic SQL Query",
+      "code": "SELECT * FROM users WHERE id = 1;"
+    }
+  },
+
+  "PostgreSQL": {
+    "description": "PostgreSQL adalah database relasional open-source yang powerful, scalable, dan sangat stabil.",
+    "official_website": "https://www.postgresql.org",
+    "important_features": [
+      {
+        "feature": "ACID Compliance",
+        "function": "Menjamin transaksi aman"
+      },
+      {
+        "feature": "Advanced SQL",
+        "function": "Support fitur SQL tingkat lanjut"
+      },
+      {
+        "feature": "JSON Support",
+        "function": "Menyimpan data JSON"
+      },
+      {
+        "feature": "Extensibility",
+        "function": "Bisa ditambah fitur custom"
+      }
+    ],
+    "common_use_cases": [
+      "Web applications",
+      "Data analytics",
+      "Enterprise systems",
+      "Geospatial data"
+    ],
+    "advantages": [
+      "Sangat stabil",
+      "Fitur lengkap",
+      "Open-source",
+      "Scalable"
+    ],
+    "best_practices": [
+      "Gunakan indexing",
+      "Gunakan schema yang jelas",
+      "Backup database rutin"
+    ],
+    "example": {
+      "title": "PostgreSQL Query",
+      "code": "SELECT name, email FROM users WHERE active = true;"
+    }
+  },
+
+  "MySQL": {
+    "description": "MySQL adalah database relasional populer yang banyak digunakan untuk web development.",
+    "official_website": "https://www.mysql.com",
+    "important_features": [
+      {
+        "feature": "Fast Performance",
+        "function": "Cepat untuk web aplikasi"
+      },
+      {
+        "feature": "Easy to Use",
+        "function": "Mudah dipelajari"
+      },
+      {
+        "feature": "Replication",
+        "function": "Support database replication"
+      },
+      {
+        "feature": "ACID Support",
+        "function": "Transaksi aman"
+      }
+    ],
+    "common_use_cases": [
+      "Web development",
+      "CMS (WordPress)",
+      "E-commerce",
+      "Small to medium apps"
+    ],
+    "advantages": [
+      "Populer",
+      "Mudah digunakan",
+      "Banyak tutorial",
+      "Performa bagus"
+    ],
+    "best_practices": [
+      "Gunakan indexing",
+      "Hindari query berat",
+      "Gunakan foreign key"
+    ],
+    "example": {
+      "title": "MySQL Query",
+      "code": "SELECT * FROM products WHERE price > 100;"
+    }
+  },
+
+  "SQL_Server": {
+    "description": "SQL Server adalah database relasional dari Microsoft yang digunakan untuk enterprise system.",
+    "official_website": "https://www.microsoft.com/sql-server",
+    "important_features": [
+      {
+        "feature": "Enterprise Ready",
+        "function": "Cocok untuk perusahaan besar"
+      },
+      {
+        "feature": "T-SQL",
+        "function": "Bahasa SQL khusus Microsoft"
+      },
+      {
+        "feature": "Integration Services",
+        "function": "ETL dan data processing"
+      },
+      {
+        "feature": "Security Features",
+        "function": "Keamanan tingkat tinggi"
+      }
+    ],
+    "common_use_cases": [
+      "Enterprise applications",
+      "Banking systems",
+      "Business intelligence",
+      "Corporate systems"
+    ],
+    "advantages": [
+      "Sangat aman",
+      "Enterprise grade",
+      "Tooling lengkap",
+      "Integration Microsoft ecosystem"
+    ],
+    "best_practices": [
+      "Gunakan indexing optimal",
+      "Backup rutin",
+      "Gunakan stored procedures"
+    ],
+    "example": {
+      "title": "SQL Server Query",
+      "code": "SELECT TOP 10 * FROM Employees;"
+    }
+  }
+}

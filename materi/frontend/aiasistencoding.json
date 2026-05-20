@@ -1,0 +1,196 @@
+{
+  "AI_Assisted_Coding": {
+    "description": "AI Assisted Coding adalah penggunaan Artificial Intelligence untuk membantu developer dalam menulis, memahami, memperbaiki, dan mengoptimalkan kode program.",
+    "functions": [
+      "Auto code completion",
+      "Generate code otomatis",
+      "Membantu debugging",
+      "Menjelaskan kode",
+      "Refactoring kode",
+      "Membantu dokumentasi"
+    ],
+    "benefits": [
+      "Mempercepat development",
+      "Mengurangi repetitive coding",
+      "Membantu belajar programming",
+      "Meningkatkan produktivitas",
+      "Mempermudah debugging"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Code Completion",
+        "function": "Prediksi dan melengkapi kode otomatis"
+      },
+      {
+        "concept": "Prompt Engineering",
+        "function": "Menulis instruksi yang jelas untuk AI"
+      },
+      {
+        "concept": "Context Awareness",
+        "function": "AI memahami struktur project"
+      },
+      {
+        "concept": "Code Generation",
+        "function": "Membuat kode otomatis dari instruksi"
+      }
+    ],
+    "best_practices": [
+      "Selalu review hasil AI",
+      "Jangan langsung percaya generated code",
+      "Gunakan AI sebagai assistant, bukan pengganti belajar",
+      "Gunakan prompt yang jelas dan spesifik",
+      "Perhatikan keamanan kode"
+    ],
+    "example": {
+      "title": "AI Coding Prompt Example",
+      "code": "Create a responsive login page using HTML, CSS, and JavaScript with dark mode."
+    }
+  },
+
+  "Claude_Code": {
+    "description": "Claude Code adalah AI coding assistant berbasis Claude AI yang membantu developer memahami, membuat, dan memperbaiki kode.",
+    "official_website": "https://www.anthropic.com",
+    "important_features": [
+      {
+        "feature": "Code Generation",
+        "function": "Membuat kode dari prompt"
+      },
+      {
+        "feature": "Debugging",
+        "function": "Membantu mencari error"
+      },
+      {
+        "feature": "Code Explanation",
+        "function": "Menjelaskan kode program"
+      },
+      {
+        "feature": "Large Context Window",
+        "function": "Mampu memahami project besar"
+      }
+    ],
+    "advantages": [
+      "Context understanding bagus",
+      "Penjelasan kode detail",
+      "Cocok untuk belajar",
+      "Mampu menangani project besar"
+    ],
+    "best_practices": [
+      "Berikan context project yang jelas",
+      "Gunakan prompt spesifik",
+      "Review hasil kode AI"
+    ],
+    "example": {
+      "title": "Claude Code Prompt",
+      "code": "Explain this React component and optimize its performance."
+    }
+  },
+
+  "Cursor": {
+    "description": "Cursor adalah AI-powered code editor berbasis VS Code yang memiliki fitur AI coding assistant terintegrasi.",
+    "official_website": "https://cursor.com",
+    "important_features": [
+      {
+        "feature": "AI Chat",
+        "function": "Chat langsung dengan AI di editor"
+      },
+      {
+        "feature": "Code Generation",
+        "function": "Generate kode otomatis"
+      },
+      {
+        "feature": "Project Context",
+        "function": "Memahami seluruh project"
+      },
+      {
+        "feature": "Refactoring",
+        "function": "Merapikan dan memperbaiki kode"
+      }
+    ],
+    "advantages": [
+      "Integrasi langsung di editor",
+      "Context project sangat baik",
+      "UI mirip VS Code",
+      "Produktivitas tinggi"
+    ],
+    "best_practices": [
+      "Gunakan AI chat untuk debugging",
+      "Pisahkan task coding besar menjadi kecil",
+      "Gunakan context file yang relevan"
+    ],
+    "example": {
+      "title": "Cursor AI Usage",
+      "code": "Refactor this authentication code into reusable functions."
+    }
+  },
+
+  "Copilot": {
+    "description": "GitHub Copilot adalah AI pair programmer yang dikembangkan GitHub dan OpenAI untuk membantu auto-completion dan generate kode.",
+    "official_website": "https://github.com/features/copilot",
+    "important_features": [
+      {
+        "feature": "Autocomplete",
+        "function": "Melengkapi kode otomatis"
+      },
+      {
+        "feature": "Inline Suggestions",
+        "function": "Saran kode langsung di editor"
+      },
+      {
+        "feature": "Code Generation",
+        "function": "Generate function atau component"
+      },
+      {
+        "feature": "Multi-language Support",
+        "function": "Support banyak bahasa pemrograman"
+      }
+    ],
+    "advantages": [
+      "Integrasi VS Code",
+      "Meningkatkan kecepatan coding",
+      "Support banyak framework",
+      "Auto suggestion cepat"
+    ],
+    "best_practices": [
+      "Review suggestion sebelum digunakan",
+      "Gunakan komentar jelas untuk generate kode",
+      "Jangan simpan secret/API key di prompt"
+    ],
+    "example": {
+      "title": "Copilot Prompt Comment",
+      "code": "// Create a responsive navbar using Tailwind CSS"
+    }
+  },
+
+  "Antigravity": {
+    "description": "Antigravity adalah tools AI coding assistant modern yang membantu automasi coding dan workflow development.",
+    "official_website": "https://antigravity.dev",
+    "important_features": [
+      {
+        "feature": "AI Workflow",
+        "function": "Automasi workflow coding"
+      },
+      {
+        "feature": "Code Suggestions",
+        "function": "Memberikan rekomendasi kode"
+      },
+      {
+        "feature": "Developer Productivity",
+        "function": "Meningkatkan efisiensi development"
+      }
+    ],
+    "advantages": [
+      "Workflow development lebih cepat",
+      "Membantu repetitive task",
+      "Mendukung modern development"
+    ],
+    "best_practices": [
+      "Gunakan untuk automasi task sederhana",
+      "Tetap review hasil AI",
+      "Gunakan bersama tools development lain"
+    ],
+    "example": {
+      "title": "AI Workflow Prompt",
+      "code": "Generate reusable authentication middleware for Express.js."
+    }
+  }
+}

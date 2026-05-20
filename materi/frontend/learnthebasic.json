@@ -1,0 +1,291 @@
+{
+  "AI_Development_Basics": {
+    "Learn_the_Basics": {
+      "description": "Dasar AI Development mencakup pemahaman tentang cara kerja AI, penggunaan AI dalam coding, dan bagaimana AI membantu workflow software development.",
+      "main_topics": [
+        {
+          "topic": "Artificial Intelligence",
+          "description": "Teknologi yang memungkinkan komputer meniru kecerdasan manusia"
+        },
+        {
+          "topic": "Machine Learning",
+          "description": "Cabang AI yang belajar dari data"
+        },
+        {
+          "topic": "Large Language Models",
+          "description": "Model AI yang memahami dan menghasilkan teks"
+        },
+        {
+          "topic": "Prompt Engineering",
+          "description": "Teknik memberikan instruksi ke AI"
+        },
+        {
+          "topic": "AI Assisted Coding",
+          "description": "Penggunaan AI untuk membantu development"
+        }
+      ],
+      "important_skills": [
+        "Basic Programming",
+        "API Understanding",
+        "Problem Solving",
+        "Prompt Writing",
+        "Debugging"
+      ],
+      "best_practices": [
+        "Pelajari dasar programming terlebih dahulu",
+        "Gunakan AI untuk membantu belajar",
+        "Review hasil AI sebelum digunakan",
+        "Pahami logika kode yang dihasilkan AI"
+      ],
+      "example": {
+        "title": "Basic AI Prompt",
+        "code": "Explain how REST API works with a simple example."
+      }
+    },
+
+    "How_LLMs_Work": {
+      "description": "LLM (Large Language Models) adalah model AI yang dilatih menggunakan data teks dalam jumlah besar untuk memahami dan menghasilkan bahasa manusia.",
+      "important_concepts": [
+        {
+          "concept": "Training Data",
+          "function": "Data besar yang digunakan untuk melatih model"
+        },
+        {
+          "concept": "Tokens",
+          "function": "Unit kecil teks yang diproses AI"
+        },
+        {
+          "concept": "Transformer Architecture",
+          "function": "Arsitektur utama pada LLM modern"
+        },
+        {
+          "concept": "Inference",
+          "function": "Proses AI menghasilkan jawaban"
+        },
+        {
+          "concept": "Context Window",
+          "function": "Jumlah informasi yang bisa diingat AI"
+        }
+      ],
+      "workflow": [
+        {
+          "step": 1,
+          "description": "User memberikan prompt"
+        },
+        {
+          "step": 2,
+          "description": "Prompt dipecah menjadi token"
+        },
+        {
+          "step": 3,
+          "description": "LLM memproses context"
+        },
+        {
+          "step": 4,
+          "description": "Model memprediksi token berikutnya"
+        },
+        {
+          "step": 5,
+          "description": "AI menghasilkan response"
+        }
+      ],
+      "best_practices": [
+        "Berikan context yang jelas",
+        "Gunakan prompt spesifik",
+        "Pisahkan task kompleks"
+      ],
+      "example": {
+        "title": "LLM Flow Example",
+        "code": "Prompt -> Tokenization -> Transformer Processing -> Response Generation"
+      }
+    },
+
+    "AI_vs_Traditional_Coding": {
+      "description": "Perbandingan antara development tradisional dan development dengan bantuan AI.",
+      "traditional_coding": {
+        "description": "Semua kode ditulis manual oleh developer.",
+        "advantages": [
+          "Kontrol penuh terhadap kode",
+          "Logika lebih dipahami",
+          "Lebih stabil untuk sistem kompleks"
+        ],
+        "disadvantages": [
+          "Development lebih lambat",
+          "Repetitive coding",
+          "Debugging memakan waktu"
+        ]
+      },
+      "ai_assisted_coding": {
+        "description": "AI membantu generate, memperbaiki, dan menjelaskan kode.",
+        "advantages": [
+          "Development lebih cepat",
+          "Membantu debugging",
+          "Membantu dokumentasi",
+          "Mengurangi repetitive task"
+        ],
+        "disadvantages": [
+          "Hasil AI bisa salah",
+          "Perlu review manual",
+          "Kadang menghasilkan kode tidak optimal"
+        ]
+      },
+      "best_practices": [
+        "Gabungkan AI dan skill manual coding",
+        "Jangan bergantung penuh pada AI",
+        "Pahami kode yang dihasilkan AI"
+      ],
+      "example": {
+        "title": "Comparison Example",
+        "code": "Traditional Coding: Menulis function manual.\nAI Assisted Coding: AI membantu generate function berdasarkan prompt."
+      }
+    },
+
+    "Applications": {
+      "description": "AI digunakan dalam berbagai bidang software development dan automation.",
+      "common_applications": [
+        {
+          "application": "Code Generation",
+          "description": "Membuat kode otomatis"
+        },
+        {
+          "application": "Chatbots",
+          "description": "Asisten percakapan AI"
+        },
+        {
+          "application": "Automation",
+          "description": "Automasi workflow"
+        },
+        {
+          "application": "Recommendation Systems",
+          "description": "Sistem rekomendasi"
+        },
+        {
+          "application": "Content Generation",
+          "description": "Pembuatan teks atau gambar otomatis"
+        },
+        {
+          "application": "Data Analysis",
+          "description": "Analisis data menggunakan AI"
+        }
+      ],
+      "best_practices": [
+        "Gunakan AI sesuai kebutuhan",
+        "Perhatikan keamanan data",
+        "Validasi hasil AI"
+      ],
+      "example": {
+        "title": "AI Application Example",
+        "code": "AI chatbot untuk customer support website."
+      }
+    },
+
+    "Code_Reviews": {
+      "description": "Code Review adalah proses memeriksa kode untuk menemukan bug, meningkatkan kualitas, dan memastikan standar coding.",
+      "goals": [
+        "Menemukan bug",
+        "Meningkatkan kualitas kode",
+        "Menjaga konsistensi coding style",
+        "Meningkatkan keamanan"
+      ],
+      "important_points": [
+        {
+          "point": "Readability",
+          "description": "Kode mudah dibaca"
+        },
+        {
+          "point": "Performance",
+          "description": "Kode berjalan efisien"
+        },
+        {
+          "point": "Security",
+          "description": "Tidak ada celah keamanan"
+        },
+        {
+          "point": "Maintainability",
+          "description": "Mudah dikembangkan"
+        }
+      ],
+      "best_practices": [
+        "Gunakan naming yang jelas",
+        "Pisahkan logic dengan baik",
+        "Hindari duplicate code",
+        "Review sebelum merge"
+      ],
+      "example": {
+        "title": "Code Review Example",
+        "code": "// Bad\nlet x = 5;\n\n// Good\nlet totalPrice = 5;"
+      }
+    },
+
+    "Refactoring": {
+      "description": "Refactoring adalah proses memperbaiki struktur kode tanpa mengubah fungsi utama aplikasi.",
+      "goals": [
+        "Meningkatkan readability",
+        "Mengurangi duplicate code",
+        "Mempermudah maintenance",
+        "Meningkatkan performa"
+      ],
+      "common_techniques": [
+        {
+          "technique": "Extract Function",
+          "description": "Memisahkan kode menjadi function"
+        },
+        {
+          "technique": "Rename Variables",
+          "description": "Menggunakan nama variabel lebih jelas"
+        },
+        {
+          "technique": "Remove Duplicate Code",
+          "description": "Menghapus kode berulang"
+        },
+        {
+          "technique": "Simplify Conditions",
+          "description": "Menyederhanakan logika"
+        }
+      ],
+      "best_practices": [
+        "Lakukan refactoring bertahap",
+        "Gunakan testing",
+        "Jangan mengubah banyak bagian sekaligus"
+      ],
+      "example": {
+        "title": "Refactoring Example",
+        "code": "// Before\nfunction sum(a,b){return a+b;}\n\n// After\nfunction calculateTotal(price, tax) {\n  return price + tax;\n}"
+      }
+    },
+
+    "Docs_Generation": {
+      "description": "Documentation Generation adalah proses membuat dokumentasi project atau kode secara otomatis maupun manual.",
+      "types": [
+        {
+          "type": "API Documentation",
+          "description": "Dokumentasi endpoint API"
+        },
+        {
+          "type": "Code Documentation",
+          "description": "Komentar dan penjelasan kode"
+        },
+        {
+          "type": "Project Documentation",
+          "description": "Penjelasan setup dan penggunaan project"
+        }
+      ],
+      "important_tools": [
+        "JSDoc",
+        "Swagger",
+        "Postman",
+        "Markdown"
+      ],
+      "best_practices": [
+        "Gunakan README.md",
+        "Dokumentasikan function penting",
+        "Gunakan contoh penggunaan",
+        "Update dokumentasi secara berkala"
+      ],
+      "example": {
+        "title": "JSDoc Example",
+        "code": "/**\n * Menjumlahkan dua angka\n * @param {number} a\n * @param {number} b\n * @returns {number}\n */\nfunction add(a, b) {\n  return a + b;\n}"
+      }
+    }
+  }
+}

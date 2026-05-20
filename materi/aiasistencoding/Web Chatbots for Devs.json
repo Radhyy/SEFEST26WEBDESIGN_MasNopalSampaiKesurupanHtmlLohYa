@@ -1,0 +1,55 @@
+{
+  "Claude_3_5_Sonnet": {
+    "description": "Claude 3.5 Sonnet adalah model AI dari Anthropic yang dirancang untuk memberikan kemampuan reasoning, coding, dan penulisan yang kuat dengan fokus pada akurasi, keselamatan, dan pemahaman konteks panjang.",
+
+    "main_goals": [
+      "Menjawab pertanyaan kompleks dengan akurat",
+      "Membantu coding dan debugging",
+      "Memahami konteks panjang percakapan",
+      "Mendukung workflow profesional dan enterprise"
+    ],
+
+    "strengths": [
+      "Strong reasoning",
+      "Good coding ability",
+      "Long context understanding",
+      "Safer output alignment"
+    ]
+  },
+
+  "ChatGPT_GPT_4o": {
+    "description": "ChatGPT (GPT-4o) adalah model multimodal dari OpenAI yang mampu memahami dan menghasilkan teks, gambar, dan audio dengan kecepatan tinggi dan kualitas tinggi untuk berbagai kebutuhan termasuk coding dan AI assistant.",
+
+    "main_goals": [
+      "Multimodal AI interaction",
+      "Coding assistance",
+      "Natural conversation AI",
+      "Problem solving general purpose"
+    ],
+
+    "strengths": [
+      "Fast response",
+      "Multimodal capabilities",
+      "Strong general intelligence",
+      "Developer friendly"
+    ]
+  },
+
+  "Web_Chatbots_for_Devs": {
+    "description": "Web chatbots for developers adalah AI berbasis web yang membantu developer dalam coding, debugging, dokumentasi, dan learning langsung dari browser tanpa setup lokal.",
+
+    "examples": [
+      "ChatGPT Web",
+      "Claude Web",
+      "Perplexity AI",
+      "Phind"
+    ],
+
+    "use_cases": [
+      "Debugging kode cepat",
+      "Belajar konsep programming",
+      "Generate snippet code",
+      "Research teknologi"
+    ]
+  }
+}

@@ -120,6 +120,7 @@ function registerUser({ name, email, password }) {
 
 function logoutUser() {
   localStorage.removeItem(AUTH_SESSION_KEY);
+  sessionStorage.removeItem("worksim_xp_progress");
   window.location.href = "/";
 }
 

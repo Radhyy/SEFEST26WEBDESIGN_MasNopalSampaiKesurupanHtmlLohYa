@@ -728,12 +728,12 @@ function renderRoadmap() {
   const container = document.getElementById("nodes-container");
   let html = "";
 
-  function getBadgeHtml(badge, align) {
-    if (!badge) return "";
+  function getBadgeHtml(badge, align, id) {
+    if (!badge || !id) return "";
     const bg = badge === "purple" ? "bg-[#7c3aed]" : "bg-[#15803d]";
     const pos = align === "left" ? "-left-3" : "-right-3";
     return `
-        <div class="absolute top-1/2 -translate-y-1/2 ${pos} w-5.5 h-5.5 rounded-full ${bg} text-white flex items-center justify-center text-[11px] shadow-sm z-30 ring-[2.5px] ring-white dark:ring-slate-900">
+        <div id="badge-${id}" class="hidden opacity-0 scale-50 transition-all absolute top-1/2 -translate-y-1/2 ${pos} w-5.5 h-5.5 rounded-full ${bg} text-white flex items-center justify-center text-[11px] shadow-sm z-30 ring-[2.5px] ring-white dark:ring-slate-900">
           <i class="fa-solid fa-check"></i>
         </div>
      `;
@@ -790,7 +790,7 @@ function renderRoadmap() {
           } else if (node.isHorizontal) {
             let childrenHtml = node.children
               .map((child) => {
-                const badgeHtml = getBadgeHtml(child.badge, "right");
+                const badgeHtml = getBadgeHtml(child.badge, "right", child.id);
                 return `
              <div class="relative flex-1">
                ${badgeHtml}
@@ -811,7 +811,7 @@ function renderRoadmap() {
           } else if (node.isVerticalGroup) {
             let childrenHtml = node.children
               .map((child) => {
-                const badgeHtml = getBadgeHtml(child.badge, "left");
+                const badgeHtml = getBadgeHtml(child.badge, "left", child.id);
                 return `
              <div class="relative">
                ${badgeHtml}
@@ -830,7 +830,7 @@ function renderRoadmap() {
              </div>
            `;
           } else {
-            const badgeHtml = getBadgeHtml(node.badge, "left");
+            const badgeHtml = getBadgeHtml(node.badge, "left", node.id);
             return `
             <div class="relative">
               ${badgeHtml}
@@ -876,7 +876,7 @@ function renderRoadmap() {
           } else if (node.isVerticalGroup) {
             let childrenHtml = node.children
               .map((child) => {
-                const badgeHtml = getBadgeHtml(child.badge, "right");
+                const badgeHtml = getBadgeHtml(child.badge, "right", child.id);
                 return `
              <div class="relative">
                ${badgeHtml}
@@ -897,7 +897,7 @@ function renderRoadmap() {
           } else if (node.isGridGroup) {
             let childrenHtml = node.children
               .map((child) => {
-                const badgeHtml = getBadgeHtml(child.badge, "right");
+                const badgeHtml = getBadgeHtml(child.badge, "right", child.id);
                 return `
              <div class="relative w-full">
                ${badgeHtml}
@@ -918,7 +918,7 @@ function renderRoadmap() {
           } else if (node.isGroup || node.isGroupBottom) {
             let childrenHtml = node.children
               .map((child) => {
-                const badgeHtml = getBadgeHtml(child.badge, "right");
+                const badgeHtml = getBadgeHtml(child.badge, "right", child.id);
                 return `
             <div class="relative">
               ${badgeHtml}
@@ -949,7 +949,7 @@ function renderRoadmap() {
             </div>
           `;
           } else {
-            const badgeHtml = getBadgeHtml(node.badge, "right");
+            const badgeHtml = getBadgeHtml(node.badge, "right", node.id);
             return `
             <div class="relative">
               ${badgeHtml}
@@ -1060,6 +1060,7 @@ function drawLines() {
 
   const container = document.getElementById("roadmap-container");
   const containerRect = container.getBoundingClientRect();
+  const scale = containerRect.width / container.offsetWidth || 1;
 
   const subNodes = document.querySelectorAll(".sub-node");
   const isDark = document.documentElement.classList.contains("dark");
@@ -1091,6 +1092,11 @@ function drawLines() {
         ? subRect.right - containerRect.left - 5
         : subRect.left - containerRect.left + 5;
     let endY = subRect.top - containerRect.top + subRect.height / 2;
+
+    startX /= scale;
+    startY /= scale;
+    endX /= scale;
+    endY /= scale;
 
     const curveOffset = Math.abs(endX - startX) / 2;
     const cp1x = side === "left" ? startX - curveOffset : startX + curveOffset;
@@ -1165,6 +1171,11 @@ function drawLines() {
         endY = childRect.bottom - containerRect.top;
       }
 
+      startX /= scale;
+      startY /= scale;
+      endX /= scale;
+      endY /= scale;
+
       const curveOffset = Math.abs(startY - endY) / 2;
       const cp1x = startX;
       const cp1y = startY + (isBottom ? curveOffset : -curveOffset);
@@ -1203,6 +1214,11 @@ function drawLines() {
       let endX = bottomRect.left + bottomRect.width / 2 - containerRect.left;
       let endY = bottomRect.top - containerRect.top;
 
+      startX /= scale;
+      startY /= scale;
+      endX /= scale;
+      endY /= scale;
+
       const curveOffset = Math.abs(startY - endY) / 2;
 
       const path = document.createElementNS(
@@ -1234,6 +1250,16 @@ function drawLines() {
   drawVerticalLine("sub-node-nosql_heading", "sub-node-nosql_group", false);
   drawVerticalLine("sub-node-sec_heading", "sub-node-sec_group", false);
   drawVerticalLine("sub-node-ci_cd_heading", "sub-node-deploy_group", false);
+
+  // Adjust container margin-bottom on mobile to remove empty space caused by scale
+  if (window.innerWidth < 640) {
+    const originalHeight = container.offsetHeight;
+    const scaledHeight = originalHeight * scale;
+    const emptySpace = originalHeight - scaledHeight;
+    container.style.marginBottom = `-${emptySpace}px`;
+  } else {
+    container.style.marginBottom = '0px';
+  }
 }
 
 window.addEventListener("resize", drawLines);
@@ -1464,6 +1490,43 @@ async function openPanel(id, title, category, desc) {
   overlay.classList.add("opacity-100");
   panel.classList.remove("translate-x-full");
   panel.classList.add("translate-x-0");
+
+  // === XP Tracking ===
+  const isLoggedIn = window.getCurrentUser && window.getCurrentUser();
+  const wrapper = document.getElementById("panel-content-wrapper");
+
+  // Track example tab click
+  if (currentExample) {
+    btnExample.onclick = () => {
+      switchPanelTab('example');
+      if (isLoggedIn && window.addActivityXP) {
+        window.addActivityXP(id, title, 'example', 15);
+      }
+    };
+    btnMateri.onclick = () => switchPanelTab('materi');
+  }
+
+  // Track scroll to bottom of materi
+  if (wrapper) {
+    const scrollHandler = () => {
+      if (wrapper.scrollTop + wrapper.clientHeight >= wrapper.scrollHeight - 20) {
+        if (isLoggedIn && window.addActivityXP) {
+          window.addActivityXP(id, title, 'materi', 25);
+        }
+        wrapper.removeEventListener("scroll", scrollHandler);
+      }
+    };
+    wrapper.onscroll = null;
+    wrapper.addEventListener("scroll", scrollHandler);
+
+    setTimeout(() => {
+      if (wrapper.scrollHeight <= wrapper.clientHeight) {
+        if (isLoggedIn && window.addActivityXP) {
+          window.addActivityXP(id, title, 'materi', 25);
+        }
+      }
+    }, 1000);
+  }
 }
 
 function switchPanelTab(tab) {

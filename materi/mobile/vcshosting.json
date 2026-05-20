@@ -1,0 +1,138 @@
+{
+  "VCS_Hosting": {
+    "description": "VCS Hosting adalah platform online untuk menyimpan, mengelola, dan berkolaborasi menggunakan Version Control System seperti Git.",
+    "main_goals": [
+      "Menyimpan repository online",
+      "Kolaborasi antar developer",
+      "Backup source code",
+      "Code review",
+      "CI/CD integration"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Remote Repository",
+        "function": "Repository online"
+      },
+      {
+        "concept": "Pull Request / Merge Request",
+        "function": "Review perubahan kode"
+      },
+      {
+        "concept": "Issues",
+        "function": "Manajemen bug dan task"
+      },
+      {
+        "concept": "Actions / Pipelines",
+        "function": "Automation CI/CD"
+      }
+    ],
+    "advantages": [
+      "Kolaborasi lebih mudah",
+      "Backup repository",
+      "Tracking perubahan kode",
+      "Integrasi CI/CD"
+    ],
+    "best_practices": [
+      "Gunakan branch terpisah",
+      "Gunakan README",
+      "Gunakan meaningful commit message",
+      "Gunakan pull request review"
+    ],
+    "example": {
+      "title": "VCS Hosting Workflow",
+      "code": "Local Repository -> Push -> Remote Repository -> Collaboration"
+    }
+  },
+
+  "GitHub": {
+    "description": "GitHub adalah platform hosting Git populer untuk kolaborasi software development.",
+    "official_website": "https://github.com",
+    "important_features": [
+      {
+        "feature": "Repositories",
+        "function": "Menyimpan project code"
+      },
+      {
+        "feature": "Pull Requests",
+        "function": "Review dan merge kode"
+      },
+      {
+        "feature": "GitHub Actions",
+        "function": "Automation CI/CD"
+      },
+      {
+        "feature": "Issues",
+        "function": "Task dan bug tracking"
+      }
+    ],
+    "advantages": [
+      "Komunitas terbesar",
+      "Integrasi tools banyak",
+      "Mudah digunakan",
+      "Support open-source"
+    ],
+    "best_practices": [
+      "Gunakan README lengkap",
+      "Gunakan branch protection",
+      "Gunakan GitHub Actions"
+    ],
+    "important_commands": [
+      {
+        "command": "git remote add origin <url>",
+        "function": "Menambahkan remote repository"
+      },
+      {
+        "command": "git push origin main",
+        "function": "Push ke GitHub"
+      }
+    ],
+    "example": {
+      "title": "Push to GitHub",
+      "code": "git add .\ngit commit -m \"Initial commit\"\ngit push origin main"
+    }
+  },
+
+  "GitLab": {
+    "description": "GitLab adalah platform DevOps dan Git repository hosting dengan fitur CI/CD built-in.",
+    "official_website": "https://gitlab.com",
+    "important_features": [
+      {
+        "feature": "Merge Requests",
+        "function": "Code review dan merge"
+      },
+      {
+        "feature": "GitLab CI/CD",
+        "function": "Automation pipeline"
+      },
+      {
+        "feature": "Issue Tracking",
+        "function": "Manajemen task dan bug"
+      },
+      {
+        "feature": "Self Hosted",
+        "function": "Bisa diinstall di server sendiri"
+      }
+    ],
+    "advantages": [
+      "CI/CD built-in",
+      "DevOps platform lengkap",
+      "Support self-hosted",
+      "Monitoring pipeline"
+    ],
+    "best_practices": [
+      "Gunakan merge request review",
+      "Gunakan protected branch",
+      "Gunakan GitLab CI"
+    ],
+    "important_commands": [
+      {
+        "command": "git push origin main",
+        "function": "Push repository ke GitLab"
+      }
+    ],
+    "example": {
+      "title": "GitLab Push Example",
+      "code": "git remote add origin https://gitlab.com/user/project.git\ngit push -u origin main"
+    }
+  }
+}

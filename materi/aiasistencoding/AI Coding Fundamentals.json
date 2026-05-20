@@ -1,0 +1,78 @@
+{
+  "AI_Coding_Fundamentals": {
+    "description": "AI Coding Fundamentals adalah dasar pemahaman tentang bagaimana Artificial Intelligence, khususnya Large Language Models (LLMs), bekerja dan bagaimana developer dapat memanfaatkannya secara efektif dalam proses pengembangan software.",
+
+    "main_goals": [
+      "Memahami cara kerja model AI seperti LLM",
+      "Mengoptimalkan penggunaan AI dalam coding",
+      "Mengurangi kesalahan penggunaan AI",
+      "Meningkatkan produktivitas developer dengan AI",
+      "Memahami keterbatasan model AI"
+    ],
+
+    "core_concepts": [
+      "Token-based processing",
+      "Probabilistic text generation",
+      "Context-aware prediction",
+      "Pattern recognition in language",
+      "Training on large datasets"
+    ]
+  },
+
+  "How_LLMs_Work": {
+    "description": "Large Language Models (LLMs) bekerja dengan memprediksi kata berikutnya berdasarkan konteks sebelumnya menggunakan neural networks yang dilatih pada data teks dalam jumlah besar.",
+
+    "workflow": [
+      "Input text diterima oleh model",
+      "Text diubah menjadi tokens",
+      "Model memproses context window",
+      "Model memprediksi token berikutnya",
+      "Output teks dihasilkan secara bertahap"
+    ],
+
+    "key_idea": "LLM tidak memahami seperti manusia, tetapi memprediksi berdasarkan pola statistik"
+  },
+
+  "Context_Windows_and_Tokens": {
+    "description": "Context window adalah jumlah maksimum token yang dapat diproses oleh model dalam satu input. Token adalah unit teks kecil yang digunakan model untuk memahami dan menghasilkan bahasa.",
+
+    "tokens": {
+      "description": "Token adalah potongan kecil dari teks seperti kata, sub-kata, atau karakter yang digunakan oleh model AI untuk memproses bahasa.",
+      "examples": [
+        "Hello → 1 token",
+        "ChatGPT → beberapa token tergantung tokenizer",
+        "I love AI → 3+ tokens"
+      ]
+    },
+
+    "context_window": {
+      "description": "Context window adalah batas jumlah token yang bisa diingat oleh model dalam satu percakapan atau input.",
+      "importance": [
+        "Menentukan panjang input yang bisa diproses",
+        "Mempengaruhi kualitas jawaban",
+        "Membatasi memory model"
+      ]
+    }
+  },
+
+  "AI_Limitations_and_Hallucinations": {
+    "description": "AI memiliki keterbatasan dalam memahami dunia nyata dan dapat menghasilkan informasi yang salah atau tidak akurat yang disebut hallucination.",
+
+    "limitations": [
+      "Tidak benar-benar memahami konteks seperti manusia",
+      "Bergantung pada data training",
+      "Tidak selalu up-to-date",
+      "Bisa menghasilkan jawaban salah (hallucination)"
+    ],
+
+    "hallucinations": {
+      "description": "Hallucination adalah kondisi ketika AI menghasilkan informasi yang terdengar benar tetapi sebenarnya salah atau tidak berdasarkan fakta.",
+      "causes": [
+        "Kurangnya data relevan",
+        "Overgeneralization",
+        "Ambiguity dalam prompt",
+        "Probabilistic generation"
+      ]
+    }
+  }
+}

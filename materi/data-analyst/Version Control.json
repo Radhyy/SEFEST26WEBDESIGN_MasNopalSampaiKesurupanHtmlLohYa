@@ -1,0 +1,81 @@
+{
+  "Git_and_GitHub": {
+    "description": "Git adalah sistem version control untuk melacak perubahan kode, sedangkan GitHub adalah platform untuk menyimpan dan berkolaborasi menggunakan Git.",
+
+    "core_concepts": {
+      "version_control": "Sistem untuk melacak perubahan kode",
+      "repository": "Tempat penyimpanan project",
+      "commit": "Snapshot perubahan kode",
+      "branch": "Cabang pengembangan fitur",
+      "merge": "Menggabungkan branch",
+      "pull_request": "Permintaan untuk menggabungkan kode"
+    },
+
+    "Git": {
+      "description": "Git adalah tool version control terdistribusi untuk mengelola perubahan kode secara lokal.",
+
+      "official_website": "https://git-scm.com",
+
+      "main_goals": [
+        "Tracking perubahan kode",
+        "Kolaborasi developer",
+        "Backup kode",
+        "Manajemen versi project"
+      ],
+
+      "features": [
+        "Local version control",
+        "Branching system",
+        "Fast performance",
+        "Distributed system"
+      ],
+
+      "common_commands": [
+        "git init",
+        "git add",
+        "git commit",
+        "git push",
+        "git pull",
+        "git branch"
+      ],
+
+      "example": {
+        "title": "Git Basic Commands",
+        "code": "git init\ngit add .\ngit commit -m 'first commit'"
+      }
+    },
+
+    "GitHub": {
+      "description": "GitHub adalah platform cloud untuk menyimpan repository Git dan kolaborasi tim developer.",
+
+      "official_website": "https://github.com",
+
+      "main_goals": [
+        "Code hosting",
+        "Collaboration",
+        "Open source projects",
+        "CI/CD integration"
+      ],
+
+      "features": [
+        "Repository hosting",
+        "Pull requests",
+        "Issues tracking",
+        "GitHub Actions",
+        "Collaboration tools"
+      ],
+
+      "use_cases": [
+        "Team development",
+        "Open source contribution",
+        "Project backup",
+        "CI/CD pipelines"
+      ],
+
+      "example": {
+        "title": "GitHub Workflow",
+        "code": "Local Git -> Push -> GitHub Repo -> Collaboration"
+      }
+    }
+  }
+}

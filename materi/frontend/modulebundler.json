@@ -1,0 +1,263 @@
+{
+  "Module_Bundlers": {
+    "description": "Module Bundlers adalah tools yang digunakan untuk menggabungkan, mengoptimasi, dan memproses file JavaScript, CSS, gambar, dan assets lainnya menjadi bundle siap production.",
+    "main_goals": [
+      "Menggabungkan file project",
+      "Mengoptimalkan performa aplikasi",
+      "Mengurangi ukuran file",
+      "Mendukung modern JavaScript",
+      "Meningkatkan workflow development"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Bundling",
+        "function": "Menggabungkan banyak file menjadi satu"
+      },
+      {
+        "concept": "Tree Shaking",
+        "function": "Menghapus kode yang tidak digunakan"
+      },
+      {
+        "concept": "Hot Module Replacement",
+        "function": "Update module tanpa reload halaman"
+      },
+      {
+        "concept": "Code Splitting",
+        "function": "Memecah bundle menjadi bagian kecil"
+      },
+      {
+        "concept": "Minification",
+        "function": "Mengurangi ukuran file"
+      }
+    ],
+    "why_needed": [
+      "Browser lama tidak support module modern",
+      "Mengoptimalkan loading website",
+      "Mempermudah development",
+      "Mengelola dependencies project"
+    ],
+    "best_practices": [
+      "Gunakan tree shaking",
+      "Pisahkan development dan production build",
+      "Gunakan code splitting",
+      "Optimalkan assets",
+      "Gunakan caching"
+    ],
+    "example": {
+      "title": "Basic Bundler Workflow",
+      "code": "Source Files -> Bundler -> Optimized Build -> Browser"
+    }
+  },
+
+  "Vite": {
+    "description": "Vite adalah frontend build tool modern yang fokus pada kecepatan development dan build.",
+    "official_website": "https://vitejs.dev",
+    "important_features": [
+      {
+        "feature": "Fast Dev Server",
+        "function": "Server development sangat cepat"
+      },
+      {
+        "feature": "Hot Module Replacement",
+        "function": "Update module realtime"
+      },
+      {
+        "feature": "ES Modules",
+        "function": "Menggunakan native ES modules"
+      },
+      {
+        "feature": "Production Build",
+        "function": "Menggunakan Rollup untuk build production"
+      }
+    ],
+    "advantages": [
+      "Startup sangat cepat",
+      "Konfigurasi sederhana",
+      "Support React, Vue, Svelte, dll",
+      "Developer experience modern"
+    ],
+    "best_practices": [
+      "Gunakan alias path",
+      "Pisahkan environment variables",
+      "Optimalkan assets production"
+    ],
+    "example": {
+      "title": "Create Vite Project",
+      "code": "npm create vite@latest"
+    }
+  },
+
+  "SWC": {
+    "description": "SWC adalah compiler JavaScript/TypeScript super cepat yang ditulis menggunakan Rust.",
+    "official_website": "https://swc.rs",
+    "important_features": [
+      {
+        "feature": "Fast Compilation",
+        "function": "Compile JavaScript sangat cepat"
+      },
+      {
+        "feature": "TypeScript Support",
+        "function": "Support TypeScript"
+      },
+      {
+        "feature": "JSX Support",
+        "function": "Support React JSX"
+      }
+    ],
+    "advantages": [
+      "Performa sangat tinggi",
+      "Lebih cepat dari Babel",
+      "Ditulis dengan Rust"
+    ],
+    "best_practices": [
+      "Gunakan untuk project besar",
+      "Gabungkan dengan bundler modern",
+      "Gunakan cache build"
+    ],
+    "example": {
+      "title": "Install SWC",
+      "code": "npm install @swc/core @swc/cli"
+    }
+  },
+
+  "esbuild": {
+    "description": "esbuild adalah bundler dan minifier JavaScript yang sangat cepat dan ditulis menggunakan Go.",
+    "official_website": "https://esbuild.github.io",
+    "important_features": [
+      {
+        "feature": "Fast Build",
+        "function": "Build project sangat cepat"
+      },
+      {
+        "feature": "Bundling",
+        "function": "Menggabungkan modules"
+      },
+      {
+        "feature": "Tree Shaking",
+        "function": "Menghapus unused code"
+      },
+      {
+        "feature": "Minification",
+        "function": "Memperkecil ukuran file"
+      }
+    ],
+    "advantages": [
+      "Performa luar biasa cepat",
+      "Konfigurasi sederhana",
+      "Support modern JavaScript"
+    ],
+    "best_practices": [
+      "Gunakan untuk tooling cepat",
+      "Gunakan production minify",
+      "Optimalkan bundle size"
+    ],
+    "example": {
+      "title": "Install esbuild",
+      "code": "npm install esbuild"
+    }
+  },
+
+  "Rollup": {
+    "description": "Rollup adalah JavaScript module bundler yang fokus pada optimasi bundle dan tree shaking.",
+    "official_website": "https://rollupjs.org",
+    "important_features": [
+      {
+        "feature": "Tree Shaking",
+        "function": "Menghapus kode tidak digunakan"
+      },
+      {
+        "feature": "ES Module Support",
+        "function": "Optimasi ES modules"
+      },
+      {
+        "feature": "Plugin System",
+        "function": "Support banyak plugin"
+      }
+    ],
+    "advantages": [
+      "Bundle size kecil",
+      "Production optimization bagus",
+      "Cocok untuk library"
+    ],
+    "best_practices": [
+      "Gunakan plugin seperlunya",
+      "Optimalkan output format",
+      "Gunakan code splitting"
+    ],
+    "example": {
+      "title": "Install Rollup",
+      "code": "npm install --save-dev rollup"
+    }
+  },
+
+  "Rolldown": {
+    "description": "Rolldown adalah bundler modern berbasis Rust yang kompatibel dengan ekosistem Rollup.",
+    "official_website": "https://rolldown.rs",
+    "important_features": [
+      {
+        "feature": "Rust Performance",
+        "function": "Build lebih cepat"
+      },
+      {
+        "feature": "Rollup Compatibility",
+        "function": "Kompatibel dengan plugin Rollup"
+      },
+      {
+        "feature": "Modern Architecture",
+        "function": "Dirancang untuk tooling modern"
+      }
+    ],
+    "advantages": [
+      "Performa tinggi",
+      "Modern ecosystem",
+      "Optimasi build lebih baik"
+    ],
+    "best_practices": [
+      "Gunakan untuk project modern",
+      "Gunakan plugin compatible",
+      "Pantau update ecosystem"
+    ],
+    "example": {
+      "title": "Rolldown Usage",
+      "code": "rolldown build"
+    }
+  },
+
+  "Parcel": {
+    "description": "Parcel adalah zero-configuration bundler yang mudah digunakan untuk web applications.",
+    "official_website": "https://parceljs.org",
+    "important_features": [
+      {
+        "feature": "Zero Config",
+        "function": "Tidak perlu konfigurasi rumit"
+      },
+      {
+        "feature": "Hot Reload",
+        "function": "Reload otomatis saat development"
+      },
+      {
+        "feature": "Asset Handling",
+        "function": "Mengelola gambar, CSS, dan assets"
+      },
+      {
+        "feature": "Code Splitting",
+        "function": "Memecah bundle otomatis"
+      }
+    ],
+    "advantages": [
+      "Mudah digunakan",
+      "Cepat setup",
+      "Support banyak file types",
+      "Cocok untuk pemula"
+    ],
+    "best_practices": [
+      "Gunakan production build",
+      "Optimalkan assets",
+      "Gunakan cache"
+    ],
+    "example": {
+      "title": "Install Parcel",
+      "code": "npm install --save-dev parcel"
+    }
+  }
+}

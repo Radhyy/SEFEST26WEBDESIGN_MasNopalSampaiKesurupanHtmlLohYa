@@ -1,0 +1,170 @@
+{
+    "HTML": {
+        "Semantic_HTML": {
+            "description": "Semantic HTML adalah penggunaan elemen HTML sesuai dengan makna dan fungsi kontennya agar struktur website lebih mudah dipahami oleh browser, mesin pencari, dan developer.",
+            "benefits": [
+                "Meningkatkan SEO (Search Engine Optimization)",
+                "Mempermudah pembacaan struktur website",
+                "Meningkatkan accessibility",
+                "Membuat kode lebih rapi dan mudah dipelihara"
+            ],
+            "common_tags": [
+                {
+                    "tag": "<header>",
+                    "function": "Bagian kepala halaman atau section"
+                },
+                {
+                    "tag": "<nav>",
+                    "function": "Navigasi menu"
+                },
+                {
+                    "tag": "<main>",
+                    "function": "Konten utama halaman"
+                },
+                {
+                    "tag": "<section>",
+                    "function": "Bagian konten tertentu"
+                },
+                {
+                    "tag": "<article>",
+                    "function": "Konten independen seperti artikel/blog"
+                },
+                {
+                    "tag": "<aside>",
+                    "function": "Sidebar atau konten tambahan"
+                },
+                {
+                    "tag": "<footer>",
+                    "function": "Bagian bawah halaman"
+                }
+            ],
+            "best_practices": [
+                "Gunakan elemen sesuai fungsi",
+                "Hindari terlalu banyak <div>",
+                "Gunakan heading secara berurutan",
+                "Pisahkan konten utama dan navigasi"
+            ],
+            "example": {
+                "title": "Semantic HTML Layout",
+                "code": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Semantic HTML</title>\n</head>\n<body>\n  <header>\n    <h1>Website Sekolah</h1>\n  </header>\n\n  <nav>\n    <a href=\"#\">Home</a>\n    <a href=\"#\">About</a>\n  </nav>\n\n  <main>\n    <section>\n      <h2>Berita Terbaru</h2>\n      <article>\n        <h3>Lomba Coding</h3>\n        <p>Siswa memenangkan lomba coding nasional.</p>\n      </article>\n    </section>\n  </main>\n\n  <footer>\n    <p>Copyright 2026</p>\n  </footer>\n</body>\n</html>"
+            }
+        },
+        "Forms_and_Validations": {
+            "description": "HTML Forms digunakan untuk mengambil input dari pengguna seperti login, register, pencarian, dan pengisian data.",
+            "important_tags": [
+                {
+                    "tag": "<form>",
+                    "function": "Membungkus seluruh form"
+                },
+                {
+                    "tag": "<input>",
+                    "function": "Input data pengguna"
+                },
+                {
+                    "tag": "<textarea>",
+                    "function": "Input teks panjang"
+                },
+                {
+                    "tag": "<select>",
+                    "function": "Dropdown pilihan"
+                },
+                {
+                    "tag": "<button>",
+                    "function": "Tombol aksi"
+                },
+                {
+                    "tag": "<label>",
+                    "function": "Label untuk input"
+                }
+            ],
+            "input_types": [
+                "text",
+                "email",
+                "password",
+                "number",
+                "date",
+                "checkbox",
+                "radio",
+                "file"
+            ],
+            "validation_attributes": [
+                {
+                    "attribute": "required",
+                    "function": "Input wajib diisi"
+                },
+                {
+                    "attribute": "minlength",
+                    "function": "Panjang minimal karakter"
+                },
+                {
+                    "attribute": "maxlength",
+                    "function": "Panjang maksimal karakter"
+                },
+                {
+                    "attribute": "pattern",
+                    "function": "Validasi menggunakan regex"
+                },
+                {
+                    "attribute": "min",
+                    "function": "Nilai minimal"
+                },
+                {
+                    "attribute": "max",
+                    "function": "Nilai maksimal"
+                }
+            ],
+            "best_practices": [
+                "Gunakan label untuk setiap input",
+                "Gunakan validasi bawaan HTML",
+                "Gunakan placeholder seperlunya",
+                "Pastikan form mudah dipahami pengguna"
+            ],
+            "example": {
+                "title": "Login Form Validation",
+                "code": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Form Validation</title>\n</head>\n<body>\n  <form>\n    <label>Email</label>\n    <input type=\"email\" required>\n\n    <label>Password</label>\n    <input type=\"password\" minlength=\"8\" required>\n\n    <button type=\"submit\">Login</button>\n  </form>\n</body>\n</html>"
+            }
+        },
+        "Accessibility": {
+            "description": "Accessibility adalah praktik membuat website dapat digunakan oleh semua orang termasuk pengguna dengan keterbatasan fisik maupun visual.",
+            "benefits": [
+                "Website lebih ramah pengguna",
+                "Meningkatkan pengalaman pengguna",
+                "Membantu pengguna screen reader",
+                "Mendukung standar web modern"
+            ],
+            "important_features": [
+                {
+                    "feature": "alt attribute",
+                    "function": "Deskripsi gambar untuk screen reader"
+                },
+                {
+                    "feature": "label",
+                    "function": "Memberikan informasi pada input"
+                },
+                {
+                    "feature": "aria-label",
+                    "function": "Label tambahan untuk accessibility"
+                },
+                {
+                    "feature": "keyboard navigation",
+                    "function": "Navigasi menggunakan keyboard"
+                },
+                {
+                    "feature": "heading structure",
+                    "function": "Struktur heading yang rapi"
+                }
+            ],
+            "best_practices": [
+                "Gunakan alt pada gambar",
+                "Gunakan kontras warna yang jelas",
+                "Pastikan website bisa diakses keyboard",
+                "Gunakan semantic HTML",
+                "Jangan gunakan heading secara acak"
+            ],
+            "example": {
+                "title": "Accessible Form",
+                "code": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Accessibility Example</title>\n</head>\n<body>\n  <form>\n    <label for=\"name\">Nama</label>\n    <input id=\"name\" type=\"text\" aria-label=\"Input Nama\">\n\n    <img src=\"logo.png\" alt=\"Logo Website Sekolah\">\n\n    <button type=\"submit\">Kirim</button>\n  </form>\n</body>\n</html>"
+            }
+        }
+    }
+}

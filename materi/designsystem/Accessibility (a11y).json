@@ -1,0 +1,66 @@
+{
+  "Accessibility_a11y": {
+    "description": "Accessibility (a11y) adalah praktik dalam pengembangan web yang bertujuan membuat aplikasi dapat digunakan oleh semua orang, termasuk pengguna dengan keterbatasan fisik, visual, pendengaran, atau kognitif. Accessibility memastikan pengalaman pengguna tetap inklusif dan dapat diakses menggunakan berbagai perangkat bantu seperti screen reader atau keyboard navigation.",
+
+    "main_goals": [
+      "Membuat aplikasi dapat digunakan semua orang",
+      "Mendukung pengguna dengan disabilitas",
+      "Meningkatkan usability secara umum",
+      "Memastikan kompatibilitas dengan assistive technology",
+      "Mengikuti standar global accessibility"
+    ],
+
+    "core_principles": [
+      "Perceivable (konten harus bisa dilihat/didengar)",
+      "Operable (bisa digunakan dengan keyboard atau alat bantu)",
+      "Understandable (mudah dipahami)",
+      "Robust (kompatibel dengan teknologi bantu)"
+    ]
+  },
+
+  "WCAG_Guidelines": {
+    "description": "WCAG (Web Content Accessibility Guidelines) adalah standar internasional yang dibuat untuk memastikan website dapat diakses oleh semua pengguna, termasuk penyandang disabilitas.",
+
+    "levels": [
+      "WCAG A (basic accessibility)",
+      "WCAG AA (standard recommended level)",
+      "WCAG AAA (advanced accessibility)"
+    ],
+
+    "principles": [
+      "Perceivable",
+      "Operable",
+      "Understandable",
+      "Robust"
+    ],
+
+    "importance": [
+      "Standar global accessibility",
+      "Wajib untuk banyak institusi",
+      "Meningkatkan UX untuk semua user"
+    ]
+  },
+
+  "WAI_ARIA": {
+    "description": "WAI-ARIA (Web Accessibility Initiative - Accessible Rich Internet Applications) adalah spesifikasi yang membantu membuat elemen web lebih accessible, terutama untuk aplikasi web yang kompleks seperti SPA (Single Page Application).",
+
+    "main_goals": [
+      "Menambah semantic meaning pada UI",
+      "Membantu screen reader memahami UI",
+      "Meningkatkan aksesibilitas aplikasi dinamis",
+      "Menjembatani gap HTML modern dan assistive tech"
+    ],
+
+    "core_features": [
+      "ARIA roles (role=button, dialog, etc)",
+      "ARIA labels (aria-label)",
+      "ARIA states (aria-expanded, aria-hidden)",
+      "ARIA properties"
+    ],
+
+    "example": {
+      "title": "ARIA Example",
+      "code": "<button aria-label='Close modal'>X</button>"
+    }
+  }
+}

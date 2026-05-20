@@ -1,0 +1,228 @@
+{
+  "Monitoring_and_Observability": {
+    "description": "Monitoring dan Observability adalah praktik untuk memantau performa, kesehatan, logs, metrics, dan aktivitas sistem atau aplikasi.",
+    "main_goals": [
+      "Mendeteksi masalah lebih cepat",
+      "Monitoring performa aplikasi",
+      "Menganalisis logs",
+      "Mengurangi downtime",
+      "Meningkatkan reliability sistem"
+    ],
+    "important_concepts": [
+      {
+        "concept": "Metrics",
+        "function": "Data numerik performa sistem"
+      },
+      {
+        "concept": "Logs",
+        "function": "Catatan aktivitas aplikasi"
+      },
+      {
+        "concept": "Tracing",
+        "function": "Melacak request antar service"
+      },
+      {
+        "concept": "Alerting",
+        "function": "Notifikasi saat terjadi masalah"
+      },
+      {
+        "concept": "Dashboards",
+        "function": "Visualisasi data monitoring"
+      }
+    ],
+    "three_pillars_of_observability": [
+      {
+        "pillar": "Metrics",
+        "description": "Mengukur performa sistem"
+      },
+      {
+        "pillar": "Logs",
+        "description": "Mencatat aktivitas aplikasi"
+      },
+      {
+        "pillar": "Traces",
+        "description": "Melacak alur request"
+      }
+    ],
+    "common_use_cases": [
+      "Server monitoring",
+      "Application performance monitoring",
+      "Error tracking",
+      "Infrastructure monitoring",
+      "Security monitoring"
+    ],
+    "best_practices": [
+      "Gunakan centralized logging",
+      "Buat alert penting",
+      "Pantau resource usage",
+      "Gunakan dashboards realtime",
+      "Simpan logs dengan aman"
+    ],
+    "example": {
+      "title": "Monitoring Workflow",
+      "code": "Application -> Metrics & Logs -> Monitoring Tools -> Dashboard & Alerts"
+    }
+  },
+
+  "Prometheus": {
+    "description": "Prometheus adalah open-source monitoring system yang digunakan untuk mengumpulkan dan menyimpan metrics.",
+    "official_website": "https://prometheus.io",
+    "important_features": [
+      {
+        "feature": "Time Series Database",
+        "function": "Menyimpan metrics berdasarkan waktu"
+      },
+      {
+        "feature": "Pull-Based Metrics",
+        "function": "Mengambil metrics dari target"
+      },
+      {
+        "feature": "Alertmanager",
+        "function": "Mengirim notifikasi alert"
+      },
+      {
+        "feature": "PromQL",
+        "function": "Query language untuk metrics"
+      }
+    ],
+    "important_concepts": [
+      {
+        "concept": "Exporter",
+        "function": "Mengirim metrics ke Prometheus"
+      },
+      {
+        "concept": "Scraping",
+        "function": "Mengambil metrics"
+      },
+      {
+        "concept": "Targets",
+        "function": "Server atau aplikasi yang dimonitor"
+      }
+    ],
+    "advantages": [
+      "Open-source",
+      "Kuat untuk Kubernetes",
+      "Powerful query language",
+      "Scalable monitoring"
+    ],
+    "best_practices": [
+      "Gunakan labels dengan benar",
+      "Batasi metric cardinality",
+      "Gunakan alerting penting"
+    ],
+    "important_commands": [
+      {
+        "command": "prometheus --config.file=prometheus.yml",
+        "function": "Menjalankan Prometheus"
+      }
+    ],
+    "example": {
+      "title": "Prometheus Config Example",
+      "code": "scrape_configs:\n  - job_name: 'node'\n    static_configs:\n      - targets: ['localhost:9090']"
+    }
+  },
+
+  "Grafana": {
+    "description": "Grafana adalah platform visualisasi data dan dashboard monitoring yang digunakan bersama Prometheus dan data sources lainnya.",
+    "official_website": "https://grafana.com",
+    "important_features": [
+      {
+        "feature": "Dashboards",
+        "function": "Visualisasi metrics dan logs"
+      },
+      {
+        "feature": "Alerting",
+        "function": "Mengirim alert otomatis"
+      },
+      {
+        "feature": "Multiple Data Sources",
+        "function": "Support banyak sumber data"
+      },
+      {
+        "feature": "Realtime Monitoring",
+        "function": "Visualisasi data realtime"
+      }
+    ],
+    "advantages": [
+      "Dashboard interaktif",
+      "Support banyak integrations",
+      "Realtime visualization",
+      "Mudah digunakan"
+    ],
+    "best_practices": [
+      "Pisahkan dashboard berdasarkan layanan",
+      "Gunakan panel sederhana",
+      "Buat alert yang jelas"
+    ],
+    "common_data_sources": [
+      "Prometheus",
+      "Elasticsearch",
+      "InfluxDB",
+      "MySQL",
+      "PostgreSQL"
+    ],
+    "example": {
+      "title": "Grafana Dashboard Usage",
+      "code": "Prometheus Metrics -> Grafana Dashboard -> Monitoring Visualization"
+    }
+  },
+
+  "ELK_Stack": {
+    "description": "ELK Stack adalah kombinasi Elasticsearch, Logstash, dan Kibana untuk centralized logging dan log analysis.",
+    "official_website": "https://www.elastic.co/elastic-stack",
+    "components": [
+      {
+        "component": "Elasticsearch",
+        "function": "Menyimpan dan mencari logs"
+      },
+      {
+        "component": "Logstash",
+        "function": "Memproses dan mengirim logs"
+      },
+      {
+        "component": "Kibana",
+        "function": "Visualisasi dan analisis logs"
+      }
+    ],
+    "important_features": [
+      {
+        "feature": "Centralized Logging",
+        "function": "Mengumpulkan semua logs di satu tempat"
+      },
+      {
+        "feature": "Search & Analytics",
+        "function": "Mencari dan menganalisis logs"
+      },
+      {
+        "feature": "Visualization",
+        "function": "Membuat dashboard log"
+      },
+      {
+        "feature": "Realtime Monitoring",
+        "function": "Monitoring logs realtime"
+      }
+    ],
+    "advantages": [
+      "Powerful log search",
+      "Realtime analysis",
+      "Scalable logging system",
+      "Visual dashboards"
+    ],
+    "best_practices": [
+      "Pisahkan logs berdasarkan service",
+      "Gunakan retention policy",
+      "Batasi ukuran logs",
+      "Gunakan indexing yang efisien"
+    ],
+    "common_use_cases": [
+      "Application logging",
+      "Security monitoring",
+      "Infrastructure logs",
+      "Error analysis"
+    ],
+    "example": {
+      "title": "ELK Stack Workflow",
+      "code": "Application Logs -> Logstash -> Elasticsearch -> Kibana Dashboard"
+    }
+  }
+}

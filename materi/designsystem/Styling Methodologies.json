@@ -1,0 +1,85 @@
+{
+  "Styling_Methodologies": {
+    "description": "Styling Methodologies adalah berbagai pendekatan dalam menulis dan mengelola CSS dalam aplikasi modern. Tujuannya adalah membuat styling lebih scalable, maintainable, dan mudah dikembangkan terutama pada project besar seperti React atau framework modern lainnya.",
+
+    "main_goals": [
+      "Membuat styling lebih terstruktur",
+      "Menghindari konflik CSS global",
+      "Meningkatkan maintainability code",
+      "Mempermudah scaling project besar",
+      "Mendukung component-based architecture"
+    ],
+
+    "approaches": [
+      {
+        "name": "Utility-first styling",
+        "description": "Pendekatan menggunakan class kecil-kecil yang langsung digunakan di HTML/JSX seperti Tailwind CSS."
+      },
+      {
+        "name": "Component-based styling",
+        "description": "Styling yang terikat langsung pada komponen tertentu agar tidak bercampur dengan komponen lain."
+      },
+      {
+        "name": "Scoped styling",
+        "description": "CSS hanya berlaku pada scope tertentu seperti module atau component agar tidak global."
+      }
+    ]
+  },
+
+  "Tailwind_CSS": {
+    "description": "Tailwind CSS adalah utility-first CSS framework yang memungkinkan developer membangun UI langsung dari class kecil tanpa menulis CSS tradisional secara panjang.",
+
+    "main_goals": [
+      "Mempercepat UI development",
+      "Mengurangi penulisan CSS manual",
+      "Membuat desain konsisten",
+      "Mendukung responsive design dengan mudah"
+    ],
+
+    "features": [
+      "Utility-first classes",
+      "Responsive design built-in",
+      "Dark mode support",
+      "Customizable design system",
+      "JIT (Just-in-Time compiler)"
+    ]
+  },
+
+  "CSS_in_JS": {
+    "description": "CSS-in-JS adalah pendekatan styling di mana CSS ditulis langsung di dalam JavaScript, biasanya dalam framework seperti React untuk membuat styling lebih dinamis dan terkomponen.",
+
+    "Styled_Components": {
+      "description": "Styled Components adalah library CSS-in-JS yang memungkinkan developer menulis CSS langsung di dalam komponen React dengan syntax template literal.",
+
+      "features": [
+        "Scoped styling per component",
+        "Dynamic styling based on props",
+        "No class name collision",
+        "Theming support"
+      ]
+    },
+
+    "benefits": [
+      "Styling lebih modular",
+      "Mudah maintain per component",
+      "Support dynamic UI"
+    ]
+  },
+
+  "CSS_Modules": {
+    "description": "CSS Modules adalah pendekatan styling di mana setiap file CSS bersifat lokal (scoped) untuk menghindari konflik class global dalam aplikasi.",
+
+    "main_goals": [
+      "Menghindari CSS conflict",
+      "Membuat styling lebih terisolasi",
+      "Mendukung component-based architecture"
+    ],
+
+    "features": [
+      "Local scope CSS",
+      "Automatic unique class name generation",
+      "Easy integration dengan React/Vue",
+      "No global pollution"
+    ]
+  }
+}

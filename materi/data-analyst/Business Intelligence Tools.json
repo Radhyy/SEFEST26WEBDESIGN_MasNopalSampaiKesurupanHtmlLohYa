@@ -1,0 +1,121 @@
+{
+  "Business_Intelligence_Tools": {
+    "description": "BI Tools adalah tools untuk mengubah data mentah menjadi insight bisnis melalui visualisasi, dashboard, dan analisis data.",
+    
+    "goals": [
+      "Mengubah data menjadi insight",
+      "Monitoring bisnis (KPI)",
+      "Analisis tren data",
+      "Membantu pengambilan keputusan",
+      "Visualisasi data kompleks"
+    ],
+
+    "core_concepts": {
+      "data_visualization": "Representasi data dalam bentuk grafik, chart, map",
+      "dashboard": "Kumpulan visualisasi dalam satu tampilan",
+      "etl": "Extract, Transform, Load data dari berbagai sumber",
+      "kpi": "Indikator performa bisnis",
+      "data_source": "Sumber data (database, API, spreadsheet)"
+    },
+
+    "benefits": [
+      "Keputusan bisnis lebih cepat dan akurat",
+      "Data lebih mudah dipahami",
+      "Mengurangi analisis manual",
+      "Real-time monitoring"
+    ],
+
+    "tools": {
+      "Tableau": {
+        "type": "Enterprise BI Tool",
+        "official_site": "https://www.tableau.com",
+        "description": "Tool visualisasi data sangat powerful dengan drag & drop",
+        
+        "features": [
+          "Drag & drop visualization",
+          "Interactive dashboard",
+          "Advanced analytics",
+          "Data blending",
+          "Real-time connection"
+        ],
+
+        "use_cases": [
+          "Business reporting",
+          "Sales analysis",
+          "Marketing dashboard",
+          "Financial analytics"
+        ],
+
+        "example": "Database -> Tableau -> Dashboard -> Insight"
+      },
+
+      "Power_BI": {
+        "type": "Microsoft BI Tool",
+        "official_site": "https://powerbi.microsoft.com",
+        "description": "BI tool dari Microsoft dengan integrasi Excel & Azure",
+
+        "features": [
+          "DAX (Data Analysis Expression)",
+          "Real-time dashboard",
+          "Excel integration",
+          "Cloud reporting",
+          "AI insights"
+        ],
+
+        "use_cases": [
+          "Corporate reporting",
+          "Finance dashboard",
+          "Sales tracking",
+          "Executive dashboard"
+        ],
+
+        "example": "Data -> Power BI -> Report Dashboard"
+      },
+
+      "Looker_Studio": {
+        "type": "Google BI Tool",
+        "official_site": "https://lookerstudio.google.com",
+        "description": "BI tool gratis berbasis cloud dari Google",
+
+        "features": [
+          "Free usage",
+          "Google ecosystem integration",
+          "Cloud based",
+          "Realtime data",
+          "Easy sharing"
+        ],
+
+        "use_cases": [
+          "Website analytics",
+          "Marketing report",
+          "SEO dashboard",
+          "Small business reporting"
+        ],
+
+        "example": "Google Sheets -> Looker Studio -> Dashboard"
+      },
+
+      "Metabase": {
+        "type": "Open Source BI",
+        "official_site": "https://www.metabase.com",
+        "description": "BI tool sederhana untuk query dan dashboard tanpa coding",
+
+        "features": [
+          "No-code query builder",
+          "SQL support",
+          "Dashboard creation",
+          "Self-hosted",
+          "Open source"
+        ],
+
+        "use_cases": [
+          "Startup analytics",
+          "Internal dashboard",
+          "Product analytics"
+        ],
+
+        "example": "Database -> Metabase -> Insight Dashboard"
+      }
+    }
+  }
+}

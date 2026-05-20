@@ -290,6 +290,7 @@ const roadmapData = [
         id: "testing_group",
         isVerticalGroup: true,
         style: "yellow",
+        customClass: "translate-x-[30px]",
         children: [
           { id: "vitest", title: "Vitest", badge: "purple" },
           { id: "playwright", title: "Playwright", badge: "purple" },
@@ -303,6 +304,7 @@ const roadmapData = [
         id: "security_group",
         isVerticalGroup: true,
         style: "yellow",
+        customClass: "-translate-x-[30px]",
         children: [
           { id: "cors", title: "CORS", badge: "purple" },
           { id: "https", title: "HTTPS", badge: "purple" },
@@ -463,8 +465,9 @@ function renderRoadmap() {
              `;
               })
               .join("");
+            const extraClass = node.customClass ? ` ${node.customClass}` : "";
             return `
-             <div id="sub-node-${node.id}" data-parent="${row.main.id}" data-side="left" class="flex flex-col gap-3 relative z-20 w-60">
+             <div id="sub-node-${node.id}" data-parent="${row.main.id}" data-side="left" class="flex flex-col gap-3 relative z-20 w-60${extraClass}">
                ${childrenHtml}
              </div>
            `;
@@ -528,8 +531,9 @@ function renderRoadmap() {
              `;
               })
               .join("");
+            const extraClass = node.customClass ? ` ${node.customClass}` : "";
             return `
-             <div id="sub-node-${node.id}" data-parent="${row.main.id}" data-side="right" class="w-60 flex flex-col gap-3 relative z-20">
+             <div id="sub-node-${node.id}" data-parent="${row.main.id}" data-side="right" class="w-60 flex flex-col gap-3 relative z-20${extraClass}">
                ${childrenHtml}
              </div>
            `;

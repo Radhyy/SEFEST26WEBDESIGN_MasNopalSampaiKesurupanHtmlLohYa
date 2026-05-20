@@ -384,18 +384,18 @@ function getAuthActionsHTML(user) {
 
 function getMobileAuthActionsHTML(user) {
   if (!user) {
-    return `<a class="inline-flex min-h-10 items-center rounded-full bg-linear-to-br from-brand-500 to-[#3f6ef0] px-4 py-2.5 text-sm font-bold text-white" href="/pages/login/">Mulai</a>`;
+    return `<a class="w-full inline-flex min-h-11 items-center justify-center rounded-2xl bg-linear-to-br from-brand-500 to-[#3f6ef0] px-4 py-2.5 text-sm font-bold text-white shadow-brand-sm" href="/pages/login/">Login / Daftar</a>`;
   }
 
   const name = escapeHTML(user.name);
   const avatar = escapeHTML(user.avatar || createAvatar(user.name));
   return `
-        <a class="inline-flex min-h-10 items-center gap-2 rounded-full border border-[#dbe3f8] bg-white py-1.5 pl-1.5 pr-3 text-xs font-bold text-slate-900 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100" style="max-width: 9.5rem;" href="/pages/skill-passport/" aria-label="Buka profil ${name}">
-          <img src="${avatar}" alt="${name}" class="h-7 w-7 rounded-full border border-[#dbe3f8] bg-brand-50 object-cover">
+        <a class="flex-1 inline-flex min-h-12 items-center gap-3 rounded-2xl border border-[#dbe3f8] bg-[#f7faff] px-3 py-2 text-[0.9rem] font-bold text-slate-900 transition hover:bg-[#eaf0ff] dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700" href="/pages/skill-passport/" aria-label="Buka profil ${name}">
+          <img src="${avatar}" alt="${name}" class="h-8 w-8 rounded-full border border-[#dbe3f8] bg-brand-50 object-cover">
           <span class="truncate">${name}</span>
         </a>
-        <button id="logoutButtonMobile" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#dbe3f8] bg-white text-slate-600 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-200" aria-label="Keluar dari akun WorkSim">
-          <i class="fa-solid fa-right-from-bracket text-sm"></i>
+        <button id="logoutButtonMobile" type="button" class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-red-200 bg-red-50 text-red-600 transition hover:bg-red-100 dark:border-red-900/50 dark:bg-red-900/20 dark:text-red-400" aria-label="Keluar dari akun WorkSim">
+          <i class="fa-solid fa-right-from-bracket"></i>
         </button>`;
 }
 
@@ -418,14 +418,28 @@ const NAVBAR_HTML = `
         <div id="authActions" class="flex items-center gap-2"></div>
       </div>
     </div>
-    <div class="flex w-full items-center justify-between rounded-full border border-[#dbe3f8]/80 bg-white/85 px-3 py-2 shadow-[0_10px_26px_rgba(47,91,211,0.10)] backdrop-blur lg:hidden dark:border-slate-700/80 dark:bg-slate-900/85">
-      <a href="/" class="inline-flex min-h-10 items-center font-display text-[1.3rem] font-bold tracking-[-0.02em]">Work<span class="text-brand-500">Sim</span></a>
-      <div class="flex items-center gap-2">
-        <button id="themeToggleMobile" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#b8cdfa] bg-[#e3edff] text-brand-500 dark:border-slate-500 dark:bg-slate-900 dark:text-[#ffd166]" aria-label="Ganti tema tampilan WorkSim antara mode terang dan gelap" aria-pressed="false">
-          <i id="themeIconMobile" class="fa-solid fa-moon text-sm"></i>
-        </button>
-        <div id="authActionsMobile" class="flex items-center gap-2"></div>
+    <div class="w-full lg:hidden">
+      <div class="flex w-full items-center justify-between rounded-full border border-[#dbe3f8]/80 bg-white/85 px-3 py-2 shadow-[0_10px_26px_rgba(47,91,211,0.10)] backdrop-blur dark:border-slate-700/80 dark:bg-slate-900/85">
+        <a href="/" class="inline-flex min-h-10 items-center font-display text-[1.3rem] font-bold tracking-[-0.02em]">Work<span class="text-brand-500">Sim</span></a>
+        <div class="flex items-center gap-2">
+          <button id="themeToggleMobile" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#b8cdfa] bg-[#e3edff] text-brand-500 dark:border-slate-500 dark:bg-slate-900 dark:text-[#ffd166]" aria-label="Ganti tema tampilan WorkSim antara mode terang dan gelap" aria-pressed="false">
+            <i id="themeIconMobile" class="fa-solid fa-moon text-sm"></i>
+          </button>
+          <button id="mobileMenuToggle" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#b8cdfa] bg-white text-slate-700 transition hover:text-brand-500 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100" aria-label="Buka menu navigasi" aria-controls="mobileMenu" aria-expanded="false">
+            <i id="mobileMenuIcon" class="fa-solid fa-bars text-sm"></i>
+          </button>
+        </div>
       </div>
+      <nav id="mobileMenu" class="mt-2 flex flex-col overflow-hidden rounded-3xl border border-[#dbe3f8]/80 bg-white/95 px-3 text-sm font-bold text-slate-700 shadow-[0_16px_32px_rgba(47,91,211,0.13)] backdrop-blur dark:border-slate-700/80 dark:bg-slate-900/95 dark:text-slate-100" style="max-height: 0; opacity: 0; padding-top: 0; padding-bottom: 0; transform: translateY(-8px); pointer-events: none; transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.3s ease, transform 0.3s ease;">
+        <div id="authActionsMobile" class="mb-2 flex w-full items-center gap-2 border-b border-[#dbe3f8]/80 pb-3 px-1 pt-1 dark:border-slate-700/80"></div>
+        <div class="grid gap-1">
+          <a class="rounded-2xl px-4 py-3 transition hover:bg-[#eaf0ff] dark:hover:bg-white/10" href="/">Home</a>
+          <a class="rounded-2xl px-4 py-3 transition hover:bg-[#eaf0ff] dark:hover:bg-white/10" href="/pages/ai-career-advisor/">AI Advisor</a>
+          <a class="rounded-2xl px-4 py-3 transition hover:bg-[#eaf0ff] dark:hover:bg-white/10" href="/pages/learning-roadmap/">Roadmap</a>
+          <a class="rounded-2xl px-4 py-3 transition hover:bg-[#eaf0ff] dark:hover:bg-white/10" href="/pages/career-simulation/">Simulasi</a>
+          <a class="rounded-2xl px-4 py-3 transition hover:bg-[#eaf0ff] dark:hover:bg-white/10" href="/pages/skill-passport/">Skill Passport</a>
+        </div>
+      </nav>
     </div>
   </div>
 </header>`;
@@ -529,6 +543,46 @@ document.addEventListener("DOMContentLoaded", () => {
       link.classList.add("bg-[#eaf0ff]", "dark:bg-white/10", "text-brand-500");
     }
   });
+
+  // Mobile Menu Toggle
+  const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const mobileMenuIcon = document.getElementById("mobileMenuIcon");
+
+  function setMobileMenuOpen(isOpen) {
+    if (!mobileMenuToggle || !mobileMenu || !mobileMenuIcon) return;
+
+    mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
+    mobileMenuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Tutup menu navigasi" : "Buka menu navigasi",
+    );
+    mobileMenuIcon.className = isOpen
+      ? "fa-solid fa-xmark text-sm"
+      : "fa-solid fa-bars text-sm";
+
+    mobileMenu.style.maxHeight = isOpen ? `${mobileMenu.scrollHeight + 24}px` : "0";
+    mobileMenu.style.opacity = isOpen ? "1" : "0";
+    mobileMenu.style.paddingTop = isOpen ? "0.75rem" : "0";
+    mobileMenu.style.paddingBottom = isOpen ? "0.75rem" : "0";
+    mobileMenu.style.transform = isOpen ? "translateY(0)" : "translateY(-8px)";
+    mobileMenu.style.pointerEvents = isOpen ? "auto" : "none";
+  }
+
+  if (mobileMenuToggle && mobileMenu) {
+    mobileMenuToggle.addEventListener("click", () => {
+      const isOpen = mobileMenuToggle.getAttribute("aria-expanded") === "true";
+      setMobileMenuOpen(!isOpen);
+    });
+
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => setMobileMenuOpen(false));
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 1024) setMobileMenuOpen(false);
+    });
+  }
 
   // Dark Mode Toggle
   const html = document.documentElement;

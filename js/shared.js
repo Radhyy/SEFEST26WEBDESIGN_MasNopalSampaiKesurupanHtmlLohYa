@@ -247,19 +247,19 @@ const FOOTER_HTML = `
           <p class="mb-4 text-sm font-bold uppercase tracking-[0.08em] text-brand-500">Komunitas</p>
           <p class="max-w-[22ch] text-[0.94rem] leading-7 text-slate-500 dark:text-slate-400">Ikuti update, tips belajar, dan contoh perjalanan karier digital yang relevan.</p>
           <div class="mt-5 flex gap-2.5">
-            <a class="grid h-10 w-10 place-items-center rounded-2xl border border-[#dbe3f8] bg-white text-brand-500 transition hover:-translate-y-0.5 hover:border-brand-500 hover:shadow-[0_10px_18px_rgba(47,91,211,0.12)] dark:border-slate-600 dark:bg-slate-800 dark:text-brand-400 dark:hover:border-brand-500" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a class="grid h-10 w-10 place-items-center rounded-2xl border border-[#dbe3f8] bg-white text-brand-500 transition hover:-translate-y-0.5 hover:border-brand-500 hover:shadow-[0_10px_18px_rgba(47,91,211,0.12)] dark:border-slate-600 dark:bg-slate-800 dark:text-brand-400 dark:hover:border-brand-500" href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a class="grid h-10 w-10 place-items-center rounded-2xl border border-[#dbe3f8] bg-white text-brand-500 transition hover:-translate-y-0.5 hover:border-brand-500 hover:shadow-[0_10px_18px_rgba(47,91,211,0.12)] dark:border-slate-600 dark:bg-slate-800 dark:text-brand-400 dark:hover:border-brand-500" href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <span class="grid h-10 w-10 cursor-not-allowed place-items-center rounded-2xl border border-[#dbe3f8] bg-white text-brand-500/60 dark:border-slate-600 dark:bg-slate-800 dark:text-brand-400/60" aria-label="Instagram coming soon" title="Instagram coming soon"><i class="fa-brands fa-instagram"></i></span>
+            <span class="grid h-10 w-10 cursor-not-allowed place-items-center rounded-2xl border border-[#dbe3f8] bg-white text-brand-500/60 dark:border-slate-600 dark:bg-slate-800 dark:text-brand-400/60" aria-label="LinkedIn coming soon" title="LinkedIn coming soon"><i class="fa-brands fa-linkedin-in"></i></span>
+            <span class="grid h-10 w-10 cursor-not-allowed place-items-center rounded-2xl border border-[#dbe3f8] bg-white text-brand-500/60 dark:border-slate-600 dark:bg-slate-800 dark:text-brand-400/60" aria-label="YouTube coming soon" title="YouTube coming soon"><i class="fa-brands fa-youtube"></i></span>
           </div>
+          <p class="mt-2 text-xs font-semibold text-slate-400 dark:text-slate-500">Media sosial coming soon</p>
         </div>
         <div>
           <p class="mb-4 text-sm font-bold uppercase tracking-[0.08em] text-brand-500">Mitra Kami</p>
-          <div class="rounded-2xl border border-[#dbe3f8] bg-linear-to-br from-[#f8faff] to-brand-50 p-4 shadow-[0_10px_24px_rgba(47,91,211,0.07)] dark:border-slate-600 dark:from-[#1a2640] dark:to-[#111c2f]">
-            <div class="mb-4 flex flex-wrap items-center gap-3">
+          <div class="rounded-2xl border border-[#dbe3f8] bg-linear-to-br from-[#f8faff] to-brand-50 p-5 shadow-[0_10px_24px_rgba(47,91,211,0.07)] dark:border-slate-600 dark:from-[#1a2640] dark:to-[#111c2f] flex flex-wrap items-center gap-3">
               <img src="${rootPath}assets/partners/skomda-full.webp" alt="Partner 1" class="h-8">
               <img src="${rootPath}assets/partners/scs.webp" alt="Partner 2" class="h-10 rounded-full">
               <img src="${rootPath}assets/partners/fiksi.webp" alt="Partner 3" class="h-12">
-            </div>
+              <img src="${rootPath}assets/partners/partner_4.webp" alt="Partner 4" class="h-10">
           </div>
         </div>
       </div>
@@ -294,7 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", async () => {
       const result = await Swal.fire({
         title: "Keluar dari akun?",
-        text: "Kamu akan keluar dari sesi akun saat ini dan perlu login kembali untuk mengakses dashboard serta fitur lainnya. Pastikan semua pekerjaanmu sudah tersimpan sebelum melanjutkan.",
+        text: "Kamu perlu login kembali untuk mengakses dashboard serta fitur lainnya. Pastikan semua pekerjaanmu sudah tersimpan sebelum melanjutkan.",
         confirmButtonText: "Keluar",
         cancelButtonText: "Batal",
       });

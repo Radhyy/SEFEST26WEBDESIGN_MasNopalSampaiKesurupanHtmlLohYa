@@ -1,11 +1,11 @@
-// ====== WorkSim Shared Components ======
+// WorkSim Shared Components
 // Navbar, footer, auth, dan data shared untuk semua halaman.
-// ====== WorkSim Shared Components end ======
+// WorkSim Shared Components end
 
 
 
 
-// ====== Path Helper ======
+// Path Helper
 let rootPath = "";
 const scripts = document.getElementsByTagName("script");
 for (let i = 0; i < scripts.length; i++) {
@@ -15,12 +15,12 @@ for (let i = 0; i < scripts.length; i++) {
     break;
   }
 }
-// ====== Path Helper end ======
+// Path Helper end
 
 
 
 
-// ====== Auth Helper ======
+// Auth Helper
 const AUTH_USER_KEY = "worksim_user";
 const AUTH_SESSION_KEY = "worksim_session";
 const DUMMY_USER = {
@@ -141,24 +141,24 @@ window.WorkSimAuth = {
   logoutUser,
   registerUser,
 };
-// ====== Auth Helper end ======
+// Auth Helper end
 
 
 
 
-// ====== Protected Route ======
+// Protected Route
 if (isProtectedPath(window.location.pathname) && !getCurrentUser()) {
   const redirect = encodeURIComponent(
     `${window.location.pathname}${window.location.search}${window.location.hash}`,
   );
   window.location.replace(`/pages/login/?redirect=${redirect}`);
 }
-// ====== Protected Route end ======
+// Protected Route end
 
 
 
 
-// ====== Skill Passport Data ======
+// Skill Passport Data
 const WORKSIM_PROFILE_KEY = "worksim_profile";
 const WORKSIM_PROGRESS_KEY = "worksim_progress";
 const WORKSIM_PROGRESS_SESSION_KEY = "worksim_xp_progress";
@@ -371,12 +371,12 @@ window.WorkSimData = {
   saveProfile,
   saveProgress,
 };
-// ====== Skill Passport Data end ======
+// Skill Passport Data end
 
 
 
 
-// ====== Navbar Auth UI ======
+// Navbar Auth UI
 function escapeHTML(value) {
   const div = document.createElement("div");
   div.textContent = value || "";
@@ -420,12 +420,12 @@ function getMobileAuthActionsHTML(user) {
           <i class="fa-solid fa-right-from-bracket"></i>
         </button>`;
 }
-// ====== Navbar Auth UI end ======
+// Navbar Auth UI end
 
 
 
 
-// ====== Navbar Template ======
+// Navbar Template
 const NAVBAR_HTML = `
 <header class="sticky top-0 z-30 w-full" id="site-header" style="padding: 0 1vw; border-bottom: 1px solid transparent; transition: padding 0.75s cubic-bezier(0.25,0.46,0.45,0.94), background 0.75s cubic-bezier(0.25,0.46,0.45,0.94), border-color 0.75s cubic-bezier(0.25,0.46,0.45,0.94);">
   <div class="mx-auto flex min-h-18 w-full max-w-310 items-center px-4 sm:px-6 lg:min-h-22 lg:px-0 2xl:max-w-330" id="navbar-outer">
@@ -470,12 +470,12 @@ const NAVBAR_HTML = `
     </div>
   </div>
 </header>`;
-// ====== Navbar Template end ======
+// Navbar Template end
 
 
 
 
-// ====== Footer Template ======
+// Footer Template
 const FOOTER_HTML = `
 <footer id="kontak" class="relative overflow-hidden border-t border-[#dce5fb] bg-linear-to-b from-[#f7faff] to-brand-50 py-8 pb-7 dark:border-slate-700 dark:from-[#0a1020] dark:to-[#111c2f]">
   <div class="pointer-events-none absolute -left-24 top-0 h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(47,91,211,0.14)_0%,transparent_72%)] dark:opacity-30"></div>
@@ -531,24 +531,24 @@ const FOOTER_HTML = `
     </div>
   </div>
 </footer>`;
-// ====== Footer Template end ======
+// Footer Template end
 
 
 
 
-// ====== Inject Components ======
+// Inject Components
 document.addEventListener("DOMContentLoaded", () => {
   const navPlaceholder = document.getElementById("navbar-placeholder");
   if (navPlaceholder) navPlaceholder.outerHTML = NAVBAR_HTML;
 
   const footerPlaceholder = document.getElementById("footer-placeholder");
   if (footerPlaceholder) footerPlaceholder.outerHTML = FOOTER_HTML;
-  // ====== Inject Components end ======
+  // Inject Components end
 
 
 
 
-  // ====== Auth Navbar ======
+  // Auth Navbar
   const currentUser = getCurrentUser();
   const authActions = document.getElementById("authActions");
   const authActionsMobile = document.getElementById("authActionsMobile");
@@ -572,12 +572,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-  // ====== Auth Navbar end ======
+  // Auth Navbar end
 
 
 
 
-  // ====== Active Nav ======
+  // Active Nav
   const navLinks = document.querySelectorAll("header nav a");
   const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
   navLinks.forEach((link) => {
@@ -586,12 +586,12 @@ document.addEventListener("DOMContentLoaded", () => {
       link.classList.add("bg-[#eaf0ff]", "dark:bg-white/10", "text-brand-500");
     }
   });
-  // ====== Active Nav end ======
+  // Active Nav end
 
 
 
 
-  // ====== Mobile Menu ======
+  // Mobile Menu
   const mobileMenuToggle = document.getElementById("mobileMenuToggle");
   const mobileMenu = document.getElementById("mobileMenu");
   const mobileMenuIcon = document.getElementById("mobileMenuIcon");
@@ -630,12 +630,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (window.innerWidth >= 1024) setMobileMenuOpen(false);
     });
   }
-  // ====== Mobile Menu end ======
+  // Mobile Menu end
 
 
 
 
-  // ====== Dark Mode ======
+  // Dark Mode
   const html = document.documentElement;
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") html.classList.add("dark");
@@ -666,20 +666,29 @@ document.addEventListener("DOMContentLoaded", () => {
       updateIcons(isDark);
     });
   });
-  // ====== Dark Mode end ======
+  // Dark Mode end
 
+  // Navbar Scroll Morph
+  const siteHeader = document.getElementById('site-header');
+  const navbarPill = document.getElementById('navbar-pill');
 
+  const SCROLL_ENTER_THRESHOLD = 88;
+  const SCROLL_EXIT_THRESHOLD = 16;
+  let isNavbarScrolled = null;
+  let scrollFrame = null;
 
+  function shouldUseScrolledState(scrollY) {
+    if (isNavbarScrolled === null) return scrollY > SCROLL_ENTER_THRESHOLD;
+    return isNavbarScrolled
+      ? scrollY > SCROLL_EXIT_THRESHOLD
+      : scrollY > SCROLL_ENTER_THRESHOLD;
+  }
 
-  // ====== Navbar Scroll Morph ======
-  const siteHeader  = document.getElementById('site-header');
-  const navbarOuter = document.getElementById('navbar-outer');
-  const navbarPill  = document.getElementById('navbar-pill');
-
-  const SCROLL_THRESHOLD = 60;
-
-  function applyScrollState(scrolled) {
+  function applyScrollState(scrolled, force = false) {
     if (!siteHeader || !navbarPill) return;
+    if (!force && scrolled === isNavbarScrolled) return;
+
+    isNavbarScrolled = scrolled;
     const navbarPillMobile = document.getElementById('navbar-pill-mobile');
     const navbarOuter = document.getElementById('navbar-outer');
     const isDark = html.classList.contains('dark');
@@ -728,37 +737,41 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
-  // ====== Navbar Scroll Morph end ======
+  // Navbar Scroll Morph end
 
 
 
 
-  // ====== Theme Sync ======
+  // Theme Sync
   const _origUpdateIcons = updateIcons;
   ['themeToggle', 'themeToggleMobile'].forEach(id => {
     const btn = document.getElementById(id);
     if (!btn) return;
     btn.addEventListener('click', () => {
-      setTimeout(() => applyScrollState(window.scrollY > SCROLL_THRESHOLD), 0);
+      setTimeout(() => applyScrollState(shouldUseScrolledState(window.scrollY), true), 0);
     });
   });
-  // ====== Theme Sync end ======
+  // Theme Sync end
 
 
+  // Scroll State Init
+  function syncNavbarScrollState() {
+    scrollFrame = null;
+    applyScrollState(shouldUseScrolledState(window.scrollY));
+  }
 
-
-  // ====== Scroll State Init ======
   window.addEventListener('scroll', () => {
-    applyScrollState(window.scrollY > SCROLL_THRESHOLD);
+    if (scrollFrame !== null) return;
+    scrollFrame = requestAnimationFrame(syncNavbarScrollState);
   }, { passive: true });
 
-  applyScrollState(window.scrollY > SCROLL_THRESHOLD);
-  // ====== Scroll State Init end ======
+  applyScrollState(shouldUseScrolledState(window.scrollY), true);
+  // Scroll State Init end
 
 
 
 
-  // ====== Scroll Reveal ======
+  // Scroll Reveal
   const revealEls = document.querySelectorAll(".reveal");
   if (revealEls.length) {
     const observer = new IntersectionObserver(
@@ -774,5 +787,5 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     revealEls.forEach((el) => observer.observe(el));
   }
-  // ====== Scroll Reveal end ======
+  // Scroll Reveal end
 });

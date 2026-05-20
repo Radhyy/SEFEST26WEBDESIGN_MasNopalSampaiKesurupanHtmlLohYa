@@ -1,5 +1,18 @@
 let currentStep = 1;
 
+function getStepElement(step = currentStep) {
+  return document.getElementById(`step-${step}`);
+}
+
+function syncFormHeight() {
+  const formContainer = document.getElementById('form-container');
+  const activeStep = getStepElement();
+
+  if (!formContainer || !activeStep) return;
+
+  formContainer.style.height = `${activeStep.scrollHeight}px`;
+}
+
 function updateProgress(step) {
   const progressBar = document.getElementById('progress-bar');
   const step1Text = document.getElementById('step-text-1');
@@ -44,6 +57,7 @@ function showStep(step) {
   });
 
   updateProgress(step);
+  requestAnimationFrame(syncFormHeight);
 }
 
 function nextStep(step) {
@@ -116,3 +130,12 @@ function resetForm() {
   currentStep = 1;
   showStep(currentStep);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  showStep(currentStep);
+  window.addEventListener('resize', syncFormHeight);
+
+  if (document.fonts) {
+    document.fonts.ready.then(syncFormHeight);
+  }
+});

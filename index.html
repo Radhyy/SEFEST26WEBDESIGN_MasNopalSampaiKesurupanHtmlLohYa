@@ -65,19 +65,19 @@
             Lihat Demo Roadmap
           </a>
         </div>
-        <div class="mt-6 flex items-center gap-3">
-          <div class="flex" aria-hidden="true">
-            <img class="h-10 w-10 rounded-full border-2 border-white object-cover"
+        <div class="mt-6 flex items-center gap-4">
+          <div class="flex shrink-0" aria-hidden="true">
+            <img class="relative z-10 h-10 w-10 shrink-0 rounded-full border-2 border-white object-cover dark:border-slate-900"
               src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80"
               alt="Avatar 1" />
-            <img class="-ml-3 h-10 w-10 rounded-full border-2 border-white object-cover"
+            <img class="relative z-20 -ml-3 h-10 w-10 shrink-0 rounded-full border-2 border-white object-cover dark:border-slate-900"
               src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80"
               alt="Avatar 2" />
-            <img class="-ml-3 h-10 w-10 rounded-full border-2 border-white object-cover"
+            <img class="relative z-30 -ml-3 h-10 w-10 shrink-0 rounded-full border-2 border-white object-cover dark:border-slate-900"
               src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=120&q=80"
               alt="Avatar 3" />
           </div>
-          <p class="text-sm text-slate-500">Lebih dari <strong>8.500+</strong> pelajar dan mahasiswa sudah eksplor
+          <p class="text-[0.9rem] leading-relaxed text-slate-500">Lebih dari <strong>8.500+</strong> pelajar dan mahasiswa sudah eksplor
             karier di WorkSim</p>
         </div>
       </div>
@@ -406,27 +406,29 @@
       </div>
     </section>
 
-    <section
-      class="reveal wide-page my-10 grid translate-y-6 gap-6 rounded-3xl bg-linear-to-br from-brand-500 via-[#315ed6] to-[#2c7ac2] p-5 text-white opacity-0 shadow-brand-sm transition-all duration-700 sm:p-8 lg:my-12 lg:grid-cols-[1.25fr_0.75fr] lg:p-12 dark:bg-none dark:bg-slate-900/80 dark:border dark:border-slate-700 dark:backdrop-blur dark:shadow-[0_14px_40px_rgba(20,24,38,0.07)]">
-      <div>
-        <h2 class="mb-2 font-display text-[clamp(1.4rem,2.7vw,2rem)]">Dapatkan update karier tiap minggu</h2>
-        <p class="max-w-[55ch] text-[#dfe9ff] dark:text-slate-400">Tips belajar, trend industri, dan challenge mingguan
-          langsung ke inbox
-          kamu.</p>
-        <form class="mt-4 flex flex-col gap-2.5 sm:flex-row">
-          <input
-            class="min-w-0 flex-1 rounded-xl border-0 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 shadow-sm outline-none dark:border dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:placeholder-slate-500"
-            type="email" placeholder="Masukkan email" aria-label="Email" />
-          <button type="button" class="btn-primary touch-target justify-center">
-            Kirim
-            <i class="fa-solid fa-paper-plane"></i>
-          </button>
-        </form>
-      </div>
-      <img class="hidden h-full max-h-62.5 w-full rounded-2xl object-cover sm:block"
-        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80"
-        alt="Tim mentor dan komunitas" />
-    </section>
+    <div class="wide-page my-10 lg:my-12">
+      <section
+        class="reveal grid translate-y-6 gap-6 rounded-3xl bg-linear-to-br from-brand-500 via-[#315ed6] to-[#2c7ac2] p-5 text-white opacity-0 shadow-brand-sm transition-all duration-700 sm:p-8 lg:grid-cols-[1.25fr_0.75fr] lg:p-12 dark:bg-none dark:bg-slate-900/80 dark:border dark:border-slate-700 dark:backdrop-blur dark:shadow-[0_14px_40px_rgba(20,24,38,0.07)]">
+        <div>
+          <h2 class="mb-2 font-display text-[clamp(1.4rem,2.7vw,2rem)]">Dapatkan update karier tiap minggu</h2>
+          <p class="max-w-[55ch] text-[#dfe9ff] dark:text-slate-400">Tips belajar, trend industri, dan challenge mingguan
+            langsung ke inbox
+            kamu.</p>
+          <form class="mt-4 flex flex-col gap-2.5 sm:flex-row">
+            <input
+              class="min-w-0 flex-1 rounded-xl border-0 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 shadow-sm outline-none dark:border dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:placeholder-slate-500"
+              type="email" placeholder="Masukkan email" aria-label="Email" />
+            <button type="button" class="btn-primary touch-target justify-center">
+              Kirim
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+        <img class="hidden h-full max-h-62.5 w-full rounded-2xl object-cover sm:block"
+          src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80"
+          alt="Tim mentor dan komunitas" />
+      </section>
+    </div>
   </main>
 
   <div id="footer-placeholder"></div>

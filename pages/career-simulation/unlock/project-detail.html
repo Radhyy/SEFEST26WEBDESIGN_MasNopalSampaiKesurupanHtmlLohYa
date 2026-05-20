@@ -74,22 +74,22 @@
         <i class="fa-solid fa-arrow-left text-xs"></i> Semua Project
       </a>
       <!-- Tabs -->
-      <div class="flex w-full gap-5 overflow-x-auto sm:w-auto" role="tablist" aria-label="Navigasi detail project">
+      <div class="flex w-full justify-between gap-1 overflow-x-auto sm:justify-start sm:w-auto sm:gap-5" role="tablist" aria-label="Navigasi detail project">
         <button type="button" data-project-tab="brief" role="tab" aria-selected="true" aria-controls="panel-brief"
-          class="tab-active min-h-10 text-sm font-semibold pb-0 shrink-0">
-          <i class="fa-solid fa-file-lines mr-1.5"></i> Brief Klien
+          class="tab-active min-h-10 text-xs sm:text-sm font-semibold pb-0 shrink-0">
+          <i class="fa-solid fa-file-lines mr-1 sm:mr-1.5"></i> Brief Klien
         </button>
         <button type="button" data-project-tab="submit" role="tab" aria-selected="false" aria-controls="panel-submit"
-          class="min-h-10 text-sm font-semibold text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 shrink-0">
-          <i class="fa-solid fa-upload mr-1.5"></i> Submit
+          class="min-h-10 text-xs sm:text-sm font-semibold text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 shrink-0">
+          <i class="fa-solid fa-upload mr-1 sm:mr-1.5"></i> Submit
         </button>
         <button type="button" data-project-tab="feedback" role="tab" aria-selected="false" aria-controls="panel-feedback"
-          class="min-h-10 text-sm font-semibold text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 shrink-0">
-          <i class="fa-solid fa-comments mr-1.5"></i> Feedback
+          class="min-h-10 text-xs sm:text-sm font-semibold text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 shrink-0">
+          <i class="fa-solid fa-comments mr-1 sm:mr-1.5"></i> Feedback
         </button>
         <button type="button" data-project-tab="solutions" role="tab" aria-selected="false" aria-controls="panel-solutions"
-          class="min-h-10 text-sm font-semibold text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 shrink-0">
-          <i class="fa-solid fa-users mr-1.5"></i> Solusi Lain
+          class="min-h-10 text-xs sm:text-sm font-semibold text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 shrink-0">
+          <i class="fa-solid fa-users mr-1 sm:mr-1.5"></i> Solusi Lain
         </button>
       </div>
       <!-- XP chip -->
@@ -136,13 +136,13 @@
         <div class="flex shrink-0 items-center gap-2">
           <div class="step-idle w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0">2
           </div>
-          <span class="text-xs font-semibold text-slate-400">Submit Hasil</span>
+          <span class="hidden text-xs font-semibold text-slate-400 sm:block">Submit Hasil</span>
         </div>
         <div class="flex-1 h-px bg-slate-200 dark:bg-slate-700 min-w-[20px]"></div>
         <div class="flex shrink-0 items-center gap-2">
           <div class="step-idle w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0">3
           </div>
-          <span class="text-xs font-semibold text-slate-400">Terima Feedback</span>
+          <span class="hidden text-xs font-semibold text-slate-400 sm:block">Terima Feedback</span>
         </div>
       </div>
 
@@ -385,7 +385,7 @@
       </div>
 
       <!-- Submit Area -->
-      <div class="rounded-2xl border-2 border-brand-200 dark:border-brand-800 bg-white dark:bg-slate-800 p-5">
+      <div id="submit-sidebar-area" class="rounded-2xl border-2 border-brand-200 dark:border-brand-800 bg-white dark:bg-slate-800 p-5 transition-all duration-300">
         <h3 class="font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
           <i class="fa-solid fa-upload text-brand-500"></i> Submit Hasil Kerjamu
         </h3>
@@ -420,7 +420,7 @@
               class="w-full rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 px-3 py-2.5 text-sm text-slate-700 dark:text-slate-200 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100 transition-all placeholder-slate-400 resize-none"></textarea>
           </div>
           <!-- Submit button -->
-          <button
+          <button id="submitProjectBtn"
             class="w-full rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 px-4 flex items-center justify-center gap-2 transition-all hover:-translate-y-0.5 shadow-lg shadow-brand-500/25 text-sm">
             <i class="fa-solid fa-paper-plane"></i> Submit Hasil Kerja
           </button>
@@ -473,6 +473,55 @@
           });
         });
       });
+
+      // Handle Project Submission
+      const submitBtn = document.getElementById("submitProjectBtn");
+      if (submitBtn) {
+        submitBtn.addEventListener("click", () => {
+          // Check if github link is empty
+          const githubInput = document.querySelector('input[placeholder="https://github.com/username/repo"]');
+          const githubLink = githubInput ? githubInput.value : "";
+          
+          if (!githubLink || githubLink.trim() === "") {
+            Swal.fire({
+              title: "Tautan GitHub Kosong",
+              text: "Pastikan kamu sudah memasukkan link repository GitHub sebelum submit.",
+              icon: "warning"
+            });
+            return;
+          }
+
+          // Show success message
+          Swal.fire({
+            title: "Berhasil Disubmit!",
+            text: "Hasil kerjamu berhasil dikirim. Klien virtual sedang mengevaluasi kode kamu.",
+            iconHtml: '<svg class="h-16 w-16 text-brand-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"></path></svg>',
+            showCancelButton: false,
+            confirmButtonText: "Tutup",
+            customClass: {
+              popup: "!relative !transform !overflow-hidden !rounded-2xl !bg-white dark:!bg-slate-800 !text-center !shadow-xl !transition-all sm:!my-8 sm:!w-full sm:!max-w-md !p-6 !grid-cols-none",
+              title: "!text-xl !font-bold !text-slate-900 dark:!text-white !mt-4 !col-start-1 !col-end-3 sm:!col-start-1 !text-center !p-0",
+              htmlContainer: "!mt-2 !text-sm !text-slate-500 dark:!text-slate-400 !col-start-1 !col-end-3 sm:!col-start-1 !text-center !p-0",
+              actions: "!mt-6 !flex !w-full sm:!flex-row !justify-center !bg-transparent !p-0 !col-start-1 !col-end-3 sm:!col-start-1",
+              confirmButton: "!m-0 sm:!w-auto !rounded-xl !bg-brand-500 !px-8 !py-2.5 !text-sm !font-bold !text-white !transition hover:!bg-brand-600 focus:!outline-none dark:focus:!ring-offset-slate-900",
+              icon: "!m-0 !mx-auto !flex !h-24 !w-24 !items-center !justify-center !rounded-full !border-0 !bg-brand-50 dark:!bg-brand-900/30 !col-start-1 !col-end-3 sm:!col-start-1"
+            }
+          }).then(() => {
+            // Optional: reset form or redirect to feedback tab
+            const feedbackTab = document.querySelector('[data-project-tab="feedback"]');
+            if (feedbackTab) feedbackTab.click();
+
+            // Hide the submit sidebar area
+            const submitSidebar = document.getElementById("submit-sidebar-area");
+            if (submitSidebar) {
+              submitSidebar.classList.add("opacity-0", "scale-95", "pointer-events-none");
+              setTimeout(() => {
+                submitSidebar.classList.add("hidden");
+              }, 300);
+            }
+          });
+        });
+      }
     });
   </script>
 </body>
